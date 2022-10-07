@@ -1,3 +1,4 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StyleProp, TextStyle } from 'react-native';
 import { HeaderWithButtons, HeaderWithButtonsProps } from './HeaderWithButtons';
 
@@ -26,4 +27,32 @@ export interface ScreenDataBase {
 export interface TextData {
     text: string;
     style?: StyleProp<TextStyle>;
+}
+
+export const Actions: {
+    [actionType: string]: (action: ActionProps) => () => void;
+} = {
+    navigate:
+        ({ to, navigation }: NavigateActionProps) =>
+        () => {
+            navigation.navigate(to);
+        },
+};
+
+export type ActionType = keyof typeof Actions;
+
+export type NavigateActionData = {
+    type: 'navigate';
+    to: string;
+} & ActionData;
+
+export type NavigateActionProps = {} & NavigateActionData & ActionProps;
+
+/** Props for an action to perform */
+export interface ActionData {
+    type: ActionType;
+}
+
+export interface ActionProps extends ActionData {
+    navigation: NativeStackNavigationProp<any>;
 }

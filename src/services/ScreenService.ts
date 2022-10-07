@@ -25,9 +25,36 @@ const appScreens: AppScreens = {
                 buttons: [
                     {
                         text: { text: 'Basics' },
+                        action: {
+                            type: 'navigate',
+                            to: 'Basics',
+                        },
                     },
                     {
                         text: { text: 'Essentials' },
+                        action: {
+                            type: 'navigate',
+                            to: 'Essentials',
+                        },
+                    },
+                ],
+            },
+        },
+        {
+            id: 'Basics',
+            type: 'HeaderWithButtons',
+            headerData: {
+                headerText: 'Basics',
+                subHeaderText: 'Here is some stuff to read',
+            },
+            buttonListData: {
+                buttons: [
+                    {
+                        text: { text: 'Home' },
+                        action: {
+                            type: 'navigate',
+                            to: 'Home',
+                        },
                     },
                 ],
             },

@@ -1,22 +1,24 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { TdButton, TdButtonData, TdButtonProps } from './TdButton';
+import { ActionButton, ActionButtonData } from './ActionButton';
 
 export interface ButtonListData {
-    buttons: TdButtonData[];
+    buttons: ActionButtonData[];
 }
 
 export interface ButtonListProps extends ButtonListData {
-    buttons: TdButtonProps[];
+    navigation: NativeStackNavigationProp<any>;
 }
 
-export const ButtonList = ({ buttons }: ButtonListProps) => {
+export const ButtonList = ({ buttons, navigation }: ButtonListProps) => {
     return (
         <>
             {buttons.map((button, i) => (
-                <TdButton
+                <ActionButton
                     key={button.text?.text || i}
                     {...button}
+                    navigation={navigation}
                     style={[styles.button, button.style]}
                 />
             ))}

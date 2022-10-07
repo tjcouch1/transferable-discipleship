@@ -1,7 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { TdButton } from '../TdButton';
 import { Header, HeaderData } from '../Header';
 import { ScreenDataBase } from './Screens';
 import { getScreen } from '../../services/ScreenService';
@@ -16,14 +15,14 @@ export type HeaderWithButtonsProps = {
 export const HeaderWithButtons = ({
     navigation,
     route,
-}: NativeStackScreenProps<never>) => {
+}: NativeStackScreenProps<any>) => {
     const { headerData, buttonListData } = getScreen(route.name);
 
     return (
         <ScrollView contentInsetAdjustmentBehavior="automatic">
             <View style={styles.layout}>
                 <Header {...headerData} />
-                <ButtonList {...buttonListData} />
+                <ButtonList {...buttonListData} navigation={navigation} />
             </View>
         </ScrollView>
     );
