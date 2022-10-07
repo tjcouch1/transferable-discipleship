@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from 'react';
 import {
     StyleSheet,
     TouchableOpacity,
@@ -9,12 +9,15 @@ import {
     ViewStyle,
 } from 'react-native';
 import Theme from '../Theme';
+import { TextData } from './screens/Screens';
 
-export interface TdButtonProps {
-    onPress?: (event: GestureResponderEvent) => void;
+export interface TdButtonData {
     style?: StyleProp<ViewStyle>;
-    textStyle?: StyleProp<TextStyle>;
-    title?: string;
+    text?: TextData;
+}
+
+export interface TdButtonProps extends TdButtonData {
+    onPress?: (event: GestureResponderEvent) => void;
     children?: ReactNode;
 }
 
@@ -23,18 +26,17 @@ export interface TdButtonProps {
 export const TdButton = ({
     onPress,
     style,
-    textStyle,
-    title,
+    text = {} as TextData,
     children,
 }: TdButtonProps) => {
     return (
-        <TouchableOpacity
-            style={[style, styles.navButton]}
-            onPress={onPress || undefined}>
+        <TouchableOpacity style={[styles.navButton, style]} onPress={onPress}>
             {children ? (
                 children
             ) : (
-                <Text style={[textStyle, styles.navButtonText]}>{title}</Text>
+                <Text style={[styles.navButtonText, text.style]}>
+                    {text.text}
+                </Text>
             )}
         </TouchableOpacity>
     );
