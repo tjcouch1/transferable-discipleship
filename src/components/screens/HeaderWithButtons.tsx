@@ -6,12 +6,14 @@ import { ScreenDataBase } from './Screens';
 import { getScreen } from '../../services/ScreenService';
 import { ButtonList, ButtonListData } from '../ButtonList';
 
-export type HeaderWithButtonsProps = {
+/** The data that defines the HeaderWithButtons screen */
+export type HeaderWithButtonsData = {
     type: 'HeaderWithButtons';
     headerData: HeaderData;
     buttonListData: ButtonListData;
 } & ScreenDataBase;
 
+/** Screen with a header and a list of buttons */
 export const HeaderWithButtons = ({
     navigation,
     route,

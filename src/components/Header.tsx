@@ -23,7 +23,9 @@ export const Header = ({
             <Text style={styles.headerText}>{headerText}</Text>
             <Text style={styles.subHeaderText}>{subHeaderText}</Text>
             {lineTexts.map(lineText => (
-                <Text style={[styles.lineText, lineText.style]}>
+                <Text
+                    key={lineText.text}
+                    style={[styles.lineText, lineText.style]}>
                     {lineText.text}
                 </Text>
             ))}

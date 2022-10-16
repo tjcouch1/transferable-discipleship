@@ -5,17 +5,18 @@ import {
     Text,
     GestureResponderEvent,
     StyleProp,
-    TextStyle,
     ViewStyle,
 } from 'react-native';
 import Theme from '../Theme';
 import { TextData } from './screens/Screens';
 
+/** The data that defines the TdButton */
 export interface TdButtonData {
     style?: StyleProp<ViewStyle>;
     text?: TextData;
 }
 
+/** Props the TdButton needs to function */
 export interface TdButtonProps extends TdButtonData {
     onPress?: (event: GestureResponderEvent) => void;
     children?: ReactNode;

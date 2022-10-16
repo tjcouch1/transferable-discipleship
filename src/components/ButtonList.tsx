@@ -3,10 +3,12 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { ActionButton, ActionButtonData } from './ActionButton';
 
+/** The data that defines the ButtonList */
 export interface ButtonListData {
     buttons: ActionButtonData[];
 }
 
+/** Props the ButtonList needs to function */
 export interface ButtonListProps extends ButtonListData {
     navigation: NativeStackNavigationProp<any>;
 }

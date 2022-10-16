@@ -2,9 +2,10 @@
  * ScreenService.ts - Handles getting the page structure
  */
 
-import { AppScreens, ScreenData } from '../components/screens/Screens';
+import { AppData, ScreenData } from '../components/screens/Screens';
 
-const appScreens: AppScreens = {
+const appScreens: AppData = {
+    version: '0.0.0',
     initialScreen: 'Home',
     screens: [
         {
@@ -45,7 +46,37 @@ const appScreens: AppScreens = {
             type: 'HeaderWithButtons',
             headerData: {
                 headerText: 'Basics',
-                subHeaderText: 'Here is some stuff to read',
+                subHeaderText: 'Here is some basic stuff to read',
+            },
+            buttonListData: {
+                buttons: [
+                    {
+                        text: { text: 'Click Me!' },
+                        action: {
+                            type: 'toggle',
+                            altButtons: [
+                                {
+                                    text: { text: 'You Clicked Me!' },
+                                },
+                            ],
+                        },
+                    },
+                    {
+                        text: { text: 'Home' },
+                        action: {
+                            type: 'navigate',
+                            to: 'Home',
+                        },
+                    },
+                ],
+            },
+        },
+        {
+            id: 'Essentials',
+            type: 'HeaderWithButtons',
+            headerData: {
+                headerText: 'Essentials',
+                subHeaderText: 'Here is some essential stuff to read',
             },
             buttonListData: {
                 buttons: [
