@@ -1,34 +1,50 @@
 import React from 'react';
-import { StyleSheet, Text, View, ViewStyle, StyleProp } from 'react-native';
+import { StyleSheet, View, ViewStyle, StyleProp } from 'react-native';
 import Theme from '../../Theme';
-import { TextData } from './Contents';
+import { ContentDataBase } from './Contents';
+import { HeaderText, HeaderTextData } from './HeaderText';
+import { SubheaderText, SubheaderTextData } from './SubheaderText';
+import { Text, TextData } from './Text';
 
-export interface HeaderData {
+export interface HeaderContentData extends ContentDataBase {
     type: 'Header';
-    headerText: string;
-    subHeaderText: string;
+    headerText: HeaderTextData;
+    subheaderText: SubheaderTextData;
     lineTexts?: TextData[];
     style?: StyleProp<ViewStyle>;
 }
 
-export interface HeaderProps extends Omit<HeaderData, 'type'> {}
+/**
+ * Data that defines Header but without the type
+ * (useful when you want to use Header in another component)
+ */
+export type HeaderData = Omit<HeaderContentData, 'type'>;
+
+/** Props the Header needs to function */
+export interface HeaderProps extends HeaderData {}
 
 export const Header = ({
     headerText,
-    subHeaderText,
+    subheaderText,
     lineTexts = [],
     style,
 }: HeaderProps) => {
     return (
         <View style={[styles.headerView, style]}>
-            <Text style={styles.headerText}>{headerText}</Text>
-            <Text style={styles.subHeaderText}>{subHeaderText}</Text>
+            <HeaderText
+                {...headerText}
+                style={[styles.headerText, headerText.style]}
+            />
+            <SubheaderText
+                {...subheaderText}
+                style={[styles.subheaderText, subheaderText.style]}
+            />
             {lineTexts.map(lineText => (
                 <Text
                     key={lineText.text}
-                    style={[styles.lineText, lineText.style]}>
-                    {lineText.text}
-                </Text>
+                    {...lineText}
+                    style={[styles.lineText, lineText.style]}
+                />
             ))}
         </View>
     );
@@ -45,21 +61,14 @@ const styles = StyleSheet.create({
         borderBottomColor: Theme.dimmed.backgroundColor,
     },
     headerText: {
-        fontSize: 30,
-        fontWeight: '900',
         textAlign: 'center',
-        color: Theme.default.color,
     },
-    subHeaderText: {
+    subheaderText: {
         marginTop: 5,
-        fontSize: 15,
         textAlign: 'center',
-        color: Theme.default.color,
     },
     lineText: {
         marginTop: 20,
-        fontSize: 22,
         textAlign: 'center',
-        color: Theme.default.color,
     },
 });

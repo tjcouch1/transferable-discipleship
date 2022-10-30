@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { TdButton } from './TdButton';
+import { BasicButton } from './BasicButton';
 import { ActionData, ActionFactory } from '../../../util/ActionFactory';
 import { ButtonDataBase } from './Buttons';
 
@@ -17,10 +17,10 @@ export interface ActionButtonProps extends Omit<ActionButtonData, 'type'> {
 
 /** Button that performs an action when clicked */
 export const ActionButton = (props: ActionButtonProps) => {
-    const { action, navigation, ...tdButtonData } = props;
+    const { action, navigation, ...buttonData } = props;
 
     /** Keep button state so we can toggle with toggle action */
-    const [buttonData, setButtonData] = useState(tdButtonData);
+    const [currentButtonData, setCurrentButtonData] = useState(buttonData);
 
     let onPress = action
         ? ActionFactory[action.type]({ ...action, navigation })
@@ -28,9 +28,9 @@ export const ActionButton = (props: ActionButtonProps) => {
     if (action?.type === 'toggle') {
         onPress = () =>
             ActionFactory[action.type]({ ...action, navigation })(
-                setButtonData,
+                setCurrentButtonData,
             );
     }
 
-    return <TdButton {...buttonData} onPress={onPress} />;
+    return <BasicButton {...currentButtonData} onPress={onPress} />;
 };

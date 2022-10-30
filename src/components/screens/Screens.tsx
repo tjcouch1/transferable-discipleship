@@ -1,5 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { HeaderWithButtons, HeaderWithButtonsData } from './HeaderWithButtons';
+import { ContentList, ContentListData } from './ContentList';
 
 //----- SCREEN TYPES -----//
 
@@ -8,10 +9,11 @@ export const Screens: {
     [pageType: string]: (props: NativeStackScreenProps<any>) => JSX.Element;
 } = {
     HeaderWithButtons,
+    ContentList,
 };
 
 /** Defining data for every screen type. All screen types should extend ScreenDataBase */
-export type ScreenData = HeaderWithButtonsData;
+export type ScreenData = HeaderWithButtonsData | ContentListData;
 
 /** All screen types available. A screen is a set of components that the Navigation handles */
 export type ScreenType = keyof typeof Screens;

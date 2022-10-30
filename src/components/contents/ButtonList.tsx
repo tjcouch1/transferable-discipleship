@@ -2,15 +2,22 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { ActionButton, ActionButtonData } from './buttons/ActionButton';
+import { ContentDataBase } from './Contents';
 
 /** The data that defines the ButtonList */
-export interface ButtonListData {
+export interface ButtonListContentData extends ContentDataBase {
     type: 'ButtonList';
     buttons: ActionButtonData[];
 }
 
+/**
+ * Data that defines ButtonList but without the type
+ * (useful when you want to use ButtonList in another component)
+ */
+export type ButtonListData = Omit<ButtonListContentData, 'type'>;
+
 /** Props the ButtonList needs to function */
-export interface ButtonListProps extends Omit<ButtonListData, 'type'> {
+export interface ButtonListProps extends ButtonListData {
     navigation: NativeStackNavigationProp<any>;
 }
 

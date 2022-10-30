@@ -11,84 +11,87 @@ const appScreens: AppData = {
         {
             id: 'Home',
             title: 'TD Home',
-            type: 'HeaderWithButtons',
-            headerData: {
-                type: 'Header',
-                headerText: 'Transferable Discipleship',
-                subHeaderText:
-                    'A tool for simple, reproducible Christian discipleship',
-                lineTexts: [
-                    {
-                        text: 'Please select an option below or swipe from the right anytime if you get lost',
+            type: 'ContentList',
+            contents: [
+                {
+                    type: 'Header',
+                    headerText: { text: 'Transferable Discipleship' },
+                    subheaderText: {
+                        text: 'A tool for simple, reproducible Christian discipleship',
                     },
-                ],
-            },
-            buttonListData: {
-                type: 'ButtonList',
-                buttons: [
-                    {
-                        type: 'ActionButton',
-                        text: { text: 'Basics' },
-                        action: {
-                            type: 'navigate',
-                            to: 'Basics',
+                    lineTexts: [
+                        {
+                            text: 'Please select an option below or swipe from the right anytime if you get lost',
                         },
-                    },
-                    {
-                        type: 'ActionButton',
-                        text: { text: 'Essentials' },
-                        action: {
-                            type: 'navigate',
-                            to: 'Essentials',
+                    ],
+                },
+                {
+                    type: 'ButtonList',
+                    buttons: [
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'Basics' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics',
+                            },
                         },
-                    },
-                ],
-            },
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'Essentials' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Essentials',
+                            },
+                        },
+                    ],
+                },
+            ],
         },
         {
             id: 'Basics',
-            type: 'HeaderWithButtons',
-            headerData: {
-                type: 'Header',
-                headerText: 'Basics',
-                subHeaderText: 'Here is some basic stuff to read',
-            },
-            buttonListData: {
-                type: 'ButtonList',
-                buttons: [
-                    {
-                        type: 'ActionButton',
-                        text: { text: 'Click Me!' },
-                        action: {
-                            type: 'toggle',
-                            altButtons: [
-                                {
-                                    text: { text: 'You Clicked Me!' },
-                                },
-                            ],
+            type: 'ContentList',
+            contents: [
+                {
+                    type: 'Header',
+                    headerText: { text: 'Basics' },
+                    subheaderText: { text: 'Here is some basic stuff to read' },
+                },
+                {
+                    type: 'ButtonList',
+                    buttons: [
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'Click Me!' },
+                            action: {
+                                type: 'toggle',
+                                altButtons: [
+                                    {
+                                        text: { text: 'You Clicked Me!' },
+                                    },
+                                ],
+                            },
                         },
-                    },
-                    {
-                        type: 'ActionButton',
-                        text: { text: 'Home' },
-                        action: {
-                            type: 'navigate',
-                            to: 'Home',
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'Home' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Home',
+                            },
                         },
-                    },
-                ],
-            },
+                    ],
+                },
+            ],
         },
         {
             id: 'Essentials',
             type: 'HeaderWithButtons',
             headerData: {
-                type: 'Header',
-                headerText: 'Essentials',
-                subHeaderText: 'Here is some essential stuff to read',
+                headerText: { text: 'Essentials' },
+                subheaderText: { text: 'Here is some essential stuff to read' },
             },
             buttonListData: {
-                type: 'ButtonList',
                 buttons: [
                     {
                         type: 'ActionButton',
@@ -111,6 +114,6 @@ export const getAppScreens = () => appScreens;
  * @param id The screen id to get
  * @returns Screen information
  */
-export const getScreen = (id: string): ScreenData =>
+export const getScreenData = (id: string): ScreenData =>
     appScreens.screens.find(screen => screen.id === id) ||
     ({ id: 'NOT_FOUND' } as ScreenData);

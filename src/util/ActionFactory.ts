@@ -1,6 +1,6 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ButtonDataBase } from '../components/contents/buttons/Buttons';
-import { TdButtonData } from '../components/contents/buttons/TdButton';
+import { BasicButtonData } from '../components/contents/buttons/BasicButton';
 
 //----- ACTION TYPES -----//
 
@@ -32,7 +32,7 @@ export const ActionFactory: {
         ({ altButtons }: PropsWithNavigation<ToggleActionData>) =>
         (
             setButtonData: React.Dispatch<
-                React.SetStateAction<Omit<TdButtonData, 'type'>>
+                React.SetStateAction<Omit<BasicButtonData, 'type'>>
             >,
         ) => {
             setButtonData(buttonData => {

@@ -2,40 +2,37 @@ import React, { ReactNode } from 'react';
 import {
     StyleSheet,
     TouchableOpacity,
-    Text,
     GestureResponderEvent,
 } from 'react-native';
 import Theme from '../../../Theme';
-import { TextData } from '../Contents';
+import { Text, TextData } from '../Text';
 import { ButtonDataBase } from './Buttons';
 
-/** The data that defines the TdButton */
-export interface TdButtonData extends ButtonDataBase {
-    type: 'TdButton';
+/** The data that defines the BasicButton */
+export interface BasicButtonData extends ButtonDataBase {
+    type: 'BasicButton';
 }
 
-/** Props the TdButton needs to function */
-export interface TdButtonProps extends Omit<TdButtonData, 'type'> {
+/** Props the BasicButton needs to function */
+export interface BasicButtonProps extends Omit<BasicButtonData, 'type'> {
     onPress?: (event: GestureResponderEvent) => void;
     children?: ReactNode;
 }
 
 // TODO: Consider reworking with Pressable https://reactnative.dev/docs/pressable
 
-export const TdButton = ({
+export const BasicButton = ({
     onPress,
     style,
     text = {} as TextData,
     children,
-}: TdButtonProps) => {
+}: BasicButtonProps) => {
     return (
         <TouchableOpacity style={[styles.navButton, style]} onPress={onPress}>
             {children ? (
                 children
             ) : (
-                <Text style={[styles.navButtonText, text.style]}>
-                    {text.text}
-                </Text>
+                <Text {...text} style={[styles.navButtonText, text.style]} />
             )}
         </TouchableOpacity>
     );

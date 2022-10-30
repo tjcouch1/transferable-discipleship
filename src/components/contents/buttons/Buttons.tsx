@@ -1,20 +1,20 @@
-//----- BUTTON TYPES -----//
-
 import { StyleProp, ViewStyle } from 'react-native';
 import { PropsWithNavigation } from '../../../util/ActionFactory';
-import { TextData } from '../Contents';
+import { TextData } from '../Text';
 import { ActionButton, ActionButtonData } from './ActionButton';
-import { TdButton, TdButtonData } from './TdButton';
+import { BasicButton, BasicButtonData } from './BasicButton';
+
+//----- BUTTON TYPES -----//
 
 export const Buttons: {
     [contentType: string]: (props: PropsWithNavigation<any>) => JSX.Element;
 } = {
     ActionButton,
-    TdButton,
+    BasicButton,
 };
 
 /** Defining data for every button type. All button types should extend ScreenDataBase */
-export type ButtonData = ActionButtonData | TdButtonData;
+export type ButtonData = ActionButtonData | BasicButtonData;
 
 /** All button types available */
 export type ButtonType = keyof typeof Buttons;
