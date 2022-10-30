@@ -62,22 +62,103 @@ const appScreens: AppData = {
                     buttons: [
                         {
                             type: 'ActionButton',
-                            text: { text: 'Click Me!' },
+                            text: { text: 'Gospel Review' },
                             action: {
-                                type: 'toggle',
-                                altButtons: [
-                                    {
-                                        text: { text: 'You Clicked Me!' },
-                                    },
-                                ],
+                                type: 'navigate',
+                                to: 'Basics>GospelReview',
                             },
                         },
                         {
                             type: 'ActionButton',
-                            text: { text: 'Home' },
+                            text: { text: 'Scripture 1.0' },
                             action: {
                                 type: 'navigate',
-                                to: 'Home',
+                                to: 'Basics>Scripture1.0',
+                            },
+                        },
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'Assurance of Salvation' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics>AssuranceOfSalvation',
+                            },
+                        },
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'Holy Spirit' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics>HolySpirit',
+                            },
+                        },
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'Prayer' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics>Prayer',
+                            },
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            id: 'Basics>GospelReview',
+            title: 'Gospel Review',
+            type: 'ContentList',
+            contents: [
+                {
+                    type: 'Header',
+                    headerText: { text: 'Gospel Review' },
+                    subheaderText: { text: 'Reviewing the Gospel' },
+                },
+                {
+                    type: 'ButtonList',
+                    buttons: [
+                        {
+                            type: 'ActionButton',
+                            text: {
+                                text: 'What is the relationship between God & man?',
+                            },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics>GospelReview>RelGodMan',
+                            },
+                        },
+                        {
+                            type: 'ActionButton',
+                            text: {
+                                text: "What is God's plan to restore our relationship?",
+                            },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics>GospelReview>RestReln',
+                            },
+                        },
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'What did Jesus do?' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics>GospelReview>WhatJesusDo',
+                            },
+                        },
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'How should I respond?' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics>GospelReview>HowRespond',
+                            },
+                        },
+                        {
+                            type: 'ActionButton',
+                            text: { text: 'The whole story' },
+                            action: {
+                                type: 'navigate',
+                                to: 'Basics>GospelReview>WholeStory',
                             },
                         },
                     ],
