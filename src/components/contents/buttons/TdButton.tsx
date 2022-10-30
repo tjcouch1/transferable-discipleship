@@ -4,20 +4,18 @@ import {
     TouchableOpacity,
     Text,
     GestureResponderEvent,
-    StyleProp,
-    ViewStyle,
 } from 'react-native';
-import Theme from '../Theme';
-import { TextData } from './screens/Screens';
+import Theme from '../../../Theme';
+import { TextData } from '../Contents';
+import { ButtonDataBase } from './Buttons';
 
 /** The data that defines the TdButton */
-export interface TdButtonData {
-    style?: StyleProp<ViewStyle>;
-    text?: TextData;
+export interface TdButtonData extends ButtonDataBase {
+    type: 'TdButton';
 }
 
 /** Props the TdButton needs to function */
-export interface TdButtonProps extends TdButtonData {
+export interface TdButtonProps extends Omit<TdButtonData, 'type'> {
     onPress?: (event: GestureResponderEvent) => void;
     children?: ReactNode;
 }

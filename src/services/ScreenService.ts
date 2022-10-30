@@ -13,6 +13,7 @@ const appScreens: AppData = {
             title: 'TD Home',
             type: 'HeaderWithButtons',
             headerData: {
+                type: 'Header',
                 headerText: 'Transferable Discipleship',
                 subHeaderText:
                     'A tool for simple, reproducible Christian discipleship',
@@ -23,8 +24,10 @@ const appScreens: AppData = {
                 ],
             },
             buttonListData: {
+                type: 'ButtonList',
                 buttons: [
                     {
+                        type: 'ActionButton',
                         text: { text: 'Basics' },
                         action: {
                             type: 'navigate',
@@ -32,6 +35,7 @@ const appScreens: AppData = {
                         },
                     },
                     {
+                        type: 'ActionButton',
                         text: { text: 'Essentials' },
                         action: {
                             type: 'navigate',
@@ -45,12 +49,15 @@ const appScreens: AppData = {
             id: 'Basics',
             type: 'HeaderWithButtons',
             headerData: {
+                type: 'Header',
                 headerText: 'Basics',
                 subHeaderText: 'Here is some basic stuff to read',
             },
             buttonListData: {
+                type: 'ButtonList',
                 buttons: [
                     {
+                        type: 'ActionButton',
                         text: { text: 'Click Me!' },
                         action: {
                             type: 'toggle',
@@ -62,6 +69,7 @@ const appScreens: AppData = {
                         },
                     },
                     {
+                        type: 'ActionButton',
                         text: { text: 'Home' },
                         action: {
                             type: 'navigate',
@@ -75,12 +83,15 @@ const appScreens: AppData = {
             id: 'Essentials',
             type: 'HeaderWithButtons',
             headerData: {
+                type: 'Header',
                 headerText: 'Essentials',
                 subHeaderText: 'Here is some essential stuff to read',
             },
             buttonListData: {
+                type: 'ButtonList',
                 buttons: [
                     {
+                        type: 'ActionButton',
                         text: { text: 'Home' },
                         action: {
                             type: 'navigate',

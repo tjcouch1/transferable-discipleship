@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { ActionData, ActionFactory } from './screens/Screens';
-import { TdButton, TdButtonData } from './TdButton';
+import { TdButton } from './TdButton';
+import { ActionData, ActionFactory } from '../../../util/ActionFactory';
+import { ButtonDataBase } from './Buttons';
 
 /** The data that defines the ActionButton */
-export interface ActionButtonData extends TdButtonData {
+export interface ActionButtonData extends ButtonDataBase {
+    type: 'ActionButton';
     action?: ActionData;
 }
 
 /** Props the ActionButton needs to function */
-export interface ActionButtonProps extends ActionButtonData {
+export interface ActionButtonProps extends Omit<ActionButtonData, 'type'> {
     navigation: NativeStackNavigationProp<any>;
 }
 

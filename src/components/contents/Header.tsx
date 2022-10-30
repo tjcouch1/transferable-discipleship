@@ -1,16 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, ViewStyle, StyleProp } from 'react-native';
-import Theme from '../Theme';
-import { TextData } from './screens/Screens';
+import Theme from '../../Theme';
+import { TextData } from './Contents';
 
 export interface HeaderData {
+    type: 'Header';
     headerText: string;
     subHeaderText: string;
     lineTexts?: TextData[];
     style?: StyleProp<ViewStyle>;
 }
 
-export interface HeaderProps extends HeaderData {}
+export interface HeaderProps extends Omit<HeaderData, 'type'> {}
 
 export const Header = ({
     headerText,

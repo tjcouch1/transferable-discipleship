@@ -1,10 +1,10 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Header, HeaderData } from '../Header';
+import { Header, HeaderData } from '../contents/Header';
 import { ScreenDataBase } from './Screens';
 import { getScreen } from '../../services/ScreenService';
-import { ButtonList, ButtonListData } from '../ButtonList';
+import { ButtonList, ButtonListData } from '../contents/ButtonList';
 
 /** The data that defines the HeaderWithButtons screen */
 export type HeaderWithButtonsData = {
