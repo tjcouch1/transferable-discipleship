@@ -1,11 +1,7 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
  *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
+ * Transferable Discipleship - 
  *
- * @format
  */
 
 import React from 'react';
@@ -17,15 +13,15 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+/* import { Colors } from 'react-native/Libraries/NewAppScreen'; */
 import { getAppScreens } from './src/services/ScreenService';
 import { Screens } from './src/components/screens/Screens';
 
-const App = () => {
+export default function App() {
     const isDarkMode = useColorScheme() === 'dark';
 
     const backgroundStyle = {
-        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+        backgroundColor: isDarkMode ? 'black': 'white' /* Colors.darker : Colors.lighter */,
     };
 
     const Stack = createNativeStackNavigator();
@@ -59,5 +55,3 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 });
-
-export default App;
