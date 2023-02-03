@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
   screen: {
     alignItems: 'center',
     justifyContent: 'center',
+    height: '100%'
   },
   phone: {
-    margin: 10,
     width: 360,
     height: 720,
     borderWidth: 3,
