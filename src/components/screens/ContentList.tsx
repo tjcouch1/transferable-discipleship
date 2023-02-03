@@ -1,11 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
-import {
-  StyleProp,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { ScreenDataBase } from './Screens';
 import { getScreenData } from '../../services/ScreenService';
 import { ContentData, Contents } from '../contents/Contents';
