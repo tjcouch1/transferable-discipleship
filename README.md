@@ -1,10 +1,10 @@
-# TransferableDiscipleship
+# transferable-discipleship
 Small Christian discipleship app in React Native
 
 ## Development Environment Setup
 
 1. Install Node
-2. Run `git clone https://github.com/tjcouch1/TransferableDiscipleship.git` or download the repository otherwise
+2. Run `git clone https://github.com/tjcouch1/transferable-discipleship.git` or download the repository otherwise
 3. Navigate to `transferable-discipleship`
 4. Run `npm install`
 
