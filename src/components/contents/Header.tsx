@@ -79,25 +79,25 @@ const baseStyle = StyleSheet.create({
 });
 
 const styles = {
-  screen: {
+  screen: StyleSheet.create({
     ...baseStyle,
-    headerView: StyleSheet.compose(
-      baseStyle.headerView,
-      StyleSheet.create({ headerView: { paddingTop: 15, paddingBottom: 15 } })
-        .headerView,
-    ),
-    headerText: StyleSheet.compose(
-      baseStyle.headerText,
-      StyleSheet.create({ headerText: { fontWeight: '700', fontSize: 20 } })
-        .headerText,
-    ),
-  },
-  section: {
+    headerView: {
+      ...baseStyle.headerView,
+      paddingTop: 15,
+      paddingBottom: 15,
+    },
+    headerText: {
+      ...baseStyle.headerText,
+      fontWeight: '700',
+      fontSize: 20,
+    },
+  }),
+  section: StyleSheet.create({
     ...baseStyle,
-    headerView: StyleSheet.compose(
-      baseStyle.headerView,
-      StyleSheet.create({ headerView: { width: '90%' } }).headerView,
-    ),
-  },
+    headerView: {
+      ...baseStyle.headerView,
+      width: '90%',
+    },
+  }),
   title: baseStyle,
 };

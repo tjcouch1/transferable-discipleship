@@ -116,6 +116,12 @@ const appScreens: AppData = {
           subheaderText: { text: 'Reviewing the Gospel' },
         },
         {
+          type: 'Header',
+          headerText: { text: 'section title' },
+          subheaderText: { text: 'stuff here' },
+          design: 'section',
+        },
+        {
           type: 'ButtonList',
           buttons: [
             {
