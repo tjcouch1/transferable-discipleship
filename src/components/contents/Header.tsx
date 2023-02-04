@@ -1,6 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, ViewStyle, StyleProp } from 'react-native';
+import {
+  View,
+  ViewStyle,
+  StyleProp,
+} from 'react-native';
 import Theme from '../../Theme';
+import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
 import { SubheaderText, SubheaderTextData } from './SubheaderText';
@@ -33,7 +38,7 @@ export const Header = ({
   style,
   design = 'screen',
 }: HeaderProps) => {
-  const designStyle = styles[design] || baseStyle;
+  const designStyle = designStyles[design];
   return (
     <View style={[designStyle.headerView, style]}>
       <HeaderText
@@ -55,49 +60,45 @@ export const Header = ({
   );
 };
 
-const baseStyle = StyleSheet.create({
-  headerView: {
-    paddingTop: 60,
-    paddingBottom: 40,
-    backgroundColor: Theme.default.backgroundColor,
-    paddingHorizontal: 15,
-    width: '100%',
-    borderBottomWidth: 10,
-    borderBottomColor: Theme.dimmed.backgroundColor,
-  },
-  headerText: {
-    textAlign: 'center',
-  },
-  subheaderText: {
-    marginTop: 5,
-    textAlign: 'center',
-  },
-  lineText: {
-    marginTop: 20,
-    textAlign: 'center',
-  },
-});
-
-const styles = {
-  screen: StyleSheet.create({
-    ...baseStyle,
+const designStyles = createDesignStyleSheets(
+  {
     headerView: {
-      ...baseStyle.headerView,
-      paddingTop: 15,
-      paddingBottom: 15,
+      paddingTop: 60,
+      paddingBottom: 40,
+      backgroundColor: Theme.default.backgroundColor,
+      paddingHorizontal: 15,
+      width: '100%',
+      borderBottomWidth: 10,
+      borderBottomColor: Theme.dimmed.backgroundColor,
     },
     headerText: {
-      ...baseStyle.headerText,
-      fontWeight: '700',
-      fontSize: 20,
+      textAlign: 'center',
     },
-  }),
-  section: StyleSheet.create({
-    ...baseStyle,
-    headerView: {
-      ...baseStyle.headerView,
-      width: '90%',
+    subheaderText: {
+      marginTop: 5,
+      textAlign: 'center',
     },
-  }),
-  title: baseStyle,
-};
+    lineText: {
+      marginTop: 20,
+      textAlign: 'center',
+    },
+  },
+  {
+    screen: {
+      headerView: {
+        paddingTop: 15,
+        paddingBottom: 15,
+      },
+      headerText: {
+        fontWeight: '700',
+        fontSize: 20,
+      },
+    },
+    section: {
+      extends: ['screen'],
+      headerView: {
+        width: '90%',
+      },
+    },
+  },
+);
