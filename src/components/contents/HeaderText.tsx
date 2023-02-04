@@ -4,8 +4,8 @@ import Theme from '../../Theme';
 import { Text, TextData } from './Text';
 
 /** Simple defining data for displaying header text */
-export interface HeaderTextContentData extends TextData {
-    type: 'HeaderText';
+export interface HeaderTextContentData extends Omit<TextData, 'design'> {
+  type: 'HeaderText';
 }
 
 /**
@@ -18,13 +18,5 @@ export type HeaderTextData = Omit<HeaderTextContentData, 'type'>;
 export interface HeaderTextProps extends HeaderTextData {}
 
 export const HeaderText = (textData: HeaderTextData) => (
-    <Text {...textData} style={[styles.headerText, textData.style]} />
+  <Text {...textData} design="header" style={[textData.style]} />
 );
-
-const styles = StyleSheet.create({
-    headerText: {
-        fontSize: 30,
-        fontWeight: '900',
-        color: Theme.default.color,
-    },
-});
