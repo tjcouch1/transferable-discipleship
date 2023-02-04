@@ -16,8 +16,8 @@ export interface HeaderContentData extends ContentDataBase {
   headerText: HeaderTextData;
   subheaderText: SubheaderTextData;
   lineTexts?: TextData[];
-  style?: StyleProp<ViewStyle>;
   design?: HeaderDesign;
+  style?: StyleProp<ViewStyle>;
 }
 
 type HeaderDesign = 'screen' | 'section' | 'title';
@@ -35,8 +35,8 @@ export const Header = ({
   headerText,
   subheaderText,
   lineTexts = [],
-  style,
   design = 'screen',
+  style,
 }: HeaderProps) => {
   const designStyle = designStyles[design];
   return (

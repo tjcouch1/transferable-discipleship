@@ -4,8 +4,8 @@ import Theme from '../../Theme';
 import { Text, TextData } from './Text';
 
 /** Simple defining data for displaying subheader text */
-export interface SubheaderTextContentData extends TextData {
-    type: 'SubheaderText';
+export interface SubheaderTextContentData extends Omit<TextData, 'design'> {
+  type: 'SubheaderText';
 }
 
 /**
@@ -18,12 +18,5 @@ export type SubheaderTextData = Omit<SubheaderTextContentData, 'type'>;
 export interface SubheaderTextProps extends SubheaderTextData {}
 
 export const SubheaderText = (textData: SubheaderTextProps) => (
-    <Text {...textData} style={[styles.subheaderText, textData.style]} />
+  <Text {...textData} design="subheader" style={[textData.style]} />
 );
-
-const styles = StyleSheet.create({
-    subheaderText: {
-        fontSize: 15,
-        color: Theme.default.color,
-    },
-});
