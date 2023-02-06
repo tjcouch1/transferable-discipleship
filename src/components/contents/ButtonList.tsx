@@ -18,17 +18,15 @@ export type ButtonListData = Omit<ButtonListContentData, 'type'>;
 
 /** Props the ButtonList needs to function */
 export interface ButtonListProps extends ButtonListData {
-    navigation: NativeStackNavigationProp<any>;
 }
 
-export const ButtonList = ({ buttons, navigation }: ButtonListProps) => {
+export const ButtonList = ({ buttons }: ButtonListProps) => {
     return (
         <>
             {buttons.map((button, i) => (
                 <ActionButton
                     key={button.text?.text || i}
                     {...button}
-                    navigation={navigation}
                     style={[styles.button, button.style]}
                 />
             ))}

@@ -27,7 +27,7 @@ export const HeaderWithButtons = ({
     <TScrollView contentInsetAdjustmentBehavior="automatic">
       <View style={styles.layout}>
         <Header {...headerData} />
-        <ButtonList {...buttonListData} navigation={navigation} />
+        <ButtonList {...buttonListData} />
       </View>
     </TScrollView>
   );

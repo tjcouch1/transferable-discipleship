@@ -32,11 +32,12 @@ type DesignStyleSheetComposition<T> = {
  * @returns object whose members consist of design style sheets at each design name. Any design not found will revert to baseStyles.
  */
 export const createDesignStyleSheets = <D extends string, T extends NamedStyles<T>>(
-  baseStyles: T,
+  baseStyles: NamedStyles<T>,
   extensions: DesignStyleSheetExtensions<D, T>,
 ): DesignStyleSheetComposition<T> => {
   const baseStyleSheet = StyleSheet.create(baseStyles);
 
+  // Create a proxied design style sheet composition that returns baseStyles as the default design if the specific design is not found
   const designStyleSheets: DesignStyleSheetComposition<T> = new Proxy(
     Object.fromEntries(
       Object.entries(extensions).map(([name, dSS]) => {
@@ -77,8 +78,9 @@ export const createDesignStyleSheets = <D extends string, T extends NamedStyles<
       }),
     ),
     {
-      get(obj, prop: string) {
-        return prop in obj ? obj[prop] : baseStyleSheet;
+      // If the design is not found, return the base styles
+      get(designStyleSheetComposition, design: string) {
+        return design in designStyleSheetComposition ? designStyleSheetComposition[design] : baseStyleSheet;
       },
     },
   );
