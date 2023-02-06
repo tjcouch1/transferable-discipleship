@@ -27,7 +27,7 @@ const appScreens: AppData = {
           design: 'title',
         },
         {
-          type: 'Slide',
+          type: 'ScriptureSlide',
           headerText: {
             text: 'Hi Im a slide header',
           },
