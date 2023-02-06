@@ -11,7 +11,7 @@ const appScreens: AppData = {
     {
       id: 'Home',
       title: 'TD Home',
-      type: 'ContentList',
+      type: 'ContentListScreen',
       contents: [
         {
           type: 'Header',
@@ -25,6 +25,18 @@ const appScreens: AppData = {
             },
           ],
           design: 'title',
+        },
+        {
+          type: 'Slide',
+          headerText: {
+            text: 'Hi Im a slide header',
+          },
+          contents: [
+            {
+              type: 'Text',
+              text: 'Slide stuff',
+            },
+          ],
         },
         {
           type: 'ButtonList',
@@ -51,7 +63,7 @@ const appScreens: AppData = {
     },
     {
       id: 'Basics',
-      type: 'ContentList',
+      type: 'ContentListScreen',
       contents: [
         {
           type: 'Header',
@@ -108,7 +120,7 @@ const appScreens: AppData = {
     {
       id: 'Basics>GospelReview',
       title: 'Gospel Review',
-      type: 'ContentList',
+      type: 'ContentListScreen',
       contents: [
         {
           type: 'Header',

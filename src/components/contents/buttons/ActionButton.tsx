@@ -3,6 +3,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { BasicButton } from './BasicButton';
 import { ActionData, ActionFactory } from '../../../util/ActionFactory';
 import { ButtonDataBase } from './Buttons';
+import { useNavigation } from '@react-navigation/native';
 
 /** The data that defines the ActionButton */
 export interface ActionButtonData extends ButtonDataBase {
@@ -12,12 +13,12 @@ export interface ActionButtonData extends ButtonDataBase {
 
 /** Props the ActionButton needs to function */
 export interface ActionButtonProps extends Omit<ActionButtonData, 'type'> {
-    navigation: NativeStackNavigationProp<any>;
 }
 
 /** Button that performs an action when clicked */
 export const ActionButton = (props: ActionButtonProps) => {
-    const { action, navigation, ...buttonData } = props;
+    const { action, ...buttonData } = props;
+    const navigation = useNavigation();
 
     /** Keep button state so we can toggle with toggle action */
     const [currentButtonData, setCurrentButtonData] = useState(buttonData);
