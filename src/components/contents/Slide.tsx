@@ -42,42 +42,18 @@ export const Slide = ({ headerText, contents = [], style }: SlideProps) => {
 const designStyles = createDesignStyleSheets(
   {
     headerView: {
-      paddingTop: 60,
-      paddingBottom: 40,
+      paddingVertical: 10,
       backgroundColor: Theme.default.backgroundColor,
       paddingHorizontal: 15,
-      width: '100%',
+      width: '90%',
       borderBottomWidth: 10,
       borderBottomColor: Theme.dimmed.backgroundColor,
     },
     headerText: {
-      textAlign: 'center',
-    },
-    subheaderText: {
-      marginTop: 5,
-      textAlign: 'center',
-    },
-    lineText: {
-      marginTop: 20,
-      textAlign: 'center',
+        fontSize: 25,
+        fontWeight: '600',
+
     },
   },
-  {
-    screen: {
-      headerView: {
-        paddingTop: 15,
-        paddingBottom: 15,
-      },
-      headerText: {
-        fontWeight: '700',
-        fontSize: 20,
-      },
-    },
-    section: {
-      extends: ['screen'],
-      headerView: {
-        width: '90%',
-      },
-    },
-  },
+  {},
 );

@@ -32,7 +32,7 @@ type DesignStyleSheetComposition<T> = {
  * @returns object whose members consist of design style sheets at each design name. Any design not found will revert to baseStyles.
  */
 export const createDesignStyleSheets = <D extends string, T extends NamedStyles<T>>(
-  baseStyles: T,
+  baseStyles: NamedStyles<T>,
   extensions: DesignStyleSheetExtensions<D, T>,
 ): DesignStyleSheetComposition<T> => {
   const baseStyleSheet = StyleSheet.create(baseStyles);
