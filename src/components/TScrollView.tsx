@@ -1,15 +1,27 @@
 import { ScrollView, ScrollViewProps } from 'react-native';
 import { isWeb } from '../util/Util';
 
-export default function TScrollView(props: ScrollViewProps) {
+export type TScrollViewProps = ScrollViewProps & { bottomPadding: number };
+
+export default function TScrollView({
+  bottomPadding,
+  ...scrollViewProps
+}: TScrollViewProps) {
   return (
     <ScrollView
-      {...props}
+      {...scrollViewProps}
+      // Bottom padding thanks to jgbaEmento at https://github.com/facebook/react-native/issues/15707#issuecomment-340759872
+      contentContainerStyle={[
+        {
+          paddingBottom: bottomPadding,
+        },
+        scrollViewProps.contentContainerStyle,
+      ]}
       showsVerticalScrollIndicator={
-        !isWeb() && props.showsVerticalScrollIndicator
+        !isWeb() && scrollViewProps.showsVerticalScrollIndicator
       }
       showsHorizontalScrollIndicator={
-        !isWeb() && props.showsHorizontalScrollIndicator
+        !isWeb() && scrollViewProps.showsHorizontalScrollIndicator
       }></ScrollView>
   );
 }
