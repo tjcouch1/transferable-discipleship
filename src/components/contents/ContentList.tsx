@@ -8,11 +8,22 @@ export interface ContentListContentData extends ContentDataBase {
   contents: ContentData[];
   padTop?: boolean;
   padBottom?: boolean;
+  padding?: number;
   design?: ContentListDesign;
   style?: StyleProp<ViewStyle>;
 }
 
-type ContentListDesign = 'no-padding' | 'tight' | 'comfortable' | 'loose';
+type ContentListDesign = keyof typeof ContentListDesignPadding;
+const ContentListDesignPadding = {
+  'no-padding': 0,
+  tight: 15,
+  comfortable: 30,
+  loose: 45,
+};
+export const getContentListDesignPadding = (
+  padding: number | undefined,
+  design: ContentListDesign = 'comfortable',
+) => (padding !== undefined ? padding : ContentListDesignPadding[design]);
 
 /**
  * Data that defines ContentList but without the type
@@ -27,10 +38,12 @@ export const ContentList = ({
   contents = [],
   padTop = true,
   padBottom = true,
+  padding,
   design = 'comfortable',
   style,
 }: ContentListProps) => {
   const designStyle = designStyles[design];
+  const contentPadding = getContentListDesignPadding(padding, design);
 
   return (
     <View style={[designStyle.layout, style]}>
@@ -38,9 +51,9 @@ export const ContentList = ({
         // Figure out the right spacing for this content
         const contentStyles = [designStyle.content];
         if ((i !== 0 && i !== contents.length) || (padTop && i === 0))
-          contentStyles.push(designStyle.spacedTop);
+          contentStyles.push({ paddingTop: contentPadding });
         else if (padBottom && i === contents.length)
-          contentStyles.push(designStyle.spacedBottom);
+          contentStyles.push({ paddingBottom: contentPadding });
 
         return (
           <View style={contentStyles} key={i}>
@@ -59,40 +72,9 @@ export const ContentList = ({
 const designStyles = createDesignStyleSheets(
   {
     layout: {},
-    spacedTop: {
-      paddingTop: 30,
-    },
-    spacedBottom: {
-      paddingBottom: 30,
-    },
     content: {
       alignItems: 'center',
     },
   },
-  {
-    'no-padding': {
-      spacedTop: {
-        paddingTop: 0,
-      },
-      spacedBottom: {
-        paddingBottom: 0,
-      },
-    },
-    tight: {
-      spacedTop: {
-        paddingTop: 15,
-      },
-      spacedBottom: {
-        paddingBottom: 15,
-      },
-    },
-    loose: {
-      spacedTop: {
-        paddingTop: 45,
-      },
-      spacedBottom: {
-        paddingBottom: 45,
-      },
-    },
-  },
+  {},
 );

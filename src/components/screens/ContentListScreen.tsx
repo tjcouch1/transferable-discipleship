@@ -5,7 +5,7 @@ import { ScreenDataBase } from './Screens';
 import { getScreenData } from '../../services/ScreenService';
 import { ContentData, Contents } from '../contents/Contents';
 import TScrollView from '../TScrollView';
-import { ContentList, ContentListData } from '../contents/ContentList';
+import { ContentList, ContentListData, getContentListDesignPadding } from '../contents/ContentList';
 
 /** The data that defines the ContentListScreen screen */
 export type ContentListScreenData = {
@@ -26,12 +26,13 @@ export const ContentListScreen = ({
   } = getScreenData(route.name) as ContentListScreenData;
 
   return (
-    <TScrollView contentInsetAdjustmentBehavior="automatic">
-      <ContentList
-        {...screenData}
-        padTop={padTop}
-        padBottom={padBottom}
-      />
+    <TScrollView
+      bottomPadding={getContentListDesignPadding(
+          screenData.padding,
+          screenData.design,
+        )}
+      contentInsetAdjustmentBehavior="automatic">
+      <ContentList {...screenData} padTop={padTop} padBottom={padBottom} />
     </TScrollView>
   );
 };

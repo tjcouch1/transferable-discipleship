@@ -44,15 +44,27 @@ const appScreens: AppData = {
           },
         },
         {
-          type: 'ScriptureSlide',
-          headerText: {
-            text: 'Renewing of your mind',
-          },
-          reference: 'Romans 12:1-2',
-        },
-        {
-          type: 'ScriptureSlide',
-          reference: '2 Corinthians 12:7-9',
+          type: 'ContentList',
+          padTop: false,
+          padBottom: false,
+          padding: 5,
+          contents: [
+            {
+              type: 'Text',
+              text: 'Test'
+            },
+            {
+              type: 'ScriptureSlide',
+              headerText: {
+                text: 'Renewing of your mind',
+              },
+              reference: 'Romans 12:1-2',
+            },
+            {
+              type: 'ScriptureSlide',
+              reference: '2 Corinthians 12:7-9',
+            },
+          ],
         },
       ],
     },
