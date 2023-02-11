@@ -17,7 +17,7 @@ export interface TextContentData extends ContentDataBase {
   style?: StyleProp<TextStyle>;
 }
 
-type TextDesign = 'normal' | 'header' | 'subheader';
+type TextDesign = 'normal' | 'header' | 'subheader' | 'small';
 
 /**
  * Data that defines Text but without the type
@@ -54,5 +54,10 @@ const designStyles = createDesignStyleSheets(
         color: Theme.default.color,
       },
     },
+    small: {
+      lineText: {
+        fontSize: 17,
+      }
+    }
   },
 );

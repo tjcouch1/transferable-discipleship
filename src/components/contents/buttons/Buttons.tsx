@@ -13,7 +13,7 @@ export const Buttons: {
     BasicButton,
 };
 
-/** Defining data for every button type. All button types should extend ScreenDataBase */
+/** Defining data for every button type. All button types should extend ButtonDataBase */
 export type ButtonData = ActionButtonData | BasicButtonData;
 
 /** All button types available */
@@ -22,6 +22,9 @@ export type ButtonType = keyof typeof Buttons;
 /** The base data that every button must have. All button data types should extend ButtonDataBase */
 export type ButtonDataBase = {
     type: ButtonType;
+    design?: ButtonDesign;
     style?: StyleProp<ViewStyle>;
     text?: TextData;
 };
+
+type ButtonDesign = 'normal' | 'answer';

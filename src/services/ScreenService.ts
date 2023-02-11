@@ -58,7 +58,15 @@ const appScreens: AppData = {
             },
             {
               type: 'ScriptureSlide',
-              reference: '2 Corinthians 12:7-9',
+              headerText: {
+                text: 'What is true of God?',
+              },
+              reference: 'Acts 17:24-28',
+              buttonStates: {
+                revealed: {
+                  text: { text: 'Creator, Desires to be known' },
+                },
+              },
             },
           ],
         },
