@@ -59,6 +59,7 @@ const appScreens: AppData = {
     {
       id: 'Basics',
       type: 'ContentListScreen',
+      design: 'no-padding',
       contents: [
         {
           type: 'Header',

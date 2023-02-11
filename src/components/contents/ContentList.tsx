@@ -6,8 +6,8 @@ import { ContentData, ContentDataBase, Contents } from './Contents';
 export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
   contents: ContentData[];
-  spaceFirst?: boolean;
-  spaceLast?: boolean;
+  padTop?: boolean;
+  padBottom?: boolean;
   design?: ContentListDesign;
   style?: StyleProp<ViewStyle>;
 }
@@ -25,8 +25,8 @@ export interface ContentListProps extends ContentListData {}
 
 export const ContentList = ({
   contents = [],
-  spaceFirst = true,
-  spaceLast = true,
+  padTop = true,
+  padBottom = true,
   design = 'comfortable',
   style,
 }: ContentListProps) => {
@@ -37,9 +37,9 @@ export const ContentList = ({
       {contents.map((content, i) => {
         // Figure out the right spacing for this content
         const contentStyles = [designStyle.content];
-        if ((i !== 0 && i !== contents.length) || (spaceFirst && i === 0))
+        if ((i !== 0 && i !== contents.length) || (padTop && i === 0))
           contentStyles.push(designStyle.spacedTop);
-        else if (spaceLast && i === contents.length)
+        else if (padBottom && i === contents.length)
           contentStyles.push(designStyle.spacedBottom);
 
         return (

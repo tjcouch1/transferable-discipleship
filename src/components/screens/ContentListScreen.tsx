@@ -20,8 +20,8 @@ export const ContentListScreen = ({
 }: NativeStackScreenProps<any>) => {
   // Default spaceFirst and spaceLast to false instead of true like in ContentList
   const {
-    spaceFirst = false,
-    spaceLast = false,
+    padTop = false,
+    padBottom = false,
     ...screenData
   } = getScreenData(route.name) as ContentListScreenData;
 
@@ -29,8 +29,8 @@ export const ContentListScreen = ({
     <TScrollView contentInsetAdjustmentBehavior="automatic">
       <ContentList
         {...screenData}
-        spaceFirst={spaceFirst}
-        spaceLast={spaceLast}
+        padTop={padTop}
+        padBottom={padBottom}
       />
     </TScrollView>
   );
