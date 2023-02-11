@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "transferable-discipleship-expo",
-    "slug": "transferable-discipleship-expo",
+    "name": "transferable-discipleship",
+    "slug": "transferable-discipleship",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
