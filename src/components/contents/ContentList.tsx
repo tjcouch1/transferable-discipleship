@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
-import { ContentData, ContentDataBase, Contents } from './Contents';
+import { ContentData, ContentDataBase } from './Contents';
+import ContentsContext from './ContentsContext';
 
 export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
@@ -42,6 +43,8 @@ export const ContentList = ({
   design = 'comfortable',
   style,
 }: ContentListProps) => {
+  const Contents = useContext(ContentsContext);
+
   const designStyle = designStyles[design];
   const contentPadding = getContentListDesignPadding(padding, design);
 

@@ -50,10 +50,6 @@ const appScreens: AppData = {
           padding: 5,
           contents: [
             {
-              type: 'Text',
-              text: 'Test'
-            },
-            {
               type: 'ScriptureSlide',
               headerText: {
                 text: 'Renewing of your mind',
