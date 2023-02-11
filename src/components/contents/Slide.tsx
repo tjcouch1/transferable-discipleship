@@ -2,18 +2,17 @@ import React from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
 import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
-import { ContentList } from './ContentList';
+import { ContentList, ContentListData } from './ContentList';
 import { ContentData, ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
 import { SubheaderText, SubheaderTextData } from './SubheaderText';
 import { Text, TextData } from './Text';
 
-export interface SlideContentData extends ContentDataBase {
+export type SlideContentData = ContentDataBase & {
   type: 'Slide';
   headerText?: HeaderTextData;
-  contents: ContentData[];
   style?: StyleProp<ViewStyle>;
-}
+} & ContentListData;
 
 /**
  * Data that defines Slide but without the type
@@ -24,7 +23,9 @@ export type SlideData = Omit<SlideContentData, 'type'>;
 /** Props the Slide needs to function */
 export interface SlideProps extends SlideData {}
 
-export const Slide = ({ headerText, contents = [], style }: SlideProps) => {
+export const Slide = (slideProps: SlideProps) => {
+  const { headerText, style, ...contentListProps } = slideProps;
+
   const designStyle = designStyles[''];
   return (
     <View style={[designStyle.headerView, style]}>
@@ -34,7 +35,7 @@ export const Slide = ({ headerText, contents = [], style }: SlideProps) => {
           style={[designStyle.headerText, headerText.style]}
         />
       )}
-      <ContentList contents={contents} />
+      <ContentList {...contentListProps} />
     </View>
   );
 };
@@ -50,9 +51,8 @@ const designStyles = createDesignStyleSheets(
       borderBottomColor: Theme.dimmed.backgroundColor,
     },
     headerText: {
-        fontSize: 25,
-        fontWeight: '600',
-
+      fontSize: 25,
+      fontWeight: '600',
     },
   },
   {},

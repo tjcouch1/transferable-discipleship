@@ -1,20 +1,17 @@
 import React, { useCallback } from 'react';
-import { View, ViewStyle, StyleProp } from 'react-native';
+import { ViewStyle, StyleProp } from 'react-native';
 import usePromise from '../../hooks/usePromise';
 import { getScripture } from '../../services/ScriptureService';
 import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
-import { ContentList } from './ContentList';
 import { ContentData, ContentDataBase } from './Contents';
-import { HeaderText, HeaderTextData } from './HeaderText';
+import { HeaderTextData } from './HeaderText';
 import { Slide } from './Slide';
-import { SubheaderText, SubheaderTextData } from './SubheaderText';
-import { Text, TextData } from './Text';
 
 export interface ScriptureSlideContentData extends ContentDataBase {
   type: 'ScriptureSlide';
   headerText?: HeaderTextData;
-  contents: ContentData[];
+  reference: string;
   style?: StyleProp<ViewStyle>;
 }
 
@@ -29,25 +26,42 @@ export interface ScriptureSlideProps extends ScriptureSlideData {}
 
 export const ScriptureSlide = ({
   headerText,
-  contents = [],
+  reference,
   style,
 }: ScriptureSlideProps) => {
   const [scriptureText] = usePromise(
-    useCallback(() => getScripture('Romans 12:1-2'), []),
+    useCallback(() => getScripture(reference), []),
     undefined,
   );
   const designStyle = designStyles[''];
   return (
     <Slide
-      headerText={'Romans 12:1-2'}
-      contents={[
+      headerText={
+        headerText ? { style: {}, ...headerText } : { text: reference }
+      }
+      contents={(headerText
+        ? [
+            {
+              type: 'Text',
+              design: 'subheader',
+              text: reference,
+            } as ContentData,
+          ]
+        : []
+      ).concat([
         {
           type: 'Text',
           text: scriptureText
-            ? JSON.stringify(scriptureText.verses.map(v => v.text).join(' '))
+            ? JSON.stringify(
+                scriptureText.verses
+                  .map(v => `${v.verse} ${v.text}`)
+                  .join(' ')
+                  .replace(/\n/g, ' '),
+              )
             : 'loading',
         },
-      ]}
+      ])}
+      design={'no-padding'}
     />
   );
 };

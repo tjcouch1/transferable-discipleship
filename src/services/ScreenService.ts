@@ -12,6 +12,7 @@ const appScreens: AppData = {
       id: 'Home',
       title: 'TD Home',
       type: 'ContentListScreen',
+      design: 'loose',
       contents: [
         {
           type: 'Header',
@@ -27,37 +28,31 @@ const appScreens: AppData = {
           design: 'title',
         },
         {
-          type: 'ScriptureSlide',
-          headerText: {
-            text: 'Hi Im a slide header',
+          type: 'ActionButton',
+          text: { text: 'Basics' },
+          action: {
+            type: 'navigate',
+            to: 'Basics',
           },
-          contents: [
-            {
-              type: 'Text',
-              text: 'Slide stuff',
-            },
-          ],
         },
         {
-          type: 'ButtonList',
-          buttons: [
-            {
-              type: 'ActionButton',
-              text: { text: 'Basics' },
-              action: {
-                type: 'navigate',
-                to: 'Basics',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: { text: 'Essentials' },
-              action: {
-                type: 'navigate',
-                to: 'Essentials',
-              },
-            },
-          ],
+          type: 'ActionButton',
+          text: { text: 'Essentials' },
+          action: {
+            type: 'navigate',
+            to: 'Essentials',
+          },
+        },
+        {
+          type: 'ScriptureSlide',
+          headerText: {
+            text: 'Renewing of your mind',
+          },
+          reference: 'Romans 12:1-2',
+        },
+        {
+          type: 'ScriptureSlide',
+          reference: '2 Corinthians 12:7-9',
         },
       ],
     },
@@ -121,11 +116,32 @@ const appScreens: AppData = {
       id: 'Basics>GospelReview',
       title: 'Gospel Review',
       type: 'ContentListScreen',
+      design: 'loose',
       contents: [
         {
           type: 'Header',
           headerText: { text: 'Gospel Review' },
           subheaderText: { text: 'Reviewing the Gospel' },
+        },
+        {
+          type: 'ActionButton',
+          text: {
+            text: 'What is the relationship between God & man?',
+          },
+          action: {
+            type: 'navigate',
+            to: 'Basics>GospelReview>RelGodMan',
+          },
+        },
+        {
+          type: 'ActionButton',
+          text: {
+            text: "What is God's plan to restore our relationship?",
+          },
+          action: {
+            type: 'navigate',
+            to: 'Basics>GospelReview>RestReln',
+          },
         },
         {
           type: 'Header',
@@ -134,53 +150,28 @@ const appScreens: AppData = {
           design: 'section',
         },
         {
-          type: 'ButtonList',
-          buttons: [
-            {
-              type: 'ActionButton',
-              text: {
-                text: 'What is the relationship between God & man?',
-              },
-              action: {
-                type: 'navigate',
-                to: 'Basics>GospelReview>RelGodMan',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: {
-                text: "What is God's plan to restore our relationship?",
-              },
-              action: {
-                type: 'navigate',
-                to: 'Basics>GospelReview>RestReln',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: { text: 'What did Jesus do?' },
-              action: {
-                type: 'navigate',
-                to: 'Basics>GospelReview>WhatJesusDo',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: { text: 'How should I respond?' },
-              action: {
-                type: 'navigate',
-                to: 'Basics>GospelReview>HowRespond',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: { text: 'The whole story' },
-              action: {
-                type: 'navigate',
-                to: 'Basics>GospelReview>WholeStory',
-              },
-            },
-          ],
+          type: 'ActionButton',
+          text: { text: 'What did Jesus do?' },
+          action: {
+            type: 'navigate',
+            to: 'Basics>GospelReview>WhatJesusDo',
+          },
+        },
+        {
+          type: 'ActionButton',
+          text: { text: 'How should I respond?' },
+          action: {
+            type: 'navigate',
+            to: 'Basics>GospelReview>HowRespond',
+          },
+        },
+        {
+          type: 'ActionButton',
+          text: { text: 'The whole story' },
+          action: {
+            type: 'navigate',
+            to: 'Basics>GospelReview>WholeStory',
+          },
         },
       ],
     },

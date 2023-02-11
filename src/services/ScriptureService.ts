@@ -2,6 +2,8 @@
  * ScriptureService.ts - Handles getting Scripture text
  */
 
+const defaultShortName = 'WEB';
+
 /** Example query from https://bible-api.com/romans+12:1-2 */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const bibleApiScriptureContentExample: ApiScriptureContent = {
@@ -182,7 +184,7 @@ const mapApiVerseRangeToContent = (
  */
 export const getScripture = async (
   reference: string,
-  shortName = 'WEB',
+  shortName = defaultShortName,
 ): Promise<ScriptureVerseRangeContent> => {
   const response = await fetch(
     `https://bible-api.com/${reference}?translation=${

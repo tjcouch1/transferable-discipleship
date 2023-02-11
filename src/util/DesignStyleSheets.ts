@@ -2,7 +2,7 @@
  * Functions related to creating DesignStyleSheets
  */
 
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from "react-native";
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 
 /** Internal type from react-native. Type used in StyleSheet.create. Enables intellisense on styles */
 type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
@@ -31,9 +31,13 @@ type DesignStyleSheetComposition<T> = {
  * @param extensions named sets of styles to apply over the base to make a design (use extends to extend other designs too)
  * @returns object whose members consist of design style sheets at each design name. Any design not found will revert to baseStyles.
  */
-export const createDesignStyleSheets = <D extends string, T extends NamedStyles<T>>(
+export const createDesignStyleSheets = <
+  D extends string,
+  T extends NamedStyles<T>,
+>(
   baseStyles: NamedStyles<T>,
-  extensions: DesignStyleSheetExtensions<D, T>,
+  // T & {} lowers type inference priority so T is inferred from baseStyles instead. Thanks to jcalz at https://stackoverflow.com/a/59055819
+  extensions: DesignStyleSheetExtensions<D, T & {}>,
 ): DesignStyleSheetComposition<T> => {
   const baseStyleSheet = StyleSheet.create(baseStyles);
 
@@ -63,13 +67,19 @@ export const createDesignStyleSheets = <D extends string, T extends NamedStyles<
               (overlayedSheet, currentSheet) =>
                 Object.fromEntries(
                   // For each style in baseStyles, create a new style by combining its styles with the current design's styles
-                  Object.keys(baseStyles).map(styleName => [
-                    styleName as keyof T,
-                    {
-                      ...overlayedSheet[styleName as keyof T],
-                      ...currentSheet[styleName as keyof T],
-                    },
-                  ]),
+                  Object.keys(baseStyles).map(styleName => {
+                    const overlayedStyle =
+                      overlayedSheet[styleName as keyof T] ?? {};
+                    const currentStyle =
+                      currentSheet[styleName as keyof T] ?? {};
+                    return [
+                      styleName as keyof T,
+                      {
+                        ...overlayedStyle,
+                        ...currentStyle,
+                      },
+                    ];
+                  }),
                 ) as unknown as T,
               baseStyles,
             ),
@@ -80,7 +90,9 @@ export const createDesignStyleSheets = <D extends string, T extends NamedStyles<
     {
       // If the design is not found, return the base styles
       get(designStyleSheetComposition, design: string) {
-        return design in designStyleSheetComposition ? designStyleSheetComposition[design] : baseStyleSheet;
+        return design in designStyleSheetComposition
+          ? designStyleSheetComposition[design]
+          : baseStyleSheet;
       },
     },
   );
