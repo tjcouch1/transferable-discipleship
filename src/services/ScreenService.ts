@@ -51,9 +51,6 @@ const appScreens: AppData = {
           contents: [
             {
               type: 'ScriptureSlide',
-              headerText: {
-                text: 'Renewing of your mind',
-              },
               reference: 'Romans 12:1-2',
             },
             {

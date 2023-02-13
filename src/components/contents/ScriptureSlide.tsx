@@ -1,22 +1,15 @@
 import React, { useCallback } from 'react';
-import { ViewStyle, StyleProp } from 'react-native';
-import usePromise from '../../hooks/usePromise';
-import { getScripture } from '../../services/ScriptureService';
-import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ButtonDataBase } from './buttons/Buttons';
 import { ContentData, ContentDataBase } from './Contents';
-import { HeaderTextData } from './HeaderText';
-import { Slide } from './Slide';
-import { TextContentData } from './Text';
+import { ScrRangeDisplayContentData } from './ScrRangeDisplay';
+import { Slide, SlideData } from './Slide';
 
-export interface ScriptureSlideContentData extends ContentDataBase {
+export type ScriptureSlideContentData = ContentDataBase & {
   type: 'ScriptureSlide';
-  headerText?: HeaderTextData;
   reference: string;
   buttonStates?: ScriptureSlideButton;
-  style?: StyleProp<ViewStyle>;
-}
+} & Omit<SlideData, 'contents'>;
 
 type ScriptureSlideButton = {
   hidden?: Omit<ButtonDataBase, 'type'>;
@@ -34,24 +27,22 @@ const defaultButtonStates: Partial<ScriptureSlideButton> = {
 };
 
 /**
- * Data that defines Slide but without the type
- * (useful when you want to use Slide in another component)
+ * Data that defines ScriptureSlide but without the type
+ * (useful when you want to use ScriptureSlide in another component)
  */
 export type ScriptureSlideData = Omit<ScriptureSlideContentData, 'type'>;
 
-/** Props the Slide needs to function */
+/** Props the ScriptureSlide needs to function */
 export interface ScriptureSlideProps extends ScriptureSlideData {}
 
 export const ScriptureSlide = ({
   headerText,
   reference,
   buttonStates,
-  style,
+  // Overwrite default padding from ContentList with 3
+  padding = 3,
+  ...slideProps
 }: ScriptureSlideProps) => {
-  const [scriptureText] = usePromise(
-    useCallback(() => getScripture(reference), []),
-    undefined,
-  );
   const designStyle = designStyles[''];
 
   /** Ensure the buttonStates have enough information in them  */
@@ -65,17 +56,9 @@ export const ScriptureSlide = ({
 
   const contents: ContentData[] = [
     {
-      type: 'Text',
-      design: 'small',
-      text: scriptureText
-        ? JSON.stringify(
-            scriptureText.verses
-              .map(v => `${v.verse} ${v.text}`)
-              .join(' ')
-              .replace(/\n/g, ' '),
-          )
-        : 'loading',
-    } as TextContentData,
+      type: 'ScrRangeDisplay',
+      reference,
+    } as ScrRangeDisplayContentData,
   ];
   if (headerText)
     contents.unshift({
@@ -100,7 +83,8 @@ export const ScriptureSlide = ({
         headerText ? { style: {}, ...headerText } : { text: reference }
       }
       contents={contents}
-      padding={3}
+      padding={padding}
+      {...slideProps}
     />
   );
 };

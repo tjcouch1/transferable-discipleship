@@ -5,6 +5,7 @@ import { ContentList, ContentListContentData } from './ContentList';
 import { Header, HeaderContentData } from './Header';
 import { HeaderText, HeaderTextContentData } from './HeaderText';
 import { ScriptureSlide, ScriptureSlideContentData } from './ScriptureSlide';
+import { ScrRangeDisplay, ScrRangeDisplayContentData } from './ScrRangeDisplay';
 import { Slide, SlideContentData } from './Slide';
 import { SubheaderText, SubheaderTextContentData } from './SubheaderText';
 import { Text, TextContentData } from './Text';
@@ -23,6 +24,7 @@ export const Contents: {
   Slide,
   ContentList,
   ScriptureSlide,
+  ScrRangeDisplay,
 };
 
 /** Defining data for every content type. All content types should extend ContentDataBase */
@@ -35,7 +37,8 @@ export type ContentData =
   | HeaderContentData
   | SlideContentData
   | ContentListContentData
-  | ScriptureSlideContentData;
+  | ScriptureSlideContentData
+  | ScrRangeDisplayContentData;
 
 /** All content types available. Content is a component that does various things */
 export type ContentType = keyof typeof Contents;
