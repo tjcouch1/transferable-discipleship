@@ -59,10 +59,8 @@ const appScreens: AppData = {
                 text: 'What is true of God?',
               },
               reference: 'Acts 17:24-28',
-              buttonStates: {
-                revealed: {
-                  text: { text: 'Creator, Desires to be known' },
-                },
+              revealedButton: {
+                text: { text: 'Creator, Desires to be known' },
               },
             },
           ],

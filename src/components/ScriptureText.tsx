@@ -1,4 +1,5 @@
 import { ScriptureVerseRangeContent } from '../services/ScriptureService';
+import { sup } from '../util/Util';
 import { Text, TextData } from './contents/Text';
 
 export type ScriptureTextProps = {
@@ -11,12 +12,10 @@ export const ScriptureText = ({
   design = 'small',
   ...textProps
 }: ScriptureTextProps) => {
-  const text = JSON.stringify(
-    scriptureText.verses
-      .map(v => `${v.verse} ${v.text}`)
-      .join(' ')
-      .replace(/\n/g, ' '),
-  );
+  const text = scriptureText.verses
+    .map(v => `${sup(v.verse.toString())} ${v.text}`)
+    .join(' ')
+    .replace(/\n/g, ' ');
 
   return <Text {...textProps} text={text} design={design} />;
 };

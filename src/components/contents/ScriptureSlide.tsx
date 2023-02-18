@@ -8,22 +8,17 @@ import { Slide, SlideData } from './Slide';
 export type ScriptureSlideContentData = ContentDataBase & {
   type: 'ScriptureSlide';
   reference: string;
-  buttonStates?: ScriptureSlideButton;
+  hiddenButton?: Omit<ButtonDataBase, 'type'>;
+  revealedButton?: Omit<ButtonDataBase, 'type'>;
 } & Omit<SlideData, 'contents'>;
 
-type ScriptureSlideButton = {
-  hidden?: Omit<ButtonDataBase, 'type'>;
-  revealed: Omit<ButtonDataBase, 'type'>;
-};
-
-const defaultButtonStates: Partial<ScriptureSlideButton> = {
-  hidden: {
+const defaultHiddenButton: Omit<ButtonDataBase, 'type'> = {
     text: { text: 'Tap to reveal answer' },
     design: 'answer',
-  },
-  revealed: {
-    design: 'answer',
-  },
+  }
+
+const defaultRevealedButton: Omit<ButtonDataBase, 'type'> = {
+  design: 'answer',
 };
 
 /**
@@ -38,21 +33,26 @@ export interface ScriptureSlideProps extends ScriptureSlideData {}
 export const ScriptureSlide = ({
   headerText,
   reference,
-  buttonStates,
+  hiddenButton,
+  revealedButton,
   // Overwrite default padding from ContentList with 3
   padding = 3,
   ...slideProps
 }: ScriptureSlideProps) => {
   const designStyle = designStyles[''];
 
-  /** Ensure the buttonStates have enough information in them  */
-  const buttonToggleStates = buttonStates
-    ? {
-        // TODO: Make a good merge function and merge these better so you can style the default text without losing the default text
-        hidden: { ...defaultButtonStates.hidden, ...buttonStates.hidden },
-        revealed: { ...defaultButtonStates.revealed, ...buttonStates.revealed },
-      }
-    : undefined;
+  // Only show wa button if a button was provided to be shown
+  const showButton = hiddenButton || revealedButton;
+  // Ensure the buttonStates have enough information in them
+  // TODO: Make a good merge function and merge these better so you can style the default text without losing the default text
+  const hiddenButtonMerged = {
+    ...defaultHiddenButton,
+    ...hiddenButton,
+  };
+  const revealedButtonMerged = {
+    ...defaultRevealedButton,
+    ...revealedButton,
+  };
 
   const contents: ContentData[] = [
     {
@@ -66,15 +66,15 @@ export const ScriptureSlide = ({
       design: 'subheader',
       text: reference,
     });
-  if (buttonToggleStates)
+  if (showButton)
     contents.push({
       type: 'ActionButton',
       design: 'answer',
       action: {
         type: 'toggle',
-        altButtons: [buttonToggleStates.revealed],
+        altButtons: [revealedButtonMerged],
       },
-      ...buttonToggleStates.hidden,
+      ...hiddenButtonMerged,
     });
 
   return (
