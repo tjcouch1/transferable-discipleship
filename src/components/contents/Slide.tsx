@@ -3,10 +3,9 @@ import { View, ViewStyle, StyleProp } from 'react-native';
 import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentList, ContentListData } from './ContentList';
-import { ContentData, ContentDataBase } from './Contents';
+import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
-import { SubheaderText, SubheaderTextData } from './SubheaderText';
-import { Text, TextData } from './Text';
+import { getTextDataObject } from './Text';
 
 export type SlideContentData = ContentDataBase & {
   type: 'Slide';
@@ -25,14 +24,17 @@ export interface SlideProps extends SlideData {}
 
 export const Slide = (slideProps: SlideProps) => {
   const { headerText, style, ...contentListProps } = slideProps;
+  const headerTextObject = headerText
+    ? getTextDataObject(headerText)
+    : undefined;
 
   const designStyle = designStyles[''];
   return (
     <View style={[designStyle.headerView, style]}>
-      {headerText && (
+      {headerTextObject && (
         <HeaderText
-          {...headerText}
-          style={[designStyle.headerText, headerText.style]}
+          {...headerTextObject}
+          style={[designStyle.headerText, headerTextObject.style]}
         />
       )}
       <ContentList {...contentListProps} />

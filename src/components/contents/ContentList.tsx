@@ -3,6 +3,8 @@ import { View, ViewStyle, StyleProp } from 'react-native';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentData, ContentDataBase } from './Contents';
 import ContentsContext from './ContentsContext';
+import { isString } from '../../util/Util';
+import { TextDataObjectBase, getTextDataObject } from './Text';
 
 export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
@@ -58,12 +60,20 @@ export const ContentList = ({
         else if (padBottom && i === contents.length)
           contentStyles.push({ paddingBottom: contentPadding });
 
+        // Get full content data for this content (if it is a string, build it into a TextContentData)
+        const contentObject = isString(content)
+          ? {
+              type: 'Text',
+              ...(getTextDataObject(content) as TextDataObjectBase),
+            }
+          : content;
+
         return (
           <View style={contentStyles} key={i}>
-            {React.createElement(Contents[content.type], {
+            {React.createElement(Contents[contentObject.type], {
               // TODO: Consider adding a key to ContentDataBase?
               /* key: i, */
-              ...content,
+              ...contentObject,
             })}
           </View>
         );

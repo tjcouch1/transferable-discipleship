@@ -4,6 +4,7 @@ import { ButtonDataBase } from './buttons/Buttons';
 import { ContentData, ContentDataBase } from './Contents';
 import { ScrRangeDisplayContentData } from './ScrRangeDisplay';
 import { Slide, SlideData } from './Slide';
+import { getTextDataObject } from './Text';
 
 export type ScriptureSlideContentData = ContentDataBase & {
   type: 'ScriptureSlide';
@@ -79,7 +80,9 @@ export const ScriptureSlide = ({
   return (
     <Slide
       headerText={
-        headerText ? { style: {}, ...headerText } : { text: reference }
+        headerText
+          ? { style: {}, ...getTextDataObject(headerText) }
+          : { text: reference }
       }
       contents={contents}
       padding={padding}

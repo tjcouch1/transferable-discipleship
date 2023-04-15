@@ -1,22 +1,30 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import Theme from '../../Theme';
-import { Text, TextData } from './Text';
+import { Text, TextDataObject, getTextDataObject } from './Text';
 
 /** Simple defining data for displaying header text */
-export interface HeaderTextContentData extends Omit<TextData, 'design'> {
+type HeaderTextContentDataObject = Omit<TextDataObject, 'design'> & {
   type: 'HeaderText';
-}
+};
+
+/** Defining data for displaying header text, either an object describing the text or just a string */
+export type HeaderTextContentData = HeaderTextContentDataObject | string;
+
+/** Data that defines HeaderText but without the type */
+export type HeaderTextDataObject = Omit<HeaderTextContentDataObject, 'type'>;
 
 /**
- * Data that defines HeaderText but without the type
+ * Data that defines HeaderText but without the type.
+ * Either an object describing the text or just a string.
  * (useful when you want to use HeaderText in another component)
  */
-export type HeaderTextData = Omit<HeaderTextContentData, 'type'>;
+export type HeaderTextData = HeaderTextDataObject | string;
 
 /** Props the HeaderText needs to function */
-export interface HeaderTextProps extends HeaderTextData {}
+export type HeaderTextProps = HeaderTextData;
 
-export const HeaderText = (textData: HeaderTextData) => (
-  <Text {...textData} design="header" style={[textData.style]} />
-);
+export const HeaderText = (textData: HeaderTextData) => {
+  const textDataObject = getTextDataObject(textData);
+  return (
+    <Text {...textDataObject} design="header" style={[textDataObject.style]} />
+  );
+};

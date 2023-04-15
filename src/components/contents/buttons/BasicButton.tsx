@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import Theme from '../../../Theme';
 import { createDesignStyleSheets } from '../../../util/DesignStyleSheets';
-import { Text, TextData } from '../Text';
+import { Text, TextData, getTextDataObject } from '../Text';
 import { ButtonDataBase } from './Buttons';
 
 /** The data that defines the BasicButton */
@@ -30,12 +30,14 @@ export const BasicButton = ({
   children,
 }: BasicButtonProps) => {
   const designStyle = designStyles[design];
+  const textObject = getTextDataObject(text);
+
   return (
     <TouchableOpacity style={[designStyle.navButton, style]} onPress={onPress}>
       {children ? (
         children
       ) : (
-        <Text {...text} style={[designStyle.navButtonText, text.style]} />
+        <Text {...textObject} style={[designStyle.navButtonText, textObject.style]} />
       )}
     </TouchableOpacity>
   );
