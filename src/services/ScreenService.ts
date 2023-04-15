@@ -50,6 +50,12 @@ const appScreens: AppData = {
           padding: 5,
           contents: [
             {
+              type: 'ToggleButton',
+              loop: true,
+              text: { text: 'Stuff', design: 'header' },
+              altButtons: [{ text: { text: 'Things' } }],
+            },
+            {
               type: 'ScriptureSlide',
               reference: 'Romans 12:1-2',
             },

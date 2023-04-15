@@ -13,9 +13,9 @@ export type ScriptureSlideContentData = ContentDataBase & {
 } & Omit<SlideData, 'contents'>;
 
 const defaultHiddenButton: Omit<ButtonDataBase, 'type'> = {
-    text: { text: 'Tap to reveal answer' },
-    design: 'answer',
-  }
+  text: { text: 'Tap to reveal answer' },
+  design: 'answer',
+};
 
 const defaultRevealedButton: Omit<ButtonDataBase, 'type'> = {
   design: 'answer',
@@ -41,7 +41,7 @@ export const ScriptureSlide = ({
 }: ScriptureSlideProps) => {
   const designStyle = designStyles[''];
 
-  // Only show wa button if a button was provided to be shown
+  // Only show a button if a button was provided to be shown
   const showButton = hiddenButton || revealedButton;
   // Ensure the buttonStates have enough information in them
   // TODO: Make a good merge function and merge these better so you can style the default text without losing the default text
@@ -68,13 +68,12 @@ export const ScriptureSlide = ({
     });
   if (showButton)
     contents.push({
-      type: 'ActionButton',
+      type: 'ToggleButton',
       design: 'answer',
-      action: {
-        type: 'toggle',
-        altButtons: [revealedButtonMerged],
-      },
+      // Default button is hidden button
       ...hiddenButtonMerged,
+      // Can toggle to revealed button
+      altButtons: [revealedButtonMerged],
     });
 
   return (
