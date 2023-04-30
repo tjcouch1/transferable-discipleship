@@ -28,6 +28,7 @@ export const Slide = (slideProps: SlideProps) => {
     ? getTextDataObject(headerText)
     : undefined;
 
+  // Just use the one design style available
   const designStyle = designStyles[''];
   return (
     <View style={[designStyle.headerView, style]}>
