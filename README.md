@@ -12,7 +12,7 @@ Small Christian discipleship app in React Native
 
 Run on your preferred platform:
 
+- `npm start` - runs in the web browser, and allows you to use the expo app to test the app on android and ios
 - `npm run android`
 - `npm run ios`
    - Note: you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
-- `npm run web`

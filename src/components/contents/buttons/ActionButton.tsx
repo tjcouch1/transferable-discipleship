@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React from 'react';
 import { BasicButton } from './BasicButton';
 import { ActionData, ActionFactory } from '../../../util/ActionFactory';
 import { ButtonDataBase } from './Buttons';
@@ -20,18 +19,9 @@ export const ActionButton = (props: ActionButtonProps) => {
     const { action, ...buttonData } = props;
     const navigation = useNavigation();
 
-    /** Keep button state so we can toggle with toggle action */
-    const [currentButtonData, setCurrentButtonData] = useState(buttonData);
-
     let onPress = action
         ? ActionFactory[action.type]({ ...action, navigation })
         : undefined;
-    if (action?.type === 'toggle') {
-        onPress = () =>
-            ActionFactory[action.type]({ ...action, navigation })(
-                setCurrentButtonData,
-            );
-    }
 
-    return <BasicButton {...currentButtonData} onPress={onPress} />;
+    return <BasicButton {...buttonData} onPress={onPress} />;
 };

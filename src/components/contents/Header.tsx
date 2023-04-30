@@ -1,15 +1,11 @@
 import React from 'react';
-import {
-  View,
-  ViewStyle,
-  StyleProp,
-} from 'react-native';
+import { View, ViewStyle, StyleProp } from 'react-native';
 import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
 import { SubheaderText, SubheaderTextData } from './SubheaderText';
-import { Text, TextData } from './Text';
+import { Text, TextData, getTextDataObject } from './Text';
 
 export interface HeaderContentData extends ContentDataBase {
   type: 'Header';
@@ -39,23 +35,28 @@ export const Header = ({
   style,
 }: HeaderProps) => {
   const designStyle = designStyles[design];
+  const headerTextObject = getTextDataObject(headerText);
+  const subheaderTextObject = getTextDataObject(subheaderText);
   return (
     <View style={[designStyle.headerView, style]}>
       <HeaderText
-        {...headerText}
-        style={[designStyle.headerText, headerText.style]}
+        {...headerTextObject}
+        style={[designStyle.headerText, headerTextObject.style]}
       />
       <SubheaderText
-        {...subheaderText}
-        style={[designStyle.subheaderText, subheaderText.style]}
+        {...subheaderTextObject}
+        style={[designStyle.subheaderText, subheaderTextObject.style]}
       />
-      {lineTexts.map(lineText => (
-        <Text
-          key={lineText.text}
-          {...lineText}
-          style={[designStyle.lineText, lineText.style]}
-        />
-      ))}
+      {lineTexts.map(lineText => {
+        const lineTextObject = getTextDataObject(lineText);
+        return (
+          <Text
+            key={lineTextObject.text}
+            {...lineTextObject}
+            style={[designStyle.lineText, lineTextObject.style]}
+          />
+        );
+      })}
     </View>
   );
 };

@@ -1,7 +1,7 @@
 import { ScrollView, ScrollViewProps } from 'react-native';
 import { isWeb } from '../util/Util';
 
-export type TScrollViewProps = ScrollViewProps & { bottomPadding: number };
+export type TScrollViewProps = ScrollViewProps & { bottomPadding?: number };
 
 export default function TScrollView({
   bottomPadding,
@@ -13,7 +13,7 @@ export default function TScrollView({
       // Bottom padding thanks to jgbaEmento at https://github.com/facebook/react-native/issues/15707#issuecomment-340759872
       contentContainerStyle={[
         {
-          paddingBottom: bottomPadding,
+          paddingBottom: bottomPadding || 0,
         },
         scrollViewProps.contentContainerStyle,
       ]}

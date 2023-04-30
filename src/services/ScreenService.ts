@@ -16,20 +16,17 @@ const appScreens: AppData = {
       contents: [
         {
           type: 'Header',
-          headerText: { text: 'Transferable Discipleship' },
-          subheaderText: {
-            text: 'A tool for simple, reproducible Christian discipleship',
-          },
+          headerText: 'Transferable Discipleship',
+          subheaderText:
+            'A tool for simple, reproducible Christian discipleship',
           lineTexts: [
-            {
-              text: 'Please select an option below or swipe from the right anytime if you get lost',
-            },
+            'Please select an option below or swipe from the right anytime if you get lost',
           ],
           design: 'title',
         },
         {
           type: 'ActionButton',
-          text: { text: 'Basics' },
+          text: 'Basics',
           action: {
             type: 'navigate',
             to: 'Basics',
@@ -37,7 +34,7 @@ const appScreens: AppData = {
         },
         {
           type: 'ActionButton',
-          text: { text: 'Essentials' },
+          text: 'Essentials',
           action: {
             type: 'navigate',
             to: 'Essentials',
@@ -49,16 +46,24 @@ const appScreens: AppData = {
           padBottom: false,
           padding: 5,
           contents: [
+            'Bare Text!',
+            {
+              type: 'ToggleButton',
+              loop: true,
+              text: { text: 'Stuff', design: 'header' },
+              altButtons: [{ text: 'Things' }],
+            },
             {
               type: 'ScriptureSlide',
-              headerText: {
-                text: 'Renewing of your mind',
-              },
               reference: 'Romans 12:1-2',
             },
             {
               type: 'ScriptureSlide',
-              reference: '2 Corinthians 12:7-9',
+              headerText: 'What is true of God?',
+              reference: 'Acts 17:24-28',
+              revealedButton: {
+                text: 'Creator, Desires to be known',
+              },
             },
           ],
         },
@@ -71,15 +76,15 @@ const appScreens: AppData = {
       contents: [
         {
           type: 'Header',
-          headerText: { text: 'Basics' },
-          subheaderText: { text: 'Here is some basic stuff to read' },
+          headerText: 'Basics',
+          subheaderText: 'Here is some basic stuff to read',
         },
         {
           type: 'ButtonList',
           buttons: [
             {
               type: 'ActionButton',
-              text: { text: 'Gospel Review' },
+              text: 'Gospel Review',
               action: {
                 type: 'navigate',
                 to: 'Basics>GospelReview',
@@ -87,7 +92,7 @@ const appScreens: AppData = {
             },
             {
               type: 'ActionButton',
-              text: { text: 'Scripture 1.0' },
+              text: 'Scripture 1.0',
               action: {
                 type: 'navigate',
                 to: 'Basics>Scripture1.0',
@@ -95,7 +100,7 @@ const appScreens: AppData = {
             },
             {
               type: 'ActionButton',
-              text: { text: 'Assurance of Salvation' },
+              text: 'Assurance of Salvation',
               action: {
                 type: 'navigate',
                 to: 'Basics>AssuranceOfSalvation',
@@ -103,7 +108,7 @@ const appScreens: AppData = {
             },
             {
               type: 'ActionButton',
-              text: { text: 'Holy Spirit' },
+              text: 'Holy Spirit',
               action: {
                 type: 'navigate',
                 to: 'Basics>HolySpirit',
@@ -111,7 +116,7 @@ const appScreens: AppData = {
             },
             {
               type: 'ActionButton',
-              text: { text: 'Prayer' },
+              text: 'Prayer',
               action: {
                 type: 'navigate',
                 to: 'Basics>Prayer',
@@ -129,8 +134,8 @@ const appScreens: AppData = {
       contents: [
         {
           type: 'Header',
-          headerText: { text: 'Gospel Review' },
-          subheaderText: { text: 'Reviewing the Gospel' },
+          headerText: 'Gospel Review',
+          subheaderText: 'Reviewing the Gospel',
         },
         {
           type: 'ActionButton',
@@ -154,13 +159,13 @@ const appScreens: AppData = {
         },
         {
           type: 'Header',
-          headerText: { text: 'section title' },
-          subheaderText: { text: 'stuff here' },
+          headerText: 'section title',
+          subheaderText: 'stuff here',
           design: 'section',
         },
         {
           type: 'ActionButton',
-          text: { text: 'What did Jesus do?' },
+          text: 'What did Jesus do?',
           action: {
             type: 'navigate',
             to: 'Basics>GospelReview>WhatJesusDo',
@@ -168,7 +173,7 @@ const appScreens: AppData = {
         },
         {
           type: 'ActionButton',
-          text: { text: 'How should I respond?' },
+          text: 'How should I respond?',
           action: {
             type: 'navigate',
             to: 'Basics>GospelReview>HowRespond',
@@ -176,7 +181,7 @@ const appScreens: AppData = {
         },
         {
           type: 'ActionButton',
-          text: { text: 'The whole story' },
+          text: 'The whole story',
           action: {
             type: 'navigate',
             to: 'Basics>GospelReview>WholeStory',
@@ -188,14 +193,14 @@ const appScreens: AppData = {
       id: 'Essentials',
       type: 'HeaderWithButtons',
       headerData: {
-        headerText: { text: 'Essentials' },
-        subheaderText: { text: 'Here is some essential stuff to read' },
+        headerText: 'Essentials',
+        subheaderText: 'Here is some essential stuff to read',
       },
       buttonListData: {
         buttons: [
           {
             type: 'ActionButton',
-            text: { text: 'Home' },
+            text: 'Home',
             action: {
               type: 'navigate',
               to: 'Home',

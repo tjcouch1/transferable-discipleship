@@ -1,85 +1,94 @@
 import React, { useCallback } from 'react';
-import { ViewStyle, StyleProp } from 'react-native';
-import usePromise from '../../hooks/usePromise';
-import { getScripture } from '../../services/ScriptureService';
-import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
+import { ButtonDataBase } from './buttons/Buttons';
 import { ContentData, ContentDataBase } from './Contents';
-import { HeaderTextData } from './HeaderText';
-import { Slide } from './Slide';
+import { ScrRangeDisplayContentData } from './ScrRangeDisplay';
+import { Slide, SlideData } from './Slide';
+import { getTextDataObject } from './Text';
 
-export interface ScriptureSlideContentData extends ContentDataBase {
+export type ScriptureSlideContentData = ContentDataBase & {
   type: 'ScriptureSlide';
-  headerText?: HeaderTextData;
   reference: string;
-  style?: StyleProp<ViewStyle>;
-}
+  hiddenButton?: Omit<ButtonDataBase, 'type'>;
+  revealedButton?: Omit<ButtonDataBase, 'type'>;
+} & Omit<SlideData, 'contents'>;
+
+const defaultHiddenButton: Omit<ButtonDataBase, 'type'> = {
+  text: { text: 'Tap to reveal answer' },
+  design: 'answer',
+};
+
+const defaultRevealedButton: Omit<ButtonDataBase, 'type'> = {
+  design: 'answer',
+};
 
 /**
- * Data that defines Slide but without the type
- * (useful when you want to use Slide in another component)
+ * Data that defines ScriptureSlide but without the type
+ * (useful when you want to use ScriptureSlide in another component)
  */
 export type ScriptureSlideData = Omit<ScriptureSlideContentData, 'type'>;
 
-/** Props the Slide needs to function */
+/** Props the ScriptureSlide needs to function */
 export interface ScriptureSlideProps extends ScriptureSlideData {}
 
 export const ScriptureSlide = ({
   headerText,
   reference,
-  style,
+  hiddenButton,
+  revealedButton,
+  // Overwrite default padding from ContentList with 3
+  padding = 3,
+  ...slideProps
 }: ScriptureSlideProps) => {
-  const [scriptureText] = usePromise(
-    useCallback(() => getScripture(reference), []),
-    undefined,
-  );
   const designStyle = designStyles[''];
+
+  // Only show a button if a button was provided to be shown
+  const showButton = hiddenButton || revealedButton;
+  // Ensure the buttonStates have enough information in them
+  // TODO: Make a good merge function and merge these better so you can style the default text without losing the default text
+  const hiddenButtonMerged = {
+    ...defaultHiddenButton,
+    ...hiddenButton,
+  };
+  const revealedButtonMerged = {
+    ...defaultRevealedButton,
+    ...revealedButton,
+  };
+
+  const contents: ContentData[] = [
+    {
+      type: 'ScrRangeDisplay',
+      reference,
+    } as ScrRangeDisplayContentData,
+  ];
+  if (headerText)
+    contents.unshift({
+      type: 'Text',
+      design: 'subheader',
+      text: reference,
+    });
+  if (showButton)
+    contents.push({
+      type: 'ToggleButton',
+      design: 'answer',
+      // Default button is hidden button
+      ...hiddenButtonMerged,
+      // Can toggle to revealed button
+      altButtons: [revealedButtonMerged],
+    });
+
   return (
     <Slide
       headerText={
-        headerText ? { style: {}, ...headerText } : { text: reference }
+        headerText
+          ? { style: {}, ...getTextDataObject(headerText) }
+          : { text: reference }
       }
-      contents={(headerText
-        ? [
-            {
-              type: 'Text',
-              design: 'subheader',
-              text: reference,
-            } as ContentData,
-          ]
-        : []
-      ).concat([
-        {
-          type: 'Text',
-          text: scriptureText
-            ? JSON.stringify(
-                scriptureText.verses
-                  .map(v => `${v.verse} ${v.text}`)
-                  .join(' ')
-                  .replace(/\n/g, ' '),
-              )
-            : 'loading',
-        },
-      ])}
-      design={'no-padding'}
+      contents={contents}
+      padding={padding}
+      {...slideProps}
     />
   );
 };
 
-const designStyles = createDesignStyleSheets(
-  {
-    headerView: {
-      paddingVertical: 10,
-      backgroundColor: Theme.default.backgroundColor,
-      paddingHorizontal: 15,
-      width: '90%',
-      borderBottomWidth: 10,
-      borderBottomColor: Theme.dimmed.backgroundColor,
-    },
-    headerText: {
-      fontSize: 25,
-      fontWeight: '600',
-    },
-  },
-  {},
-);
+const designStyles = createDesignStyleSheets({}, {});
