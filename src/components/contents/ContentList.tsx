@@ -51,14 +51,17 @@ export const ContentList = ({
   const contentPadding = getContentListDesignPadding(padding, design);
 
   return (
-    <View style={[designStyle.layout, style]}>
+    <View
+      style={[
+        designStyle.layout,
+        {
+          marginTop: padTop ? contentPadding : undefined,
+          gap: contentPadding,
+          marginBottom: padBottom ? contentPadding : undefined,
+        },
+        style,
+      ]}>
       {contents.map((content, i) => {
-        // Figure out the right spacing for this content
-        const contentStyles = [designStyle.content];
-        if ((i !== 0 && i !== contents.length) || (padTop && i === 0))
-          contentStyles.push({ paddingTop: contentPadding });
-        else if (padBottom && i === contents.length)
-          contentStyles.push({ paddingBottom: contentPadding });
 
         // Get full content data for this content (if it is a string, build it into a TextContentData)
         const contentObject = isString(content)
@@ -69,7 +72,7 @@ export const ContentList = ({
           : content;
 
         return (
-          <View style={contentStyles} key={i}>
+          <View style={designStyle.content} key={i}>
             {React.createElement(Contents[contentObject.type], {
               // TODO: Consider adding a key to ContentDataBase?
               /* key: i, */
@@ -84,7 +87,7 @@ export const ContentList = ({
 
 const designStyles = createDesignStyleSheets(
   {
-    layout: {},
+    layout: {width: '100%'},
     content: {
       alignItems: 'center',
     },
