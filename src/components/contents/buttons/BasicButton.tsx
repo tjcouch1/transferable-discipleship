@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import {
-  StyleSheet,
   TouchableOpacity,
   GestureResponderEvent,
 } from 'react-native';
@@ -37,7 +36,10 @@ export const BasicButton = ({
       {children ? (
         children
       ) : (
-        <Text {...textObject} style={[designStyle.navButtonText, textObject.style]} />
+        <Text
+          {...textObject}
+          style={[designStyle.navButtonText, textObject.style]}
+        />
       )}
     </TouchableOpacity>
   );
@@ -53,19 +55,20 @@ const designStyles = createDesignStyleSheets(
     navButtonText: {
       color: Theme.default.color,
       fontSize: 25,
+      textAlign: 'center',
     },
   },
   {
     answer: {
-        navButton: {
-            backgroundColor: Theme.default.color,
-            padding: 5,
-            borderRadius: 4,
-        },
-        navButtonText: {
-            color: Theme.default.backgroundColor,
-            fontSize: 17,
-        }
-    }
+      navButton: {
+        backgroundColor: Theme.default.color,
+        padding: 5,
+        borderRadius: 4,
+      },
+      navButtonText: {
+        color: Theme.default.backgroundColor,
+        fontSize: 17,
+      },
+    },
   },
 );
