@@ -29,6 +29,8 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   const appScreens = getAppScreens();
+  // Get an array of the screens in the app
+  const screens = [...appScreens.screens.values()];
 
   return (
     <SafeAreaView style={[backgroundStyle, styles.safeAreaView]}>
@@ -40,7 +42,7 @@ export default function App() {
               backgroundColor={backgroundStyle.backgroundColor}
             />
             <Stack.Navigator initialRouteName={appScreens.initialScreen}>
-              {appScreens.screens.map(screen => (
+              {screens.map(screen => (
                 <Stack.Screen
                   name={screen.id}
                   key={screen.id}

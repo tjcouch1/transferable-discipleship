@@ -1,6 +1,8 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ButtonDataBase } from '../components/contents/buttons/Buttons';
 import { BasicButtonData } from '../components/contents/buttons/BasicButton';
+import { RouteProp } from '@react-navigation/native';
+import { pathJoin } from './PathUtil';
 
 //----- ACTION TYPES -----//
 
@@ -12,6 +14,7 @@ export type ActionDataBase = {
 /** Generic props passed down that allow access to navigation */
 export type PropsWithNavigation<T> = T & {
   navigation: NativeStackNavigationProp<any>;
+  route: RouteProp<any>;
 };
 
 /** Mapping from an action type to a function factory for that action given the ActionProps provided */
@@ -24,9 +27,9 @@ export const ActionFactory: {
   ) => (params: any) => void;
 } = {
   navigate:
-    ({ to, navigation }: PropsWithNavigation<NavigateActionData>) =>
+    ({ to, navigation, route }: PropsWithNavigation<NavigateActionData>) =>
     () => {
-      navigation.navigate(to);
+      navigation.navigate(pathJoin(route.name, to));
     },
 };
 

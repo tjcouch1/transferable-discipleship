@@ -10,214 +10,6 @@ import {
 } from '../components/screens/Screens';
 import { ROOT_PATH, PATH_DELIMITER, pathJoin } from '../util/PathUtil';
 
-const serializedAppData: SerializedAppData = {
-  version: '0.0.0',
-  initialScreen: 'Home',
-  screens: [
-    {
-      id: 'Home',
-      title: 'TD Home',
-      type: 'ContentListScreen',
-      design: 'loose',
-      contents: [
-        {
-          type: 'Header',
-          headerText: 'Transferable Discipleship',
-          subheaderText:
-            'A tool for simple, reproducible Christian discipleship',
-          lineTexts: [
-            'Please select an option below or swipe from the right anytime if you get lost',
-          ],
-          design: 'title',
-        },
-        {
-          type: 'ActionButton',
-          text: 'Basics',
-          action: {
-            type: 'navigate',
-            to: 'Basics',
-          },
-        },
-        {
-          type: 'ActionButton',
-          text: 'Essentials',
-          action: {
-            type: 'navigate',
-            to: 'Essentials',
-          },
-        },
-        {
-          type: 'ContentList',
-          padTop: false,
-          padBottom: false,
-          padding: 5,
-          contents: [
-            'Bare Text!',
-            {
-              type: 'ToggleButton',
-              loop: true,
-              text: { text: 'Stuff', design: 'header' },
-              altButtons: [{ text: 'Things' }],
-            },
-            {
-              type: 'ScriptureSlide',
-              reference: 'Romans 12:1-2',
-            },
-            {
-              type: 'ScriptureSlide',
-              headerText: 'What is true of God?',
-              reference: 'Acts 17:24-28',
-              revealedButton: {
-                text: 'Creator, Desires to be known',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'Basics',
-      type: 'ContentListScreen',
-      design: 'no-padding',
-      contents: [
-        {
-          type: 'Header',
-          headerText: 'Basics',
-          subheaderText: 'Here is some basic stuff to read',
-        },
-        {
-          type: 'ButtonList',
-          buttons: [
-            {
-              type: 'ActionButton',
-              text: 'Gospel Review',
-              action: {
-                type: 'navigate',
-                to: 'Basics>GospelReview',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: 'Scripture 1.0',
-              action: {
-                type: 'navigate',
-                to: 'Basics>Scripture1.0',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: 'Assurance of Salvation',
-              action: {
-                type: 'navigate',
-                to: 'Basics>AssuranceOfSalvation',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: 'Holy Spirit',
-              action: {
-                type: 'navigate',
-                to: 'Basics>HolySpirit',
-              },
-            },
-            {
-              type: 'ActionButton',
-              text: 'Prayer',
-              action: {
-                type: 'navigate',
-                to: 'Basics>Prayer',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'Basics>GospelReview',
-      title: 'Gospel Review',
-      type: 'ContentListScreen',
-      design: 'loose',
-      contents: [
-        {
-          type: 'Header',
-          headerText: 'Gospel Review',
-          subheaderText: 'Reviewing the Gospel',
-        },
-        {
-          type: 'ActionButton',
-          text: {
-            text: 'What is the relationship between God & man?',
-          },
-          action: {
-            type: 'navigate',
-            to: 'Basics>GospelReview>RelGodMan',
-          },
-        },
-        {
-          type: 'ActionButton',
-          text: {
-            text: "What is God's plan to restore our relationship?",
-          },
-          action: {
-            type: 'navigate',
-            to: 'Basics>GospelReview>RestReln',
-          },
-        },
-        {
-          type: 'Header',
-          headerText: 'section title',
-          subheaderText: 'stuff here',
-          design: 'section',
-        },
-        {
-          type: 'ActionButton',
-          text: 'What did Jesus do?',
-          action: {
-            type: 'navigate',
-            to: 'Basics>GospelReview>WhatJesusDo',
-          },
-        },
-        {
-          type: 'ActionButton',
-          text: 'How should I respond?',
-          action: {
-            type: 'navigate',
-            to: 'Basics>GospelReview>HowRespond',
-          },
-        },
-        {
-          type: 'ActionButton',
-          text: 'The whole story',
-          action: {
-            type: 'navigate',
-            to: 'Basics>GospelReview>WholeStory',
-          },
-        },
-      ],
-    },
-    {
-      id: 'Essentials',
-      type: 'HeaderWithButtons',
-      headerData: {
-        headerText: 'Essentials',
-        subheaderText: 'Here is some essential stuff to read',
-      },
-      buttonListData: {
-        buttons: [
-          {
-            type: 'ActionButton',
-            text: 'Home',
-            action: {
-              type: 'navigate',
-              to: 'Home',
-            },
-          },
-        ],
-      },
-    },
-  ],
-};
-
 const serializedAppDataNew: SerializedAppData = {
   version: '0.0.0',
   initialScreen: 'Home',
@@ -301,7 +93,7 @@ const serializedAppDataNew: SerializedAppData = {
                   text: 'Gospel Review',
                   action: {
                     type: 'navigate',
-                    to: 'Basics>GospelReview',
+                    to: 'GospelReview',
                   },
                 },
                 {
@@ -309,7 +101,7 @@ const serializedAppDataNew: SerializedAppData = {
                   text: 'Scripture 1.0',
                   action: {
                     type: 'navigate',
-                    to: 'Basics>Scripture1.0',
+                    to: 'Scripture1.0',
                   },
                 },
                 {
@@ -317,7 +109,7 @@ const serializedAppDataNew: SerializedAppData = {
                   text: 'Assurance of Salvation',
                   action: {
                     type: 'navigate',
-                    to: 'Basics>AssuranceOfSalvation',
+                    to: 'AssuranceOfSalvation',
                   },
                 },
                 {
@@ -325,7 +117,7 @@ const serializedAppDataNew: SerializedAppData = {
                   text: 'Holy Spirit',
                   action: {
                     type: 'navigate',
-                    to: 'Basics>HolySpirit',
+                    to: 'HolySpirit',
                   },
                 },
                 {
@@ -333,7 +125,7 @@ const serializedAppDataNew: SerializedAppData = {
                   text: 'Prayer',
                   action: {
                     type: 'navigate',
-                    to: 'Basics>Prayer',
+                    to: 'Prayer',
                   },
                 },
               ],
@@ -358,7 +150,7 @@ const serializedAppDataNew: SerializedAppData = {
                   },
                   action: {
                     type: 'navigate',
-                    to: 'Basics>GospelReview>RelGodMan',
+                    to: 'RelGodMan',
                   },
                 },
                 {
@@ -368,7 +160,7 @@ const serializedAppDataNew: SerializedAppData = {
                   },
                   action: {
                     type: 'navigate',
-                    to: 'Basics>GospelReview>RestReln',
+                    to: 'RestReln',
                   },
                 },
                 {
@@ -382,7 +174,7 @@ const serializedAppDataNew: SerializedAppData = {
                   text: 'What did Jesus do?',
                   action: {
                     type: 'navigate',
-                    to: 'Basics>GospelReview>WhatJesusDo',
+                    to: 'WhatJesusDo',
                   },
                 },
                 {
@@ -390,7 +182,7 @@ const serializedAppDataNew: SerializedAppData = {
                   text: 'How should I respond?',
                   action: {
                     type: 'navigate',
-                    to: 'Basics>GospelReview>HowRespond',
+                    to: 'HowRespond',
                   },
                 },
                 {
@@ -398,7 +190,7 @@ const serializedAppDataNew: SerializedAppData = {
                   text: 'The whole story',
                   action: {
                     type: 'navigate',
-                    to: 'Basics>GospelReview>WholeStory',
+                    to: 'WholeStory',
                   },
                 },
               ],
@@ -419,7 +211,7 @@ const serializedAppDataNew: SerializedAppData = {
                 text: 'Home',
                 action: {
                   type: 'navigate',
-                  to: 'Home',
+                  to: '..',
                 },
               },
             ],
@@ -445,6 +237,13 @@ function assertScreenIdIsValid(screenId: string) {
     );
 }
 
+/**
+ * Recursively copies screens over to screenMap following down currentPath
+ * @param screenMap map to add screens to
+ * @param currentPath path to add current screens to
+ * @param screens screens to add to the screenMap. Note that these are cloned and modified
+ * @returns screenMap
+ */
 function addSubscreensToMap(
   screenMap: ScreenMap,
   currentPath: string,
@@ -458,9 +257,18 @@ function addSubscreensToMap(
     if (screenMap.has(screenPath))
       throw new Error(`Duplicate screen path! ${screenPath}`);
 
-    screenMap.set(screenPath, screen);
+    const screenClone = { ...screen };
 
-    addSubscreensToMap(screenMap, screenPath, screen.subscreens);
+    screenMap.set(screenPath, screenClone);
+
+    // Preserve original id as title if a title was not provided
+    if (!screenClone.title && screenClone.title !== '')
+      screenClone.title = screenClone.id;
+
+    // Overwrite the existing id with the full path
+    screenClone.id = screenPath;
+
+    addSubscreensToMap(screenMap, screenPath, screenClone.subscreens);
   });
 
   return screenMap;
@@ -477,6 +285,7 @@ function addSubscreensToMap(
 function deserializeAppData(appData: SerializedAppData): AppData {
   return {
     ...appData,
+    initialScreen: pathJoin(ROOT_PATH, appData.initialScreen),
     screens: addSubscreensToMap(
       new Map<string, ScreenData>(),
       ROOT_PATH,
@@ -486,16 +295,13 @@ function deserializeAppData(appData: SerializedAppData): AppData {
 }
 
 const appScreens = deserializeAppData(serializedAppDataNew);
-console.log('serializedAppData', serializedAppData)
-console.log('appScreens', appScreens);
 
-export const getAppScreens = () => serializedAppData;
+export const getAppScreens = () => appScreens;
 
 /**
  * Get the information a screen needs to display
- * @param id The screen id to get
+ * @param path The screen path to get (aka screen id)
  * @returns Screen information
  */
-export const getScreenData = (id: string): ScreenData =>
-  serializedAppData.screens.find(screen => screen.id === id) ||
-  ({ id: 'NOT_FOUND' } as ScreenData);
+export const getScreenData = (path: string): ScreenData =>
+  appScreens.screens.get(path) || ({ id: 'NOT_FOUND' } as ScreenData);
