@@ -12,10 +12,11 @@ export const ScriptureText = ({
   design = 'small',
   ...textProps
 }: ScriptureTextProps) => {
+  // Put superscripted verse numbers and a non-breaking space before the verse
+  // Trim the verse to remove extraneous new lines
   const text = scriptureText.verses
-    .map(v => `${sup(v.verse.toString())} ${v.text}`)
-    .join(' ')
-    .replace(/\n/g, ' ');
+    .map(v => `${sup(v.verse.toString())}\xa0${v.text.trim()}`)
+    .join(' ');
 
   return <Text {...textProps} text={text} design={design} />;
 };
