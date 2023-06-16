@@ -13,9 +13,8 @@ export const ScriptureText = ({
   ...textProps
 }: ScriptureTextProps) => {
   const text = scriptureText.verses
-    .map(v => `${sup(v.verse.toString())} ${v.text}`)
-    .join(' ')
-    .replace(/\n/g, ' ');
+    .map(v => `${sup(v.verse.toString())}\xa0${v.text.trim()}`)
+    .join(' ');
 
   return <Text {...textProps} text={text} design={design} />;
 };
