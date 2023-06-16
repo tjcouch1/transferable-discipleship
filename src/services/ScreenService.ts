@@ -61,15 +61,43 @@ const serializedAppDataNew: SerializedAppData = {
             },
             {
               type: 'ScriptureSlide',
-              reference: 'Romans 12:1-2',
+              scripture: {
+                reference: 'Romans 12:1-2',
+              },
             },
             {
               type: 'ScriptureSlide',
               headerText: 'What is true of God?',
-              reference: 'Acts 17:24-28',
-              revealedButton: {
-                text: 'Creator, Desires to be known',
+              scripture: {
+                reference: 'Acts 17:24-28',
+                revealedButton: {
+                  text: 'Creator, Desires to be known',
+                },
               },
+            },
+            {
+              type: 'ScriptureSlide',
+              headerText: 'What is the nature of man?',
+              scripture: [
+                {
+                  reference: 'Ephesians 2:1-3',
+                  revealedButton: {
+                    text: 'Dead',
+                  },
+                },
+                {
+                  reference: 'Romans 3:23',
+                  revealedButton: {
+                    text: 'All have sinned',
+                  },
+                },
+                {
+                  reference: 'Romans 6:23',
+                  revealedButton: {
+                    text: 'Deserve death',
+                  },
+                },
+              ],
             },
           ],
         },

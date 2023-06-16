@@ -54,7 +54,7 @@ const designStyles = createDesignStyleSheets(
       borderBottomColor: Theme.dimmed.backgroundColor,
     },
     headerText: {
-      fontSize: 25,
+      fontSize: 23,
       fontWeight: '600',
     },
   },
