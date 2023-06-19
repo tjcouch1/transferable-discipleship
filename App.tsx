@@ -9,15 +9,17 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
+  Text,
   useColorScheme,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { getAppScreens } from './src/services/ScreenService';
+import { getAppScreens, getData } from './src/services/ScreenService';
 import { Screens } from './src/components/screens/Screens';
 import WebWrapper from './src/components/WebWrapper';
 import ContentsContext from './src/components/contents/ContentsContext';
 import { Contents } from './src/components/contents/Contents';
+import usePromise from './src/hooks/usePromise';
 
 export default function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -32,10 +34,13 @@ export default function App() {
   // Get an array of the screens in the app
   const screens = [...appScreens.screens.values()];
 
+  const [stuff] = usePromise(getData, -1);
+
   return (
     <SafeAreaView style={[backgroundStyle, styles.safeAreaView]}>
       <ContentsContext.Provider value={Contents}>
         <WebWrapper>
+          <Text>{stuff}</Text>
           <NavigationContainer>
             <StatusBar
               barStyle={isDarkMode ? 'light-content' : 'dark-content'}

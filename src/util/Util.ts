@@ -4,6 +4,8 @@
 
 import { Platform } from 'react-native';
 
+export const APP_VERSION = '0.0.0';
+
 export function isWeb() {
   return Platform.OS === 'web';
 }
