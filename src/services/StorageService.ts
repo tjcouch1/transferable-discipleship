@@ -5,6 +5,18 @@
 import * as FileSystem from 'expo-file-system';
 import { APP_VERSION, isWeb } from '../util/Util';
 
+/**
+ * Locations for persisted data.
+ * 
+ * When looking at backup locations, this enumeration is traversed end-to-beginning
+ */
+enum Dirs {
+  Bundle,
+  Document,
+  Cache,
+}
+
+// These are all null if on web
 const bundleDir = FileSystem.bundleDirectory;
 const documentDir = FileSystem.documentDirectory;
 const cacheDir = FileSystem.cacheDirectory;
@@ -19,7 +31,7 @@ function getFileName(
   version: string,
   extension = 'json',
 ) {
-  return `${directory}/${name}`;
+  return `${directory}/${name}.${getVersionFileFormat(version)}.${extension}`;
 }
 
 export async function saveData(
@@ -47,12 +59,6 @@ export async function saveData(
     console.error(e);
     return false;
   }
-}
-
-enum Dirs {
-  Bundle,
-  Document,
-  Cache,
 }
 
 export async function loadData<T>(
@@ -84,18 +90,15 @@ export async function loadData<T>(
     name,
     version,
   );
-  let errorMessage = '';
   try {
     const dataSerialized = await (isWeb()
       ? localStorage.getItem(key)
       : FileSystem.readAsStringAsync(key));
     if (dataSerialized !== null) return JSON.parse(dataSerialized);
   } catch (e) {
-    errorMessage = `${e}`;
+    // Ignore ENOENT - entry does not exist - because we want to return null if the entry does not exist
+    if (!`${e}`.includes('ENOENT')) throw e;
   }
-
-  if (errorMessage && (!checkBackupLocations || location <= 0))
-    console.error(errorMessage);
 
   if (!isWeb() && checkBackupLocations)
     return loadData(
