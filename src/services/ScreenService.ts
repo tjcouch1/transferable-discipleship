@@ -9,9 +9,10 @@ import {
   ScreenMap,
 } from '../components/screens/Screens';
 import { ROOT_PATH, PATH_DELIMITER, pathJoin } from '../util/PathUtil';
+import { APP_VERSION } from '../util/Util';
 
 const serializedAppDataNew: SerializedAppData = {
-  version: '0.0.0',
+  version: APP_VERSION,
   initialScreen: 'Home',
   screens: [
     {
