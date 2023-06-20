@@ -10,21 +10,6 @@ import {
 } from '../components/screens/Screens';
 import { ROOT_PATH, PATH_DELIMITER, pathJoin } from '../util/PathUtil';
 import { APP_VERSION } from '../util/Util';
-import { loadData, saveData } from './StorageService';
-
-let resolveData = (data: number) => {};
-const dataPromise = new Promise((resolve) => {resolveData = resolve;});
-
-(async () => {
-  const data = (await loadData<number>('test', 'data')) || 0;
-  console.log(`loaded: ${data}`);
-  saveData('test', 'data', data + 1);
-  resolveData(data);
-})();
-
-export function getData() {
-  return dataPromise;
-}
 
 const serializedAppDataNew: SerializedAppData = {
   version: APP_VERSION,
