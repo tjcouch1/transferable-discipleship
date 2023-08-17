@@ -49,6 +49,7 @@ const serializedAppDataNew: SerializedAppData = {
         },
         {
           type: 'ContentList',
+          isOpenDefault: 0,
           padTop: false,
           padBottom: false,
           padding: 5,

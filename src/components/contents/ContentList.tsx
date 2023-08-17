@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentData, ContentDataBase } from './Contents';
@@ -9,6 +9,9 @@ import { TextDataObjectBase, getTextDataObject } from './Text';
 export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
   contents: ContentData[];
+  controlIsOpen?: boolean;
+  /** Which index to open by default. Set to -1 (default) to leave all closed. Only functional if `controlIsOpen` is true */
+  isOpenDefault?: number;
   padTop?: boolean;
   padBottom?: boolean;
   padding?: number;
@@ -39,6 +42,8 @@ export interface ContentListProps extends ContentListData {}
 
 export const ContentList = ({
   contents = [],
+  controlIsOpen = true,
+  isOpenDefault = -1,
   padTop = true,
   padBottom = true,
   padding,
@@ -49,6 +54,10 @@ export const ContentList = ({
 
   const designStyle = designStyles[design];
   const contentPadding = getContentListDesignPadding(padding, design);
+
+  const [openIndex, setOpenIndex] = useState(isOpenDefault);
+
+  let openableIndex = -1;
 
   return (
     <View
@@ -70,10 +79,20 @@ export const ContentList = ({
             }
           : content;
 
+        const openObject: { isOpen?: boolean, onChange?: (isOpening: boolean) => void } = {};
+        // TODO: Make this openable check a function from Contents.tsx
+        if (controlIsOpen && (contentObject.type === 'Slide' || contentObject.type === 'ScriptureSlide')) {
+          openableIndex += 1;
+          const thisOpenableIndex = openableIndex;
+          openObject.isOpen = openIndex === openableIndex;
+          openObject.onChange = (isOpening) => isOpening ? setOpenIndex(thisOpenableIndex) : setOpenIndex(-1);
+        }
+
         return React.createElement(Contents[contentObject.type], {
           // TODO: Consider adding a key to ContentDataBase?
           key: i,
           ...contentObject,
+          ...openObject
         });
       })}
     </View>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
 import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
@@ -40,6 +40,10 @@ export const Slide = (slideProps: SlideProps) => {
     : undefined;
 
   const [isOpen, setIsOpen] = useState(isOpenProp ?? isOpenDefault);
+
+  useEffect(() => {
+    if (isOpenProp !== undefined) setIsOpen(isOpenProp);
+  }, [isOpenProp]);
 
   // Just use the one design style available
   const designStyle = designStyles[''];
