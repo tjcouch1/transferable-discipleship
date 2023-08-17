@@ -16,7 +16,7 @@ export interface ToggleButtonProps extends Omit<ToggleButtonData, 'type'> {}
 export const ToggleButton = (props: ToggleButtonProps) => {
   const { altButtons, loop, ...buttonDataProps } = {
     altButtons: [],
-    loop: false,
+    loop: true,
     ...props,
   };
 

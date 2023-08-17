@@ -49,12 +49,13 @@ const designStyles = createDesignStyleSheets(
   {
     navButton: {
       backgroundColor: Theme.default.backgroundColor,
-      padding: 15,
+      padding: 12,
       borderRadius: 12,
+      width: '75%'
     },
     navButtonText: {
       color: Theme.default.color,
-      fontSize: 25,
+      fontSize: 22,
       textAlign: 'center',
     },
   },
@@ -64,6 +65,7 @@ const designStyles = createDesignStyleSheets(
         backgroundColor: Theme.default.color,
         padding: 5,
         borderRadius: 4,
+        width: 'auto'
       },
       navButtonText: {
         color: Theme.default.backgroundColor,
