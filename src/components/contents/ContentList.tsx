@@ -10,8 +10,8 @@ export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
   contents: ContentData[];
   controlIsOpen?: boolean;
-  /** Which index to open by default. Set to -1 (default) to leave all closed. Only functional if `controlIsOpen` is true */
-  isOpenDefault?: number;
+  /** Which index of the openable contents to open by default. Set to -1 (default) to leave all closed. Only functional if `controlIsOpen` is true */
+  openIndexDefault?: number;
   padTop?: boolean;
   padBottom?: boolean;
   padding?: number;
@@ -43,7 +43,7 @@ export interface ContentListProps extends ContentListData {}
 export const ContentList = ({
   contents = [],
   controlIsOpen = true,
-  isOpenDefault = -1,
+  openIndexDefault = -1,
   padTop = true,
   padBottom = true,
   padding,
@@ -55,7 +55,7 @@ export const ContentList = ({
   const designStyle = designStyles[design];
   const contentPadding = getContentListDesignPadding(padding, design);
 
-  const [openIndex, setOpenIndex] = useState(isOpenDefault);
+  const [openIndex, setOpenIndex] = useState(openIndexDefault);
 
   let openableIndex = -1;
 

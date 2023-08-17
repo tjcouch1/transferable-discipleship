@@ -49,7 +49,7 @@ const serializedAppDataNew: SerializedAppData = {
         },
         {
           type: 'ContentList',
-          isOpenDefault: 0,
+          openIndexDefault: 0,
           padTop: false,
           padBottom: false,
           padding: 5,
@@ -70,6 +70,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'ScriptureSlide',
               headerText: 'What is true of God?',
+              isOpenDefault: true,
               scripture: {
                 reference: 'Acts 17:24-28',
                 revealedButton: {
@@ -109,11 +110,19 @@ const serializedAppDataNew: SerializedAppData = {
           id: 'Basics',
           type: 'ContentListScreen',
           design: 'no-padding',
+          controlIsOpen: false,
           contents: [
             {
               type: 'Header',
               headerText: 'Basics',
               subheaderText: 'Here is some basic stuff to read',
+            },
+            {
+              type: 'ScriptureSlide',
+              isOpenDefault: true,
+              scripture: {
+                reference: 'John 11:35',
+              },
             },
             {
               type: 'ButtonList',
