@@ -62,7 +62,6 @@ export const ContentList = ({
         style,
       ]}>
       {contents.map((content, i) => {
-
         // Get full content data for this content (if it is a string, build it into a TextContentData)
         const contentObject = isString(content)
           ? {
@@ -71,15 +70,11 @@ export const ContentList = ({
             }
           : content;
 
-        return (
-          <View style={designStyle.content} key={i}>
-            {React.createElement(Contents[contentObject.type], {
-              // TODO: Consider adding a key to ContentDataBase?
-              /* key: i, */
-              ...contentObject,
-            })}
-          </View>
-        );
+        return React.createElement(Contents[contentObject.type], {
+          // TODO: Consider adding a key to ContentDataBase?
+          key: i,
+          ...contentObject,
+        });
       })}
     </View>
   );
@@ -87,10 +82,7 @@ export const ContentList = ({
 
 const designStyles = createDesignStyleSheets(
   {
-    layout: {width: '100%'},
-    content: {
-      alignItems: 'center',
-    },
+    layout: { width: '100%', alignItems: 'center' },
   },
   {},
 );

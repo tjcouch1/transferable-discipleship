@@ -1,10 +1,10 @@
 import { ScriptureVerseRangeContent } from '../services/ScriptureService';
 import { sup } from '../util/Util';
-import { Text, TextData } from './contents/Text';
+import { Text, TextDataObject } from './contents/Text';
 
 export type ScriptureTextProps = {
   scriptureText: ScriptureVerseRangeContent;
-} & Omit<TextData, 'text'>;
+} & Omit<TextDataObject, 'text'>;
 
 export const ScriptureText = ({
   scriptureText,

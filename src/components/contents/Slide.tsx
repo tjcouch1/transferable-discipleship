@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
 import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
@@ -10,6 +10,7 @@ import { getTextDataObject } from './Text';
 export type SlideContentData = ContentDataBase & {
   type: 'Slide';
   headerText?: HeaderTextData;
+  isOpenDefault?: boolean;
   style?: StyleProp<ViewStyle>;
 } & ContentListData;
 
@@ -20,13 +21,25 @@ export type SlideContentData = ContentDataBase & {
 export type SlideData = Omit<SlideContentData, 'type'>;
 
 /** Props the Slide needs to function */
-export interface SlideProps extends SlideData {}
+export interface SlideProps extends SlideData {
+  isOpen?: boolean;
+  onChange?: (isOpening: boolean) => void;
+}
 
 export const Slide = (slideProps: SlideProps) => {
-  const { headerText, style, ...contentListProps } = slideProps;
+  const {
+    headerText,
+    isOpenDefault = false,
+    isOpen: isOpenProp,
+    onChange,
+    style,
+    ...contentListProps
+  } = slideProps;
   const headerTextObject = headerText
     ? getTextDataObject(headerText)
     : undefined;
+
+  const [isOpen, setIsOpen] = useState(isOpenProp ?? isOpenDefault);
 
   // Just use the one design style available
   const designStyle = designStyles[''];
@@ -36,9 +49,14 @@ export const Slide = (slideProps: SlideProps) => {
         <HeaderText
           {...headerTextObject}
           style={[designStyle.headerText, headerTextObject.style]}
+          onPress={() => {
+            if (isOpenProp !== undefined) {
+              if (onChange) onChange(!isOpen);
+            } else setIsOpen(!isOpen);
+          }}
         />
       )}
-      <ContentList {...contentListProps} />
+      {isOpen && <ContentList {...contentListProps} />}
     </View>
   );
 };
