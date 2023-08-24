@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextDataObject, getTextDataObject } from './Text';
+import { Text, TextDataObject, TextPropsBase, getTextDataObject } from './Text';
 
 /** Simple defining data for displaying subheader text */
 type SubheaderTextContentDataObject = Omit<TextDataObject, 'design'> & {
@@ -20,7 +20,7 @@ export type SubheaderTextDataObject = Omit<SubheaderTextContentDataObject, 'type
 export type SubheaderTextData = SubheaderTextDataObject | string;
 
 /** Props the HeaderText needs to function */
-export type SubheaderTextProps = SubheaderTextData;
+export type SubheaderTextProps = SubheaderTextData & TextPropsBase;
 
 export const SubheaderText = (textData: SubheaderTextData) => {
   const textDataObject = getTextDataObject(textData);

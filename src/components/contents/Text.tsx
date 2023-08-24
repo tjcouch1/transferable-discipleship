@@ -9,12 +9,13 @@ import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
 import { isString } from '../../util/Util';
+import { GestureResponderEvent } from 'react-native';
 
 /** The base data that every text object must have. All text data object data types should extend TextDataObjectBase */
 export type TextDataObjectBase = { text: string };
 
 /** Simple defining data for displaying text */
-interface TextContentDataObject extends ContentDataBase, TextDataObjectBase {
+export interface TextContentDataObject extends ContentDataBase, TextDataObjectBase {
   type: 'Text';
   design?: TextDesign;
   style?: StyleProp<TextStyle>;
@@ -35,8 +36,13 @@ export type TextDataObject = Omit<TextContentDataObject, 'type'>;
  */
 export type TextData = TextDataObject | string;
 
+/** The base props that every text object should have and pass down to the text inside. All text data object props should extend TextPropsBase */
+export type TextPropsBase = {
+  onPress?: (event: GestureResponderEvent) => void;
+};
+
 /** Props the Text needs to function */
-export type TextProps = TextData;
+export type TextProps = TextData & TextPropsBase;
 
 // Have to bake out any optional parameter into specifically defined for TypeScript to realize we provdied it
 const DEFAULT_PROPS: Omit<TextDataObject, 'design' | 'text'> & {
@@ -63,19 +69,19 @@ export const getTextDataObject = <T extends TextDataObjectBase | string>(
 };
 
 export const Text = (props: TextProps) => {
-  const { text, design, style } = {
+  const { text, design, style, onPress } = {
     ...DEFAULT_PROPS,
     ...getTextDataObject(props),
   };
 
   const designStyle = designStyles[design];
-  return <ReactText style={[designStyle.lineText, style]}>{text}</ReactText>;
+  return <ReactText onPress={onPress} style={[designStyle.lineText, style]}>{text}</ReactText>;
 };
 
 const designStyles = createDesignStyleSheets(
   {
     lineText: {
-      fontSize: 22,
+      fontSize: 20,
       color: Theme.default.color,
     },
   },
@@ -89,7 +95,7 @@ const designStyles = createDesignStyleSheets(
     },
     subheader: {
       lineText: {
-        fontSize: 15,
+        fontSize: 16,
         color: Theme.default.color,
       },
     },

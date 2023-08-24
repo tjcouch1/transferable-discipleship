@@ -1,14 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentData, ContentDataBase } from './Contents';
-import ContentsContext from './ContentsContext';
+import ContentsModuleContext from './ContentsContext';
 import { isString } from '../../util/Util';
-import { TextDataObjectBase, getTextDataObject } from './Text';
+import { TextContentDataObject, TextDataObjectBase, getTextDataObject } from './Text';
 
 export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
   contents: ContentData[];
+  controlIsOpen?: boolean;
+  /** Which index of the openable contents to open by default. Set to -1 (default) to leave all closed. Only functional if `controlIsOpen` is true */
+  openIndexDefault?: number;
   padTop?: boolean;
   padBottom?: boolean;
   padding?: number;
@@ -39,16 +42,22 @@ export interface ContentListProps extends ContentListData {}
 
 export const ContentList = ({
   contents = [],
+  controlIsOpen = true,
+  openIndexDefault = -1,
   padTop = true,
   padBottom = true,
   padding,
   design = 'comfortable',
   style,
 }: ContentListProps) => {
-  const Contents = useContext(ContentsContext);
+  const { Contents, isOpenable } = useContext(ContentsModuleContext);
 
   const designStyle = designStyles[design];
   const contentPadding = getContentListDesignPadding(padding, design);
+
+  const [openIndex, setOpenIndex] = useState(openIndexDefault);
+
+  let openableIndex = -1;
 
   return (
     <View
@@ -62,24 +71,29 @@ export const ContentList = ({
         style,
       ]}>
       {contents.map((content, i) => {
-
         // Get full content data for this content (if it is a string, build it into a TextContentData)
         const contentObject = isString(content)
-          ? {
+          ? ({
               type: 'Text',
               ...(getTextDataObject(content) as TextDataObjectBase),
-            }
+            } as TextContentDataObject)
           : content;
 
-        return (
-          <View style={designStyle.content} key={i}>
-            {React.createElement(Contents[contentObject.type], {
-              // TODO: Consider adding a key to ContentDataBase?
-              /* key: i, */
-              ...contentObject,
-            })}
-          </View>
-        );
+        const openObject: { isOpen?: boolean, onChange?: (isOpening: boolean) => void } = {};
+        // TODO: Make this openable check a function from Contents.tsx
+        if (controlIsOpen && isOpenable(contentObject)) {
+          openableIndex += 1;
+          const thisOpenableIndex = openableIndex;
+          openObject.isOpen = openIndex === openableIndex;
+          openObject.onChange = (isOpening) => isOpening ? setOpenIndex(thisOpenableIndex) : setOpenIndex(-1);
+        }
+
+        return React.createElement(Contents[contentObject.type], {
+          // TODO: Consider adding a key to ContentDataBase?
+          key: i,
+          ...contentObject,
+          ...openObject
+        });
       })}
     </View>
   );
@@ -87,10 +101,7 @@ export const ContentList = ({
 
 const designStyles = createDesignStyleSheets(
   {
-    layout: {width: '100%'},
-    content: {
-      alignItems: 'center',
-    },
+    layout: { width: '100%', alignItems: 'center' },
   },
   {},
 );

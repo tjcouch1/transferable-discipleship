@@ -49,6 +49,7 @@ const serializedAppDataNew: SerializedAppData = {
         },
         {
           type: 'ContentList',
+          openIndexDefault: 0,
           padTop: false,
           padBottom: false,
           padding: 5,
@@ -62,6 +63,7 @@ const serializedAppDataNew: SerializedAppData = {
             },
             {
               type: 'ScriptureSlide',
+              canClose: false,
               scripture: {
                 reference: 'Romans 12:1-2',
               },
@@ -69,6 +71,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'ScriptureSlide',
               headerText: 'What is true of God?',
+              isOpenDefault: true,
               scripture: {
                 reference: 'Acts 17:24-28',
                 revealedButton: {
@@ -108,11 +111,27 @@ const serializedAppDataNew: SerializedAppData = {
           id: 'Basics',
           type: 'ContentListScreen',
           design: 'no-padding',
+          controlIsOpen: false,
           contents: [
             {
               type: 'Header',
               headerText: 'Basics',
               subheaderText: 'Here is some basic stuff to read',
+            },
+            {
+              type: 'ScriptureSlide',
+              isOpenDefault: true,
+              scripture: {
+                reference: 'John 11:35',
+              },
+            },
+            {
+              type: 'ScriptureSlide',
+              canClose: false,
+              isOpenDefault: false,
+              scripture: {
+                reference: 'John 11:36',
+              },
             },
             {
               type: 'ButtonList',
