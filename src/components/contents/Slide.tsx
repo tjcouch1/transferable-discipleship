@@ -11,7 +11,7 @@ import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentList, ContentListData } from './ContentList';
 import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
-import { getTextDataObject } from './Text';
+import { Text, getTextDataObject } from './Text';
 
 export type SlideContentData = ContentDataBase & {
   type: 'Slide';
@@ -60,7 +60,12 @@ export const Slide = (slideProps: SlideProps) => {
   // Just use the one design style available
   const designStyle = designStyles[''];
   return (
-    <View style={[designStyle.slideView, style]}>
+    <View
+      style={[
+        designStyle.slideView,
+        isOpen ? designStyle.slideViewOpen : undefined,
+        style,
+      ]}>
       <TouchableWithoutFeedback
         onPress={() => {
           if (canClose) {
@@ -71,6 +76,8 @@ export const Slide = (slideProps: SlideProps) => {
         }}>
         <View
           style={[
+            designStyle.headerView,
+            isOpen ? undefined : designStyle.headerViewClosed,
             designStyle.contentView,
             canClose ? designStyle.pressableHeaderView : undefined,
           ]}>
@@ -78,6 +85,13 @@ export const Slide = (slideProps: SlideProps) => {
             <HeaderText
               {...headerTextObject}
               style={[designStyle.headerText, headerTextObject.style]}
+            />
+          )}
+          {canClose && (
+            <Text
+              design="small"
+              style={[designStyle.chevron, isOpen ? undefined : designStyle.chevronClosed]}
+              text={isOpen ? '^' : 'v'}
             />
           )}
         </View>
@@ -97,11 +111,21 @@ const designStyles = createDesignStyleSheets(
   {
     slideView: {
       backgroundColor: Theme.default.backgroundColor,
-      // FIX NOT BEING ABLE TO CLICK THE WHOLE HEADER
-      paddingVertical: 10,
       width: '90%',
       borderBottomWidth: 10,
       borderBottomColor: Theme.dimmed.backgroundColor,
+    },
+    slideViewOpen: {
+      paddingBottom: 10,
+    },
+    headerView: {
+      paddingTop: 10,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    headerViewClosed: {
+      paddingBottom: 10,
     },
     contentView: {
       paddingHorizontal: 15,
@@ -116,7 +140,14 @@ const designStyles = createDesignStyleSheets(
       fontSize: 23,
       fontWeight: '600',
     },
+    chevron: {
+      fontWeight: '900',
+    },
+    chevronClosed: {
+      fontWeight: '600',
+    },
     closedContent: {
+      // Just hide the contents if the slide is closed so it can load while hidden
       display: 'none',
     },
   },
