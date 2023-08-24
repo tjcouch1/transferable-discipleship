@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentData, ContentDataBase } from './Contents';
-import ContentsContext from './ContentsContext';
+import ContentsModuleContext from './ContentsContext';
 import { isString } from '../../util/Util';
-import { TextDataObjectBase, getTextDataObject } from './Text';
+import { TextContentDataObject, TextDataObjectBase, getTextDataObject } from './Text';
 
 export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
@@ -50,7 +50,7 @@ export const ContentList = ({
   design = 'comfortable',
   style,
 }: ContentListProps) => {
-  const Contents = useContext(ContentsContext);
+  const { Contents, isOpenable } = useContext(ContentsModuleContext);
 
   const designStyle = designStyles[design];
   const contentPadding = getContentListDesignPadding(padding, design);
@@ -73,15 +73,15 @@ export const ContentList = ({
       {contents.map((content, i) => {
         // Get full content data for this content (if it is a string, build it into a TextContentData)
         const contentObject = isString(content)
-          ? {
+          ? ({
               type: 'Text',
               ...(getTextDataObject(content) as TextDataObjectBase),
-            }
+            } as TextContentDataObject)
           : content;
 
         const openObject: { isOpen?: boolean, onChange?: (isOpening: boolean) => void } = {};
         // TODO: Make this openable check a function from Contents.tsx
-        if (controlIsOpen && (contentObject.type === 'Slide' || contentObject.type === 'ScriptureSlide')) {
+        if (controlIsOpen && isOpenable(contentObject)) {
           openableIndex += 1;
           const thisOpenableIndex = openableIndex;
           openObject.isOpen = openIndex === openableIndex;

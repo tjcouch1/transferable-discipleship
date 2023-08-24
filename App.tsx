@@ -16,8 +16,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { getAppScreens } from './src/services/ScreenService';
 import { Screens } from './src/components/screens/Screens';
 import WebWrapper from './src/components/WebWrapper';
-import ContentsContext from './src/components/contents/ContentsContext';
-import { Contents } from './src/components/contents/Contents';
+import ContentsModuleContext from './src/components/contents/ContentsContext';
+import * as ContentsModule from './src/components/contents/Contents';
 
 export default function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={[backgroundStyle, styles.safeAreaView]}>
-      <ContentsContext.Provider value={Contents}>
+      <ContentsModuleContext.Provider value={ContentsModule}>
         <WebWrapper>
           <NavigationContainer>
             <StatusBar
@@ -53,7 +53,7 @@ export default function App() {
             </Stack.Navigator>
           </NavigationContainer>
         </WebWrapper>
-      </ContentsContext.Provider>
+      </ContentsModuleContext.Provider>
     </SafeAreaView>
   );
 }

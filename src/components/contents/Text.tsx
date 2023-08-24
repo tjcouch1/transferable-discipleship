@@ -15,7 +15,7 @@ import { GestureResponderEvent } from 'react-native';
 export type TextDataObjectBase = { text: string };
 
 /** Simple defining data for displaying text */
-interface TextContentDataObject extends ContentDataBase, TextDataObjectBase {
+export interface TextContentDataObject extends ContentDataBase, TextDataObjectBase {
   type: 'Text';
   design?: TextDesign;
   style?: StyleProp<TextStyle>;

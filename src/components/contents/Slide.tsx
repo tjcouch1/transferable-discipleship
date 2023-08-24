@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, ViewStyle, StyleProp } from 'react-native';
+import {
+  View,
+  ViewStyle,
+  StyleProp,
+  TouchableWithoutFeedback,
+  Platform,
+} from 'react-native';
 import Theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentList, ContentListData } from './ContentList';
@@ -10,6 +16,9 @@ import { getTextDataObject } from './Text';
 export type SlideContentData = ContentDataBase & {
   type: 'Slide';
   headerText?: HeaderTextData;
+  /** Whether or not you can press the header to open and close the slide. Defaults to true */
+  canClose?: boolean;
+  /** Whether the slide is open by default. Only applicable if `canClose` is true */
   isOpenDefault?: boolean;
   style?: StyleProp<ViewStyle>;
 } & ContentListData;
@@ -29,6 +38,7 @@ export interface SlideProps extends SlideData {
 export const Slide = (slideProps: SlideProps) => {
   const {
     headerText,
+    canClose = true,
     isOpenDefault = false,
     isOpen: isOpenProp,
     onChange,
@@ -39,45 +49,75 @@ export const Slide = (slideProps: SlideProps) => {
     ? getTextDataObject(headerText)
     : undefined;
 
-  const [isOpen, setIsOpen] = useState(isOpenProp ?? isOpenDefault);
+  const [isOpen, setIsOpen] = useState(
+    canClose ? isOpenProp ?? isOpenDefault : true,
+  );
 
   useEffect(() => {
-    if (isOpenProp !== undefined) setIsOpen(isOpenProp);
-  }, [isOpenProp]);
+    if (canClose && isOpenProp !== undefined) setIsOpen(isOpenProp);
+  }, [canClose, isOpenProp]);
 
   // Just use the one design style available
   const designStyle = designStyles[''];
   return (
-    <View style={[designStyle.headerView, style]}>
-      {headerTextObject && (
-        <HeaderText
-          {...headerTextObject}
-          style={[designStyle.headerText, headerTextObject.style]}
-          onPress={() => {
+    <View style={[designStyle.slideView, style]}>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          if (canClose) {
             if (isOpenProp !== undefined) {
               if (onChange) onChange(!isOpen);
             } else setIsOpen(!isOpen);
-          }}
-        />
-      )}
-      {isOpen && <ContentList {...contentListProps} />}
+          }
+        }}>
+        <View
+          style={[
+            designStyle.contentView,
+            canClose ? designStyle.pressableHeaderView : undefined,
+          ]}>
+          {headerTextObject && (
+            <HeaderText
+              {...headerTextObject}
+              style={[designStyle.headerText, headerTextObject.style]}
+            />
+          )}
+        </View>
+      </TouchableWithoutFeedback>
+      <ContentList
+        style={[
+          designStyle.contentView,
+          isOpen ? undefined : designStyle.closedContent,
+        ]}
+        {...contentListProps}
+      />
     </View>
   );
 };
 
 const designStyles = createDesignStyleSheets(
   {
-    headerView: {
-      paddingVertical: 10,
+    slideView: {
       backgroundColor: Theme.default.backgroundColor,
-      paddingHorizontal: 15,
+      // FIX NOT BEING ABLE TO CLICK THE WHOLE HEADER
+      paddingVertical: 10,
       width: '90%',
       borderBottomWidth: 10,
       borderBottomColor: Theme.dimmed.backgroundColor,
     },
+    contentView: {
+      paddingHorizontal: 15,
+    },
+    pressableHeaderView: {
+      // Display cursor on web https://github.com/necolas/react-native-web/issues/506#issuecomment-1412166955
+      // This is here to avoid errors with the next line. This is just confirming the default display
+      display: 'flex',
+      ...Platform.select({ web: { cursor: 'pointer' } }),
+    },
     headerText: {
       fontSize: 23,
       fontWeight: '600',
+    },
+    closedContent: {
+      display: 'none',
     },
   },
   {},

@@ -63,6 +63,7 @@ const serializedAppDataNew: SerializedAppData = {
             },
             {
               type: 'ScriptureSlide',
+              canClose: false,
               scripture: {
                 reference: 'Romans 12:1-2',
               },
@@ -122,6 +123,14 @@ const serializedAppDataNew: SerializedAppData = {
               isOpenDefault: true,
               scripture: {
                 reference: 'John 11:35',
+              },
+            },
+            {
+              type: 'ScriptureSlide',
+              canClose: false,
+              isOpenDefault: false,
+              scripture: {
+                reference: 'John 11:36',
               },
             },
             {
