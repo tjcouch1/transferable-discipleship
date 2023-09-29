@@ -1,0 +1,159 @@
+{
+  "web": {
+    "shortName": "WEB",
+    "name": "World English Bible",
+    "id": "web",
+    "language": "English",
+    "license": "Public Domain",
+    "sourceUrl": "https://bible-api.com/",
+    "verses": {
+      "Romans 12:1-2": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 12:1-2",
+        "verses": [
+          {
+            "verse": 1,
+            "text": "Therefore I urge you, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God, which is your spiritual service.\n"
+          },
+          {
+            "verse": 2,
+            "text": "Don’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 12:1-2?translation=web"
+      },
+      "Acts 17:24-28": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Acts 17:24-28",
+        "verses": [
+          {
+            "verse": 24,
+            "text": "The God who made the world and all things in it, he, being Lord of heaven and earth, doesn’t dwell in temples made with hands,\n"
+          },
+          {
+            "verse": 25,
+            "text": "neither is he served by men’s hands, as though he needed anything, seeing he himself gives to all life and breath, and all things.\n"
+          },
+          {
+            "verse": 26,
+            "text": "He made from one blood every nation of men to dwell on all the surface of the earth, having determined appointed seasons, and the boundaries of their dwellings,\n"
+          },
+          {
+            "verse": 27,
+            "text": "that they should seek the Lord, if perhaps they might reach out for him and find him, though he is not far from each one of us.\n"
+          },
+          {
+            "verse": 28,
+            "text": "‘For in him we live, and move, and have our being.’ As some of your own poets have said, ‘For we are also his offspring.’\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Acts 17:24-28?translation=web"
+      },
+      "Ephesians 2:1-3": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Ephesians 2:1-3",
+        "verses": [
+          {
+            "verse": 1,
+            "text": "You were made alive when you were dead in transgressions and sins,\n"
+          },
+          {
+            "verse": 2,
+            "text": "in which you once walked according to the course of this world, according to the prince of the power of the air, the spirit who now works in the children of disobedience;\n"
+          },
+          {
+            "verse": 3,
+            "text": "among whom we also all once lived in the lusts of our flesh, doing the desires of the flesh and of the mind, and were by nature children of wrath, even as the rest.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Ephesians 2:1-3?translation=web"
+      },
+      "Romans 3:23": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 3:23",
+        "verses": [
+          {
+            "verse": 23,
+            "text": "for all have sinned, and fall short of the glory of God;\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 3:23?translation=web"
+      },
+      "Romans 6:23": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 6:23",
+        "verses": [
+          {
+            "verse": 23,
+            "text": "For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 6:23?translation=web"
+      },
+      "John 11:35": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 11:35",
+        "verses": [
+          {
+            "verse": 35,
+            "text": "Jesus wept.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 11:35?translation=web"
+      },
+      "John 11:36": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 11:36",
+        "verses": [
+          {
+            "verse": 36,
+            "text": "The Jews therefore said, “See how much affection he had for him!”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 11:36?translation=web"
+      }
+    }
+  }
+}
