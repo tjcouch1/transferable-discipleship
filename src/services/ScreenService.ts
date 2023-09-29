@@ -2,6 +2,9 @@
  * ScreenService.ts - Handles getting the page structure
  */
 
+import { ContentListData } from '../components/contents/ContentList';
+import { ContentData } from '../components/contents/Contents';
+import { ContentListScreenData } from '../components/screens/ContentListScreen';
 import {
   SerializedAppData,
   ScreenData,
@@ -11,6 +14,7 @@ import {
 import { ROOT_PATH, PATH_DELIMITER, pathJoin } from '../util/PathUtil';
 import { APP_VERSION } from '../util/Util';
 
+// const serializedAppDataNew: SerializedAppData = require('../../assets/data/screens.json')
 const serializedAppDataNew: SerializedAppData = {
   version: APP_VERSION,
   initialScreen: 'Home',
@@ -353,3 +357,29 @@ export const getAppScreens = () => appScreens;
  */
 export const getScreenData = (path: string): ScreenData =>
   appScreens.screens.get(path) || ({ id: 'NOT_FOUND' } as ScreenData);
+
+function forEachContentOfContents(
+  contents: ContentData[],
+  callback: (content: ContentData) => void,
+) {
+  if (!contents) return;
+
+  contents.forEach(content => {
+    if (!content) return;
+
+    callback(content);
+    if ((content as ContentListData).contents)
+      forEachContentOfContents((content as ContentListData).contents, callback);
+  });
+}
+
+/** Runs a callback on every content in the screens recursively */
+export function forEachContent(callback: (content: ContentData) => void) {
+  appScreens.screens.forEach(screen => {
+    if ((screen as ContentListScreenData).contents)
+      forEachContentOfContents(
+        (screen as ContentListScreenData).contents,
+        callback,
+      );
+  });
+}

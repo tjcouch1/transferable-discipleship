@@ -2,11 +2,14 @@
  * ScriptureService.ts - Handles getting Scripture text
  */
 
+import { ScriptureSlideContentData } from '../components/contents/ScriptureSlide';
+import { forEachContent } from './ScreenService';
+
 const defaultShortName = 'WEB';
 
 /** Example query from https://bible-api.com/romans+12:1-2 */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const bibleApiScriptureContentExample: ApiScriptureContent = {
+/* const bibleApiScriptureContentExample: ApiScriptureContent = {
   reference: 'Romans 12:1-2',
   verses: [
     {
@@ -28,46 +31,10 @@ const bibleApiScriptureContentExample: ApiScriptureContent = {
   translation_id: 'web',
   translation_name: 'World English Bible',
   translation_note: 'Public Domain',
-};
+}; */
 
-const bibleApiAvailableTranslations: ScriptureResourceInfo[] = [
-  {
-    shortName: 'CHR',
-    name: 'Cherokee New Testament',
-    id: 'cherokee',
-    language: 'Cherokee',
-    license: 'Public Domain',
-  },
-  {
-    shortName: 'BBE',
-    name: 'Bible in Basic English',
-    id: 'bbe',
-    language: 'English',
-    license: 'Public Domain',
-  },
-  {
-    shortName: 'KJV',
-    name: 'King James Version',
-    id: 'kjv',
-    language: 'English',
-    license: 'Public Domain',
-  },
-  {
-    shortName: 'WEB',
-    name: 'World English Bible',
-    id: 'web',
-    language: 'English',
-    license: 'Public Domain',
-  },
-  {
-    shortName: 'OEBCW',
-    name: 'Open English Bible, Commonwealth Edition',
-    id: 'oeb-cw',
-    language: 'English (UK)',
-    license: 'Public Domain',
-  },
-  // listed at https://bible-api.com/. Did not finish
-];
+// listed at https://bible-api.com/. Did not finish
+const bibleApiAvailableTranslations: ScriptureResourceInfo[] = require('../../assets/data/bible-api.com/translations.json');
 
 /** Information about the Scripture Resource */
 export type ScriptureResourceInfo = {
@@ -129,6 +96,22 @@ export type ScriptureVerseRangeContent = {
   reference: string;
   /** verse contents */
   verses: ScriptureVerseContent[];
+  /** URL from which we fetched these verses */
+  sourceUrl: string;
+};
+
+type ScriptureCache = ScriptureResourceInfo & {
+  /** Base url from which we fetched these verses */
+  sourceUrl: string;
+  verses: {
+    [reference: string]:
+      | ScriptureVerseRangeContent
+      | Promise<ScriptureVerseRangeContent>;
+  };
+};
+
+type MultiScriptureCache = {
+  [id: string]: ScriptureCache;
 };
 
 /**
@@ -171,31 +154,96 @@ const mapApiVerseToContent = (
 
 const mapApiVerseRangeToContent = (
   apiVerseRange: ApiScriptureContent,
+  sourceUrl: string,
 ): ScriptureVerseRangeContent => ({
   resourceInfo: getTranslationById(apiVerseRange.translation_id),
   reference: apiVerseRange.reference,
   verses: apiVerseRange.verses.map(apiVerse => mapApiVerseToContent(apiVerse)),
+  sourceUrl,
 });
+
+// #region retrieving and caching Scripture
+
+/** Scripture cache containing verses in our desired format and info about where we got them */
+const scriptureCache: MultiScriptureCache = require('../../assets/data/scripture.json');
+
+const scriptureUrl = 'https://bible-api.com/';
 
 /**
  * Get Scripture verses from a string reference
  * @param reference reference to get verses from like 'Romans 12:1-2', 'Romans 3:5', 'Mark 3:5,6,7-12'
  * @param shortName which translation to get verses from
  */
-export const getScripture = async (
+export const getScripture = (
   reference: string,
   shortName = defaultShortName,
 ): Promise<ScriptureVerseRangeContent> => {
-  const response = await fetch(
-    `https://bible-api.com/${reference}?translation=${
-      getTranslation(shortName).id
-    }`,
-  );
-  if (!response.ok)
-    throw new Error(
-      `Failed to get Scripture for ${reference} ${shortName}. Error: ${await response.json()}`,
-    );
+  // Try to get from cache
+  const translationInfo = getTranslation(shortName);
+  const translationId = translationInfo.id;
+  if (scriptureCache[translationId]) {
+    const cachedVerses = scriptureCache[translationId].verses[reference];
+    if (cachedVerses) {
+      console.log(`Found ${reference}${'then' in cachedVerses ? ' promise' : ''} in cache`);
+      return Promise.resolve(cachedVerses);
+    }
+  }
 
-  const apiVerses: ApiScriptureContent = await response.json();
-  return mapApiVerseRangeToContent(apiVerses);
+  // Get verses from server
+  console.warn(`Did not find ${reference} in cache. Caching`);
+  const versesUrl = `${scriptureUrl}${reference}?translation=${translationId}`;
+  if (!scriptureCache[translationId])
+    scriptureCache[translationId] = {
+      ...translationInfo,
+      sourceUrl: scriptureUrl,
+      verses: {},
+    };
+  const versesPromise = (async () => {
+    const response = await fetch(versesUrl);
+    if (!response.ok)
+      throw new Error(
+        `Failed to get Scripture for ${reference} ${shortName}. Error: ${await response.json()}`,
+      );
+
+    const apiVerses: ApiScriptureContent = await response.json();
+    const verses = mapApiVerseRangeToContent(apiVerses, versesUrl);
+
+    // Save verses to cache
+    scriptureCache[translationId].verses[reference] = verses;
+    console.log(`${reference} cached`);
+
+    return verses;
+  })();
+
+  // Save verses promise to cache
+  scriptureCache[translationId].verses[reference] = versesPromise;
+
+  return versesPromise;
 };
+
+/* Get all Scripture References from the screens and cache the verses */
+async function cacheAllScripture() {
+  const getScripturePromises: Set<ReturnType<typeof getScripture>> = new Set();
+  forEachContent(content => {
+    const scriptureSlide = content as ScriptureSlideContentData;
+    if (scriptureSlide.scripture) {
+      const scriptures = Array.isArray(scriptureSlide.scripture)
+        ? scriptureSlide.scripture
+        : [scriptureSlide.scripture];
+      scriptures.forEach(scripture =>
+        getScripturePromises.add(getScripture(scripture.reference)),
+      );
+    }
+  });
+
+  console.log(`Found ${getScripturePromises.size} unique Scripture references`)
+
+  await Promise.all(getScripturePromises.values());
+
+  localStorage.setItem('scriptureCache', JSON.stringify(scriptureCache));
+}
+
+// Cache all Scripture at startup
+cacheAllScripture();
+
+// #endregion
