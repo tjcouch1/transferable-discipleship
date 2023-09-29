@@ -10,6 +10,7 @@ import { ScrRangeDisplay, ScrRangeDisplayContentData } from './ScrRangeDisplay';
 import { Slide, SlideContentData } from './Slide';
 import { SubheaderText, SubheaderTextContentData } from './SubheaderText';
 import { Text, TextContentData } from './Text';
+import { Image, ImageContentData } from './Image';
 
 //----- CONTENT TYPES -----//
 
@@ -24,7 +25,8 @@ export type ContentData =
   | SlideContentData
   | ContentListContentData
   | ScriptureSlideContentData
-  | ScrRangeDisplayContentData;
+  | ScrRangeDisplayContentData
+  | ImageContentData;
 
 /** All content types available. Content is a component that does various things */
 export type ContentType = keyof typeof Contents;
@@ -49,6 +51,7 @@ export const Contents: {
   ContentList,
   ScriptureSlide,
   ScrRangeDisplay,
+  Image,
 };
 
 /** Determines whether the content is openable and should be considered for managing its isOpen prop */

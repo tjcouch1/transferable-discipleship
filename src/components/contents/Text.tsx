@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   StyleProp,
-  StyleSheet,
   Text as ReactText,
   TextStyle,
 } from 'react-native';
