@@ -31,9 +31,7 @@ const serializedAppDataNew: SerializedAppData = {
           headerText: 'Transferable Discipleship',
           subheaderText:
             'A tool for simple, reproducible Christian discipleship',
-          lineTexts: [
-            'Please select an option below or swipe from the right anytime if you get lost',
-          ],
+          lineTexts: ['Please select an option below'],
           design: 'title',
         },
         {
@@ -67,6 +65,14 @@ const serializedAppDataNew: SerializedAppData = {
           action: {
             type: 'navigate',
             to: 'Essentials',
+          },
+        },
+        {
+          type: 'ActionButton',
+          text: 'How to',
+          action: {
+            type: 'navigate',
+            to: 'How to',
           },
         },
         {
@@ -286,6 +292,35 @@ const serializedAppDataNew: SerializedAppData = {
               },
             ],
           },
+        },
+        {
+          id: 'How to',
+          type: 'ContentListScreen',
+          design: 'tight',
+          contents: [
+            {
+              type: 'Header',
+              headerText: 'How to use this app',
+              subheaderText: '',
+              lineTexts: [
+                'To grow in your faith, there is no better place to turn than allowing the Bible to work in your heart. Scripture is the foundation for this material.',
+              ],
+              design: 'title',
+              style: {
+                paddingVertical: 10
+              }
+            },
+            {
+              type: 'Slide',
+              canClose: false,
+              headerText: 'The format of this material is simple:',
+              design: 'tight',
+              contents: [
+                '1. Read the question.\n2. Read what the Bible says to answer the question.\n3. Discuss each question based on the Scripture given.',
+                'After each passage of Scripture, some hints are given to help guide the conversation and give an idea how each verse helps answer the question.'
+              ]
+            }
+          ],
         },
       ],
     },
