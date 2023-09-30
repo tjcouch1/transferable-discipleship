@@ -307,8 +307,9 @@ const serializedAppDataNew: SerializedAppData = {
               ],
               design: 'title',
               style: {
-                paddingVertical: 10
-              }
+                paddingTop: 10,
+                paddingBottom: 10,
+              },
             },
             {
               type: 'Slide',
@@ -317,9 +318,27 @@ const serializedAppDataNew: SerializedAppData = {
               design: 'tight',
               contents: [
                 '1. Read the question.\n2. Read what the Bible says to answer the question.\n3. Discuss each question based on the Scripture given.',
-                'After each passage of Scripture, some hints are given to help guide the conversation and give an idea how each verse helps answer the question.'
-              ]
-            }
+                'After each passage of Scripture, some hints are given to help guide the conversation and give an idea how each verse helps answer the question.',
+              ],
+            },
+            {
+              type: 'Slide',
+              canClose: false,
+              headerText: 'Feedback?',
+              design: 'tight',
+              contents: [
+                'Found a problem? Want a feature? Other feedback?',
+                {
+                  type: 'ActionButton',
+                  text: 'Let us know',
+                  design: 'answer',
+                  action: {
+                    type: 'link',
+                    to: 'https://github.com/tjcouch1/transferable-discipleship/issues',
+                  },
+                },
+              ],
+            },
           ],
         },
       ],
