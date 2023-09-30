@@ -31,18 +31,20 @@ export interface ImageProps extends ImageData {}
 export function Image({ image: source, style }: ImageProps) {
   const [isModal, setIsModal] = useState(false);
 
+  const defaultSize = 75 * (isWeb() && isModal ? 3 : 1)
+
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setIsModal(!isModal)}>
         <ReactImage
           source={getImageSource(source)}
           style={[
-            isWeb() || isRemote(source) ? { width: 75, height: 75 } : {},
+            isWeb() || isRemote(source) ? { width: defaultSize, height: defaultSize } : {},
             style,
           ]}
         />
       </TouchableWithoutFeedback>
-      {isModal && (
+      {!isWeb() && isModal && (
         <ImageView
           images={[getImageSource(source)]}
           imageIndex={0}

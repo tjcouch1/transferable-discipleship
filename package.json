@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "web": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo start --web",
     "test": "jest",
-    "expo:upgrade": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo install --fix"
+    "expo:upgrade": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo install --fix",
+    "postinstall": "npx patch-package"
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
