@@ -138,13 +138,13 @@ const designStyles = createDesignStyleSheets(
     },
     headerText: {
       fontSize: 23,
-      fontWeight: '600',
+      fontWeight: '700',
     },
     chevron: {
-      fontWeight: '900',
+      fontWeight: '700',
     },
     chevronClosed: {
-      fontWeight: '600',
+      fontWeight: '500',
     },
     closedContent: {
       // Just hide the contents if the slide is closed so it can load while hidden

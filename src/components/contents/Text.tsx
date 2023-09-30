@@ -80,6 +80,7 @@ export const Text = (props: TextProps) => {
 const designStyles = createDesignStyleSheets(
   {
     lineText: {
+      fontFamily: 'OpenSauceOne',
       fontSize: 20,
       color: Theme.default.color,
     },
@@ -87,6 +88,7 @@ const designStyles = createDesignStyleSheets(
   {
     header: {
       lineText: {
+        fontFamily: 'LibreFranklin',
         fontSize: 30,
         fontWeight: '900',
         color: Theme.default.color,
