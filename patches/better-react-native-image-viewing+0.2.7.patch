@@ -1,0 +1,62 @@
+diff --git a/node_modules/better-react-native-image-viewing/dist/components/ImageItem/ImageItem.web.js b/node_modules/better-react-native-image-viewing/dist/components/ImageItem/ImageItem.web.js
+new file mode 100644
+index 0000000..e8b9db9
+--- /dev/null
++++ b/node_modules/better-react-native-image-viewing/dist/components/ImageItem/ImageItem.web.js
+@@ -0,0 +1,10 @@
++/**
++ * Copyright (c) JOB TODAY S.A. and its affiliates.
++ *
++ * This source code is licensed under the MIT license found in the
++ * LICENSE file in the root directory of this source tree.
++ *
++ */
++
++import ImageItem from "./ImageItem.android";
++export default ImageItem;
+\ No newline at end of file
+diff --git a/node_modules/better-react-native-image-viewing/dist/hooks/useImageDimensions.js b/node_modules/better-react-native-image-viewing/dist/hooks/useImageDimensions.js
+index d89a3a1..651d45c 100644
+--- a/node_modules/better-react-native-image-viewing/dist/hooks/useImageDimensions.js
++++ b/node_modules/better-react-native-image-viewing/dist/hooks/useImageDimensions.js
+@@ -6,7 +6,7 @@
+  *
+  */
+ import { useEffect, useState } from "react";
+-import { Image } from "react-native";
++import { Image, Platform } from "react-native";
+ import { createCache } from "../utils";
+ const CACHE_SIZE = 50;
+ const imageDimensionsCache = createCache(CACHE_SIZE);
+@@ -14,7 +14,7 @@ const useImageDimensions = (image) => {
+     const [dimensions, setDimensions] = useState(null);
+     const getImageDimensions = (image) => {
+         return new Promise((resolve) => {
+-            if (typeof image == "number") {
++            if (Platform.OS !== "web" && typeof image == "number") {
+                 const cacheKey = `${image}`;
+                 let imageDimensions = imageDimensionsCache.get(cacheKey);
+                 if (!imageDimensions) {
+@@ -26,14 +26,19 @@ const useImageDimensions = (image) => {
+                 return;
+             }
+             // @ts-ignore
+-            if (image.uri) {
++            if (Platform.OS === "web" || image.uri) {
+                 const source = image;
+                 const cacheKey = source.uri;
+                 const imageDimensions = imageDimensionsCache.get(cacheKey);
+                 if (imageDimensions) {
+                     resolve(imageDimensions);
+-                }
+-                else {
++                } // Thanks to staltz at https://github.com/jobtoday/react-native-image-viewing/pull/121/files
++                else if (Platform.OS === "web") {
++                    Image.getSize(source.uri, (width, height) => {
++                        imageDimensionsCache.set(cacheKey, { width, height });
++                        resolve({ width, height })
++                    })
++                } else {
+                     // @ts-ignore
+                     Image.getSizeWithHeaders(source.uri, source.headers, (width, height) => {
+                         imageDimensionsCache.set(cacheKey, { width, height });

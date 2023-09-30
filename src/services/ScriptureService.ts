@@ -3,6 +3,7 @@
  */
 
 import { ScriptureSlideContentData } from '../components/contents/ScriptureSlide';
+import { isWeb } from '../util/Util';
 import { forEachContent } from './ScreenService';
 
 const defaultShortName = 'WEB';
@@ -240,7 +241,8 @@ async function cacheAllScripture() {
 
   await Promise.all(getScripturePromises.values());
 
-  localStorage.setItem('scriptureCache', JSON.stringify(scriptureCache));
+  if (isWeb())
+    localStorage.setItem('scriptureCache', JSON.stringify(scriptureCache));
 }
 
 // Cache all Scripture at startup

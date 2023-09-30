@@ -1,8 +1,15 @@
-import { ImageStyle, StyleProp } from 'react-native';
+import { ImageStyle, StyleProp, TouchableWithoutFeedback } from 'react-native';
 import { ContentDataBase } from './Contents';
 import { Image as ReactImage } from 'react-native';
-import { ImageUrl, getImageSource, isRemote } from '../../services/ImageService';
+import {
+  ImageUrl,
+  getImageSource,
+  isRemote,
+} from '../../services/ImageService';
 import { isWeb } from '../../util/Util';
+import { useState } from 'react';
+// Thanks to Yahia Naguib at https://stackoverflow.com/a/61130824 for sharing how to get babel to include this package
+import ImageView from 'better-react-native-image-viewing';
 
 /** Simple defining data for displaying images */
 export interface ImageContentData extends ContentDataBase {
@@ -22,10 +29,29 @@ export type ImageData = Omit<ImageContentData, 'type'>;
 export interface ImageProps extends ImageData {}
 
 export function Image({ image: source, style }: ImageProps) {
+  const [isModal, setIsModal] = useState(false);
+
   return (
-    <ReactImage
-      source={getImageSource(source)}
-      style={[isWeb() || isRemote(source) ? { width: 75, height: 75 } : {}, style]}
-    />
+    <>
+      <TouchableWithoutFeedback onPress={() => setIsModal(!isModal)}>
+        <ReactImage
+          source={getImageSource(source)}
+          style={[
+            isWeb() || isRemote(source) ? { width: 75, height: 75 } : {},
+            style,
+          ]}
+        />
+      </TouchableWithoutFeedback>
+      {isModal && (
+        <ImageView
+          images={[getImageSource(source)]}
+          imageIndex={0}
+          visible={isModal}
+          onRequestClose={() => setIsModal(false)}
+          animationType='slide'
+          swipeToCloseEnabled
+        />
+      )}
+    </>
   );
 }
