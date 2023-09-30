@@ -211,7 +211,7 @@ export const getScripture = (
 
     // Save verses to cache
     scriptureCache[translationId].verses[reference] = verses;
-    console.log(`${reference} cached`);
+    // console.log(`${reference} cached`);
 
     return verses;
   })();
@@ -237,7 +237,7 @@ async function cacheAllScripture() {
     }
   });
 
-  console.log(`Found ${getScripturePromises.size} unique Scripture references`)
+  // console.log(`Found ${getScripturePromises.size} unique Scripture references`)
 
   await Promise.all(getScripturePromises.values());
 

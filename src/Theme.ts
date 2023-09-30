@@ -8,4 +8,7 @@ export default StyleSheet.create({
     dimmed: {
         backgroundColor: 'darkslateblue',
     },
+    background: {
+        backgroundColor: 'white'
+    }
 });

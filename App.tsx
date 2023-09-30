@@ -18,6 +18,8 @@ import { Screens } from './src/components/screens/Screens';
 import WebWrapper from './src/components/WebWrapper';
 import ContentsModuleContext from './src/components/contents/ContentsContext';
 import * as ContentsModule from './src/components/contents/Contents';
+import Theme from './src/Theme';
+import { isWeb } from './src/util/Util';
 
 export default function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -47,7 +49,24 @@ export default function App() {
                   name={screen.id}
                   key={screen.id}
                   component={Screens[screen.type]}
-                  options={{ title: screen.title || screen.id }}
+                  options={{
+                    title: screen.title || screen.id,
+                    // Header background
+                    headerStyle: {
+                      backgroundColor: Theme.default.backgroundColor,
+                    },
+                    // Remove the white line at the bottom of the header
+                    headerShadowVisible: !isWeb(),
+                    // Back button and header text color
+                    headerTintColor: Theme.default.color,
+                    // App background
+                    contentStyle: {
+                      backgroundColor: Theme.background.backgroundColor,
+                      borderTopWidth: isWeb() ? 1 : 0,
+                      borderTopColor: Theme.dimmed.backgroundColor,
+                    },
+                    headerShown: screen.showNavigationBar ?? true,
+                  }}
                 />
               ))}
             </Stack.Navigator>

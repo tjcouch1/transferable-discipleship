@@ -22,6 +22,7 @@ const serializedAppDataNew: SerializedAppData = {
     {
       id: 'Home',
       title: 'TD Home',
+      showNavigationBar: false,
       type: 'ContentListScreen',
       design: 'loose',
       contents: [

@@ -20,9 +20,15 @@ export type ScreenType = keyof typeof Screens;
 
 /** The base data that every screen must have. All screen types should extend ScreenDataBase */
 export interface ScreenDataBase {
+  /** ID that is unique among this screen's siblings */
   id: string;
+  /** Text to show on the navigation bar */
   title?: string;
+  /** Whether to show the navigation bar. Defaults to true */
+  showNavigationBar?: boolean;
+  /** Type of Screen */
   type: ScreenType;
+  /** Screens that are children of this screen. Can navigate to them with an `ActionButton` */
   subscreens?: ScreenData[];
 }
 
