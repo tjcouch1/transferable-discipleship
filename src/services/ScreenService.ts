@@ -455,6 +455,23 @@ const serializedAppDataNew: SerializedAppData = {
                     },
                   ],
                 },
+                {
+                  type: 'Slide',
+                  headerText: 'Software Licenses',
+                  design: 'tight',
+                  contents: [
+                    'This software was created using many amazing libraries. Beware there are many licenses to display on the following page.',
+                    {
+                      type: 'ActionButton',
+                      design: 'answer',
+                      text: 'Software License Info',
+                      action: {
+                        type: 'navigate',
+                        to: 'app:/__licenses',
+                      },
+                    },
+                  ],
+                },
               ],
             },
           ],

@@ -9,7 +9,8 @@
     "web": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo start --web",
     "test": "jest",
     "expo:upgrade": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo install --fix",
-    "postinstall": "npx patch-package"
+    "postinstall": "npx patch-package",
+    "licenses": "license-checker --json --out assets/licenses/licenses-raw.json --customPath license-checker.json"
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
@@ -18,15 +19,15 @@
     "better-react-native-image-viewing": "^0.2.7",
     "expo": "^49.0.0",
     "expo-file-system": "~15.4.4",
+    "expo-font": "~11.4.0",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.5",
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
-    "react-native-web": "~0.19.6",
-    "expo-font": "~11.4.0",
-    "expo-splash-screen": "~0.20.5"
+    "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -36,6 +37,7 @@
     "babel-jest": "^29.4.1",
     "cross-env": "^7.0.3",
     "jest": "^29.4.1",
+    "license-checker": "^25.0.1",
     "patch-package": "^8.0.0",
     "react-test-renderer": "^18.1.0",
     "typescript": "^5.1.3"
