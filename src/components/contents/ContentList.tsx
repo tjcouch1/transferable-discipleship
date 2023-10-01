@@ -9,6 +9,7 @@ import { TextContentDataObject, TextDataObjectBase, getTextDataObject } from './
 export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
   contents: ContentData[];
+  /** Whether this content list should control which openable contents are open. Defaults to true */
   controlIsOpen?: boolean;
   /** Which index of the openable contents to open by default. Set to -1 (default) to leave all closed. Only functional if `controlIsOpen` is true */
   openIndexDefault?: number;

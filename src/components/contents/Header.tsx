@@ -10,7 +10,7 @@ import { Text, TextData, getTextDataObject } from './Text';
 export interface HeaderContentData extends ContentDataBase {
   type: 'Header';
   headerText: HeaderTextData;
-  subheaderText: SubheaderTextData;
+  subheaderText?: SubheaderTextData;
   lineTexts?: TextData[];
   design?: HeaderDesign;
   style?: StyleProp<ViewStyle>;
@@ -36,17 +36,21 @@ export const Header = ({
 }: HeaderProps) => {
   const designStyle = designStyles[design];
   const headerTextObject = getTextDataObject(headerText);
-  const subheaderTextObject = getTextDataObject(subheaderText);
+  const subheaderTextObject = subheaderText
+    ? getTextDataObject(subheaderText)
+    : undefined;
   return (
     <View style={[designStyle.headerView, style]}>
       <HeaderText
         {...headerTextObject}
         style={[designStyle.headerText, headerTextObject.style]}
       />
-      <SubheaderText
-        {...subheaderTextObject}
-        style={[designStyle.subheaderText, subheaderTextObject.style]}
-      />
+      {subheaderTextObject && (
+        <SubheaderText
+          {...subheaderTextObject}
+          style={[designStyle.subheaderText, subheaderTextObject.style]}
+        />
+      )}
       {lineTexts.map(lineText => {
         const lineTextObject = getTextDataObject(lineText);
         return (
@@ -92,7 +96,7 @@ const designStyles = createDesignStyleSheets(
       },
       headerText: {
         fontWeight: '700',
-        fontSize: 20,
+        fontSize: 25,
       },
     },
     section: {

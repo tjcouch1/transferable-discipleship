@@ -76,6 +76,14 @@ const serializedAppDataNew: SerializedAppData = {
           },
         },
         {
+          type: 'ActionButton',
+          text: 'About',
+          action: {
+            type: 'navigate',
+            to: 'About',
+          },
+        },
+        {
           type: 'ContentList',
           openIndexDefault: 0,
           padTop: false,
@@ -301,15 +309,10 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Header',
               headerText: 'How to use this app',
-              subheaderText: '',
               lineTexts: [
                 'To grow in your faith, there is no better place to turn than allowing the Bible to work in your heart. Scripture is the foundation for this material.',
               ],
-              design: 'title',
-              style: {
-                paddingTop: 10,
-                paddingBottom: 10,
-              },
+              design: 'screen',
             },
             {
               type: 'Slide',
@@ -336,6 +339,121 @@ const serializedAppDataNew: SerializedAppData = {
                     type: 'link',
                     to: 'https://github.com/tjcouch1/transferable-discipleship/issues',
                   },
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'About',
+          type: 'ContentListScreen',
+          design: 'tight',
+          contents: [
+            {
+              type: 'Header',
+              headerText: 'About TD',
+              lineTexts: [
+                'Transferable Discipleship is a tool for simple, reproducible Christian discipleship.',
+              ],
+              design: 'screen',
+            },
+            {
+              type: 'Slide',
+              headerText: 'Create Your Own Discipleship App',
+              design: 'tight',
+              contents: [
+                'Want to make your own discipleship app like this one?',
+                {
+                  type: 'ActionButton',
+                  design: 'answer',
+                  text: 'Fork us on GitHub!',
+                  action: {
+                    type: 'link',
+                    to: 'https://github.com/tjcouch1/transferable-discipleship',
+                  },
+                },
+              ],
+            },
+            {
+              type: 'Slide',
+              headerText: 'Credits and Licensing',
+              design: 'tight',
+              contents: [
+                "- Disciple-making content of the app compiled by *Content Creator*.\n- App developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved from Tim Morgan's bible-api.com",
+                {
+                  type: 'ActionButton',
+                  design: 'answer',
+                  text: 'Licensing Info',
+                  action: {
+                    type: 'navigate',
+                    to: 'Licensing',
+                  },
+                },
+              ],
+            },
+          ],
+          subscreens: [
+            {
+              id: 'Licensing',
+              type: 'ContentListScreen',
+              design: 'tight',
+              contents: [
+                {
+                  type: 'Header',
+                  headerText: 'Licensing Info',
+                  design: 'screen',
+                },
+                {
+                  type: 'Slide',
+                  headerText: 'Transferable Discipleship',
+                  design: 'tight',
+                  contents: [
+                    'Transferable Discipleship is licensed under the GPL-3.0 License.',
+                  ],
+                },
+                {
+                  type: 'Slide',
+                  headerText: 'World English Bible',
+                  design: 'tight',
+                  contents: [
+                    'The World English Bible is public domain.',
+                    {
+                      type: 'ActionButton',
+                      design: 'answer',
+                      text: 'WorldEnglish.Bible',
+                      action: {
+                        type: 'link',
+                        to: 'https://worldenglish.bible/',
+                      },
+                    },
+                  ],
+                },
+                {
+                  type: 'Slide',
+                  headerText: 'Fonts',
+                  design: 'tight',
+                  contents: [
+                    '- Libre Franklin is licensed under the SIL Open Font License Version 1.1.',
+                    {
+                      type: 'ActionButton',
+                      design: 'answer',
+                      text: 'Libre Franklin GitHub',
+                      action: {
+                        type: 'link',
+                        to: 'https://github.com/impallari/Libre-Franklin',
+                      },
+                    },
+                    '- Open Sauce One is licensed under the SIL Open Font License Version 1.1.',
+                    {
+                      type: 'ActionButton',
+                      design: 'answer',
+                      text: 'Open Sauce GitHub',
+                      action: {
+                        type: 'link',
+                        to: 'https://github.com/marcologous/Open-Sauce-Fonts',
+                      },
+                    },
+                  ],
                 },
               ],
             },
