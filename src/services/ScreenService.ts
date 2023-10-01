@@ -460,7 +460,7 @@ const serializedAppDataNew: SerializedAppData = {
                   headerText: 'Software Licenses',
                   design: 'tight',
                   contents: [
-                    'This software was created using many amazing libraries. Beware there are many licenses to display on the following page.',
+                    'This software was created using many amazing libraries. Beware there are many licenses to display on the following page. It will take a long time to load.',
                     {
                       type: 'ActionButton',
                       design: 'answer',
@@ -480,6 +480,9 @@ const serializedAppDataNew: SerializedAppData = {
     },
   ],
 };
+
+/** Screen data for software license info. Accessed on path `app:/__licenses` */
+const licensesScreen = require('../../assets/data/licenses/licenses.json');
 
 function assertScreenIdIsValid(screenId: string) {
   if (!screenId)
@@ -548,7 +551,7 @@ function deserializeAppData(appData: SerializedAppData): AppData {
     screens: addSubscreensToMap(
       new Map<string, ScreenData>(),
       ROOT_PATH,
-      appData.screens,
+      [...appData.screens, licensesScreen],
     ),
   };
 }
