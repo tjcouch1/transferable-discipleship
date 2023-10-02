@@ -10,6 +10,8 @@
 import fs from 'fs';
 import path from 'path';
 import { ContentListScreenData } from '../src/components/screens/ContentListScreen';
+import { SlideContentData } from '../src/components/contents/Slide';
+import packageJson from '../package.json';
 
 type LicenseInfo = {
   licenses: string;
@@ -70,7 +72,11 @@ fs.readFile(inputFilePath, 'utf8', (err, licensesJson) => {
 
 /** Transforms license info from `license-checker` to content */
 function transformLicenses(licenses: Licenses): ContentListScreenData {
-  // Example transformation: Convert all string values to uppercase
+  const appKey = `${packageJson.name}@${packageJson.version}`;
+
+  // Set `transferable-discipleship`'s license appropriately (it's showing up as UNLICENSED, so I think `license-checker` doesn't support GPL)
+  licenses[appKey].licenses = packageJson.license;
+
   const licensesScreen: ContentListScreenData = {
     id: '__licenses',
     title: 'Software License Info',
@@ -81,22 +87,36 @@ function transformLicenses(licenses: Licenses): ContentListScreenData {
       headerText: moduleName,
       design: 'tight',
       contents: [
-        `${licenseInfo.description ? `${licenseInfo.description}\n----\n` : ''}${
-          licenseInfo.copyright ? `${licenseInfo.copyright}\n` : ''
-        }${
+        `${
+          licenseInfo.description ? `${licenseInfo.description}\n----\n` : ''
+        }${licenseInfo.copyright ? `${licenseInfo.copyright}\n` : ''}${
           licenseInfo.publisher ? `Publisher: ${licenseInfo.publisher}\n` : ''
         }${licenseInfo.email ? `${licenseInfo.email}\n` : ''}${
           licenseInfo.repository ? `${licenseInfo.repository}\n` : ''
         }${
-          licenseInfo.licenses
+          licenseInfo.licenses && licenseInfo.licenses !== 'UNLICENSED'
             ? `License: ${licenseInfo.licenses}${
-                licenseInfo.licenseModified !== 'no' ? '*' : ''
+                licenseInfo.licenseModified !== 'no' ? ' (Modified)' : ''
               }`
-            : 'Unknown'
-        }\n----\n${licenseInfo.licenseText ? `${licenseInfo.licenseText}` : ''}`,
+            : 'License: Unknown'
+        }\n----\n${
+          licenseInfo.licenseText ? `${licenseInfo.licenseText}` : ''
+        }`,
       ],
     })),
   };
+
+  // Move the `transferable-discipleship` license info to the top
+  licensesScreen.contents.unshift(
+    ...licensesScreen.contents.splice(
+      licensesScreen.contents.findIndex(
+        content =>
+          ((content as SlideContentData)?.headerText as string) === appKey,
+      ),
+      1,
+    ),
+  );
+
   licensesScreen.contents.unshift({
     type: 'Header',
     headerText: 'Software License Info',

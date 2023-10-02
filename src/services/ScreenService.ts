@@ -324,24 +324,6 @@ const serializedAppDataNew: SerializedAppData = {
                 'After each passage of Scripture, some hints are given to help guide the conversation and give an idea how each verse helps answer the question.',
               ],
             },
-            {
-              type: 'Slide',
-              canClose: false,
-              headerText: 'Feedback?',
-              design: 'tight',
-              contents: [
-                'Found a problem? Want a feature? Other feedback?',
-                {
-                  type: 'ActionButton',
-                  text: 'Let us know',
-                  design: 'answer',
-                  action: {
-                    type: 'link',
-                    to: 'https://github.com/tjcouch1/transferable-discipleship/issues',
-                  },
-                },
-              ],
-            },
           ],
         },
         {
@@ -356,6 +338,23 @@ const serializedAppDataNew: SerializedAppData = {
                 'Transferable Discipleship is a tool for simple, reproducible Christian discipleship.',
               ],
               design: 'screen',
+            },
+            {
+              type: 'Slide',
+              headerText: 'Feedback?',
+              design: 'tight',
+              contents: [
+                'Found a problem? Want a feature? Other feedback?',
+                {
+                  type: 'ActionButton',
+                  text: 'Let us know',
+                  design: 'answer',
+                  action: {
+                    type: 'link',
+                    to: 'https://github.com/tjcouch1/transferable-discipleship/issues',
+                  },
+                },
+              ],
             },
             {
               type: 'Slide',
@@ -379,7 +378,7 @@ const serializedAppDataNew: SerializedAppData = {
               headerText: 'Credits and Licensing',
               design: 'tight',
               contents: [
-                "- Disciple-making content of the app compiled by *Content Creator*.\n- App developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved from Tim Morgan's bible-api.com",
+                "- Disciple-making content of the app compiled by *Content Creator*.\n- App developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
                 {
                   type: 'ActionButton',
                   design: 'answer',
@@ -408,7 +407,7 @@ const serializedAppDataNew: SerializedAppData = {
                   headerText: 'Transferable Discipleship',
                   design: 'tight',
                   contents: [
-                    'Transferable Discipleship is licensed under the GPL-3.0 License.',
+                    'Transferable Discipleship Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below.',
                   ],
                 },
                 {
@@ -460,7 +459,7 @@ const serializedAppDataNew: SerializedAppData = {
                   headerText: 'Software Licenses',
                   design: 'tight',
                   contents: [
-                    'This software was created using many amazing libraries. Beware there are many licenses to display on the following page. It will take a long time to load.',
+                    'This software was created using many amazing libraries including React Native and Expo. Beware there are many licenses to display on the following page. It will take a long time to load.',
                     {
                       type: 'ActionButton',
                       design: 'answer',
