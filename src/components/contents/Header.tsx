@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
-import Theme from '../../Theme';
+import theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
@@ -10,7 +10,7 @@ import { Text, TextData, getTextDataObject } from './Text';
 export interface HeaderContentData extends ContentDataBase {
   type: 'Header';
   headerText: HeaderTextData;
-  subheaderText: SubheaderTextData;
+  subheaderText?: SubheaderTextData;
   lineTexts?: TextData[];
   design?: HeaderDesign;
   style?: StyleProp<ViewStyle>;
@@ -36,17 +36,21 @@ export const Header = ({
 }: HeaderProps) => {
   const designStyle = designStyles[design];
   const headerTextObject = getTextDataObject(headerText);
-  const subheaderTextObject = getTextDataObject(subheaderText);
+  const subheaderTextObject = subheaderText
+    ? getTextDataObject(subheaderText)
+    : undefined;
   return (
     <View style={[designStyle.headerView, style]}>
       <HeaderText
         {...headerTextObject}
         style={[designStyle.headerText, headerTextObject.style]}
       />
-      <SubheaderText
-        {...subheaderTextObject}
-        style={[designStyle.subheaderText, subheaderTextObject.style]}
-      />
+      {subheaderTextObject && (
+        <SubheaderText
+          {...subheaderTextObject}
+          style={[designStyle.subheaderText, subheaderTextObject.style]}
+        />
+      )}
       {lineTexts.map(lineText => {
         const lineTextObject = getTextDataObject(lineText);
         return (
@@ -66,22 +70,25 @@ const designStyles = createDesignStyleSheets(
     headerView: {
       paddingTop: 60,
       paddingBottom: 40,
-      backgroundColor: Theme.default.backgroundColor,
+      backgroundColor: theme.header.background,
       paddingHorizontal: 15,
       width: '100%',
       borderBottomWidth: 10,
-      borderBottomColor: Theme.dimmed.backgroundColor,
+      borderBottomColor: theme.header.bottom,
     },
     headerText: {
       textAlign: 'center',
+      color: theme.header.headerText,
     },
     subheaderText: {
       marginTop: 5,
       textAlign: 'center',
+      color: theme.header.subheaderText,
     },
     lineText: {
       marginTop: 20,
       textAlign: 'center',
+      color: theme.header.lineText,
     },
   },
   {
@@ -92,7 +99,7 @@ const designStyles = createDesignStyleSheets(
       },
       headerText: {
         fontWeight: '700',
-        fontSize: 20,
+        fontSize: 25,
       },
     },
     section: {

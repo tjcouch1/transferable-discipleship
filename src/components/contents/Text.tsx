@@ -4,7 +4,7 @@ import {
   Text as ReactText,
   TextStyle,
 } from 'react-native';
-import Theme from '../../Theme';
+import theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
 import { isString } from '../../util/Util';
@@ -80,22 +80,24 @@ export const Text = (props: TextProps) => {
 const designStyles = createDesignStyleSheets(
   {
     lineText: {
+      fontFamily: 'OpenSauceOne',
       fontSize: 20,
-      color: Theme.default.color,
+      color: theme.text.lineText,
     },
   },
   {
     header: {
       lineText: {
+        fontFamily: 'LibreFranklin',
         fontSize: 30,
         fontWeight: '900',
-        color: Theme.default.color,
+        color: theme.text.headerText,
       },
     },
     subheader: {
       lineText: {
         fontSize: 16,
-        color: Theme.default.color,
+        color: theme.text.subheaderText,
       },
     },
     small: {

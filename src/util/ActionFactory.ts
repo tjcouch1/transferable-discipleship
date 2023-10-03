@@ -3,6 +3,7 @@ import { ButtonDataBase } from '../components/contents/buttons/Buttons';
 import { BasicButtonData } from '../components/contents/buttons/BasicButton';
 import { RouteProp } from '@react-navigation/native';
 import { pathJoin } from './PathUtil';
+import { Linking } from 'react-native';
 
 //----- ACTION TYPES -----//
 
@@ -31,6 +32,11 @@ export const ActionFactory: {
     () => {
       navigation.navigate(pathJoin(route.name, to));
     },
+  link:
+    ({ to }: PropsWithNavigation<LinkActionData>) =>
+    async () => {
+      if (await Linking.canOpenURL(to)) Linking.openURL(to);
+    },
 };
 
 /** All available action types. An action is a function that does something based on the data that defines it */
@@ -42,5 +48,11 @@ export type NavigateActionData = {
   to: string;
 } & ActionDataBase;
 
+/** The data that defines an action to open a link */
+export type LinkActionData = {
+  type: 'link';
+  to: string;
+} & ActionDataBase;
+
 /** Defining data for every action type. All action types should extend ActionDataBase  */
-export type ActionData = NavigateActionData;
+export type ActionData = NavigateActionData | LinkActionData;

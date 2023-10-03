@@ -76,6 +76,14 @@ const serializedAppDataNew: SerializedAppData = {
           },
         },
         {
+          type: 'ActionButton',
+          text: 'About',
+          action: {
+            type: 'navigate',
+            to: 'About',
+          },
+        },
+        {
           type: 'ContentList',
           openIndexDefault: 0,
           padTop: false,
@@ -91,6 +99,7 @@ const serializedAppDataNew: SerializedAppData = {
             },
             {
               type: 'ScriptureSlide',
+              design: 'primary',
               canClose: false,
               scripture: {
                 reference: 'Romans 12:1-2',
@@ -301,31 +310,179 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Header',
               headerText: 'How to use this app',
-              subheaderText: '',
               lineTexts: [
                 'To grow in your faith, there is no better place to turn than allowing the Bible to work in your heart. Scripture is the foundation for this material.',
               ],
-              design: 'title',
-              style: {
-                paddingVertical: 10
-              }
+              design: 'screen',
             },
             {
               type: 'Slide',
               canClose: false,
               headerText: 'The format of this material is simple:',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 '1. Read the question.\n2. Read what the Bible says to answer the question.\n3. Discuss each question based on the Scripture given.',
-                'After each passage of Scripture, some hints are given to help guide the conversation and give an idea how each verse helps answer the question.'
-              ]
-            }
+                'After each passage of Scripture, some hints are given to help guide the conversation and give an idea how each verse helps answer the question.',
+              ],
+            },
+          ],
+        },
+        {
+          id: 'About',
+          type: 'ContentListScreen',
+          design: 'tight',
+          contents: [
+            {
+              type: 'Header',
+              headerText: 'About TD',
+              lineTexts: [
+                'Transferable Discipleship is a tool for simple, reproducible Christian discipleship.',
+              ],
+              design: 'screen',
+            },
+            {
+              type: 'Slide',
+              headerText: 'Feedback?',
+              contentDesign: 'tight',
+              contents: [
+                'Found a problem? Want a feature? Other feedback?',
+                {
+                  type: 'ActionButton',
+                  text: 'Let us know',
+                  design: 'answer',
+                  action: {
+                    type: 'link',
+                    to: 'https://github.com/tjcouch1/transferable-discipleship/issues',
+                  },
+                },
+              ],
+            },
+            {
+              type: 'Slide',
+              headerText: 'Create Your Own Discipleship App',
+              contentDesign: 'tight',
+              contents: [
+                'Want to make your own discipleship app like this one?',
+                {
+                  type: 'ActionButton',
+                  design: 'answer',
+                  text: 'Fork us on GitHub!',
+                  action: {
+                    type: 'link',
+                    to: 'https://github.com/tjcouch1/transferable-discipleship',
+                  },
+                },
+              ],
+            },
+            {
+              type: 'Slide',
+              headerText: 'Credits and Licensing',
+              contentDesign: 'tight',
+              contents: [
+                "- Disciple-making content of the app compiled by *Content Creator*.\n- App developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
+                {
+                  type: 'ActionButton',
+                  design: 'answer',
+                  text: 'Licensing Info',
+                  action: {
+                    type: 'navigate',
+                    to: 'Licensing',
+                  },
+                },
+              ],
+            },
+          ],
+          subscreens: [
+            {
+              id: 'Licensing',
+              type: 'ContentListScreen',
+              design: 'tight',
+              contents: [
+                {
+                  type: 'Header',
+                  headerText: 'Licensing Info',
+                  design: 'screen',
+                },
+                {
+                  type: 'Slide',
+                  headerText: 'Transferable Discipleship',
+                  contentDesign: 'tight',
+                  contents: [
+                    'Transferable Discipleship Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below.',
+                  ],
+                },
+                {
+                  type: 'Slide',
+                  headerText: 'World English Bible',
+                  contentDesign: 'tight',
+                  contents: [
+                    'The World English Bible is public domain.',
+                    {
+                      type: 'ActionButton',
+                      design: 'answer',
+                      text: 'WorldEnglish.Bible',
+                      action: {
+                        type: 'link',
+                        to: 'https://worldenglish.bible/',
+                      },
+                    },
+                  ],
+                },
+                {
+                  type: 'Slide',
+                  headerText: 'Fonts',
+                  contentDesign: 'tight',
+                  contents: [
+                    '- Libre Franklin is licensed under the SIL Open Font License Version 1.1.',
+                    {
+                      type: 'ActionButton',
+                      design: 'answer',
+                      text: 'Libre Franklin GitHub',
+                      action: {
+                        type: 'link',
+                        to: 'https://github.com/impallari/Libre-Franklin',
+                      },
+                    },
+                    '- Open Sauce One is licensed under the SIL Open Font License Version 1.1.',
+                    {
+                      type: 'ActionButton',
+                      design: 'answer',
+                      text: 'Open Sauce GitHub',
+                      action: {
+                        type: 'link',
+                        to: 'https://github.com/marcologous/Open-Sauce-Fonts',
+                      },
+                    },
+                  ],
+                },
+                {
+                  type: 'Slide',
+                  headerText: 'Software Licenses',
+                  contentDesign: 'tight',
+                  contents: [
+                    'This software was created using many amazing libraries including React Native and Expo. Beware there are many licenses to display on the following page. It will take a long time to load.',
+                    {
+                      type: 'ActionButton',
+                      design: 'answer',
+                      text: 'Software License Info',
+                      action: {
+                        type: 'navigate',
+                        to: 'app:/__licenses',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],
     },
   ],
 };
+
+/** Screen data for software license info. Accessed on path `app:/__licenses` */
+const licensesScreen = require('../../assets/data/licenses/licenses.json');
 
 function assertScreenIdIsValid(screenId: string) {
   if (!screenId)
@@ -394,7 +551,7 @@ function deserializeAppData(appData: SerializedAppData): AppData {
     screens: addSubscreensToMap(
       new Map<string, ScreenData>(),
       ROOT_PATH,
-      appData.screens,
+      [...appData.screens, licensesScreen],
     ),
   };
 }
