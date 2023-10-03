@@ -74,7 +74,7 @@ fs.readFile(inputFilePath, 'utf8', (err, licensesJson) => {
 function transformLicenses(licenses: Licenses): ContentListScreenData {
   const appKey = `${packageJson.name}@${packageJson.version}`;
 
-  // Set `transferable-discipleship`'s license appropriately (it's showing up as UNLICENSED, so I think `license-checker` doesn't support GPL)
+  // Set the app's license appropriately (it's showing up as UNLICENSED, so maybe `license-checker` doesn't support GPL or the main package's license or something)
   licenses[appKey].licenses = packageJson.license;
 
   const licensesScreen: ContentListScreenData = {
@@ -85,7 +85,7 @@ function transformLicenses(licenses: Licenses): ContentListScreenData {
     contents: Object.entries(licenses).map(([moduleName, licenseInfo]) => ({
       type: 'Slide',
       headerText: moduleName,
-      design: 'tight',
+      contentDesign: 'tight',
       contents: [
         `${
           licenseInfo.description ? `${licenseInfo.description}\n----\n` : ''
@@ -106,13 +106,18 @@ function transformLicenses(licenses: Licenses): ContentListScreenData {
     })),
   };
 
-  // Move the `transferable-discipleship` license info to the top
+  // Move the app's license info to the top and make it primary
+  const appContentIndex = licensesScreen.contents.findIndex(
+    content => ((content as SlideContentData)?.headerText as string) === appKey,
+  );
+
+  if (appContentIndex < 0) throw new Error(`License info for ${appKey} not found!`);
+
+  (licensesScreen.contents[appContentIndex] as SlideContentData).design = 'primary';
+
   licensesScreen.contents.unshift(
     ...licensesScreen.contents.splice(
-      licensesScreen.contents.findIndex(
-        content =>
-          ((content as SlideContentData)?.headerText as string) === appKey,
-      ),
+      appContentIndex,
       1,
     ),
   );
