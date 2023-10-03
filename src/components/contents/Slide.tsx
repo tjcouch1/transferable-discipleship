@@ -6,9 +6,9 @@ import {
   TouchableWithoutFeedback,
   Platform,
 } from 'react-native';
-import Theme from '../../Theme';
+import theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
-import { ContentList, ContentListData } from './ContentList';
+import { ContentList, ContentListData, ContentListDesign } from './ContentList';
 import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
 import { Text, getTextDataObject } from './Text';
@@ -20,8 +20,14 @@ export type SlideContentData = ContentDataBase & {
   canClose?: boolean;
   /** Whether the slide is open by default. Only applicable if `canClose` is true */
   isOpenDefault?: boolean;
+  /** The design for the slide overall */
+  design?: SlideDesign;
+  /** The design for the content list in the slide */
+  contentDesign?: ContentListDesign
   style?: StyleProp<ViewStyle>;
-} & ContentListData;
+} & Omit<ContentListData, 'design'>;
+
+type SlideDesign = 'normal' | 'primary';
 
 /**
  * Data that defines Slide but without the type
@@ -42,6 +48,7 @@ export const Slide = (slideProps: SlideProps) => {
     isOpenDefault = false,
     isOpen: isOpenProp,
     onChange,
+    design = 'normal',
     style,
     ...contentListProps
   } = slideProps;
@@ -58,7 +65,7 @@ export const Slide = (slideProps: SlideProps) => {
   }, [canClose, isOpenProp]);
 
   // Just use the one design style available
-  const designStyle = designStyles[''];
+  const designStyle = designStyles[design];
   return (
     <View
       style={[
@@ -102,6 +109,7 @@ export const Slide = (slideProps: SlideProps) => {
           isOpen ? undefined : designStyle.closedContent,
         ]}
         {...contentListProps}
+        design={contentListProps.contentDesign}
       />
     </View>
   );
@@ -110,10 +118,10 @@ export const Slide = (slideProps: SlideProps) => {
 const designStyles = createDesignStyleSheets(
   {
     slideView: {
-      backgroundColor: Theme.default.backgroundColor,
+      backgroundColor: theme.fillLight,
       width: '90%',
       borderBottomWidth: 10,
-      borderBottomColor: Theme.dimmed.backgroundColor,
+      borderBottomColor: theme.fillMid,
     },
     slideViewOpen: {
       paddingBottom: 10,
@@ -139,6 +147,7 @@ const designStyles = createDesignStyleSheets(
     headerText: {
       fontSize: 23,
       fontWeight: '700',
+      color: theme.accentDark
     },
     chevron: {
       fontWeight: '700',
@@ -151,5 +160,11 @@ const designStyles = createDesignStyleSheets(
       display: 'none',
     },
   },
-  {},
+  {
+    primary: {
+      headerText: {
+        color: theme.primaryLight
+      }
+    }
+  },
 );

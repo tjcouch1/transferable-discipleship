@@ -3,7 +3,7 @@ import {
   TouchableOpacity,
   GestureResponderEvent,
 } from 'react-native';
-import Theme from '../../../Theme';
+import theme from '../../../Theme';
 import { createDesignStyleSheets } from '../../../util/DesignStyleSheets';
 import { Text, TextData, getTextDataObject } from '../Text';
 import { ButtonDataBase } from './Buttons';
@@ -48,13 +48,13 @@ export const BasicButton = ({
 const designStyles = createDesignStyleSheets(
   {
     navButton: {
-      backgroundColor: Theme.default.backgroundColor,
+      backgroundColor: theme.primary,
       padding: 12,
       borderRadius: 12,
       width: '75%'
     },
     navButtonText: {
-      color: Theme.default.color,
+      color: theme.textLight,
       fontSize: 22,
       textAlign: 'center',
     },
@@ -62,13 +62,13 @@ const designStyles = createDesignStyleSheets(
   {
     answer: {
       navButton: {
-        backgroundColor: Theme.default.color,
+        backgroundColor: theme.primaryLight,
         padding: 5,
         borderRadius: 4,
         width: 'auto'
       },
       navButtonText: {
-        color: Theme.default.backgroundColor,
+        color: theme.textLight,
         fontSize: 17,
       },
     },

@@ -99,6 +99,7 @@ const serializedAppDataNew: SerializedAppData = {
             },
             {
               type: 'ScriptureSlide',
+              design: 'primary',
               canClose: false,
               scripture: {
                 reference: 'Romans 12:1-2',
@@ -318,7 +319,7 @@ const serializedAppDataNew: SerializedAppData = {
               type: 'Slide',
               canClose: false,
               headerText: 'The format of this material is simple:',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 '1. Read the question.\n2. Read what the Bible says to answer the question.\n3. Discuss each question based on the Scripture given.',
                 'After each passage of Scripture, some hints are given to help guide the conversation and give an idea how each verse helps answer the question.',
@@ -342,7 +343,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Slide',
               headerText: 'Feedback?',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 'Found a problem? Want a feature? Other feedback?',
                 {
@@ -359,7 +360,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Slide',
               headerText: 'Create Your Own Discipleship App',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 'Want to make your own discipleship app like this one?',
                 {
@@ -376,7 +377,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Slide',
               headerText: 'Credits and Licensing',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 "- Disciple-making content of the app compiled by *Content Creator*.\n- App developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
                 {
@@ -405,7 +406,7 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'Slide',
                   headerText: 'Transferable Discipleship',
-                  design: 'tight',
+                  contentDesign: 'tight',
                   contents: [
                     'Transferable Discipleship Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below.',
                   ],
@@ -413,7 +414,7 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'Slide',
                   headerText: 'World English Bible',
-                  design: 'tight',
+                  contentDesign: 'tight',
                   contents: [
                     'The World English Bible is public domain.',
                     {
@@ -430,7 +431,7 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'Slide',
                   headerText: 'Fonts',
-                  design: 'tight',
+                  contentDesign: 'tight',
                   contents: [
                     '- Libre Franklin is licensed under the SIL Open Font License Version 1.1.',
                     {
@@ -457,7 +458,7 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'Slide',
                   headerText: 'Software Licenses',
-                  design: 'tight',
+                  contentDesign: 'tight',
                   contents: [
                     'This software was created using many amazing libraries including React Native and Expo. Beware there are many licenses to display on the following page. It will take a long time to load.',
                     {

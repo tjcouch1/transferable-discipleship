@@ -18,7 +18,7 @@ import { Screens } from './src/components/screens/Screens';
 import WebWrapper from './src/components/WebWrapper';
 import ContentsModuleContext from './src/components/contents/ContentsContext';
 import * as ContentsModule from './src/components/contents/Contents';
-import Theme from './src/Theme';
+import theme from './src/Theme';
 import { isWeb } from './src/util/Util';
 import { preventAutoHideAsync, hideAsync } from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
@@ -69,17 +69,17 @@ export default function App() {
                     title: screen.title || screen.id,
                     // Header background
                     headerStyle: {
-                      backgroundColor: Theme.default.backgroundColor,
+                      backgroundColor: theme.primary,
                     },
                     // Remove the white line at the bottom of the header
                     headerShadowVisible: !isWeb(),
                     // Back button and header text color
-                    headerTintColor: Theme.default.color,
+                    headerTintColor: theme.fillLight,
                     // App background
                     contentStyle: {
-                      backgroundColor: Theme.background.backgroundColor,
+                      backgroundColor: theme.background,
                       borderTopWidth: isWeb() ? 1 : 0,
-                      borderTopColor: Theme.dimmed.backgroundColor,
+                      borderTopColor: theme.fillDark,
                     },
                     headerShown: screen.showNavigationBar ?? true,
                   }}

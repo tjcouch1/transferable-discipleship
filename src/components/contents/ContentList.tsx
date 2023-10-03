@@ -20,7 +20,8 @@ export interface ContentListContentData extends ContentDataBase {
   style?: StyleProp<ViewStyle>;
 }
 
-type ContentListDesign = keyof typeof ContentListDesignPadding;
+export type ContentListDesign = keyof typeof ContentListDesignPadding;
+
 const ContentListDesignPadding = {
   'no-padding': 0,
   tight: 15,

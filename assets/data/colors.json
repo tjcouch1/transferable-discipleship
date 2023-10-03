@@ -1,0 +1,14 @@
+{
+  "light": {
+    "background": "#ebecec",
+    "textDark": "#383f43",
+    "textLight": "#ffffff",
+    "fillLight": "#ffffff",
+    "fillMid": "#9c9fa1",
+    "fillDark": "#383f43",
+    "primary": "#007bc6",
+    "primaryLight": "#00c7e2",
+    "accent": "#ffcf07",
+    "accentDark": "#ff9700"
+  }
+}

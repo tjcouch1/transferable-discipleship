@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
-import Theme from '../../Theme';
+import theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
@@ -70,22 +70,25 @@ const designStyles = createDesignStyleSheets(
     headerView: {
       paddingTop: 60,
       paddingBottom: 40,
-      backgroundColor: Theme.default.backgroundColor,
+      backgroundColor: theme.primary,
       paddingHorizontal: 15,
       width: '100%',
       borderBottomWidth: 10,
-      borderBottomColor: Theme.dimmed.backgroundColor,
+      borderBottomColor: theme.fillMid,
     },
     headerText: {
       textAlign: 'center',
+      color: theme.textLight,
     },
     subheaderText: {
       marginTop: 5,
       textAlign: 'center',
+      color: theme.textLight,
     },
     lineText: {
       marginTop: 20,
       textAlign: 'center',
+      color: theme.textLight,
     },
   },
   {
