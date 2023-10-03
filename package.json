@@ -1,5 +1,5 @@
 {
-  "name": "transferable-discipleship",
+  "name": "discipleship-app-template",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "test": "jest",
     "expo:upgrade": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo install --fix",
     "postinstall": "npx patch-package",
-    "licenses": "license-checker --json --out assets/data/licenses/licenses-raw.json --customPath license-checker.json && ts-node lib/transform-licenses-content.ts assets/data/licenses/licenses-raw.json assets/data/licenses/licenses.json"
+    "licenses": "license-checker --json --out assets/data/licenses/licenses-raw.json --customPath lib/license-checker.json && ts-node lib/transform-licenses-content.ts assets/data/licenses/licenses-raw.json assets/data/licenses/licenses.json"
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
@@ -44,12 +44,11 @@
     "typescript": "^5.1.3"
   },
   "private": true,
-  "author": "TJ Couch tjcouch@gmail.com",
-  "copyright": "Copyright 2023 TJ Couch",
-  "email": "tjcouch1@gmail.com",
+  "author": "<content_creator> <contact_email>",
+  "copyright": "Copyright 2023 <content_creator>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjcouch1/transferable-discipleship"
+    "url": "<repo_url>"
   },
   "license": "GPL-3.0-only"
 }

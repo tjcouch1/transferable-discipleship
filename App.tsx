@@ -1,6 +1,6 @@
 /**
  *
- * Transferable Discipleship -
+ * Discipleship App Template -
  *
  */
 
