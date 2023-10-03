@@ -118,10 +118,10 @@ export const Slide = (slideProps: SlideProps) => {
 const designStyles = createDesignStyleSheets(
   {
     slideView: {
-      backgroundColor: theme.fillLight,
+      backgroundColor: theme.slide.background,
       width: '90%',
       borderBottomWidth: 10,
-      borderBottomColor: theme.fillMid,
+      borderBottomColor: theme.slide.bottom,
     },
     slideViewOpen: {
       paddingBottom: 10,
@@ -147,7 +147,7 @@ const designStyles = createDesignStyleSheets(
     headerText: {
       fontSize: 23,
       fontWeight: '700',
-      color: theme.accentDark
+      color: theme.slide.headerText,
     },
     chevron: {
       fontWeight: '700',
@@ -163,7 +163,7 @@ const designStyles = createDesignStyleSheets(
   {
     primary: {
       headerText: {
-        color: theme.primaryLight
+        color: theme.slide.headerTextPrimary
       }
     }
   },

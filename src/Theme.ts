@@ -1,16 +1,38 @@
 import { ColorValue, StyleSheet } from 'react-native';
 
 type Colors = {
-  background: string;
-  textDark: string;
-  textLight: string;
-  fillLight: string;
-  fillMid: string;
-  fillDark: string;
-  primary: string;
-  primaryLight: string;
-  accent: string;
-  accentDark: string;
+  app: {
+    background: string;
+  };
+  navigation: {
+    background: string;
+    text: string;
+    bottom: string;
+  };
+  header: {
+    background: string;
+    headerText: string;
+    subheaderText: string;
+    lineText: string;
+    bottom: string;
+  };
+  slide: {
+    background: string;
+    headerText: string;
+    headerTextPrimary: string;
+    bottom: string;
+  };
+  button: {
+    background: string;
+    text: string;
+    backgroundAnswer: string;
+    textAnswer: string;
+  };
+  text: {
+    headerText: string;
+    subheaderText: string;
+    lineText: string;
+  };
 };
 
 type ColorMap = {

@@ -82,7 +82,7 @@ const designStyles = createDesignStyleSheets(
     lineText: {
       fontFamily: 'OpenSauceOne',
       fontSize: 20,
-      color: theme.textDark,
+      color: theme.text.lineText,
     },
   },
   {
@@ -91,13 +91,13 @@ const designStyles = createDesignStyleSheets(
         fontFamily: 'LibreFranklin',
         fontSize: 30,
         fontWeight: '900',
-        color: theme.textDark,
+        color: theme.text.headerText,
       },
     },
     subheader: {
       lineText: {
         fontSize: 16,
-        color: theme.textDark,
+        color: theme.text.subheaderText,
       },
     },
     small: {

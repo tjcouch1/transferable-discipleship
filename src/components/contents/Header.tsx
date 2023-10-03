@@ -70,25 +70,25 @@ const designStyles = createDesignStyleSheets(
     headerView: {
       paddingTop: 60,
       paddingBottom: 40,
-      backgroundColor: theme.primary,
+      backgroundColor: theme.header.background,
       paddingHorizontal: 15,
       width: '100%',
       borderBottomWidth: 10,
-      borderBottomColor: theme.fillMid,
+      borderBottomColor: theme.header.bottom,
     },
     headerText: {
       textAlign: 'center',
-      color: theme.textLight,
+      color: theme.header.headerText,
     },
     subheaderText: {
       marginTop: 5,
       textAlign: 'center',
-      color: theme.textLight,
+      color: theme.header.subheaderText,
     },
     lineText: {
       marginTop: 20,
       textAlign: 'center',
-      color: theme.textLight,
+      color: theme.header.lineText,
     },
   },
   {

@@ -69,17 +69,17 @@ export default function App() {
                     title: screen.title || screen.id,
                     // Header background
                     headerStyle: {
-                      backgroundColor: theme.primary,
+                      backgroundColor: theme.navigation.background,
                     },
                     // Remove the white line at the bottom of the header
                     headerShadowVisible: !isWeb(),
                     // Back button and header text color
-                    headerTintColor: theme.fillLight,
+                    headerTintColor: theme.navigation.text,
                     // App background
                     contentStyle: {
-                      backgroundColor: theme.background,
+                      backgroundColor: theme.app.background,
                       borderTopWidth: isWeb() ? 1 : 0,
-                      borderTopColor: theme.fillDark,
+                      borderTopColor: theme.navigation.bottom,
                     },
                     headerShown: screen.showNavigationBar ?? true,
                   }}

@@ -48,13 +48,13 @@ export const BasicButton = ({
 const designStyles = createDesignStyleSheets(
   {
     navButton: {
-      backgroundColor: theme.primary,
+      backgroundColor: theme.button.background,
       padding: 12,
       borderRadius: 12,
       width: '75%'
     },
     navButtonText: {
-      color: theme.textLight,
+      color: theme.button.text,
       fontSize: 22,
       textAlign: 'center',
     },
@@ -62,13 +62,13 @@ const designStyles = createDesignStyleSheets(
   {
     answer: {
       navButton: {
-        backgroundColor: theme.primaryLight,
+        backgroundColor: theme.button.backgroundAnswer,
         padding: 5,
         borderRadius: 4,
         width: 'auto'
       },
       navButtonText: {
-        color: theme.textLight,
+        color: theme.button.textAnswer,
         fontSize: 17,
       },
     },
