@@ -1,9 +1,23 @@
+/**
+ * Copyright (C) 2023 TJ Couch
+ * This file is part of discipleship‑app‑template.
+ *
+ * discipleship‑app‑template is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * discipleship‑app‑template is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import React from 'react';
-import {
-  StyleProp,
-  Text as ReactText,
-  TextStyle,
-} from 'react-native';
+import { StyleProp, Text as ReactText, TextStyle } from 'react-native';
 import theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
@@ -14,7 +28,9 @@ import { GestureResponderEvent } from 'react-native';
 export type TextDataObjectBase = { text: string };
 
 /** Simple defining data for displaying text */
-export interface TextContentDataObject extends ContentDataBase, TextDataObjectBase {
+export interface TextContentDataObject
+  extends ContentDataBase,
+    TextDataObjectBase {
   type: 'Text';
   design?: TextDesign;
   style?: StyleProp<TextStyle>;
@@ -43,7 +59,7 @@ export type TextPropsBase = {
 /** Props the Text needs to function */
 export type TextProps = TextData & TextPropsBase;
 
-// Have to bake out any optional parameter into specifically defined for TypeScript to realize we provdied it
+// Have to bake out any optional parameter into specifically defined for TypeScript to realize we provided it
 const DEFAULT_PROPS: Omit<TextDataObject, 'design' | 'text'> & {
   design: TextDesign;
 } = {
@@ -74,7 +90,11 @@ export const Text = (props: TextProps) => {
   };
 
   const designStyle = designStyles[design];
-  return <ReactText onPress={onPress} style={[designStyle.lineText, style]}>{text}</ReactText>;
+  return (
+    <ReactText onPress={onPress} style={[designStyle.lineText, style]}>
+      {text}
+    </ReactText>
+  );
 };
 
 const designStyles = createDesignStyleSheets(

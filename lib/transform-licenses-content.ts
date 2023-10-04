@@ -4,7 +4,8 @@
  * First argument passed is the input path relative to CWD
  * Second argument passed is the output path relative to CWD
  *
- * Code started by ChatGPT and modified by TJ Couch
+ * This code was generated using OpenAI's ChatGPT and modified by TJ Couch. For more information about ChatGPT and its capabilities, visit [OpenAI's website](https://www.openai.com).
+ * Prompt: "Write me a Node script to load json, transform it in some way, and save it to a new file" https://chat.openai.com/share/49cc18b1-21d5-4af5-9c61-c728e7e10c36
  */
 
 import fs from 'fs';
@@ -74,7 +75,7 @@ fs.readFile(inputFilePath, 'utf8', (err, licensesJson) => {
 function transformLicenses(licenses: Licenses): ContentListScreenData {
   const appKey = `${packageJson.name}@${packageJson.version}`;
 
-  // Set `transferable-discipleship`'s license appropriately (it's showing up as UNLICENSED, so I think `license-checker` doesn't support GPL)
+  // Set the app's license appropriately (it's showing up as UNLICENSED, so maybe `license-checker` doesn't support GPL or the main package's license or something)
   licenses[appKey].licenses = packageJson.license;
 
   const licensesScreen: ContentListScreenData = {
@@ -85,7 +86,7 @@ function transformLicenses(licenses: Licenses): ContentListScreenData {
     contents: Object.entries(licenses).map(([moduleName, licenseInfo]) => ({
       type: 'Slide',
       headerText: moduleName,
-      design: 'tight',
+      contentDesign: 'tight',
       contents: [
         `${
           licenseInfo.description ? `${licenseInfo.description}\n----\n` : ''
@@ -106,15 +107,19 @@ function transformLicenses(licenses: Licenses): ContentListScreenData {
     })),
   };
 
-  // Move the `transferable-discipleship` license info to the top
+  // Move the app's license info to the top and make it primary
+  const appContentIndex = licensesScreen.contents.findIndex(
+    content => ((content as SlideContentData)?.headerText as string) === appKey,
+  );
+
+  if (appContentIndex < 0)
+    throw new Error(`License info for ${appKey} not found!`);
+
+  (licensesScreen.contents[appContentIndex] as SlideContentData).design =
+    'primary';
+
   licensesScreen.contents.unshift(
-    ...licensesScreen.contents.splice(
-      licensesScreen.contents.findIndex(
-        content =>
-          ((content as SlideContentData)?.headerText as string) === appKey,
-      ),
-      1,
-    ),
+    ...licensesScreen.contents.splice(appContentIndex, 1),
   );
 
   licensesScreen.contents.unshift({

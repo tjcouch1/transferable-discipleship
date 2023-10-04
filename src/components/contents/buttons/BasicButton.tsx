@@ -1,8 +1,23 @@
+/**
+ * Copyright (C) 2023 TJ Couch
+ * This file is part of discipleship‑app‑template.
+ *
+ * discipleship‑app‑template is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * discipleship‑app‑template is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import React, { ReactNode } from 'react';
-import {
-  TouchableOpacity,
-  GestureResponderEvent,
-} from 'react-native';
+import { TouchableOpacity, GestureResponderEvent } from 'react-native';
 import theme from '../../../Theme';
 import { createDesignStyleSheets } from '../../../util/DesignStyleSheets';
 import { Text, TextData, getTextDataObject } from '../Text';
@@ -51,7 +66,7 @@ const designStyles = createDesignStyleSheets(
       backgroundColor: theme.button.background,
       padding: 12,
       borderRadius: 12,
-      width: '75%'
+      width: '75%',
     },
     navButtonText: {
       color: theme.button.text,
@@ -65,7 +80,7 @@ const designStyles = createDesignStyleSheets(
         backgroundColor: theme.button.backgroundAnswer,
         padding: 5,
         borderRadius: 4,
-        width: 'auto'
+        width: 'auto',
       },
       navButtonText: {
         color: theme.button.textAnswer,

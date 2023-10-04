@@ -1,4 +1,22 @@
 /**
+ * Copyright (C) 2023 TJ Couch
+ * This file is part of discipleship‑app‑template.
+ *
+ * discipleship‑app‑template is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * discipleship‑app‑template is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
  * Functions related to creating DesignStyleSheets
  */
 
@@ -64,18 +82,18 @@ export const createDesignStyleSheets = <
           StyleSheet.create(
             // Lay each sheet over the previous ones
             overlaySheets.reduce(
-              (overlayedSheet, currentSheet) =>
+              (overlaidSheet, currentSheet) =>
                 Object.fromEntries(
                   // For each style in baseStyles, create a new style by combining its styles with the current design's styles
                   Object.keys(baseStyles).map(styleName => {
-                    const overlayedStyle =
-                      overlayedSheet[styleName as keyof T] ?? {};
+                    const overlaidStyle =
+                      overlaidSheet[styleName as keyof T] ?? {};
                     const currentStyle =
                       currentSheet[styleName as keyof T] ?? {};
                     return [
                       styleName as keyof T,
                       {
-                        ...overlayedStyle,
+                        ...overlaidStyle,
                         ...currentStyle,
                       },
                     ];

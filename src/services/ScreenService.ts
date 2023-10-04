@@ -1,4 +1,22 @@
 /**
+ * Copyright (C) 2023 TJ Couch
+ * This file is part of discipleship‑app‑template.
+ *
+ * discipleship‑app‑template is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * discipleship‑app‑template is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
  * ScreenService.ts - Handles getting the page structure
  */
 
@@ -28,7 +46,7 @@ const serializedAppDataNew: SerializedAppData = {
       contents: [
         {
           type: 'Header',
-          headerText: 'Transferable Discipleship',
+          headerText: 'Discipleship App Template',
           subheaderText:
             'A tool for simple, reproducible Christian discipleship',
           lineTexts: ['Please select an option below'],
@@ -336,7 +354,7 @@ const serializedAppDataNew: SerializedAppData = {
               type: 'Header',
               headerText: 'About TD',
               lineTexts: [
-                'Transferable Discipleship is a tool for simple, reproducible Christian discipleship.',
+                'Discipleship App Template is a tool for simple, reproducible Christian discipleship.',
               ],
               design: 'screen',
             },
@@ -352,7 +370,7 @@ const serializedAppDataNew: SerializedAppData = {
                   design: 'answer',
                   action: {
                     type: 'link',
-                    to: 'https://github.com/tjcouch1/transferable-discipleship/issues',
+                    to: '<repo_url>/issues',
                   },
                 },
               ],
@@ -366,10 +384,10 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'ActionButton',
                   design: 'answer',
-                  text: 'Fork us on GitHub!',
+                  text: 'Fork the template on GitHub!',
                   action: {
                     type: 'link',
-                    to: 'https://github.com/tjcouch1/transferable-discipleship',
+                    to: 'https://github.com/tjcouch1/discipleship-app-template',
                   },
                 },
               ],
@@ -379,7 +397,7 @@ const serializedAppDataNew: SerializedAppData = {
               headerText: 'Credits and Licensing',
               contentDesign: 'tight',
               contents: [
-                "- Disciple-making content of the app compiled by *Content Creator*.\n- App developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
+                "- Disciple-making content of the app compiled by <content_creator>.\n- App template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
                 {
                   type: 'ActionButton',
                   design: 'answer',
@@ -405,10 +423,10 @@ const serializedAppDataNew: SerializedAppData = {
                 },
                 {
                   type: 'Slide',
-                  headerText: 'Transferable Discipleship',
+                  headerText: 'Discipleship App Template',
                   contentDesign: 'tight',
                   contents: [
-                    'Transferable Discipleship Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below.',
+                    'Discipleship App Template Copyright 2023 <content_creator>.\n<contact_email>\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below.',
                   ],
                 },
                 {
@@ -548,11 +566,10 @@ function deserializeAppData(appData: SerializedAppData): AppData {
   return {
     ...appData,
     initialScreen: pathJoin(ROOT_PATH, appData.initialScreen),
-    screens: addSubscreensToMap(
-      new Map<string, ScreenData>(),
-      ROOT_PATH,
-      [...appData.screens, licensesScreen],
-    ),
+    screens: addSubscreensToMap(new Map<string, ScreenData>(), ROOT_PATH, [
+      ...appData.screens,
+      licensesScreen,
+    ]),
   };
 }
 
