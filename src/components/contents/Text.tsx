@@ -43,7 +43,7 @@ export type TextPropsBase = {
 /** Props the Text needs to function */
 export type TextProps = TextData & TextPropsBase;
 
-// Have to bake out any optional parameter into specifically defined for TypeScript to realize we provdied it
+// Have to bake out any optional parameter into specifically defined for TypeScript to realize we provided it
 const DEFAULT_PROPS: Omit<TextDataObject, 'design' | 'text'> & {
   design: TextDesign;
 } = {

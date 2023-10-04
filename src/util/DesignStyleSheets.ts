@@ -64,18 +64,18 @@ export const createDesignStyleSheets = <
           StyleSheet.create(
             // Lay each sheet over the previous ones
             overlaySheets.reduce(
-              (overlayedSheet, currentSheet) =>
+              (overlaidSheet, currentSheet) =>
                 Object.fromEntries(
                   // For each style in baseStyles, create a new style by combining its styles with the current design's styles
                   Object.keys(baseStyles).map(styleName => {
-                    const overlayedStyle =
-                      overlayedSheet[styleName as keyof T] ?? {};
+                    const overlaidStyle =
+                      overlaidSheet[styleName as keyof T] ?? {};
                     const currentStyle =
                       currentSheet[styleName as keyof T] ?? {};
                     return [
                       styleName as keyof T,
                       {
-                        ...overlayedStyle,
+                        ...overlaidStyle,
                         ...currentStyle,
                       },
                     ];

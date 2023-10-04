@@ -1,11 +1,10 @@
-/**
- * Wraps the application in a "phone" layout on web
- */
-
 import { PropsWithChildren } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { isWeb } from '../util/Util';
 
+/**
+ * Wraps the application in a "phone" layout on web for easy preview
+ */
 export default function WebWrapper({ children }: PropsWithChildren) {
   return isWeb() ? (
     <View style={[styles.screen]}>

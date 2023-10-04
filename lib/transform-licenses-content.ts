@@ -4,7 +4,8 @@
  * First argument passed is the input path relative to CWD
  * Second argument passed is the output path relative to CWD
  *
- * Code started by ChatGPT and modified by TJ Couch
+ * This code was generated using OpenAI's ChatGPT and modified by TJ Couch. For more information about ChatGPT and its capabilities, visit [OpenAI's website](https://www.openai.com).
+ * Prompt: "Write me a Node script to load json, transform it in some way, and save it to a new file" https://chat.openai.com/share/49cc18b1-21d5-4af5-9c61-c728e7e10c36
  */
 
 import fs from 'fs';
@@ -111,15 +112,14 @@ function transformLicenses(licenses: Licenses): ContentListScreenData {
     content => ((content as SlideContentData)?.headerText as string) === appKey,
   );
 
-  if (appContentIndex < 0) throw new Error(`License info for ${appKey} not found!`);
+  if (appContentIndex < 0)
+    throw new Error(`License info for ${appKey} not found!`);
 
-  (licensesScreen.contents[appContentIndex] as SlideContentData).design = 'primary';
+  (licensesScreen.contents[appContentIndex] as SlideContentData).design =
+    'primary';
 
   licensesScreen.contents.unshift(
-    ...licensesScreen.contents.splice(
-      appContentIndex,
-      1,
-    ),
+    ...licensesScreen.contents.splice(appContentIndex, 1),
   );
 
   licensesScreen.contents.unshift({
