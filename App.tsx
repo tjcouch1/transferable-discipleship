@@ -1,7 +1,19 @@
 /**
+ * Copyright (C) 2023 TJ Couch
+ * This file is part of discipleship‑app‑template.
  *
- * Discipleship App Template -
+ * discipleship‑app‑template is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
+ * discipleship‑app‑template is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
  */
 
 import React, { useCallback, useMemo } from 'react';
@@ -39,19 +51,20 @@ export default function App() {
   const screens = useMemo(() => [...appScreens.screens.values()], [appScreens]);
 
   const [fontsLoaded] = useFonts({
-    'LibreFranklin': require('./assets/fonts/LibreFranklin-VariableFont_wght.ttf'),
-    'OpenSauceOne': require('./assets/fonts/OpenSauceOne-Regular.ttf')
-  })
+    LibreFranklin: require('./assets/fonts/LibreFranklin-VariableFont_wght.ttf'),
+    OpenSauceOne: require('./assets/fonts/OpenSauceOne-Regular.ttf'),
+  });
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) await hideAsync();
-  }, [fontsLoaded])
+  }, [fontsLoaded]);
 
-  if (!fontsLoaded)
-    return;
+  if (!fontsLoaded) return;
 
   return (
-    <SafeAreaView style={[backgroundStyle, styles.safeAreaView]} onLayout={onLayoutRootView}>
+    <SafeAreaView
+      style={[backgroundStyle, styles.safeAreaView]}
+      onLayout={onLayoutRootView}>
       <ContentsModuleContext.Provider value={ContentsModule}>
         <WebWrapper>
           <NavigationContainer>

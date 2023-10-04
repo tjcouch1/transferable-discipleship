@@ -1,10 +1,32 @@
+/**
+ * Copyright (C) 2023 TJ Couch
+ * This file is part of discipleship‑app‑template.
+ *
+ * discipleship‑app‑template is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * discipleship‑app‑template is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import React, { useContext, useState } from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentData, ContentDataBase } from './Contents';
 import ContentsModuleContext from './ContentsContext';
 import { isString } from '../../util/Util';
-import { TextContentDataObject, TextDataObjectBase, getTextDataObject } from './Text';
+import {
+  TextContentDataObject,
+  TextDataObjectBase,
+  getTextDataObject,
+} from './Text';
 
 export interface ContentListContentData extends ContentDataBase {
   type: 'ContentList';
@@ -81,20 +103,24 @@ export const ContentList = ({
             } as TextContentDataObject)
           : content;
 
-        const openObject: { isOpen?: boolean, onChange?: (isOpening: boolean) => void } = {};
+        const openObject: {
+          isOpen?: boolean;
+          onChange?: (isOpening: boolean) => void;
+        } = {};
         // TODO: Make this openable check a function from Contents.tsx
         if (controlIsOpen && isOpenable(contentObject)) {
           openableIndex += 1;
           const thisOpenableIndex = openableIndex;
           openObject.isOpen = openIndex === openableIndex;
-          openObject.onChange = (isOpening) => isOpening ? setOpenIndex(thisOpenableIndex) : setOpenIndex(-1);
+          openObject.onChange = isOpening =>
+            isOpening ? setOpenIndex(thisOpenableIndex) : setOpenIndex(-1);
         }
 
         return React.createElement(Contents[contentObject.type], {
           // TODO: Consider adding a key to ContentDataBase?
           key: i,
           ...contentObject,
-          ...openObject
+          ...openObject,
         });
       })}
     </View>
