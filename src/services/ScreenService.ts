@@ -380,7 +380,7 @@ const serializedAppDataNew: SerializedAppData = {
               headerText: 'Create Your Own Discipleship App',
               contentDesign: 'tight',
               contents: [
-                'Want to make your own discipleship app like this one?',
+                'This app was created using discipleship‑app‑template. Want to make your own discipleship app like this one?',
                 {
                   type: 'ActionButton',
                   design: 'answer',
@@ -397,14 +397,14 @@ const serializedAppDataNew: SerializedAppData = {
               headerText: 'Credits and Licensing',
               contentDesign: 'tight',
               contents: [
-                "- Disciple-making content of the app compiled by <content_creator>.\n- App template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
+                "- Disciple-making content of the app compiled by <content_creator>.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
                 {
                   type: 'ActionButton',
                   design: 'answer',
-                  text: 'Licensing Info',
+                  text: 'More Licensing Info',
                   action: {
                     type: 'navigate',
-                    to: 'Licensing',
+                    to: 'Credits',
                   },
                 },
               ],
@@ -412,14 +412,17 @@ const serializedAppDataNew: SerializedAppData = {
           ],
           subscreens: [
             {
-              id: 'Licensing',
+              id: 'Credits',
               type: 'ContentListScreen',
               design: 'tight',
               contents: [
                 {
                   type: 'Header',
-                  headerText: 'Licensing Info',
+                  headerText: 'Credits and Attributions',
                   design: 'screen',
+                  lineTexts: [
+                    'Thanks to all the many people who made this app possible.',
+                  ],
                 },
                 {
                   type: 'Slide',
@@ -431,10 +434,18 @@ const serializedAppDataNew: SerializedAppData = {
                 },
                 {
                   type: 'Slide',
-                  headerText: 'World English Bible',
+                  headerText: 'discipleship‑app‑template',
                   contentDesign: 'tight',
                   contents: [
-                    'The World English Bible is public domain.',
+                    'This app was created using discipleship‑app‑template Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below.',
+                  ],
+                },
+                {
+                  type: 'Slide',
+                  headerText: 'Scripture',
+                  contentDesign: 'tight',
+                  contents: [
+                    'The Scripture included in this app is from the World English Bible translation. The World English Bible is public domain.',
                     {
                       type: 'ActionButton',
                       design: 'answer',
@@ -451,7 +462,7 @@ const serializedAppDataNew: SerializedAppData = {
                   headerText: 'Fonts',
                   contentDesign: 'tight',
                   contents: [
-                    '- Libre Franklin is licensed under the SIL Open Font License Version 1.1.',
+                    '- Libre Franklin is licensed under the SIL Open Font License Version 1.1.\nMore information on the Software Licenses page linked below.',
                     {
                       type: 'ActionButton',
                       design: 'answer',
@@ -461,7 +472,7 @@ const serializedAppDataNew: SerializedAppData = {
                         to: 'https://github.com/impallari/Libre-Franklin',
                       },
                     },
-                    '- Open Sauce One is licensed under the SIL Open Font License Version 1.1.',
+                    '- Open Sauce One is licensed under the SIL Open Font License Version 1.1.\nMore information on the Software Licenses page linked below.',
                     {
                       type: 'ActionButton',
                       design: 'answer',
