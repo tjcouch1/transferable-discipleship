@@ -17,4 +17,4 @@ web-build/
 assets/data/scripture.api.bible/
 
 # License files are generated and unnecessary to check in
-assets/data/licenses
+assets/data/licenses/licenses-raw.json
