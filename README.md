@@ -30,6 +30,7 @@ Christian discipleship app template in React Native
     - `splash.png` - Loading splash screen image
     - `data/screens.json` - Content for the app
       - Regarding the `Home/About` and `Home/About/Credits` screens specifically, we request that you only add to or restructure and somehow include all the content in these screens in order to credit those whose technologies went into making this template possible and to comply with licensing needs. Otherwise, you're free to modify the content as you desire!
+      - To edit with type support, you can put the contents of `data/screens.json` in `src/services/ScreenService.ts` in place of `require('../../assets/data/screens.json')`. We [plan to add JSON schemas](https://github.com/tjcouch1/discipleship-app-template/issues/25) at some point.
     - `data/colors.json` - Theme colors for the app
     - `fonts` - contains fonts used in the app. Must also update in `App.tsx` and `src/components/contents/Text.tsx`
       - To ensure including the license information for each font works properly, make sure each font family has the font family name at the start of each file name, and make sure each font family has its license in the same directory with the name `<font_family>.LICENSE`
