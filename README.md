@@ -73,6 +73,8 @@ TODO
 
 TODO
 
+## Building and publishing preview builds
+
 ### Create an Android Preview `.apk` to install on your device
 
 `npm run build:android-preview`
@@ -85,10 +87,14 @@ https://docs.expo.dev/build/internal-distribution/#configure-app-signing
 
 https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribution
 
+#### Publishing updates to preview builds
+
+`eas update --branch preview --message "Update message"`
+
 ### Building and publishing releases
 
 https://docs.expo.dev/distribution/introduction/
 
-### Building and publishing updates
+#### Publishing updates to releases
 
 https://docs.expo.dev/eas-update/getting-started/#publish-an-update
