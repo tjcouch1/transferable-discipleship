@@ -1,5 +1,5 @@
 {
-  "name": "discipleship-app-template",
+  "name": "transferable-discipleship",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -47,11 +47,11 @@
     "typescript": "^5.1.3"
   },
   "private": true,
-  "author": "<content_creator> <contact_email>",
-  "copyright": "Copyright 2023 <content_creator>",
+  "author": "TJ Couch tjcouch1@gmail.com",
+  "copyright": "Copyright 2023 TJ Couch",
   "repository": {
     "type": "git",
-    "url": "<repo_url>"
+    "url": "https://github.com/tjcouch1/transferable-discipleship"
   },
   "license": "GPL-3.0-only"
 }

@@ -20,6 +20,10 @@ import { ImageRequireSource, ImageURISource } from 'react-native';
 
 const images = {
   icon: require('../../assets/favicon.png'),
+  'cycles-of-involvement': require('../../assets/images/cycles-of-involvement.png'),
+  'invite': require('../../assets/images/invite.png'),
+  'nations': require('../../assets/images/nations.png'),
+  'spiritual-multiplication': require('../../assets/images/spiritual-multiplication.png'),
 };
 
 type ImageKey = keyof typeof images;

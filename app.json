@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "discipleship-app-template",
-    "slug": "discipleship-app-template",
+    "name": "transferable-discipleship",
+    "slug": "transferable-discipleship",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,28 +9,41 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ebecec"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/97ad893f-12a9-4da7-baaf-c8f468dd9583"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#ebecec"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png",
       "build": {
         "babel": {
-          "include": ["better-react-native-image-viewing"]
+          "include": [
+            "better-react-native-image-viewing"
+          ]
         }
       }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "97ad893f-12a9-4da7-baaf-c8f468dd9583"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }

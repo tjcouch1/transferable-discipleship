@@ -11,8 +11,8 @@
       "contents": [
         {
           "type": "Header",
-          "headerText": "Discipleship App Template",
-          "subheaderText": "A tool for simple, reproducible Christian discipleship",
+          "headerText": "Transferable Discipleship",
+          "subheaderText": "A tool for Simple, Accessible, and Transferable Christian discipleship",
           "lineTexts": ["Please select an option below"],
           "design": "title"
         },
@@ -313,11 +313,43 @@
           "contents": [
             {
               "type": "Header",
-              "headerText": "About TD",
+              "headerText": "About Transferable Discipleship",
               "lineTexts": [
-                "Discipleship App Template is a tool for simple, reproducible Christian discipleship."
+                "Transferable Discipleship is a tool for Simple, Accessible, and Transferable Christian discipleship."
               ],
               "design": "screen"
+            },
+            {
+              "type": "Slide",
+              "headerText": "Vision",
+              "design": "tight",
+              "contents": [
+                "\"Go and make disciples...\" That is the goal. From my years of making disciples on college campuses, I have found great resources that work well from staff to student. After that, it becomes difficult to see discipleship continue to others. My goal was to figure out how to make discipleship Simple, Accessible, and Transferable."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "Simple",
+              "design": "tight",
+              "contents": [
+                "The content is set up in a simple question-and-Scripture format. This way, a person can simply sit down with someone else, read through the questions, and see how the Bible answers those questions."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "Accessible",
+              "design": "tight",
+              "contents": [
+                "Sometimes, it can be difficult to know where to go to find the discipleship material you need. Then, when the person you disciple wants to disciple someone else, they may not know where to find what material you followed with them. Since this is a free app, it's available to everyone."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "Transferable",
+              "design": "tight",
+              "contents": [
+                "Jesus spent three years with a group of guys, and those eleven guys changed the world. They didn't keep what Jesus taught them to themselves, and they also didn't wait until they had it all figured out to begin helping others. This material is not all-inclusive, but it contains what I think are some of the most important concepts a Christian needs to grow in and share with others. It is intended for quick replication. After finishing the Basics and the Essentials, a person is challenged to use the Basics and Essentials to disciple someone else."
+              ]
             },
             {
               "type": "Slide",
@@ -331,7 +363,7 @@
                   "design": "answer",
                   "action": {
                     "type": "link",
-                    "to": "<repo_url>/issues"
+                    "to": "https://github.com/tjcouch1/transferable-discipleship/issues"
                   }
                 }
               ]
@@ -348,7 +380,7 @@
                   "text": "Fork the template on GitHub!",
                   "action": {
                     "type": "link",
-                    "to": "https://github.com/tjcouch1/discipleship-app-template"
+                    "to": "https://github.com/tjcouch1/discipleship%2Dapp%2Dtemplate"
                   }
                 }
               ]
@@ -358,7 +390,7 @@
               "headerText": "Credits and Licensing",
               "contentDesign": "tight",
               "contents": [
-                "- Disciple-making content of the app compiled by <content_creator>.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
+                "- Disciple-making content of the app compiled by TJ Couch.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
                 {
                   "type": "ActionButton",
                   "design": "answer",
@@ -387,15 +419,15 @@
                 },
                 {
                   "type": "Slide",
-                  "headerText": "Discipleship App Template",
+                  "headerText": "Transferable Discipleship",
                   "contentDesign": "tight",
                   "contents": [
-                    "Discipleship App Template Copyright 2023 <content_creator>.\n<contact_email>\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below."
+                    "Transferable Discipleship Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below."
                   ]
                 },
                 {
                   "type": "Slide",
-                  "headerText": "discipleship‑app‑template",
+                  "headerText": "Discipleship App Template",
                   "contentDesign": "tight",
                   "contents": [
                     "This app was created using discipleship‑app‑template Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below."
