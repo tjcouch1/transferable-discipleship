@@ -153,6 +153,674 @@
           }
         ],
         "sourceUrl": "https://bible-api.com/John 11:36?translation=web"
+      },
+      "Romans 3:21-26": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 3:21-26",
+        "verses": [
+          {
+            "verse": 21,
+            "text": "But now apart from the law, a righteousness of God has been revealed, being testified by the law and the prophets;\n"
+          },
+          {
+            "verse": 22,
+            "text": "even the righteousness of God through faith in Jesus Christ to all and on all those who believe. For there is no distinction,\n"
+          },
+          {
+            "verse": 23,
+            "text": "for all have sinned, and fall short of the glory of God;\n"
+          },
+          {
+            "verse": 24,
+            "text": "being justified freely by his grace through the redemption that is in Christ Jesus;\n"
+          },
+          {
+            "verse": 25,
+            "text": "whom God sent to be an atoning sacrifice, through faith in his blood, for a demonstration of his righteousness through the passing over of prior sins, in God’s forbearance;\n"
+          },
+          {
+            "verse": 26,
+            "text": "to demonstrate his righteousness at this present time; that he might himself be just, and the justifier of him who has faith in Jesus.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 3:21-26?translation=web"
+      },
+      "Romans 4:2-8": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 4:2-8",
+        "verses": [
+          {
+            "verse": 2,
+            "text": "For if Abraham was justified by works, he has something to boast about, but not toward God.\n"
+          },
+          {
+            "verse": 3,
+            "text": "For what does the Scripture say? “Abraham believed God, and it was accounted to him for righteousness.”\n"
+          },
+          {
+            "verse": 4,
+            "text": "Now to him who works, the reward is not counted as grace, but as something owed.\n"
+          },
+          {
+            "verse": 5,
+            "text": "But to him who doesn’t work, but believes in him who justifies the ungodly, his faith is accounted for righteousness.\n"
+          },
+          {
+            "verse": 6,
+            "text": "Even as David also pronounces blessing on the man to whom God counts righteousness apart from works,\n"
+          },
+          {
+            "verse": 7,
+            "text": "“Blessed are they whose iniquities are forgiven,\nwhose sins are covered.\n"
+          },
+          {
+            "verse": 8,
+            "text": "Blessed is the man whom the Lord will by no means charge with sin.”\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 4:2-8?translation=web"
+      },
+      "Ephesians 2:4-5": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Ephesians 2:4-5",
+        "verses": [
+          {
+            "verse": 4,
+            "text": "But God, being rich in mercy, for his great love with which he loved us,\n"
+          },
+          {
+            "verse": 5,
+            "text": "even when we were dead through our trespasses, made us alive together with Christ (by grace you have been saved),\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Ephesians 2:4-5?translation=web"
+      },
+      "Ephesians 2:8-9": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Ephesians 2:8-9",
+        "verses": [
+          {
+            "verse": 8,
+            "text": "for by grace you have been saved through faith, and that not of yourselves; it is the gift of God,\n"
+          },
+          {
+            "verse": 9,
+            "text": "not of works, that no one would boast.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Ephesians 2:8-9?translation=web"
+      },
+      "Romans 5:6-8": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 5:6-8",
+        "verses": [
+          {
+            "verse": 6,
+            "text": "For while we were yet weak, at the right time Christ died for the ungodly.\n"
+          },
+          {
+            "verse": 7,
+            "text": "For one will hardly die for a righteous man. Yet perhaps for a righteous person someone would even dare to die.\n"
+          },
+          {
+            "verse": 8,
+            "text": "But God commends his own love toward us, in that while we were yet sinners, Christ died for us.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 5:6-8?translation=web"
+      },
+      "Romans 5:18-19": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 5:18-19",
+        "verses": [
+          {
+            "verse": 18,
+            "text": "So then as through one trespass, all men were condemned; even so through one act of righteousness, all men were justified to life.\n"
+          },
+          {
+            "verse": 19,
+            "text": "For as through the one man’s disobedience many were made sinners, even so through the obedience of the one, many will be made righteous.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 5:18-19?translation=web"
+      },
+      "John 14:6": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 14:6",
+        "verses": [
+          {
+            "verse": 6,
+            "text": "Jesus said to him,\n“I am the way, the truth, and the life. No one comes to the Father, except through me.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 14:6?translation=web"
+      },
+      "1 Corinthians 15:3-8": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 Corinthians 15:3-8",
+        "verses": [
+          {
+            "verse": 3,
+            "text": "For I delivered to you first of all that which I also received: that Christ died for our sins according to the Scriptures,\n"
+          },
+          {
+            "verse": 4,
+            "text": "that he was buried, that he was raised on the third day according to the Scriptures,\n"
+          },
+          {
+            "verse": 5,
+            "text": "and that he appeared to Cephas, then to the twelve.\n"
+          },
+          {
+            "verse": 6,
+            "text": "Then he appeared to over five hundred brothers at once, most of whom remain until now, but some have also fallen asleep.\n"
+          },
+          {
+            "verse": 7,
+            "text": "Then he appeared to James, then to all the apostles,\n"
+          },
+          {
+            "verse": 8,
+            "text": "and last of all, as to the child born at the wrong time, he appeared to me also.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 Corinthians 15:3-8?translation=web"
+      },
+      "2 Corinthians 5:21": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Corinthians 5:21",
+        "verses": [
+          {
+            "verse": 21,
+            "text": "For him who knew no sin he made to be sin on our behalf; so that in him we might become the righteousness of God.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Corinthians 5:21?translation=web"
+      },
+      "John 3:16-18": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 3:16-18",
+        "verses": [
+          {
+            "verse": 16,
+            "text": "\nFor God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.\n\n"
+          },
+          {
+            "verse": 17,
+            "text": "\nFor God didn’t send his Son into the world to judge the world, but that the world should be saved through him.\n\n"
+          },
+          {
+            "verse": 18,
+            "text": "\nHe who believes in him is not judged. He who doesn’t believe has been judged already, because he has not believed in the name of the one and only Son of God.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 3:16-18?translation=web"
+      },
+      "Romans 10:8-10": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 10:8-10",
+        "verses": [
+          {
+            "verse": 8,
+            "text": "But what does it say? “The word is near you, in your mouth, and in your heart”; that is, the word of faith, which we preach:\n"
+          },
+          {
+            "verse": 9,
+            "text": "that if you will confess with your mouth that Jesus is Lord, and believe in your heart that God raised him from the dead, you will be saved.\n"
+          },
+          {
+            "verse": 10,
+            "text": "For with the heart, one believes unto righteousness; and with the mouth confession is made unto salvation.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 10:8-10?translation=web"
+      },
+      "Mark 1:15": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Mark 1:15",
+        "verses": [
+          {
+            "verse": 15,
+            "text": "and saying,\n“The time is fulfilled, and God’s Kingdom is at hand! Repent, and believe in the Good News.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Mark 1:15?translation=web"
+      },
+      "Acts 3:19": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Acts 3:19",
+        "verses": [
+          {
+            "verse": 19,
+            "text": "“Repent therefore, and turn again, that your sins may be blotted out, so that there may come times of refreshing from the presence of the Lord,\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Acts 3:19?translation=web"
+      },
+      "2 Corinthians 5:15": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Corinthians 5:15",
+        "verses": [
+          {
+            "verse": 15,
+            "text": "He died for all, that those who live should no longer live to themselves, but to him who for their sakes died and rose again.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Corinthians 5:15?translation=web"
+      },
+      "Romans 4:2-6": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 4:2-6",
+        "verses": [
+          {
+            "verse": 2,
+            "text": "For if Abraham was justified by works, he has something to boast about, but not toward God.\n"
+          },
+          {
+            "verse": 3,
+            "text": "For what does the Scripture say? “Abraham believed God, and it was accounted to him for righteousness.”\n"
+          },
+          {
+            "verse": 4,
+            "text": "Now to him who works, the reward is not counted as grace, but as something owed.\n"
+          },
+          {
+            "verse": 5,
+            "text": "But to him who doesn’t work, but believes in him who justifies the ungodly, his faith is accounted for righteousness.\n"
+          },
+          {
+            "verse": 6,
+            "text": "Even as David also pronounces blessing on the man to whom God counts righteousness apart from works,\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 4:2-6?translation=web"
+      },
+      "Romans 5:6-8, 18-19": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 5:6-8,18-19",
+        "verses": [
+          {
+            "verse": 6,
+            "text": "For while we were yet weak, at the right time Christ died for the ungodly.\n"
+          },
+          {
+            "verse": 7,
+            "text": "For one will hardly die for a righteous man. Yet perhaps for a righteous person someone would even dare to die.\n"
+          },
+          {
+            "verse": 8,
+            "text": "But God commends his own love toward us, in that while we were yet sinners, Christ died for us.\n"
+          },
+          {
+            "verse": 18,
+            "text": "So then as through one trespass, all men were condemned; even so through one act of righteousness, all men were justified to life.\n"
+          },
+          {
+            "verse": 19,
+            "text": "For as through the one man’s disobedience many were made sinners, even so through the obedience of the one, many will be made righteous.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 5:6-8, 18-19?translation=web"
+      },
+      "Romans 15:4": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 15:4",
+        "verses": [
+          {
+            "verse": 4,
+            "text": "For whatever things were written before were written for our learning, that through perseverance and through encouragement of the Scriptures we might have hope.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 15:4?translation=web"
+      },
+      "Psalm 19:7-11": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Psalms 19:7-11",
+        "verses": [
+          {
+            "verse": 7,
+            "text": "Yahweh’s law is perfect, restoring the soul.\nYahweh’s testimony is sure, making wise the simple.\n"
+          },
+          {
+            "verse": 8,
+            "text": "Yahweh’s precepts are right, rejoicing the heart.\nYahweh’s commandment is pure, enlightening the eyes.\n"
+          },
+          {
+            "verse": 9,
+            "text": "The fear of Yahweh is clean, enduring forever.\nYahweh’s ordinances are true, and righteous altogether.\n"
+          },
+          {
+            "verse": 10,
+            "text": "More to be desired are they than gold, yes, than much fine gold;\nsweeter also than honey and the extract of the honeycomb.\n"
+          },
+          {
+            "verse": 11,
+            "text": "Moreover by them is your servant warned.\nIn keeping them there is great reward.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Psalm 19:7-11?translation=web"
+      },
+      "John 17:17": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 17:17",
+        "verses": [
+          {
+            "verse": 17,
+            "text": "\nSanctify them in your truth. Your word is truth.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 17:17?translation=web"
+      },
+      "2 Timothy 3:14-17": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Timothy 3:14-17",
+        "verses": [
+          {
+            "verse": 14,
+            "text": "But you remain in the things which you have learned and have been assured of, knowing from whom you have learned them.\n"
+          },
+          {
+            "verse": 15,
+            "text": "From infancy, you have known the holy Scriptures which are able to make you wise for salvation through faith, which is in Christ Jesus.\n"
+          },
+          {
+            "verse": 16,
+            "text": "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness,\n"
+          },
+          {
+            "verse": 17,
+            "text": "that the man of God may be complete, thoroughly equipped for every good work.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Timothy 3:14-17?translation=web"
+      },
+      "Psalm 119:105": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Psalms 119:105",
+        "verses": [
+          {
+            "verse": 105,
+            "text": "Your word is a lamp to my feet,\nand a light for my path.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Psalm 119:105?translation=web"
+      },
+      "Matthew 4:4": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 4:4",
+        "verses": [
+          {
+            "verse": 4,
+            "text": "But he answered,\n“It is written, ‘Man shall not live by bread alone, but by every word that proceeds out of the mouth of God.’”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 4:4?translation=web"
+      },
+      "Psalm 1:1-3": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Psalms 1:1-3",
+        "verses": [
+          {
+            "verse": 1,
+            "text": "Blessed is the man who doesn’t walk in the counsel of the wicked,\nnor stand on the path of sinners,\nnor sit in the seat of scoffers;\n"
+          },
+          {
+            "verse": 2,
+            "text": "but his delight is in Yahweh’s law.\nOn his law he meditates day and night.\n"
+          },
+          {
+            "verse": 3,
+            "text": "He will be like a tree planted by the streams of water,\nthat produces its fruit in its season,\nwhose leaf also does not wither.\nWhatever he does shall prosper.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Psalm 1:1-3?translation=web"
+      },
+      "Matthew 7:24-27": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 7:24-27",
+        "verses": [
+          {
+            "verse": 24,
+            "text": "\n“Everyone therefore who hears these words of mine, and does them, I will liken him to a wise man, who built his house on a rock.\n\n"
+          },
+          {
+            "verse": 25,
+            "text": "\nThe rain came down, the floods came, and the winds blew, and beat on that house; and it didn’t fall, for it was founded on the rock.\n\n"
+          },
+          {
+            "verse": 26,
+            "text": "\nEveryone who hears these words of mine, and doesn’t do them will be like a foolish man, who built his house on the sand.\n\n"
+          },
+          {
+            "verse": 27,
+            "text": "\nThe rain came down, the floods came, and the winds blew, and beat on that house; and it fell—and great was its fall.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 7:24-27?translation=web"
+      },
+      "John 8:31-32": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 8:31-32",
+        "verses": [
+          {
+            "verse": 31,
+            "text": "Jesus therefore said to those Jews who had believed him,\n“If you remain in my word, then you are truly my disciples.\n\n"
+          },
+          {
+            "verse": 32,
+            "text": "\nYou will know the truth, and the truth will make you free.”\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 8:31-32?translation=web"
+      },
+      "Psalm 119:11": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Psalms 119:11",
+        "verses": [
+          {
+            "verse": 11,
+            "text": "I have hidden your word in my heart,\nthat I might not sin against you.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Psalm 119:11?translation=web"
+      },
+      "Psalm 40:8": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Psalms 40:8",
+        "verses": [
+          {
+            "verse": 8,
+            "text": "I delight to do your will, my God.\nYes, your law is within my heart.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Psalm 40:8?translation=web"
+      },
+      "Deuteronomy 11:18-20": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Deuteronomy 11:18-20",
+        "verses": [
+          {
+            "verse": 18,
+            "text": "Therefore you shall lay up these my words in your heart and in your soul. You shall bind them for a sign on your hand, and they shall be for frontlets between your eyes.\n"
+          },
+          {
+            "verse": 19,
+            "text": "You shall teach them to your children, talking of them, when you sit in your house, and when you walk by the way, and when you lie down, and when you rise up.\n"
+          },
+          {
+            "verse": 20,
+            "text": "You shall write them on the door posts of your house, and on your gates;\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Deuteronomy 11:18-20?translation=web"
       }
     }
   }
