@@ -53,14 +53,6 @@ const serializedAppDataNew: SerializedAppData = {
           design: 'title',
         },
         {
-          type: 'Image',
-          image: 'invite',
-          style: {
-            width: 108,
-            height: 192,
-          },
-        },
-        {
           type: 'ActionButton',
           text: 'Basics',
           action: {
@@ -582,7 +574,13 @@ const serializedAppDataNew: SerializedAppData = {
                           },
                         },
                         '‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒',
-                        '"The Bible is the inevitable outcome of God\'s continuous speech. It is the infallible declaration of His mind for us to put into our familiar human words."',
+                        {
+                          type: 'Text',
+                          text: '"The Bible is the inevitable outcome of God\'s continuous speech. It is the infallible declaration of His mind for us to put into our familiar human words."',
+                          style: {
+                            fontStyle: 'italic',
+                          },
+                        },
                         {
                           type: 'Text',
                           text: '-A. W. Tozer (Pursuit of God)',
@@ -732,7 +730,7 @@ const serializedAppDataNew: SerializedAppData = {
                       scripture: {
                         reference: 'Psalm 40:8',
                         revealedButton: {
-                          text: 'Delight to do God\'s will',
+                          text: "Delight to do God's will",
                         },
                       },
                     },
@@ -782,10 +780,10 @@ const serializedAppDataNew: SerializedAppData = {
                           altButtons: [
                             {
                               design: 'answer',
-                              text: 'Guard that time!'
-                            }
-                          ]
-                        }
+                              text: 'Guard that time!',
+                            },
+                          ],
+                        },
                       ],
                     },
                     {
@@ -800,10 +798,10 @@ const serializedAppDataNew: SerializedAppData = {
                           altButtons: [
                             {
                               design: 'answer',
-                              text: 'It may sound silly, but finding a distraction-free place is important'
-                            }
-                          ]
-                        }
+                              text: 'It may sound silly, but finding a distraction-free place is important',
+                            },
+                          ],
+                        },
                       ],
                     },
                     {
@@ -818,10 +816,10 @@ const serializedAppDataNew: SerializedAppData = {
                           altButtons: [
                             {
                               design: 'answer',
-                              text: 'I suggest one that will get you through all of the Bible, not just the parts you like to read'
-                            }
-                          ]
-                        }
+                              text: 'I suggest one that will get you through all of the Bible, not just the parts you like to read',
+                            },
+                          ],
+                        },
                       ],
                     },
                     {
@@ -836,10 +834,10 @@ const serializedAppDataNew: SerializedAppData = {
                           altButtons: [
                             {
                               design: 'answer',
-                              text: 'Who will keep you accountable?'
-                            }
-                          ]
-                        }
+                              text: 'Who will keep you accountable?',
+                            },
+                          ],
+                        },
                       ],
                     },
                   ],
@@ -857,12 +855,226 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'ActionButton',
                   text: {
-                    text: 'What is the relationship between God & man?',
+                    text: 'How can I know that my faith is secure?',
                   },
                   action: {
                     type: 'navigate',
-                    to: 'RelGodMan',
+                    to: 'KnowFaithSecure',
                   },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'What does a saved person look like?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'WhatSavedLook',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'How can I know that I am saved?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'HowKnowSaved',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Can anything cause me to lose my salvation?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'CanLoseSalvation',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: "Was Jesus' sacrifice enough?",
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'WasJesusEnough',
+                  },
+                },
+              ],
+              subscreens: [
+                {
+                  id: 'KnowFaithSecure',
+                  title: 'Assurance of Salvation',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'How can I know that my faith is secure?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Corinthians 13:5',
+                        revealedButton: {
+                          text: 'Test yourself',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'WhatSavedLook',
+                  title: 'Assurance of Salvation',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'What does a saved person look like?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Corinthians 5:17',
+                        revealedButton: {
+                          text: 'New creation',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Ephesians 4:20-24',
+                        revealedButton: {
+                          text: 'Put off old/put on new',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'HowKnowSaved',
+                  title: 'Assurance of Salvation',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'How can I know that I am saved?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 John 2:3-6',
+                        revealedButton: {
+                          text: 'Obedience',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 John 3:6, 9-10',
+                        revealedButton: {
+                          text: 'Choose to sin less',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 John 3:14',
+                        revealedButton: {
+                          text: 'Love others',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 John 3:24',
+                        revealedButton: {
+                          text: 'Spirit in us',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'CanLoseSalvation',
+                  title: 'Assurance of Salvation',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Can anything cause me to lose my salvation?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 John 5:12-13',
+                        revealedButton: {
+                          text: 'You CAN know',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'John 10:27-29',
+                        revealedButton: {
+                          text: "Secure in God's hands",
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'John 17:11-12',
+                        revealedButton: {
+                          text: 'Jesus kept, protected, and prays for the Father to do the same',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Ephesians 1:13-14',
+                        revealedButton: {
+                          text: 'Sealed by the Holy Spirit',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 8:31-39',
+                        revealedButton: {
+                          text: 'Nothing can separate us',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'WasJesusEnough',
+                  title: 'Assurance of Salvation',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: "Was Jesus' sacrifice enough?",
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Hebrews 10:11-18',
+                        revealedButton: {
+                          text: 'Once was enough!',
+                        },
+                      },
+                    },
+                  ],
                 },
               ],
             },
@@ -877,12 +1089,479 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'ActionButton',
                   text: {
-                    text: 'What is the relationship between God & man?',
+                    text: 'Who is the Holy Spirit?',
                   },
                   action: {
                     type: 'navigate',
-                    to: 'RelGodMan',
+                    to: 'WhoHolySpirit',
                   },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'What does the Holy Spirit do?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'WhatHolySpiritDo',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'What is the role of the Holy Spirit?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'WhatRoleHolySpirit',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Where does the Holy Spirit live?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'WhereHolySpiritLive',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'How should we respond?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'HowRespond',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: "What is God's invitation to us?",
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'GodsInvitation',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Summary',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Summary',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'What is Spiritual Breathing?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'SpiritualBreathing',
+                  },
+                },
+              ],
+              subscreens: [
+                {
+                  id: 'WhoHolySpirit',
+                  title: 'Holy Spirit',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Who is the Holy Spirit?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Genesis 1:1-2',
+                        revealedButton: {
+                          text: 'Present at creation',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Corinthians 3:17-18',
+                        revealedButton: {
+                          text: 'The Holy Spirit is God',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Matthew 3:16-17',
+                        revealedButton: {
+                          text: 'Trinity',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'WhatHolySpiritDo',
+                  title: 'Holy Spirit',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'What does the Holy Spirit do?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 5:5',
+                        revealedButton: {
+                          text: "Lets us know God's love",
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Ephesians 3:16',
+                        revealedButton: {
+                          text: 'Strengthens our weaknesses',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'John 14:25-26',
+                        revealedButton: {
+                          text: 'Teaches us',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 Corinthians 2:10-12',
+                        revealedButton: {
+                          text: 'Gives us understanding',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'John 16:13-14',
+                        revealedButton: {
+                          text: 'Guides us to Truth',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Acts 1:8',
+                        revealedButton: {
+                          text: 'Power to witness',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'WhatRoleHolySpirit',
+                  title: 'Holy Spirit',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'What is the role of the Holy Spirit?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Peter 1:20-21',
+                        revealedButton: {
+                          text: 'Source of Scriptures',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Ephesians 1:13-14',
+                        revealedButton: {
+                          text: 'Salvation seal',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Timothy 1:13-14',
+                        revealedButton: {
+                          text: 'Guards doctrine',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'WhereHolySpiritLive',
+                  title: 'Holy Spirit',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Where does the Holy Spirit live?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Ezekiel 36:26-27',
+                        revealedButton: {
+                          text: 'In you',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 Corinthians 3:16',
+                        revealedButton: {
+                          text: 'In you',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'HowRespond',
+                  title: 'Holy Spirit',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'How should we respond?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Acts 2:38',
+                        revealedButton: {
+                          text: 'Repent/receive the Spirit',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Galatians 5:16-25',
+                        revealedButton: {
+                          text: 'Walk by the Spirit/deeds vs fruit',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'GodsInvitation',
+                  title: 'Holy Spirit',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: "What is God's invitation to us?",
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Ephesians 5:15-20',
+                        revealedButton: {
+                          text: 'Walk by the Spirit/Deeds vs. fruit',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'Summary',
+                  title: 'Holy Spirit',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Summary',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 8:1-2',
+                        revealedButton: {
+                          text: 'Freedom',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 8:3-4',
+                        revealedButton: {
+                          text: 'New desires',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 8:5-11',
+                        revealedButton: {
+                          text: 'Life',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 8:12-13',
+                        revealedButton: {
+                          text: 'Death to sin',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 8:14-16',
+                        revealedButton: {
+                          text: 'Family of God',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'SpiritualBreathing',
+                  title: 'Holy Spirit',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'What is Spiritual Breathing?',
+                    },
+                    {
+                      type: 'Slide',
+                      headerText:
+                        'An exercise in walking in the power of the Holy Spirit.',
+                      canClose: false,
+                      contents: [],
+                    },
+                    {
+                      type: 'Slide',
+                      headerText: 'Exhale:',
+                      canClose: false,
+                      contentDesign: 'tight',
+                      contents: [
+                        {
+                          type: 'Text',
+                          text: 'Confession',
+                          style: {
+                            fontWeight: 'bold',
+                          },
+                        },
+                        '1. Agree with God that I have wronged Him with my sin.',
+                        '2. Agree with God about His provision for my sin.',
+                        {
+                          type: 'Text',
+                          text: '1 John 1:9',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontWeight: 'bold',
+                            paddingLeft: 35,
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: '1 John 1:9',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontStyle: 'italic',
+                            paddingLeft: 35,
+                          },
+                        },
+                        '3. Repent (change your mind, actions, and heart)',
+                      ],
+                    },
+                    {
+                      type: 'Slide',
+                      headerText: 'Inhale:',
+                      canClose: false,
+                      contentDesign: 'tight',
+                      contents: [
+                        {
+                          type: 'Text',
+                          text: "Be filled with the Spirit to walk in light of God's forgiveness and empowerment.",
+                          style: {
+                            fontWeight: 'bold',
+                          },
+                        },
+                        {
+                          type: 'Text',
+                          text: "1. God's command:",
+                          style: {
+                            alignSelf: 'flex-start',
+                          },
+                        },
+                        {
+                          type: 'Text',
+                          text: 'Ephesians 5:18',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontWeight: 'bold',
+                            paddingLeft: 35,
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Ephesians 5:18',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontStyle: 'italic',
+                            paddingLeft: 35,
+                          },
+                        },
+                        {
+                          type: 'Text',
+                          text: '2. His promise:',
+                          style: {
+                            alignSelf: 'flex-start',
+                          },
+                        },
+                        {
+                          type: 'Text',
+                          text: '1 John 5:14-15',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontWeight: 'bold',
+                            paddingLeft: 35,
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: '1 John 5:14-15',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontStyle: 'italic',
+                            paddingLeft: 35,
+                          },
+                        },
+                        '3. Thank Him for His grace, forgiveness, and indwelling Spirit.',
+                      ],
+                    },
+                  ],
                 },
               ],
             },
@@ -905,28 +1584,103 @@ const serializedAppDataNew: SerializedAppData = {
                   },
                 },
               ],
+              subscreens: [
+                {
+                  id: 'ScreenId',
+                  title: 'Prayer',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'ScreenTitle',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      headerText: 'SlideHeading',
+                      scripture: {
+                        reference: 'Psalm 119:11',
+                        revealedButton: {
+                          text: 'Answer',
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },
         {
           id: 'Essentials',
-          type: 'HeaderWithButtons',
-          headerData: {
-            headerText: 'Essentials',
-            subheaderText: 'Here is some essential stuff to read',
-          },
-          buttonListData: {
-            buttons: [
-              {
-                type: 'ActionButton',
-                text: 'Home',
-                action: {
-                  type: 'navigate',
-                  to: '..',
-                },
+          type: 'ContentListScreen',
+          contents: [
+            {
+              type: 'Header',
+              headerText: 'Essentials',
+              subheaderText: 'Here is some essential stuff to read',
+            },
+            {
+              type: 'ActionButton',
+              text: 'Home',
+              action: {
+                type: 'navigate',
+                to: '..',
               },
-            ],
-          },
+            },
+            {
+              type: 'Image',
+              image: 'invite',
+              style: {
+                width: 108,
+                height: 192,
+              },
+            },
+          ],
+          subscreens: [
+            {
+              id: 'Assurance of Salvation',
+              type: 'ContentListScreen',
+              contents: [
+                {
+                  type: 'Header',
+                  headerText: 'Assurance of Salvation',
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'NavText',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'ScreenId',
+                  },
+                },
+              ],
+              subscreens: [
+                {
+                  id: 'ScreenId',
+                  title: 'Assurance of Salvation',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'ScreenTitle',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      headerText: 'SlideHeading',
+                      scripture: {
+                        reference: 'Psalm 119:11',
+                        revealedButton: {
+                          text: 'Answer',
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
           id: 'How to',

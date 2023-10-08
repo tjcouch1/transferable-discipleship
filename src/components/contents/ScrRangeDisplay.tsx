@@ -21,12 +21,12 @@ import usePromise from '../../hooks/usePromise';
 import { getScripture } from '../../services/ScriptureService';
 import { ScriptureText } from '../ScriptureText';
 import { ContentDataBase } from './Contents';
-import { Text, TextData } from './Text';
+import { Text, TextDataObject } from './Text';
 
 export type ScrRangeDisplayContentData = ContentDataBase & {
   type: 'ScrRangeDisplay';
   reference: string;
-} & Omit<TextData, 'text'>;
+} & Omit<TextDataObject, 'text'>;
 
 /**
  * Data that defines ScrRangeDisplay but without the type

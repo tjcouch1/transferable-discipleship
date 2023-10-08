@@ -821,6 +821,840 @@
           }
         ],
         "sourceUrl": "https://bible-api.com/Deuteronomy 11:18-20?translation=web"
+      },
+      "2 Corinthians 13:5": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Corinthians 13:5",
+        "verses": [
+          {
+            "verse": 5,
+            "text": "Examine your own selves, whether you are in the faith. Test your own selves. Or don’t you know as to your own selves, that Jesus Christ is in you?—unless indeed you are disqualified.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Corinthians 13:5?translation=web"
+      },
+      "2 Corinthians 5:17": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Corinthians 5:17",
+        "verses": [
+          {
+            "verse": 17,
+            "text": "Therefore if anyone is in Christ, he is a new creation. The old things have passed away. Behold, all things have become new.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Corinthians 5:17?translation=web"
+      },
+      "Ephesians 4:20-24": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Ephesians 4:20-24",
+        "verses": [
+          {
+            "verse": 20,
+            "text": "But you did not learn Christ that way;\n"
+          },
+          {
+            "verse": 21,
+            "text": "if indeed you heard him, and were taught in him, even as truth is in Jesus:\n"
+          },
+          {
+            "verse": 22,
+            "text": "that you put away, as concerning your former way of life, the old man, that grows corrupt after the lusts of deceit;\n"
+          },
+          {
+            "verse": 23,
+            "text": "and that you be renewed in the spirit of your mind,\n"
+          },
+          {
+            "verse": 24,
+            "text": "and put on the new man, who in the likeness of God has been created in righteousness and holiness of truth.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Ephesians 4:20-24?translation=web"
+      },
+      "1 John 2:3-6": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 John 2:3-6",
+        "verses": [
+          {
+            "verse": 3,
+            "text": "This is how we know that we know him: if we keep his commandments.\n"
+          },
+          {
+            "verse": 4,
+            "text": "One who says, “I know him,” and doesn’t keep his commandments, is a liar, and the truth isn’t in him.\n"
+          },
+          {
+            "verse": 5,
+            "text": "But whoever keeps his word, God’s love has most certainly been perfected in him. This is how we know that we are in him:\n"
+          },
+          {
+            "verse": 6,
+            "text": "he who says he remains in him ought himself also to walk just like he walked.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 John 2:3-6?translation=web"
+      },
+      "1 John 3:6, 9-10": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 John 3:6,9-10",
+        "verses": [
+          {
+            "verse": 6,
+            "text": "Whoever remains in him doesn’t sin. Whoever sins hasn’t seen him and doesn’t know him.\n"
+          },
+          {
+            "verse": 9,
+            "text": "Whoever is born of God doesn’t commit sin, because his seed remains in him; and he can’t sin, because he is born of God.\n"
+          },
+          {
+            "verse": 10,
+            "text": "In this the children of God are revealed, and the children of the devil. Whoever doesn’t do righteousness is not of God, neither is he who doesn’t love his brother.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 John 3:6, 9-10?translation=web"
+      },
+      "1 John 3:14": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 John 3:14",
+        "verses": [
+          {
+            "verse": 14,
+            "text": "We know that we have passed out of death into life, because we love the brothers. He who doesn’t love his brother remains in death.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 John 3:14?translation=web"
+      },
+      "1 John 3:24": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 John 3:24",
+        "verses": [
+          {
+            "verse": 24,
+            "text": "He who keeps his commandments remains in him, and he in him. By this we know that he remains in us, by the Spirit which he gave us.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 John 3:24?translation=web"
+      },
+      "1 John 5:12-13": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 John 5:12-13",
+        "verses": [
+          {
+            "verse": 12,
+            "text": "He who has the Son has the life. He who doesn’t have God’s Son doesn’t have the life.\n"
+          },
+          {
+            "verse": 13,
+            "text": "These things I have written to you who believe in the name of the Son of God, that you may know that you have eternal life, and that you may continue to believe in the name of the Son of God.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 John 5:12-13?translation=web"
+      },
+      "John 10:27-29": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 10:27-29",
+        "verses": [
+          {
+            "verse": 27,
+            "text": "\nMy sheep hear my voice, and I know them, and they follow me.\n\n"
+          },
+          {
+            "verse": 28,
+            "text": "\nI give eternal life to them. They will never perish, and no one will snatch them out of my hand.\n\n"
+          },
+          {
+            "verse": 29,
+            "text": "\nMy Father, who has given them to me, is greater than all. No one is able to snatch them out of my Father’s hand.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 10:27-29?translation=web"
+      },
+      "John 17:11-12": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 17:11-12",
+        "verses": [
+          {
+            "verse": 11,
+            "text": "\nI am no more in the world, but these are in the world, and I am coming to you. Holy Father, keep them through your name which you have given me, that they may be one, even as we are.\n\n"
+          },
+          {
+            "verse": 12,
+            "text": "\nWhile I was with them in the world, I kept them in your name. Those whom you have given me I have kept. None of them is lost, except the son of destruction, that the Scripture might be fulfilled.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 17:11-12?translation=web"
+      },
+      "Ephesians 1:13-14": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Ephesians 1:13-14",
+        "verses": [
+          {
+            "verse": 13,
+            "text": "In him you also, having heard the word of the truth, the Good News of your salvation—in whom, having also believed, you were sealed with the promised Holy Spirit,\n"
+          },
+          {
+            "verse": 14,
+            "text": "who is a pledge of our inheritance, to the redemption of God’s own possession, to the praise of his glory.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Ephesians 1:13-14?translation=web"
+      },
+      "Romans 8:31-39": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 8:31-39",
+        "verses": [
+          {
+            "verse": 31,
+            "text": "What then shall we say about these things? If God is for us, who can be against us?\n"
+          },
+          {
+            "verse": 32,
+            "text": "He who didn’t spare his own Son, but delivered him up for us all, how would he not also with him freely give us all things?\n"
+          },
+          {
+            "verse": 33,
+            "text": "Who could bring a charge against God’s chosen ones? It is God who justifies.\n"
+          },
+          {
+            "verse": 34,
+            "text": "Who is he who condemns? It is Christ who died, yes rather, who was raised from the dead, who is at the right hand of God, who also makes intercession for us.\n"
+          },
+          {
+            "verse": 35,
+            "text": "Who shall separate us from the love of Christ? Could oppression, or anguish, or persecution, or famine, or nakedness, or peril, or sword?\n"
+          },
+          {
+            "verse": 36,
+            "text": "Even as it is written,\n“For your sake we are killed all day long.\nWe were accounted as sheep for the slaughter.”\n"
+          },
+          {
+            "verse": 37,
+            "text": "No, in all these things, we are more than conquerors through him who loved us.\n"
+          },
+          {
+            "verse": 38,
+            "text": "For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers,\n"
+          },
+          {
+            "verse": 39,
+            "text": "nor height, nor depth, nor any other created thing, will be able to separate us from God’s love, which is in Christ Jesus our Lord.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 8:31-39?translation=web"
+      },
+      "Hebrews 10:11-18": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Hebrews 10:11-18",
+        "verses": [
+          {
+            "verse": 11,
+            "text": "Every priest indeed stands day by day serving and often offering the same sacrifices, which can never take away sins,\n"
+          },
+          {
+            "verse": 12,
+            "text": "but he, when he had offered one sacrifice for sins forever, sat down on the right hand of God;\n"
+          },
+          {
+            "verse": 13,
+            "text": "from that time waiting until his enemies are made the footstool of his feet.\n"
+          },
+          {
+            "verse": 14,
+            "text": "For by one offering he has perfected forever those who are being sanctified.\n"
+          },
+          {
+            "verse": 15,
+            "text": "The Holy Spirit also testifies to us, for after saying,\n"
+          },
+          {
+            "verse": 16,
+            "text": "“This is the covenant that I will make with them:\n‘After those days,’ says the Lord,\n‘I will put my laws on their heart,\nI will also write them on their mind;’”\nthen he says,\n"
+          },
+          {
+            "verse": 17,
+            "text": "“I will remember their sins and their iniquities no more.”\n"
+          },
+          {
+            "verse": 18,
+            "text": "Now where remission of these is, there is no more offering for sin.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Hebrews 10:11-18?translation=web"
+      },
+      "Genesis 1:1-2": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Genesis 1:1-2",
+        "verses": [
+          {
+            "verse": 1,
+            "text": "In the beginning, God created the heavens and the earth.\n"
+          },
+          {
+            "verse": 2,
+            "text": "The earth was formless and empty. Darkness was on the surface of the deep and God’s Spirit was hovering over the surface of the waters.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Genesis 1:1-2?translation=web"
+      },
+      "2 Corinthians 3:17-18": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Corinthians 3:17-18",
+        "verses": [
+          {
+            "verse": 17,
+            "text": "Now the Lord is the Spirit and where the Spirit of the Lord is, there is liberty.\n"
+          },
+          {
+            "verse": 18,
+            "text": "But we all, with unveiled face seeing the glory of the Lord as in a mirror, are transformed into the same image from glory to glory, even as from the Lord, the Spirit.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Corinthians 3:17-18?translation=web"
+      },
+      "Matthew 3:16-17": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 3:16-17",
+        "verses": [
+          {
+            "verse": 16,
+            "text": "Jesus, when he was baptized, went up directly from the water: and behold, the heavens were opened to him. He saw the Spirit of God descending as a dove, and coming on him.\n"
+          },
+          {
+            "verse": 17,
+            "text": "Behold, a voice out of the heavens said, “This is my beloved Son, with whom I am well pleased.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 3:16-17?translation=web"
+      },
+      "Romans 5:5": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 5:5",
+        "verses": [
+          {
+            "verse": 5,
+            "text": "and hope doesn’t disappoint us, because God’s love has been poured out into our hearts through the Holy Spirit who was given to us.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 5:5?translation=web"
+      },
+      "Ephesians 3:16": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Ephesians 3:16",
+        "verses": [
+          {
+            "verse": 16,
+            "text": "that he would grant you, according to the riches of his glory, that you may be strengthened with power through his Spirit in the inward man;\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Ephesians 3:16?translation=web"
+      },
+      "John 14:25-26": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 14:25-26",
+        "verses": [
+          {
+            "verse": 25,
+            "text": "\nI have said these things to you, while still living with you.\n\n"
+          },
+          {
+            "verse": 26,
+            "text": "\nBut the Counselor, the Holy Spirit, whom the Father will send in my name, he will teach you all things, and will remind you of all that I said to you.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 14:25-26?translation=web"
+      },
+      "1 Corinthians 2:10-12": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 Corinthians 2:10-12",
+        "verses": [
+          {
+            "verse": 10,
+            "text": "But to us, God revealed them through the Spirit. For the Spirit searches all things, yes, the deep things of God.\n"
+          },
+          {
+            "verse": 11,
+            "text": "For who among men knows the things of a man, except the spirit of the man, which is in him? Even so, no one knows the things of God, except God’s Spirit.\n"
+          },
+          {
+            "verse": 12,
+            "text": "But we received, not the spirit of the world, but the Spirit which is from God, that we might know the things that were freely given to us by God.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 Corinthians 2:10-12?translation=web"
+      },
+      "John 16:13-14": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 16:13-14",
+        "verses": [
+          {
+            "verse": 13,
+            "text": "\nHowever when he, the Spirit of truth, has come, he will guide you into all truth, for he will not speak from himself; but whatever he hears, he will speak. He will declare to you things that are coming.\n\n"
+          },
+          {
+            "verse": 14,
+            "text": "\nHe will glorify me, for he will take from what is mine, and will declare it to you.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 16:13-14?translation=web"
+      },
+      "Acts 1:8": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Acts 1:8",
+        "verses": [
+          {
+            "verse": 8,
+            "text": "\nBut you will receive power when the Holy Spirit has come upon you. You will be witnesses to me in Jerusalem, in all Judea and Samaria, and to the uttermost parts of the earth.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Acts 1:8?translation=web"
+      },
+      "2 Peter 1:20-21": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Peter 1:20-21",
+        "verses": [
+          {
+            "verse": 20,
+            "text": "knowing this first, that no prophecy of Scripture is of private interpretation.\n"
+          },
+          {
+            "verse": 21,
+            "text": "For no prophecy ever came by the will of man: but holy men of God spoke, being moved by the Holy Spirit.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Peter 1:20-21?translation=web"
+      },
+      "2 Timothy 1:13-14": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Timothy 1:13-14",
+        "verses": [
+          {
+            "verse": 13,
+            "text": "Hold the pattern of sound words which you have heard from me, in faith and love which is in Christ Jesus.\n"
+          },
+          {
+            "verse": 14,
+            "text": "That good thing which was committed to you, guard through the Holy Spirit who dwells in us.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Timothy 1:13-14?translation=web"
+      },
+      "Ezekiel 36:26-27": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Ezekiel 36:26-27",
+        "verses": [
+          {
+            "verse": 26,
+            "text": "I will also give you a new heart, and I will put a new spirit within you. I will take away the stony heart out of your flesh, and I will give you a heart of flesh.\n"
+          },
+          {
+            "verse": 27,
+            "text": "I will put my Spirit within you, and cause you to walk in my statutes. You will keep my ordinances and do them.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Ezekiel 36:26-27?translation=web"
+      },
+      "1 Corinthians 3:16": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 Corinthians 3:16",
+        "verses": [
+          {
+            "verse": 16,
+            "text": "Don’t you know that you are a temple of God, and that God’s Spirit lives in you?\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 Corinthians 3:16?translation=web"
+      },
+      "Acts 2:38": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Acts 2:38",
+        "verses": [
+          {
+            "verse": 38,
+            "text": "Peter said to them, “Repent, and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of sins, and you will receive the gift of the Holy Spirit.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Acts 2:38?translation=web"
+      },
+      "Galatians 5:16-25": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Galatians 5:16-25",
+        "verses": [
+          {
+            "verse": 16,
+            "text": "But I say, walk by the Spirit, and you won’t fulfill the lust of the flesh.\n"
+          },
+          {
+            "verse": 17,
+            "text": "For the flesh lusts against the Spirit, and the Spirit against the flesh; and these are contrary to one another, that you may not do the things that you desire.\n"
+          },
+          {
+            "verse": 18,
+            "text": "But if you are led by the Spirit, you are not under the law.\n"
+          },
+          {
+            "verse": 19,
+            "text": "Now the deeds of the flesh are obvious, which are: adultery, sexual immorality, uncleanness, lustfulness,\n"
+          },
+          {
+            "verse": 20,
+            "text": "idolatry, sorcery, hatred, strife, jealousies, outbursts of anger, rivalries, divisions, heresies,\n"
+          },
+          {
+            "verse": 21,
+            "text": "envy, murders, drunkenness, orgies, and things like these; of which I forewarn you, even as I also forewarned you, that those who practice such things will not inherit God’s Kingdom.\n"
+          },
+          {
+            "verse": 22,
+            "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith,\n"
+          },
+          {
+            "verse": 23,
+            "text": "gentleness, and self-control. Against such things there is no law.\n"
+          },
+          {
+            "verse": 24,
+            "text": "Those who belong to Christ have crucified the flesh with its passions and lusts.\n"
+          },
+          {
+            "verse": 25,
+            "text": "If we live by the Spirit, let’s also walk by the Spirit.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Galatians 5:16-25?translation=web"
+      },
+      "Ephesians 5:15-20": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Ephesians 5:15-20",
+        "verses": [
+          {
+            "verse": 15,
+            "text": "Therefore watch carefully how you walk, not as unwise, but as wise;\n"
+          },
+          {
+            "verse": 16,
+            "text": "redeeming the time, because the days are evil.\n"
+          },
+          {
+            "verse": 17,
+            "text": "Therefore don’t be foolish, but understand what the will of the Lord is.\n"
+          },
+          {
+            "verse": 18,
+            "text": "Don’t be drunken with wine, in which is dissipation, but be filled with the Spirit,\n"
+          },
+          {
+            "verse": 19,
+            "text": "speaking to one another in psalms, hymns, and spiritual songs; singing, and making melody in your heart to the Lord;\n"
+          },
+          {
+            "verse": 20,
+            "text": "giving thanks always concerning all things in the name of our Lord Jesus Christ, to God, even the Father;\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Ephesians 5:15-20?translation=web"
+      },
+      "Romans 8:1-2": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 8:1-2",
+        "verses": [
+          {
+            "verse": 1,
+            "text": "There is therefore now no condemnation to those who are in Christ Jesus, who don’t walk according to the flesh, but according to the Spirit.\n"
+          },
+          {
+            "verse": 2,
+            "text": "For the law of the Spirit of life in Christ Jesus made me free from the law of sin and of death.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 8:1-2?translation=web"
+      },
+      "Romans 8:3-4": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 8:3-4",
+        "verses": [
+          {
+            "verse": 3,
+            "text": "For what the law couldn’t do, in that it was weak through the flesh, God did, sending his own Son in the likeness of sinful flesh and for sin, he condemned sin in the flesh;\n"
+          },
+          {
+            "verse": 4,
+            "text": "that the ordinance of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 8:3-4?translation=web"
+      },
+      "Romans 8:5-11": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 8:5-11",
+        "verses": [
+          {
+            "verse": 5,
+            "text": "For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit, the things of the Spirit.\n"
+          },
+          {
+            "verse": 6,
+            "text": "For the mind of the flesh is death, but the mind of the Spirit is life and peace;\n"
+          },
+          {
+            "verse": 7,
+            "text": "because the mind of the flesh is hostile towards God; for it is not subject to God’s law, neither indeed can it be.\n"
+          },
+          {
+            "verse": 8,
+            "text": "Those who are in the flesh can’t please God.\n"
+          },
+          {
+            "verse": 9,
+            "text": "But you are not in the flesh but in the Spirit, if it is so that the Spirit of God dwells in you. But if any man doesn’t have the Spirit of Christ, he is not his.\n"
+          },
+          {
+            "verse": 10,
+            "text": "If Christ is in you, the body is dead because of sin, but the spirit is alive because of righteousness.\n"
+          },
+          {
+            "verse": 11,
+            "text": "But if the Spirit of him who raised up Jesus from the dead dwells in you, he who raised up Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 8:5-11?translation=web"
+      },
+      "Romans 8:12-13": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 8:12-13",
+        "verses": [
+          {
+            "verse": 12,
+            "text": "So then, brothers, we are debtors, not to the flesh, to live after the flesh.\n"
+          },
+          {
+            "verse": 13,
+            "text": "For if you live after the flesh, you must die; but if by the Spirit you put to death the deeds of the body, you will live.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 8:12-13?translation=web"
+      },
+      "Romans 8:14-16": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 8:14-16",
+        "verses": [
+          {
+            "verse": 14,
+            "text": "For as many as are led by the Spirit of God, these are children of God.\n"
+          },
+          {
+            "verse": 15,
+            "text": "For you didn’t receive the spirit of bondage again to fear, but you received the Spirit of adoption, by whom we cry, “Abba! Father!”\n"
+          },
+          {
+            "verse": 16,
+            "text": "The Spirit himself testifies with our spirit that we are children of God;\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 8:14-16?translation=web"
       }
     }
   }
