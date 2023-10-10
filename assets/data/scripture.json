@@ -2417,6 +2417,40 @@
           }
         ],
         "sourceUrl": "https://bible-api.com/Luke 14:25-33?translation=web"
+      },
+      "Mark 3:14": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Mark 3:14",
+        "verses": [
+          {
+            "verse": 14,
+            "text": "He appointed twelve, that they might be with him, and that he might send them out to preach,\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Mark 3:14?translation=web"
+      },
+      "John 20:21": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 20:21",
+        "verses": [
+          {
+            "verse": 21,
+            "text": "Jesus therefore said to them again,\n“Peace be to you. As the Father has sent me, even so I send you.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 20:21?translation=web"
       }
     }
   }

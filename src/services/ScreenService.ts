@@ -2576,13 +2576,50 @@ const serializedAppDataNew: SerializedAppData = {
                     },
                     {
                       type: 'ScriptureSlide',
-                      headerText: 'SlideHeading',
                       scripture: {
-                        reference: 'Psalm 119:11',
+                        reference: 'Mark 3:14',
                         revealedButton: {
-                          text: 'Answer',
+                          text: 'Jesus modeled it',
                         },
                       },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'John 20:21',
+                        revealedButton: {
+                          text: "God's plan to reach ALL",
+                        },
+                      },
+                    },
+                    {
+                      type: 'Slide',
+                      contentDesign: 'tight',
+                      contents: [
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: '2 Timothy 2:2',
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Spiritual multiplication',
+                            },
+                          ],
+                        },
+                        {
+                          type: 'Image',
+                          image: 'spiritual-multiplication',
+                          style: {
+                            width: 216,
+                            height: 384,
+                          },
+                        },
+                      ],
                     },
                   ],
                 },
@@ -2596,14 +2633,232 @@ const serializedAppDataNew: SerializedAppData = {
                       headerText: 'The "How" of Discipleship',
                     },
                     {
-                      type: 'ScriptureSlide',
-                      headerText: 'SlideHeading',
-                      scripture: {
-                        reference: 'Psalm 119:11',
-                        revealedButton: {
-                          text: 'Answer',
+                      type: 'Slide',
+                      design: 'primary',
+                      contentDesign: 'tight',
+                      headerText: 'Content',
+                      contents: [
+                        {
+                          type: 'HeaderText',
+                          text: 'It is important to establish a solid Biblical foundation.',
+                          style: {
+                            fontSize: 23,
+                            color: '#007bc6',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
                         },
-                      },
+                        {
+                          type: 'HeaderText',
+                          text: 'John 17:17',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'John 17:17',
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Scripture sanctifies',
+                            },
+                          ],
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: '2 Timothy 2:15',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: '2 Timothy 2:15',
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Rightly handling the Word of truth',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'Slide',
+                      design: 'primary',
+                      contentDesign: 'tight',
+                      headerText: 'Community',
+                      contents: [
+                        {
+                          type: 'HeaderText',
+                          text: 'It is important to show care for each other, modeling love, vulnerability, and service.',
+                          style: {
+                            fontSize: 23,
+                            color: '#007bc6',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: '1 Thessalonians 2:8',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: '1 Thessalonians 2:8',
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Shared lives',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'Slide',
+                      design: 'primary',
+                      contentDesign: 'tight',
+                      headerText: 'Context',
+                      contents: [
+                        {
+                          type: 'HeaderText',
+                          text: 'It is important to express the gospel beginning with those in your closest spheres of influence.',
+                          style: {
+                            fontSize: 23,
+                            color: '#007bc6',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: 'John 4:39-42',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'John 4:39-42',
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Shared with those closest to her',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'Slide',
+                      design: 'primary',
+                      contentDesign: 'tight',
+                      headerText: 'Replication',
+                      contents: [
+                        {
+                          type: 'HeaderText',
+                          text: 'Matthew 28:18-20',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Matthew 28:18-20',
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Make disciples',
+                            },
+                          ],
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: '2 Timothy 2:2',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: '2 Timothy 2:2',
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Repeat the process',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'Slide',
+                      design: 'primary',
+                      contentDesign: 'tight',
+                      headerText: 'How to get started',
+                      contents: [
+                        {
+                          type: 'Image',
+                          image: 'invite',
+                          style: {
+                            width: 216,
+                            height: 384,
+                          },
+                        },
+                      ],
                     },
                   ],
                 },
