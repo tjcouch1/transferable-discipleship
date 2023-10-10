@@ -2033,14 +2033,6 @@ const serializedAppDataNew: SerializedAppData = {
                 to: 'Discipleship',
               },
             },
-            {
-              type: 'Image',
-              image: 'invite',
-              style: {
-                width: 108,
-                height: 192,
-              },
-            },
           ],
           subscreens: [
             {
@@ -2054,32 +2046,310 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'ActionButton',
                   text: {
-                    text: 'NavText',
+                    text: 'What is discipleship?',
                   },
                   action: {
                     type: 'navigate',
-                    to: 'ScreenId',
+                    to: 'WhatIsDiscipleship',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Go Make',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Go Make',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Disciples',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Disciples',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'All Nations',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'All Nations',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Baptizing',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Baptizing',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Teaching',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Teaching',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Empowered',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Empowered',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'God causes growth',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'God causes growth',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Cycles of discipleship',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Cycles of discipleship',
                   },
                 },
               ],
               subscreens: [
                 {
-                  id: 'ScreenId',
+                  id: 'WhatIsDiscipleship',
                   title: 'The Great Commission',
                   type: 'ContentListScreen',
                   contents: [
                     {
                       type: 'Header',
-                      headerText: 'ScreenTitle',
+                      headerText: 'What is discipleship?',
                     },
                     {
                       type: 'ScriptureSlide',
-                      headerText: 'SlideHeading',
                       scripture: {
-                        reference: 'Psalm 119:11',
+                        reference: 'Matthew 28:18-20',
                         revealedButton: {
-                          text: 'Answer',
+                          text: 'What is discipleship?',
                         },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'Go Make',
+                  title: 'The Great Commission',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Go Make',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 10:14-15',
+                        revealedButton: {
+                          text: 'Active/intentional',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'Disciples',
+                  title: 'The Great Commission',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Disciples',
+                    },
+                    {
+                      type: 'Slide',
+                      headerText: 'Disciple',
+                      design: 'primary',
+                      contentDesign: 'tight',
+                      contents: [
+                        'Someone who learns how to grow, live, and express the Christian life and repeats the process with others.',
+                      ],
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Timothy 2:2',
+                        revealedButton: {
+                          text: 'Replication',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'All Nations',
+                  title: 'The Great Commission',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'All Nations',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Acts 1:8',
+                      },
+                    },
+                    {
+                      type: 'Slide',
+                      headerText: 'A picture of nations from Acts 1:8',
+                      design: 'primary',
+                      contentDesign: 'tight',
+                      contents: [
+                        {
+                          type: 'Image',
+                          image: 'nations',
+                          style: {
+                            width: 216,
+                            height: 384,
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  id: 'Baptizing',
+                  title: 'The Great Commission',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Baptizing',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Corinthians 5:17-20',
+                        revealedButton: {
+                          text: 'New life; new purpose; part of a community',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'Teaching',
+                  title: 'The Great Commission',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Teaching',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Deuteronomy 6:6-9',
+                        revealedButton: {
+                          text: 'Founded in Scripture',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Acts 4:20',
+                        revealedButton: {
+                          text: "Can't stop telling your experience",
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'Empowered',
+                  title: 'The Great Commission',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Empowered',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Peter 1:3-4',
+                        revealedButton: {
+                          text: 'God has given us all we need',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'God causes growth',
+                  title: 'The Great Commission',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'God causes growth',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 Corinthians 3:6-7',
+                        revealedButton: {
+                          text: 'Invested by people; produced by God',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Galatians 3:3',
+                        revealedButton: {
+                          text: 'Saved by the Spirit; sanctified by the Spirit',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'Cycles of discipleship',
+                  title: 'The Great Commission',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Cycles of discipleship',
+                    },
+                    {
+                      type: 'Image',
+                      image: 'cycles-of-involvement',
+                      style: {
+                        width: 216,
+                        height: 384,
                       },
                     },
                   ],
@@ -2098,23 +2368,232 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'ActionButton',
                   text: {
-                    text: 'NavText',
+                    text: 'The motivation',
                   },
                   action: {
                     type: 'navigate',
-                    to: 'ScreenId',
+                    to: 'TheMotivation',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Who?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Who',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Why?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'Why',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'How?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'How',
                   },
                 },
               ],
               subscreens: [
                 {
-                  id: 'ScreenId',
+                  id: 'TheMotivation',
                   title: 'Discipleship',
                   type: 'ContentListScreen',
                   contents: [
                     {
                       type: 'Header',
-                      headerText: 'ScreenTitle',
+                      headerText: 'What is our motivation?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Revelation 7:9-10',
+                        revealedButton: {
+                          text: 'All nations worshiping before the Lamb',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'Who',
+                  title: 'Discipleship',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'The "Who" of Discipleship',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Luke 6:12-17',
+                        revealedButton: {
+                          text: 'Selection',
+                        },
+                      },
+                    },
+                    {
+                      type: 'Slide',
+                      design: 'primary',
+                      headerText:
+                        'Jesus chose a few people to invest deeply in.',
+                      contents: [
+                        'Why is important to choose to invest in a few people?',
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Because it is impossible to invest in everyone',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      type: 'Slide',
+                      design: 'primary',
+                      contentDesign: 'tight',
+                      headerText: 'How do you choose whom to invest in?',
+                      style: {
+                        borderBottomColor: '#00c7e2',
+                      },
+                      contents: [
+                        {
+                          type: 'HeaderText',
+                          text: 'Faithful',
+                          style: {
+                            fontSize: 25,
+                            color: '#007bc6',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: '2 Timothy 2:2',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: '2 Timothy 2:2',
+                          style: {
+                            paddingBottom: 15,
+                          },
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: 'Available',
+                          style: {
+                            fontSize: 25,
+                            color: '#007bc6',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: 'Luke 9:57-62',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Luke 9:57-62',
+                          style: {
+                            paddingBottom: 15,
+                          },
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: 'Teachable',
+                          style: {
+                            fontSize: 25,
+                            color: '#007bc6',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'HeaderText',
+                          text: 'Acts 2:42',
+                          style: {
+                            fontSize: 23,
+                            color: '#ff9700',
+                            alignSelf: 'flex-start',
+                            fontWeight: '700',
+                          },
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Acts 2:42',
+                        },
+                      ],
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Luke 14:25-33',
+                        revealedButton: {
+                          text: 'Count the cost',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'Why',
+                  title: 'Discipleship',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'The "Why" of Discipleship',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      headerText: 'SlideHeading',
+                      scripture: {
+                        reference: 'Psalm 119:11',
+                        revealedButton: {
+                          text: 'Answer',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'How',
+                  title: 'Discipleship',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'The "How" of Discipleship',
                     },
                     {
                       type: 'ScriptureSlide',
