@@ -2595,6 +2595,7 @@ const serializedAppDataNew: SerializedAppData = {
                     {
                       type: 'Slide',
                       contentDesign: 'tight',
+                      headerText: '2 Timothy 2:2',
                       contents: [
                         {
                           type: 'ScrRangeDisplay',
