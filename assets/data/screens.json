@@ -17,20 +17,6 @@
           "design": "title"
         },
         {
-          "type": "Image",
-          "image": "icon"
-        },
-        {
-          "type": "Image",
-          "image": "https://images.unsplash.com/photo-1691689761201-4fe4388438b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
-          "attribution": "Photo by <a href=\"https://unsplash.com/@gabriellemeschini?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText\">Gabrielle Meschini</a> on <a href=\"https://unsplash.com/photos/a-man-riding-a-skateboard-down-the-side-of-a-road-RZSKBsaOxVk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText\">Unsplash</a>"
-        },
-        {
-          "type": "Image",
-          "image": "data:image/png;base64,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",
-          "attribution": "Converted with https://ezgif.com/image-to-datauri"
-        },
-        {
           "type": "ActionButton",
           "text": "Basics",
           "action": {
@@ -61,160 +47,74 @@
             "type": "navigate",
             "to": "About"
           }
-        },
-        {
-          "type": "ContentList",
-          "openIndexDefault": 0,
-          "padTop": false,
-          "padBottom": false,
-          "padding": 5,
-          "contents": [
-            "Bare Text!",
-            {
-              "type": "ToggleButton",
-              "loop": true,
-              "text": { "text": "Stuff", "design": "header" },
-              "altButtons": [{ "text": "Things" }]
-            },
-            {
-              "type": "ScriptureSlide",
-              "design": "primary",
-              "canClose": false,
-              "scripture": {
-                "reference": "Romans 12:1-2"
-              }
-            },
-            {
-              "type": "ScriptureSlide",
-              "headerText": "What is true of God?",
-              "isOpenDefault": true,
-              "scripture": {
-                "reference": "Acts 17:24-28",
-                "revealedButton": {
-                  "text": "Creator, Desires to be known"
-                }
-              }
-            },
-            {
-              "type": "ScriptureSlide",
-              "headerText": "What is the nature of man?",
-              "scripture": [
-                {
-                  "reference": "Ephesians 2:1-3",
-                  "revealedButton": {
-                    "text": "Dead"
-                  }
-                },
-                {
-                  "reference": "Romans 3:23",
-                  "revealedButton": {
-                    "text": "All have sinned"
-                  }
-                },
-                {
-                  "reference": "Romans 6:23",
-                  "revealedButton": {
-                    "text": "Deserve death"
-                  }
-                }
-              ]
-            }
-          ]
         }
       ],
       "subscreens": [
         {
           "id": "Basics",
           "type": "ContentListScreen",
-          "design": "no-padding",
-          "controlIsOpen": false,
           "contents": [
             {
               "type": "Header",
-              "headerText": "Basics",
-              "subheaderText": "Here is some basic stuff to read"
+              "headerText": "Basics"
             },
             {
-              "type": "ScriptureSlide",
-              "isOpenDefault": true,
-              "scripture": {
-                "reference": "John 11:35"
+              "type": "ActionButton",
+              "text": "Gospel Review",
+              "action": {
+                "type": "navigate",
+                "to": "Gospel Review"
               }
             },
             {
-              "type": "ScriptureSlide",
-              "canClose": false,
-              "isOpenDefault": false,
-              "scripture": {
-                "reference": "John 11:36"
+              "type": "ActionButton",
+              "text": "Scripture 1.0",
+              "action": {
+                "type": "navigate",
+                "to": "Scripture 1.0"
               }
             },
             {
-              "type": "ButtonList",
-              "buttons": [
-                {
-                  "type": "ActionButton",
-                  "text": "Gospel Review",
-                  "action": {
-                    "type": "navigate",
-                    "to": "GospelReview"
-                  }
-                },
-                {
-                  "type": "ActionButton",
-                  "text": "Scripture 1.0",
-                  "action": {
-                    "type": "navigate",
-                    "to": "Scripture1.0"
-                  }
-                },
-                {
-                  "type": "ActionButton",
-                  "text": "Assurance of Salvation",
-                  "action": {
-                    "type": "navigate",
-                    "to": "AssuranceOfSalvation"
-                  }
-                },
-                {
-                  "type": "ActionButton",
-                  "text": "Holy Spirit",
-                  "action": {
-                    "type": "navigate",
-                    "to": "HolySpirit"
-                  }
-                },
-                {
-                  "type": "ActionButton",
-                  "text": "Prayer",
-                  "action": {
-                    "type": "navigate",
-                    "to": "Prayer"
-                  }
-                }
-              ]
+              "type": "ActionButton",
+              "text": "Assurance of Salvation",
+              "action": {
+                "type": "navigate",
+                "to": "Assurance of Salvation"
+              }
+            },
+            {
+              "type": "ActionButton",
+              "text": "Holy Spirit",
+              "action": {
+                "type": "navigate",
+                "to": "Holy Spirit"
+              }
+            },
+            {
+              "type": "ActionButton",
+              "text": "Prayer",
+              "action": {
+                "type": "navigate",
+                "to": "Prayer"
+              }
             }
           ],
           "subscreens": [
             {
-              "id": "GospelReview",
-              "title": "Gospel Review",
+              "id": "Gospel Review",
               "type": "ContentListScreen",
               "design": "loose",
               "contents": [
                 {
                   "type": "Header",
-                  "headerText": "Gospel Review",
-                  "subheaderText": "Reviewing the Gospel"
+                  "headerText": "Gospel Review"
                 },
                 {
                   "type": "ActionButton",
-                  "text": {
-                    "text": "What is the relationship between God & man?"
-                  },
+                  "text": "What is the relationship between God & man?",
                   "action": {
                     "type": "navigate",
-                    "to": "RelGodMan"
+                    "to": "RelationshipGodMan"
                   }
                 },
                 {
@@ -224,14 +124,8 @@
                   },
                   "action": {
                     "type": "navigate",
-                    "to": "RestReln"
+                    "to": "RestoreRelationship"
                   }
-                },
-                {
-                  "type": "Header",
-                  "headerText": "section title",
-                  "subheaderText": "stuff here",
-                  "design": "section"
                 },
                 {
                   "type": "ActionButton",
@@ -257,29 +151,2674 @@
                     "to": "WholeStory"
                   }
                 }
+              ],
+              "subscreens": [
+                {
+                  "id": "RelationshipGodMan",
+                  "title": "Gospel Review",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What is the relationship between God & man?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "What is true of God?",
+                      "scripture": {
+                        "reference": "Acts 17:24-28",
+                        "revealedButton": {
+                          "text": "Creator; desires to be known"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "What is the nature of man?",
+                      "scripture": [
+                        {
+                          "reference": "Ephesians 2:1-3",
+                          "revealedButton": {
+                            "text": "Dead"
+                          }
+                        },
+                        {
+                          "reference": "Romans 3:23",
+                          "revealedButton": {
+                            "text": "All have sinned"
+                          }
+                        },
+                        {
+                          "reference": "Romans 6:23",
+                          "revealedButton": {
+                            "text": "Deserve death"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "RestoreRelationship",
+                  "title": "Gospel Review",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What is God's plan to restore our relationship?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "What is the purpose of the law?",
+                      "scripture": {
+                        "reference": "Romans 3:21-26",
+                        "revealedButton": {
+                          "text": "Points us to Jesus"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "How were people saved in the Old Testament?",
+                      "scripture": {
+                        "reference": "Romans 4:2-8",
+                        "revealedButton": {
+                          "text": "Faith in Christ"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "How are people saved now?",
+                      "scripture": [
+                        {
+                          "reference": "Ephesians 2:4-5"
+                        },
+                        {
+                          "reference": "Ephesians 2:8-9",
+                          "revealedButton": {
+                            "text": "Faith, not works"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "WhatJesusDo",
+                  "title": "Gospel Review",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What did Jesus do?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 5:6-8",
+                        "revealedButton": {
+                          "text": "Died in our place"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 5:18-19",
+                        "revealedButton": {
+                          "text": "Made us righteous"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 14:6",
+                        "revealedButton": {
+                          "text": "Only way"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 Corinthians 15:3-8",
+                        "revealedButton": {
+                          "text": "Proved His resurrection"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Corinthians 5:21",
+                        "revealedButton": {
+                          "text": "Took our sin; gave us His righteousness"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "HowRespond",
+                  "title": "Gospel Review",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "How should I respond?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 3:16-18",
+                        "revealedButton": {
+                          "text": "Believe or condemned already"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 10:8-10",
+                        "revealedButton": {
+                          "text": "Confess & believe"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Mark 1:15",
+                        "revealedButton": {
+                          "text": "Repent & believe"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Acts 3:19",
+                        "revealedButton": {
+                          "text": "Repent & turn to God"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Corinthians 5:15",
+                        "revealedButton": {
+                          "text": "New reason to live"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "WholeStory",
+                  "title": "Gospel Review",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "The whole story"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "God exists, and He created everything, including people who bear His image, to know Him personally.",
+                      "scripture": {
+                        "reference": "Acts 17:24-28"
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "As God, He is perfect and has a perfect standard that, as His image bearers, we have all failed to meet.",
+                      "scripture": {
+                        "reference": "Romans 3:23"
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "That imperfection, called sin, has caused us to be separated from the perfect God.",
+                      "scripture": {
+                        "reference": "Romans 6:23"
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "God knew this would happen from the beginning and set up a plan to show us our inability to make things right between us and Him.",
+                      "scripture": [
+                        {
+                          "reference": "Romans 3:21-26"
+                        },
+                        {
+                          "reference": "Romans 4:2-6"
+                        },
+                        {
+                          "reference": "Ephesians 2:8-9"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "The plan was to send His only Son to live a perfect life and, dying on a cross, to exchange our sin for His right standing before God.",
+                      "scripture": [
+                        {
+                          "reference": "Romans 5:6-8, 18-19"
+                        },
+                        {
+                          "reference": "John 14:6"
+                        },
+                        {
+                          "reference": "2 Corinthians 5:21"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "All who repent and believe in Him receive eternal life.",
+                      "scripture": [
+                        {
+                          "reference": "John 3:16-18"
+                        },
+                        {
+                          "reference": "Romans 10:8-10"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "headerText": "Life now has new meaning, no longer to live for self but for God.",
+                      "scripture": {
+                        "reference": "2 Corinthians 5:15"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Scripture 1.0",
+              "type": "ContentListScreen",
+              "contents": [
+                {
+                  "type": "Header",
+                  "headerText": "Scripture 1.0"
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Intro to Scripture"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "IntroScripture"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Why is Scripture so great?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhyScriptureGreat"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What does Scripture do?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhatScriptureDo"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What should we do?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhatWeDo"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "How does this affect me?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "HowAffectMe"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What does my time with God look like?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "TimeWithGod"
+                  }
+                }
+              ],
+              "subscreens": [
+                {
+                  "id": "IntroScripture",
+                  "title": "Scripture 1.0",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Intro to Scripture"
+                    },
+                    {
+                      "type": "Slide",
+                      "canClose": false,
+                      "contents": [
+                        {
+                          "type": "Text",
+                          "text": "Scripture 1.0 is not intended to answer all the questions you have about the Bible. Scripture 2.0 (coming soon) will address more reliability issues. What Scripture 1.0 is intended to do is to give you a picture, by looking at a lot of Scripture, of the benefits of reading Scripture and how it affects our lives. It is intended to help you to see the importance of digging into the Bible daily.",
+                          "style": {
+                            "fontWeight": "bold"
+                          }
+                        },
+                        "‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒",
+                        {
+                          "type": "Text",
+                          "text": "\"The Bible is the inevitable outcome of God's continuous speech. It is the infallible declaration of His mind for us to put into our familiar human words.\"",
+                          "style": {
+                            "fontStyle": "italic"
+                          }
+                        },
+                        {
+                          "type": "Text",
+                          "text": "-A. W. Tozer (Pursuit of God)",
+                          "style": {
+                            "textAlign": "right",
+                            "fontStyle": "italic"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "WhyScriptureGreat",
+                  "title": "Scripture 1.0",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Why is Scripture so great?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 15:4",
+                        "revealedButton": {
+                          "text": "Instruction; endurance; encouragement; hope"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Psalm 19:7-11",
+                        "revealedButton": {
+                          "text": "Perfect; right; pure; equalizing; sweet; great reward for obedience"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 17:17",
+                        "revealedButton": {
+                          "text": "Truth"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "WhatScriptureDo",
+                  "title": "Scripture 1.0",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What does Scripture do?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Timothy 3:14-17",
+                        "revealedButton": {
+                          "text": "Wise unto salvation"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Psalm 119:105",
+                        "revealedButton": {
+                          "text": "Light; lamp"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Matthew 4:4",
+                        "revealedButton": {
+                          "text": "Gives life"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "WhatWeDo",
+                  "title": "Scripture 1.0",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What should we do?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Psalm 1:1-3",
+                        "revealedButton": {
+                          "text": "Delight; meditate continually"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Matthew 7:24-27",
+                        "revealedButton": {
+                          "text": "Hear & do"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 8:31-32",
+                        "revealedButton": {
+                          "text": "Abide"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "HowAffectMe",
+                  "title": "Scripture 1.0",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "How does this affect me?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Psalm 119:11",
+                        "revealedButton": {
+                          "text": "Stored up to not sin"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Psalm 40:8",
+                        "revealedButton": {
+                          "text": "Delight to do God's will"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Deuteronomy 11:18-20",
+                        "revealedButton": {
+                          "text": "Affects every aspect of our lives"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "TimeWithGod",
+                  "title": "Scripture 1.0",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What does my time with God look like?"
+                    },
+                    {
+                      "type": "Slide",
+                      "canClose": false,
+                      "contents": [
+                        {
+                          "type": "Text",
+                          "text": "It is important to develop a consistent daily discipline of reading Scripture.",
+                          "style": {
+                            "fontWeight": "bold"
+                          }
+                        },
+                        "Here are some questions to set you on the right track. To develop a daily time with the Lord, ask yourself the following questions:"
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "When",
+                      "contents": [
+                        "When will you make time for reading?",
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Guard that time!"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "Where",
+                      "contents": [
+                        "Where are you going to do it each day?",
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "It may sound silly, but finding a distraction-free place is important"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "What",
+                      "contents": [
+                        "What reading plan will you use?",
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "I suggest one that will get you through all of the Bible, not just the parts you like to read"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "How",
+                      "contents": [
+                        "Are there resources you need to accomplish your goal?",
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Who will keep you accountable?"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Assurance of Salvation",
+              "type": "ContentListScreen",
+              "contents": [
+                {
+                  "type": "Header",
+                  "headerText": "Assurance of Salvation"
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "How can I know that my faith is secure?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "KnowFaithSecure"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What does a saved person look like?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhatSavedLook"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "How can I know that I am saved?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "HowKnowSaved"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Can anything cause me to lose my salvation?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "CanLoseSalvation"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Was Jesus' sacrifice enough?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WasJesusEnough"
+                  }
+                }
+              ],
+              "subscreens": [
+                {
+                  "id": "KnowFaithSecure",
+                  "title": "Assurance of Salvation",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "How can I know that my faith is secure?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Corinthians 13:5",
+                        "revealedButton": {
+                          "text": "Test yourself"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "WhatSavedLook",
+                  "title": "Assurance of Salvation",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What does a saved person look like?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Corinthians 5:17",
+                        "revealedButton": {
+                          "text": "New creation"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Ephesians 4:20-24",
+                        "revealedButton": {
+                          "text": "Put off old/put on new"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "HowKnowSaved",
+                  "title": "Assurance of Salvation",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "How can I know that I am saved?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 John 2:3-6",
+                        "revealedButton": {
+                          "text": "Obedience"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 John 3:6, 9-10",
+                        "revealedButton": {
+                          "text": "Choose to sin less"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 John 3:14",
+                        "revealedButton": {
+                          "text": "Love others"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 John 3:24",
+                        "revealedButton": {
+                          "text": "Spirit in us"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "CanLoseSalvation",
+                  "title": "Assurance of Salvation",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Can anything cause me to lose my salvation?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 John 5:12-13",
+                        "revealedButton": {
+                          "text": "You CAN know"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 10:27-29",
+                        "revealedButton": {
+                          "text": "Secure in God's hands"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 17:11-12",
+                        "revealedButton": {
+                          "text": "Jesus kept, protected, and prays for the Father to do the same"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Ephesians 1:13-14",
+                        "revealedButton": {
+                          "text": "Sealed by the Holy Spirit"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 8:31-39",
+                        "revealedButton": {
+                          "text": "Nothing can separate us"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "WasJesusEnough",
+                  "title": "Assurance of Salvation",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Was Jesus' sacrifice enough?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Hebrews 10:11-18",
+                        "revealedButton": {
+                          "text": "Once was enough!"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Holy Spirit",
+              "type": "ContentListScreen",
+              "contents": [
+                {
+                  "type": "Header",
+                  "headerText": "Holy Spirit"
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Who is the Holy Spirit?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhoHolySpirit"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What does the Holy Spirit do?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhatHolySpiritDo"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What is the role of the Holy Spirit?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhatRoleHolySpirit"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Where does the Holy Spirit live?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhereHolySpiritLive"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "How should we respond?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "HowRespond"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What is God's invitation to us?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "GodsInvitation"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Summary"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Summary"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What is Spiritual Breathing?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "SpiritualBreathing"
+                  }
+                }
+              ],
+              "subscreens": [
+                {
+                  "id": "WhoHolySpirit",
+                  "title": "Holy Spirit",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Who is the Holy Spirit?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Genesis 1:1-2",
+                        "revealedButton": {
+                          "text": "Present at creation"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Corinthians 3:17-18",
+                        "revealedButton": {
+                          "text": "The Holy Spirit is God"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Matthew 3:16-17",
+                        "revealedButton": {
+                          "text": "Trinity"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "WhatHolySpiritDo",
+                  "title": "Holy Spirit",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What does the Holy Spirit do?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 5:5",
+                        "revealedButton": {
+                          "text": "Lets us know God's love"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Ephesians 3:16",
+                        "revealedButton": {
+                          "text": "Strengthens our weaknesses"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 14:25-26",
+                        "revealedButton": {
+                          "text": "Teaches us"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 Corinthians 2:10-12",
+                        "revealedButton": {
+                          "text": "Gives us understanding"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 16:13-14",
+                        "revealedButton": {
+                          "text": "Guides us to Truth"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Acts 1:8",
+                        "revealedButton": {
+                          "text": "Power to witness"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "WhatRoleHolySpirit",
+                  "title": "Holy Spirit",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What is the role of the Holy Spirit?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Peter 1:20-21",
+                        "revealedButton": {
+                          "text": "Source of Scriptures"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Ephesians 1:13-14",
+                        "revealedButton": {
+                          "text": "Salvation seal"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Timothy 1:13-14",
+                        "revealedButton": {
+                          "text": "Guards doctrine"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "WhereHolySpiritLive",
+                  "title": "Holy Spirit",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Where does the Holy Spirit live?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Ezekiel 36:26-27",
+                        "revealedButton": {
+                          "text": "In you"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 Corinthians 3:16",
+                        "revealedButton": {
+                          "text": "In you"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "HowRespond",
+                  "title": "Holy Spirit",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "How should we respond?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Acts 2:38",
+                        "revealedButton": {
+                          "text": "Repent/receive the Spirit"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Galatians 5:16-25",
+                        "revealedButton": {
+                          "text": "Walk by the Spirit/deeds vs fruit"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "GodsInvitation",
+                  "title": "Holy Spirit",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What is God's invitation to us?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Ephesians 5:15-20",
+                        "revealedButton": {
+                          "text": "Walk by the Spirit/deeds vs. fruit"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "Summary",
+                  "title": "Holy Spirit",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Summary"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 8:1-2",
+                        "revealedButton": {
+                          "text": "Freedom"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 8:3-4",
+                        "revealedButton": {
+                          "text": "New desires"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 8:5-11",
+                        "revealedButton": {
+                          "text": "Life"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 8:12-13",
+                        "revealedButton": {
+                          "text": "Death to sin"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 8:14-16",
+                        "revealedButton": {
+                          "text": "Family of God"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "SpiritualBreathing",
+                  "title": "Holy Spirit",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What is Spiritual Breathing?"
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "An exercise in walking in the power of the Holy Spirit.",
+                      "canClose": false,
+                      "contents": []
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "Exhale:",
+                      "canClose": false,
+                      "contentDesign": "tight",
+                      "contents": [
+                        {
+                          "type": "Text",
+                          "text": "Confession",
+                          "style": {
+                            "fontWeight": "bold"
+                          }
+                        },
+                        "1. Agree with God that I have wronged Him with my sin.",
+                        "2. Agree with God about His provision for my sin.",
+                        {
+                          "type": "Text",
+                          "text": "1 John 1:9",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontWeight": "bold",
+                            "paddingLeft": 35
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "1 John 1:9",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontStyle": "italic",
+                            "paddingLeft": 35
+                          }
+                        },
+                        "3. Repent (change your mind, actions, and heart)"
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "Inhale:",
+                      "canClose": false,
+                      "contentDesign": "tight",
+                      "contents": [
+                        {
+                          "type": "Text",
+                          "text": "Be filled with the Spirit to walk in light of God's forgiveness and empowerment.",
+                          "style": {
+                            "fontWeight": "bold"
+                          }
+                        },
+                        {
+                          "type": "Text",
+                          "text": "1. God's command:",
+                          "style": {
+                            "alignSelf": "flex-start"
+                          }
+                        },
+                        {
+                          "type": "Text",
+                          "text": "Ephesians 5:18",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontWeight": "bold",
+                            "paddingLeft": 35
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Ephesians 5:18",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontStyle": "italic",
+                            "paddingLeft": 35
+                          }
+                        },
+                        {
+                          "type": "Text",
+                          "text": "2. His promise:",
+                          "style": {
+                            "alignSelf": "flex-start"
+                          }
+                        },
+                        {
+                          "type": "Text",
+                          "text": "1 John 5:14-15",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontWeight": "bold",
+                            "paddingLeft": 35
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "1 John 5:14-15",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontStyle": "italic",
+                            "paddingLeft": 35
+                          }
+                        },
+                        "3. Thank Him for His grace, forgiveness, and indwelling Spirit."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Prayer",
+              "type": "ContentListScreen",
+              "contents": [
+                {
+                  "type": "Header",
+                  "headerText": "Prayer"
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Introduction to prayer"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "IntroToPrayer"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Why should we pray?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhyPray"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Does God answer prayer?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "DoesGodAnswer"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "How should we pray?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "HowShouldPray"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Model prayer"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "ModelPrayer"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "How can we develop a growing dependence on God through prayer?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "DevelopDependence"
+                  }
+                }
+              ],
+              "subscreens": [
+                {
+                  "id": "IntroToPrayer",
+                  "title": "Prayer",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Introduction to prayer"
+                    },
+                    {
+                      "type": "Slide",
+                      "canClose": false,
+                      "contentDesign": "tight",
+                      "contents": [
+                        "Prayer is conversation with God. It is our direct access to a loving Creator who is personal and accessible and who cares about our lives. Praying is not our access to some cosmic genie who grants our every wish. While God does desire to answer our prayers according to His will, His greater desire is for us to cast our cares upon Him and to increase our dependence on Him. Prayer is also not simply cathartic. Prayer is a powerful means of connecting with the heart of God and even seeing things change as a result."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "WhyPray",
+                  "title": "Prayer",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Why should we pray?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 16:23-24",
+                        "revealedButton": {
+                          "text": "Full joy"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Philippians 4:6-7",
+                        "revealedButton": {
+                          "text": "Peace"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Hebrews 4:14-16",
+                        "revealedButton": {
+                          "text": "Jesus understands"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "James 5:16",
+                        "revealedButton": {
+                          "text": "Confession; community; healing"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Exodus 32:11-14",
+                        "revealedButton": {
+                          "text": "Changes God's actions"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Luke 22:41-42",
+                        "revealedButton": {
+                          "text": "Aligns us to God's will"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "DoesGodAnswer",
+                  "title": "Prayer",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Does God answer prayer?"
+                    },
+                    {
+                      "type": "Slide",
+                      "design": "primary",
+                      "headerText": "Is prayer always answered?",
+                      "canClose": false,
+                      "contentDesign": "tight",
+                      "contents": []
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 John 5:14",
+                        "revealedButton": {
+                          "text": "God hears"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Matthew 21:22",
+                        "revealedButton": {
+                          "text": "According to faith"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 14:13",
+                        "revealedButton": {
+                          "text": "According to Jesus' character"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "James 4:3",
+                        "revealedButton": {
+                          "text": "Not selfish prayer"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Corinthians 12:8-10",
+                        "revealedButton": {
+                          "text": "Sometimes the answer is \"No\" for a bigger purpose"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Luke 22:41-42",
+                        "revealedButton": {
+                          "text": "Aligns us to God's will"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "HowShouldPray",
+                  "title": "Prayer",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "How should we pray?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Luke 18:9-14",
+                        "revealedButton": {
+                          "text": "Humbly"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 Thessalonians 5:17",
+                        "revealedButton": {
+                          "text": "Continually"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 8:26-28",
+                        "revealedButton": {
+                          "text": "Spirit intercedes"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Nehemiah 4:9",
+                        "revealedButton": {
+                          "text": "Pray, then act in faith"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Matthew 7:7-11",
+                        "revealedButton": {
+                          "text": "Ask; seek; knock"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Luke 11:13",
+                        "revealedButton": {
+                          "text": "God delights to give the Holy Spirit"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "ModelPrayer",
+                  "title": "Prayer",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Model prayer"
+                    },
+                    {
+                      "type": "Slide",
+                      "canClose": false,
+                      "headerText": "Matthew 6:9-13",
+                      "contentDesign": "tight",
+                      "contents": [
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Matthew 6:9",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontStyle": "italic"
+                          }
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Praise God for His goodness; honor Him for His holiness."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Matthew 6:10",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontStyle": "italic"
+                          }
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Help me to desire Your desires and to allow You to use me in whatever ways you think best."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Matthew 6:11",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontStyle": "italic"
+                          }
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Meet the needs I have today."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Matthew 6:12",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontStyle": "italic"
+                          }
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Ask forgiveness of sin; see where you need to forgive others."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Matthew 6:13",
+                          "style": {
+                            "alignSelf": "flex-start",
+                            "fontStyle": "italic"
+                          }
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Watch over and protect us."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "DevelopDependence",
+                  "title": "Prayer",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "How can we develop a growing dependence on God through prayer?"
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "Make a plan",
+                      "contentDesign": "tight",
+                      "contents": ["When will you make time to pray?"]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "Keep track of prayer requests",
+                      "contentDesign": "tight",
+                      "contents": [
+                        "Writing down what you are praying for is a good way to look back on God's faithfulness."
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "Make a plan",
+                      "contentDesign": "tight",
+                      "contents": [
+                        "Make a conscious effort to make prayer a part of your day, moment by moment."
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]
         },
         {
           "id": "Essentials",
-          "type": "HeaderWithButtons",
-          "headerData": {
-            "headerText": "Essentials",
-            "subheaderText": "Here is some essential stuff to read"
-          },
-          "buttonListData": {
-            "buttons": [
-              {
-                "type": "ActionButton",
-                "text": "Home",
-                "action": {
-                  "type": "navigate",
-                  "to": ".."
-                }
+          "type": "ContentListScreen",
+          "contents": [
+            {
+              "type": "Header",
+              "headerText": "Essentials"
+            },
+            {
+              "type": "ActionButton",
+              "text": "The Great Commission",
+              "action": {
+                "type": "navigate",
+                "to": "The Great Commission"
               }
-            ]
-          }
+            },
+            {
+              "type": "ActionButton",
+              "text": "Discipleship (Who, Why, & How)",
+              "action": {
+                "type": "navigate",
+                "to": "Discipleship"
+              }
+            }
+          ],
+          "subscreens": [
+            {
+              "id": "The Great Commission",
+              "type": "ContentListScreen",
+              "contents": [
+                {
+                  "type": "Header",
+                  "headerText": "The Great Commission"
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "What is discipleship?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "WhatIsDiscipleship"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Go Make"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Go Make"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Disciples"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Disciples"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "All Nations"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "All Nations"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Baptizing"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Baptizing"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Teaching"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Teaching"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Empowered"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Empowered"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "God causes growth"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "God causes growth"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Cycles of discipleship"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Cycles of discipleship"
+                  }
+                }
+              ],
+              "subscreens": [
+                {
+                  "id": "WhatIsDiscipleship",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What is discipleship?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Matthew 28:18-20",
+                        "revealedButton": {
+                          "text": "What is discipleship?"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "Go Make",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Go Make"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Romans 10:14-15",
+                        "revealedButton": {
+                          "text": "Active/intentional"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "Disciples",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Disciples"
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "Disciple",
+                      "design": "primary",
+                      "contentDesign": "tight",
+                      "contents": [
+                        "Someone who learns how to grow, live, and express the Christian life and repeats the process with others."
+                      ]
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Timothy 2:2",
+                        "revealedButton": {
+                          "text": "Replication"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "All Nations",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "All Nations"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Acts 1:8"
+                      }
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "A picture of nations from Acts 1:8",
+                      "design": "primary",
+                      "contentDesign": "tight",
+                      "contents": [
+                        {
+                          "type": "Image",
+                          "image": "nations",
+                          "style": {
+                            "width": 216,
+                            "height": 384
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "Baptizing",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Baptizing"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Corinthians 5:17-20",
+                        "revealedButton": {
+                          "text": "New life; new purpose; part of a community"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "Teaching",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Teaching"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Deuteronomy 6:6-9",
+                        "revealedButton": {
+                          "text": "Founded in Scripture"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Acts 4:20",
+                        "revealedButton": {
+                          "text": "Can't stop telling your experience"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "Empowered",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Empowered"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "2 Peter 1:3-4",
+                        "revealedButton": {
+                          "text": "God has given us all we need"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "God causes growth",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "God causes growth"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "1 Corinthians 3:6-7",
+                        "revealedButton": {
+                          "text": "Invested by people; produced by God"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Galatians 3:3",
+                        "revealedButton": {
+                          "text": "Saved by the Spirit; sanctified by the Spirit"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "Cycles of discipleship",
+                  "title": "The Great Commission",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "Cycles of discipleship"
+                    },
+                    {
+                      "type": "Image",
+                      "image": "cycles-of-involvement",
+                      "style": {
+                        "width": 216,
+                        "height": 384
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Discipleship",
+              "type": "ContentListScreen",
+              "contents": [
+                {
+                  "type": "Header",
+                  "headerText": "Discipleship",
+                  "subheaderText": "(Who, Why, & How)"
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "The motivation"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "TheMotivation"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Who?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Who"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "Why?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "Why"
+                  }
+                },
+                {
+                  "type": "ActionButton",
+                  "text": {
+                    "text": "How?"
+                  },
+                  "action": {
+                    "type": "navigate",
+                    "to": "How"
+                  }
+                }
+              ],
+              "subscreens": [
+                {
+                  "id": "TheMotivation",
+                  "title": "Discipleship",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "What is our motivation?"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Revelation 7:9-10",
+                        "revealedButton": {
+                          "text": "All nations worshiping before the Lamb"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "Who",
+                  "title": "Discipleship",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "The \"Who\" of Discipleship"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Luke 6:12-17",
+                        "revealedButton": {
+                          "text": "Selection"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Slide",
+                      "design": "primary",
+                      "headerText": "Jesus chose a few people to invest deeply in.",
+                      "contents": [
+                        "Why is important to choose to invest in a few people?",
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Because it is impossible to invest in everyone"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "design": "primary",
+                      "contentDesign": "tight",
+                      "headerText": "How do you choose whom to invest in?",
+                      "style": {
+                        "borderBottomColor": "#00c7e2"
+                      },
+                      "contents": [
+                        {
+                          "type": "HeaderText",
+                          "text": "Faithful",
+                          "style": {
+                            "fontSize": 25,
+                            "color": "#007bc6",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "2 Timothy 2:2",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "2 Timothy 2:2",
+                          "style": {
+                            "paddingBottom": 15
+                          }
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "Available",
+                          "style": {
+                            "fontSize": 25,
+                            "color": "#007bc6",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "Luke 9:57-62",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Luke 9:57-62",
+                          "style": {
+                            "paddingBottom": 15
+                          }
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "Teachable",
+                          "style": {
+                            "fontSize": 25,
+                            "color": "#007bc6",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "Acts 2:42",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Acts 2:42"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Luke 14:25-33",
+                        "revealedButton": {
+                          "text": "Count the cost"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "Why",
+                  "title": "Discipleship",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "The \"Why\" of Discipleship"
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "Mark 3:14",
+                        "revealedButton": {
+                          "text": "Jesus modeled it"
+                        }
+                      }
+                    },
+                    {
+                      "type": "ScriptureSlide",
+                      "scripture": {
+                        "reference": "John 20:21",
+                        "revealedButton": {
+                          "text": "God's plan to reach ALL"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Slide",
+                      "contentDesign": "tight",
+                      "headerText": "2 Timothy 2:2",
+                      "contents": [
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "2 Timothy 2:2"
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Spiritual multiplication"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Image",
+                          "image": "spiritual-multiplication",
+                          "style": {
+                            "width": 216,
+                            "height": 384
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "How",
+                  "title": "Discipleship",
+                  "type": "ContentListScreen",
+                  "contents": [
+                    {
+                      "type": "Header",
+                      "headerText": "The \"How\" of Discipleship"
+                    },
+                    {
+                      "type": "Slide",
+                      "design": "primary",
+                      "contentDesign": "tight",
+                      "headerText": "Content",
+                      "contents": [
+                        {
+                          "type": "HeaderText",
+                          "text": "It is important to establish a solid Biblical foundation.",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#007bc6",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "John 17:17",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "John 17:17"
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Scripture sanctifies"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "2 Timothy 2:15",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "2 Timothy 2:15"
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Rightly handling the Word of truth"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "design": "primary",
+                      "contentDesign": "tight",
+                      "headerText": "Community",
+                      "contents": [
+                        {
+                          "type": "HeaderText",
+                          "text": "It is important to show care for each other, modeling love, vulnerability, and service.",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#007bc6",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "1 Thessalonians 2:8",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "1 Thessalonians 2:8"
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Shared lives"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "design": "primary",
+                      "contentDesign": "tight",
+                      "headerText": "Context",
+                      "contents": [
+                        {
+                          "type": "HeaderText",
+                          "text": "It is important to express the gospel beginning with those in your closest spheres of influence.",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#007bc6",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "John 4:39-42",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "John 4:39-42"
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Shared with those closest to her"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "design": "primary",
+                      "contentDesign": "tight",
+                      "headerText": "Replication",
+                      "contents": [
+                        {
+                          "type": "HeaderText",
+                          "text": "Matthew 28:18-20",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "Matthew 28:18-20"
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Make disciples"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "HeaderText",
+                          "text": "2 Timothy 2:2",
+                          "style": {
+                            "fontSize": 23,
+                            "color": "#ff9700",
+                            "alignSelf": "flex-start",
+                            "fontWeight": "700"
+                          }
+                        },
+                        {
+                          "type": "ScrRangeDisplay",
+                          "reference": "2 Timothy 2:2"
+                        },
+                        {
+                          "type": "ToggleButton",
+                          "design": "answer",
+                          "text": "Tap to reveal answer",
+                          "altButtons": [
+                            {
+                              "design": "answer",
+                              "text": "Repeat the process"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "design": "primary",
+                      "contentDesign": "tight",
+                      "headerText": "How to get started",
+                      "contents": [
+                        {
+                          "type": "Image",
+                          "image": "invite",
+                          "style": {
+                            "width": 216,
+                            "height": 384
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "How to",
@@ -322,7 +2861,7 @@
             {
               "type": "Slide",
               "headerText": "Vision",
-              "design": "tight",
+              "contentDesign": "tight",
               "contents": [
                 "\"Go and make disciples...\" That is the goal. From my years of making disciples on college campuses, I have found great resources that work well from staff to student. After that, it becomes difficult to see discipleship continue to others. My goal was to figure out how to make discipleship Simple, Accessible, and Transferable."
               ]
@@ -330,7 +2869,7 @@
             {
               "type": "Slide",
               "headerText": "Simple",
-              "design": "tight",
+              "contentDesign": "tight",
               "contents": [
                 "The content is set up in a simple question-and-Scripture format. This way, a person can simply sit down with someone else, read through the questions, and see how the Bible answers those questions."
               ]
@@ -338,7 +2877,7 @@
             {
               "type": "Slide",
               "headerText": "Accessible",
-              "design": "tight",
+              "contentDesign": "tight",
               "contents": [
                 "Sometimes, it can be difficult to know where to go to find the discipleship material you need. Then, when the person you disciple wants to disciple someone else, they may not know where to find what material you followed with them. Since this is a free app, it's available to everyone."
               ]
@@ -346,7 +2885,7 @@
             {
               "type": "Slide",
               "headerText": "Transferable",
-              "design": "tight",
+              "contentDesign": "tight",
               "contents": [
                 "Jesus spent three years with a group of guys, and those eleven guys changed the world. They didn't keep what Jesus taught them to themselves, and they also didn't wait until they had it all figured out to begin helping others. This material is not all-inclusive, but it contains what I think are some of the most important concepts a Christian needs to grow in and share with others. It is intended for quick replication. After finishing the Basics and the Essentials, a person is challenged to use the Basics and Essentials to disciple someone else."
               ]
