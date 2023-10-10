@@ -1655,6 +1655,464 @@
           }
         ],
         "sourceUrl": "https://bible-api.com/Romans 8:14-16?translation=web"
+      },
+      "John 16:23-24": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 16:23-24",
+        "verses": [
+          {
+            "verse": 23,
+            "text": "\n“In that day you will ask me no questions. Most certainly I tell you, whatever you may ask of the Father in my name, he will give it to you.\n\n"
+          },
+          {
+            "verse": 24,
+            "text": "\nUntil now, you have asked nothing in my name. Ask, and you will receive, that your joy may be made full.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 16:23-24?translation=web"
+      },
+      "Philippians 4:6-7": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Philippians 4:6-7",
+        "verses": [
+          {
+            "verse": 6,
+            "text": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God.\n"
+          },
+          {
+            "verse": 7,
+            "text": "And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Philippians 4:6-7?translation=web"
+      },
+      "Hebrews 4:14-16": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Hebrews 4:14-16",
+        "verses": [
+          {
+            "verse": 14,
+            "text": "Having then a great high priest, who has passed through the heavens, Jesus, the Son of God, let us hold tightly to our confession.\n"
+          },
+          {
+            "verse": 15,
+            "text": "For we don’t have a high priest who can’t be touched with the feeling of our infirmities, but one who has been in all points tempted like we are, yet without sin.\n"
+          },
+          {
+            "verse": 16,
+            "text": "Let us therefore draw near with boldness to the throne of grace, that we may receive mercy, and may find grace for help in time of need.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Hebrews 4:14-16?translation=web"
+      },
+      "James 5:16": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "James 5:16",
+        "verses": [
+          {
+            "verse": 16,
+            "text": "Confess your offenses to one another, and pray for one another, that you may be healed. The insistent prayer of a righteous person is powerfully effective.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/James 5:16?translation=web"
+      },
+      "Exodus 32:11-14": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Exodus 32:11-14",
+        "verses": [
+          {
+            "verse": 11,
+            "text": "Moses begged Yahweh his God, and said, “Yahweh, why does your wrath burn hot against your people, that you have brought out of the land of Egypt with great power and with a mighty hand?\n"
+          },
+          {
+            "verse": 12,
+            "text": "Why should the Egyptians speak, saying, ‘He brought them out for evil, to kill them in the mountains, and to consume them from the surface of the earth?’ Turn from your fierce wrath, and repent of this evil against your people.\n"
+          },
+          {
+            "verse": 13,
+            "text": "Remember Abraham, Isaac, and Israel, your servants, to whom you swore by your own self, and said to them, ‘I will multiply your offspring as the stars of the sky, and all this land that I have spoken of I will give to your offspring, and they shall inherit it forever.’”\n"
+          },
+          {
+            "verse": 14,
+            "text": "Yahweh repented of the evil which he said he would do to his people.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Exodus 32:11-14?translation=web"
+      },
+      "Luke 22:41-42": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Luke 22:41-42",
+        "verses": [
+          {
+            "verse": 41,
+            "text": "He was withdrawn from them about a stone’s throw, and he knelt down and prayed,\n"
+          },
+          {
+            "verse": 42,
+            "text": "saying,\n“Father, if you are willing, remove this cup from me. Nevertheless, not my will, but yours, be done.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Luke 22:41-42?translation=web"
+      },
+      "1 John 5:14": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 John 5:14",
+        "verses": [
+          {
+            "verse": 14,
+            "text": "This is the boldness which we have toward him, that, if we ask anything according to his will, he listens to us.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 John 5:14?translation=web"
+      },
+      "Matthew 21:22": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 21:22",
+        "verses": [
+          {
+            "verse": 22,
+            "text": "\nAll things, whatever you ask in prayer, believing, you will receive.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 21:22?translation=web"
+      },
+      "John 14:13": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "John 14:13",
+        "verses": [
+          {
+            "verse": 13,
+            "text": "\nWhatever you will ask in my name, that will I do, that the Father may be glorified in the Son.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/John 14:13?translation=web"
+      },
+      "James 4:3": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "James 4:3",
+        "verses": [
+          {
+            "verse": 3,
+            "text": "You ask, and don’t receive, because you ask with wrong motives, so that you may spend it on your pleasures.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/James 4:3?translation=web"
+      },
+      "2 Corinthians 12:8-10": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "2 Corinthians 12:8-10",
+        "verses": [
+          {
+            "verse": 8,
+            "text": "Concerning this thing, I begged the Lord three times that it might depart from me.\n"
+          },
+          {
+            "verse": 9,
+            "text": "He has said to me,\n“My grace is sufficient for you, for my power is made perfect in weakness.” Most gladly therefore I will rather glory in my weaknesses, that the power of Christ may rest on me.\n"
+          },
+          {
+            "verse": 10,
+            "text": "Therefore I take pleasure in weaknesses, in injuries, in necessities, in persecutions, in distresses, for Christ’s sake. For when I am weak, then am I strong.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/2 Corinthians 12:8-10?translation=web"
+      },
+      "Luke 18:9-14": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Luke 18:9-14",
+        "verses": [
+          {
+            "verse": 9,
+            "text": "He spoke also this parable to certain people who were convinced of their own righteousness, and who despised all others.\n"
+          },
+          {
+            "verse": 10,
+            "text": "\n“Two men went up into the temple to pray; one was a Pharisee, and the other was a tax collector.\n\n"
+          },
+          {
+            "verse": 11,
+            "text": "\nThe Pharisee stood and prayed to himself like this: ‘God, I thank you, that I am not like the rest of men, extortionists, unrighteous, adulterers, or even like this tax collector.\n\n"
+          },
+          {
+            "verse": 12,
+            "text": "\nI fast twice a week. I give tithes of all that I get.’\n\n"
+          },
+          {
+            "verse": 13,
+            "text": "\nBut the tax collector, standing far away, wouldn’t even lift up his eyes to heaven, but beat his breast, saying, ‘God, be merciful to me, a sinner!’\n\n"
+          },
+          {
+            "verse": 14,
+            "text": "\nI tell you, this man went down to his house justified rather than the other; for everyone who exalts himself will be humbled, but he who humbles himself will be exalted.”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Luke 18:9-14?translation=web"
+      },
+      "1 Thessalonians 5:17": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "1 Thessalonians 5:17",
+        "verses": [
+          {
+            "verse": 17,
+            "text": "Pray without ceasing.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/1 Thessalonians 5:17?translation=web"
+      },
+      "Romans 8:26-28": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Romans 8:26-28",
+        "verses": [
+          {
+            "verse": 26,
+            "text": "In the same way, the Spirit also helps our weaknesses, for we don’t know how to pray as we ought. But the Spirit himself makes intercession for us with groanings which can’t be uttered.\n"
+          },
+          {
+            "verse": 27,
+            "text": "He who searches the hearts knows what is on the Spirit’s mind, because he makes intercession for the saints according to God.\n"
+          },
+          {
+            "verse": 28,
+            "text": "We know that all things work together for good for those who love God, to those who are called according to his purpose.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Romans 8:26-28?translation=web"
+      },
+      "Nehemiah 4:9": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Nehemiah 4:9",
+        "verses": [
+          {
+            "verse": 9,
+            "text": "But we made our prayer to our God, and set a watch against them day and night, because of them.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Nehemiah 4:9?translation=web"
+      },
+      "Matthew 7:7-11": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 7:7-11",
+        "verses": [
+          {
+            "verse": 7,
+            "text": "\n“Ask, and it will be given you. Seek, and you will find. Knock, and it will be opened for you.\n\n"
+          },
+          {
+            "verse": 8,
+            "text": "\nFor everyone who asks receives. He who seeks finds. To him who knocks it will be opened.\n\n"
+          },
+          {
+            "verse": 9,
+            "text": "\nOr who is there among you, who, if his son asks him for bread, will give him a stone?\n\n"
+          },
+          {
+            "verse": 10,
+            "text": "\nOr if he asks for a fish, who will give him a serpent?\n\n"
+          },
+          {
+            "verse": 11,
+            "text": "\nIf you then, being evil, know how to give good gifts to your children, how much more will your Father who is in heaven give good things to those who ask him!\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 7:7-11?translation=web"
+      },
+      "Luke 11:13": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Luke 11:13",
+        "verses": [
+          {
+            "verse": 13,
+            "text": "\nIf you then, being evil, know how to give good gifts to your children, how much more will your heavenly Father give the Holy Spirit to those who ask him?”\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Luke 11:13?translation=web"
+      },
+      "Matthew 6:9": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 6:9",
+        "verses": [
+          {
+            "verse": 9,
+            "text": "\nPray like this: ‘Our Father in heaven, may your name be kept holy.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 6:9?translation=web"
+      },
+      "Matthew 6:10": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 6:10",
+        "verses": [
+          {
+            "verse": 10,
+            "text": "\nLet your Kingdom come. Let your will be done, as in heaven, so on earth.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 6:10?translation=web"
+      },
+      "Matthew 6:11": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 6:11",
+        "verses": [
+          {
+            "verse": 11,
+            "text": "\nGive us today our daily bread.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 6:11?translation=web"
+      },
+      "Matthew 6:12": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 6:12",
+        "verses": [
+          {
+            "verse": 12,
+            "text": "\nForgive us our debts, as we also forgive our debtors.\n\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 6:12?translation=web"
+      },
+      "Matthew 6:13": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Matthew 6:13",
+        "verses": [
+          {
+            "verse": 13,
+            "text": "\nBring us not into temptation, but deliver us from the evil one. For yours is the Kingdom, the power, and the glory forever. Amen.’\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Matthew 6:13?translation=web"
       }
     }
   }

@@ -1381,7 +1381,7 @@ const serializedAppDataNew: SerializedAppData = {
                       scripture: {
                         reference: 'Ephesians 5:15-20',
                         revealedButton: {
-                          text: 'Walk by the Spirit/Deeds vs. fruit',
+                          text: 'Walk by the Spirit/deeds vs. fruit',
                         },
                       },
                     },
@@ -1576,18 +1576,496 @@ const serializedAppDataNew: SerializedAppData = {
                 {
                   type: 'ActionButton',
                   text: {
-                    text: 'What is the relationship between God & man?',
+                    text: 'Introduction to prayer',
                   },
                   action: {
                     type: 'navigate',
-                    to: 'RelGodMan',
+                    to: 'IntroToPrayer',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Why should we pray?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'WhyPray',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Does God answer prayer?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'DoesGodAnswer',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'How should we pray?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'HowShouldPray',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'Model prayer',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'ModelPrayer',
+                  },
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'How can we develop a growing dependence on God through prayer?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'DevelopDependence',
+                  },
+                },
+              ],
+              subscreens: [
+                {
+                  id: 'IntroToPrayer',
+                  title: 'Prayer',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Introduction to prayer',
+                    },
+                    {
+                      type: 'Slide',
+                      canClose: false,
+                      contentDesign: 'tight',
+                      contents: [
+                        'Prayer is conversation with God. It is our direct access to a loving Creator who is personal and accessible and who cares about our lives. Praying is not our access to some cosmic genie who grants our every wish. While God does desire to answer our prayers according to His will, His greater desire is for us to cast our cares upon Him and to increase our dependence on Him. Prayer is also not simply cathartic. Prayer is a powerful means of connecting with the heart of God and even seeing things change as a result.',
+                      ],
+                    },
+                  ],
+                },
+                {
+                  id: 'WhyPray',
+                  title: 'Prayer',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Why should we pray?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'John 16:23-24',
+                        revealedButton: {
+                          text: 'Full joy',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Philippians 4:6-7',
+                        revealedButton: {
+                          text: 'Peace',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Hebrews 4:14-16',
+                        revealedButton: {
+                          text: 'Jesus understands',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'James 5:16',
+                        revealedButton: {
+                          text: 'Confession; community; healing',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Exodus 32:11-14',
+                        revealedButton: {
+                          text: "Changes God's actions",
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Luke 22:41-42',
+                        revealedButton: {
+                          text: "Aligns us to God's will",
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'DoesGodAnswer',
+                  title: 'Prayer',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Does God answer prayer?',
+                    },
+                    {
+                      type: 'Slide',
+                      design: 'primary',
+                      headerText: 'Is prayer always answered?',
+                      canClose: false,
+                      contentDesign: 'tight',
+                      contents: [],
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 John 5:14',
+                        revealedButton: {
+                          text: 'God hears',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Matthew 21:22',
+                        revealedButton: {
+                          text: 'According to faith',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'John 14:13',
+                        revealedButton: {
+                          text: "According to Jesus' character",
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'James 4:3',
+                        revealedButton: {
+                          text: 'Not selfish prayer',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '2 Corinthians 12:8-10',
+                        revealedButton: {
+                          text: 'Sometimes the answer is "No" for a bigger purpose',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Luke 22:41-42',
+                        revealedButton: {
+                          text: "Aligns us to God's will",
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'HowShouldPray',
+                  title: 'Prayer',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'How should we pray?',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Luke 18:9-14',
+                        revealedButton: {
+                          text: 'Humbly',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: '1 Thessalonians 5:17',
+                        revealedButton: {
+                          text: 'Continually',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Romans 8:26-28',
+                        revealedButton: {
+                          text: 'Spirit intercedes',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Nehemiah 4:9',
+                        revealedButton: {
+                          text: 'Pray, then act in faith',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Matthew 7:7-11',
+                        revealedButton: {
+                          text: 'Ask; seek; knock',
+                        },
+                      },
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      scripture: {
+                        reference: 'Luke 11:13',
+                        revealedButton: {
+                          text: 'God delights to give the Holy Spirit',
+                        },
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: 'ModelPrayer',
+                  title: 'Prayer',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'Model prayer',
+                    },
+                    {
+                      type: 'Slide',
+                      canClose: false,
+                      headerText: 'Matthew 6:9-13',
+                      contentDesign: 'tight',
+                      contents: [
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Matthew 6:9',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontStyle: 'italic',
+                          },
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Praise God for His goodness; honor Him for His holiness.',
+                            },
+                          ],
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Matthew 6:10',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontStyle: 'italic',
+                          },
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Help me to desire Your desires and to allow You to use me in whatever ways you think best.',
+                            },
+                          ],
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Matthew 6:11',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontStyle: 'italic',
+                          },
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Meet the needs I have today.',
+                            },
+                          ],
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Matthew 6:12',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontStyle: 'italic',
+                          },
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Ask forgiveness of sin; see where you need to forgive others.',
+                            },
+                          ],
+                        },
+                        {
+                          type: 'ScrRangeDisplay',
+                          reference: 'Matthew 6:13',
+                          style: {
+                            alignSelf: 'flex-start',
+                            fontStyle: 'italic',
+                          },
+                        },
+                        {
+                          type: 'ToggleButton',
+                          design: 'answer',
+                          text: 'Tap to reveal answer',
+                          altButtons: [
+                            {
+                              design: 'answer',
+                              text: 'Watch over and protect us.',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  id: 'DevelopDependence',
+                  title: 'Prayer',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText:
+                        'How can we develop a growing dependence on God through prayer?',
+                    },
+                    {
+                      type: 'Slide',
+                      headerText: 'Make a plan',
+                      contentDesign: 'tight',
+                      contents: ['When will you make time to pray?'],
+                    },
+                    {
+                      type: 'Slide',
+                      headerText: 'Keep track of prayer requests',
+                      contentDesign: 'tight',
+                      contents: [
+                        "Writing down what you are praying for is a good way to look back on God's faithfulness.",
+                      ],
+                    },
+                    {
+                      type: 'Slide',
+                      headerText: 'Make a plan',
+                      contentDesign: 'tight',
+                      contents: [
+                        'Make a conscious effort to make prayer a part of your day, moment by moment.',
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'Essentials',
+          type: 'ContentListScreen',
+          contents: [
+            {
+              type: 'Header',
+              headerText: 'Essentials',
+            },
+            {
+              type: 'ActionButton',
+              text: 'The Great Commission',
+              action: {
+                type: 'navigate',
+                to: 'The Great Commission',
+              },
+            },
+            {
+              type: 'ActionButton',
+              text: 'Discipleship (Who, Why, & How)',
+              action: {
+                type: 'navigate',
+                to: 'Discipleship',
+              },
+            },
+            {
+              type: 'Image',
+              image: 'invite',
+              style: {
+                width: 108,
+                height: 192,
+              },
+            },
+          ],
+          subscreens: [
+            {
+              id: 'The Great Commission',
+              type: 'ContentListScreen',
+              contents: [
+                {
+                  type: 'Header',
+                  headerText: 'The Great Commission',
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'NavText',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'ScreenId',
                   },
                 },
               ],
               subscreens: [
                 {
                   id: 'ScreenId',
-                  title: 'Prayer',
+                  title: 'The Great Commission',
                   type: 'ContentListScreen',
                   contents: [
                     {
@@ -1608,42 +2086,14 @@ const serializedAppDataNew: SerializedAppData = {
                 },
               ],
             },
-          ],
-        },
-        {
-          id: 'Essentials',
-          type: 'ContentListScreen',
-          contents: [
             {
-              type: 'Header',
-              headerText: 'Essentials',
-              subheaderText: 'Here is some essential stuff to read',
-            },
-            {
-              type: 'ActionButton',
-              text: 'Home',
-              action: {
-                type: 'navigate',
-                to: '..',
-              },
-            },
-            {
-              type: 'Image',
-              image: 'invite',
-              style: {
-                width: 108,
-                height: 192,
-              },
-            },
-          ],
-          subscreens: [
-            {
-              id: 'Assurance of Salvation',
+              id: 'Discipleship',
               type: 'ContentListScreen',
               contents: [
                 {
                   type: 'Header',
-                  headerText: 'Assurance of Salvation',
+                  headerText: 'Discipleship',
+                  subheaderText: '(Who, Why, & How)',
                 },
                 {
                   type: 'ActionButton',
@@ -1659,7 +2109,7 @@ const serializedAppDataNew: SerializedAppData = {
               subscreens: [
                 {
                   id: 'ScreenId',
-                  title: 'Assurance of Salvation',
+                  title: 'Discipleship',
                   type: 'ContentListScreen',
                   contents: [
                     {
@@ -1723,7 +2173,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Slide',
               headerText: 'Vision',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 '"Go and make disciples..." That is the goal. From my years of making disciples on college campuses, I have found great resources that work well from staff to student. After that, it becomes difficult to see discipleship continue to others. My goal was to figure out how to make discipleship Simple, Accessible, and Transferable.',
               ],
@@ -1731,7 +2181,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Slide',
               headerText: 'Simple',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 'The content is set up in a simple question-and-Scripture format. This way, a person can simply sit down with someone else, read through the questions, and see how the Bible answers those questions.',
               ],
@@ -1739,7 +2189,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Slide',
               headerText: 'Accessible',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 "Sometimes, it can be difficult to know where to go to find the discipleship material you need. Then, when the person you disciple wants to disciple someone else, they may not know where to find what material you followed with them. Since this is a free app, it's available to everyone.",
               ],
@@ -1747,7 +2197,7 @@ const serializedAppDataNew: SerializedAppData = {
             {
               type: 'Slide',
               headerText: 'Transferable',
-              design: 'tight',
+              contentDesign: 'tight',
               contents: [
                 "Jesus spent three years with a group of guys, and those eleven guys changed the world. They didn't keep what Jesus taught them to themselves, and they also didn't wait until they had it all figured out to begin helping others. This material is not all-inclusive, but it contains what I think are some of the most important concepts a Christian needs to grow in and share with others. It is intended for quick replication. After finishing the Basics and the Essentials, a person is challenged to use the Basics and Essentials to disciple someone else.",
               ],
@@ -1903,6 +2353,53 @@ const serializedAppDataNew: SerializedAppData = {
     },
   ],
 };
+
+/*
+Template
+{
+              id: 'Prayer',
+              type: 'ContentListScreen',
+              contents: [
+                {
+                  type: 'Header',
+                  headerText: 'Prayer',
+                },
+                {
+                  type: 'ActionButton',
+                  text: {
+                    text: 'What is the relationship between God & man?',
+                  },
+                  action: {
+                    type: 'navigate',
+                    to: 'RelGodMan',
+                  },
+                },
+              ],
+              subscreens: [
+                {
+                  id: 'ScreenId',
+                  title: 'Prayer',
+                  type: 'ContentListScreen',
+                  contents: [
+                    {
+                      type: 'Header',
+                      headerText: 'ScreenTitle',
+                    },
+                    {
+                      type: 'ScriptureSlide',
+                      headerText: 'SlideHeading',
+                      scripture: {
+                        reference: 'Psalm 119:11',
+                        revealedButton: {
+                          text: 'Answer',
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+*/
 
 /** Screen data for software license info. Accessed on path `app:/__licenses` */
 const licensesScreen = require('../../assets/data/licenses/licenses.json');
