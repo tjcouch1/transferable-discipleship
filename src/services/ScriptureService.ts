@@ -20,8 +20,9 @@
  * ScriptureService.ts - Handles getting Scripture text
  */
 
+import { ScrRangeDisplayContentData } from '../components/contents/ScrRangeDisplay';
 import { ScriptureSlideContentData } from '../components/contents/ScriptureSlide';
-import { isWeb } from '../util/Util';
+import { isString, isWeb } from '../util/Util';
 import { forEachContent } from './ScreenService';
 
 const defaultShortName = 'WEB';
@@ -248,20 +249,27 @@ export const getScripture = (
 async function cacheAllScripture() {
   const getScripturePromises: Set<ReturnType<typeof getScripture>> = new Set();
   forEachContent(content => {
-    const scriptureSlide = content as ScriptureSlideContentData;
-    if (scriptureSlide.scripture) {
-      const scriptures = Array.isArray(scriptureSlide.scripture)
-        ? scriptureSlide.scripture
-        : [scriptureSlide.scripture];
-      scriptures.forEach(scripture =>
-        getScripturePromises.add(getScripture(scripture.reference)),
-      );
+    if (!isString(content)) {
+      if ('scripture' in content) {
+        const scriptureSlide = content as ScriptureSlideContentData;
+        if (scriptureSlide.scripture) {
+          const scriptures = Array.isArray(scriptureSlide.scripture)
+            ? scriptureSlide.scripture
+            : [scriptureSlide.scripture];
+          scriptures.forEach(scripture =>
+            getScripturePromises.add(getScripture(scripture.reference)),
+          );
+        }
+      } else if ('reference' in content) {
+        const scrRangeDisplay = content as ScrRangeDisplayContentData;
+        if (scrRangeDisplay.reference) {
+          getScripturePromises.add(getScripture(scrRangeDisplay.reference));
+        }
+      }
     }
   });
 
-  // console.log(`Found ${getScripturePromises.size} unique Scripture references`)
-
-  await Promise.all(getScripturePromises.values());
+  await Promise.all([...getScripturePromises.values()]);
 
   if (isWeb())
     localStorage.setItem('scriptureCache', JSON.stringify(scriptureCache));
