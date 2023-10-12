@@ -30,7 +30,8 @@
     "react-native-screens": "~3.22.0",
     "react-native-web": "~0.19.6",
     "expo-updates": "~0.18.16",
-    "expo-dev-client": "~2.4.11"
+    "expo-dev-client": "~2.4.11",
+    "expo-constants": "~14.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

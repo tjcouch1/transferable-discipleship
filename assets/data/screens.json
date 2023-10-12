@@ -2892,7 +2892,10 @@
             },
             {
               "type": "Slide",
-              "headerText": "Feedback?",
+              "headerText": {
+                "text": "Feedback?",
+                "style": { "color": "#9c9fa1" }
+              },
               "contentDesign": "tight",
               "contents": [
                 "Found a problem? Want a feature? Other feedback?",
@@ -2909,7 +2912,10 @@
             },
             {
               "type": "Slide",
-              "headerText": "Create Your Own Discipleship App",
+              "headerText": {
+                "text": "Create Your Own Discipleship App",
+                "style": { "color": "#9c9fa1" }
+              },
               "contentDesign": "tight",
               "contents": [
                 "This app was created using discipleship‑app‑template. Want to make your own discipleship app like this one?",
@@ -2926,7 +2932,10 @@
             },
             {
               "type": "Slide",
-              "headerText": "Credits and Licensing",
+              "headerText": {
+                "text": "Credits and Licensing",
+                "style": { "color": "#9c9fa1" }
+              },
               "contentDesign": "tight",
               "contents": [
                 "- Disciple-making content of the app compiled by TJ Couch.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",

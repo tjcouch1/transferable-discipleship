@@ -20,12 +20,22 @@
  * Shared utility functions
  */
 
+import Constants from 'expo-constants';
 import { Platform } from 'react-native';
 
 export const APP_VERSION = '0.0.0';
 
 export function isWeb() {
   return Platform.OS === 'web';
+}
+
+/** Returns true if running in expo go (or toggled on/off since then) */
+export function isDev() {
+  // Constants.debugMode is true only on web in expo go
+  // Constants.expoGoConfig is populated in expo go on any device but null in builds
+  // Constants.executionEnvironment is 'bare' on web in expo go and when built preview
+  //  but 'storeClient' when on android in expo go
+  return !!Constants.expoGoConfig;
 }
 
 /**

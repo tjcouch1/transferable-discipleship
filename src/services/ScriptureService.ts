@@ -22,7 +22,7 @@
 
 import { ScrRangeDisplayContentData } from '../components/contents/ScrRangeDisplay';
 import { ScriptureSlideContentData } from '../components/contents/ScriptureSlide';
-import { isString, isWeb } from '../util/Util';
+import { isDev, isString, isWeb } from '../util/Util';
 import { forEachContent } from './ScreenService';
 
 const defaultShortName = 'WEB';
@@ -203,18 +203,11 @@ export const getScripture = (
   const translationId = translationInfo.id;
   if (scriptureCache[translationId]) {
     const cachedVerses = scriptureCache[translationId].verses[reference];
-    if (cachedVerses) {
-      console.log(
-        `Found ${reference}${
-          'then' in cachedVerses ? ' promise' : ''
-        } in cache`,
-      );
-      return Promise.resolve(cachedVerses);
-    }
+    if (cachedVerses) return Promise.resolve(cachedVerses);
   }
 
   // Get verses from server
-  console.warn(`Did not find ${reference} in cache. Caching`);
+  if (isDev()) console.warn(`Did not find ${reference} in cache. Caching`);
   const versesUrl = `${scriptureUrl}${reference}?translation=${translationId}`;
   if (!scriptureCache[translationId])
     scriptureCache[translationId] = {
@@ -223,13 +216,20 @@ export const getScripture = (
       verses: {},
     };
   const versesPromise = (async () => {
-    const response = await fetch(versesUrl);
-    if (!response.ok)
+    let responseContents: any;
+    let error: any | undefined;
+    if (isDev()) {
+      const response = await fetch(versesUrl);
+      responseContents = await response.json();
+
+      if (!response.ok) error = responseContents;
+    } else error = `Not in dev mode. Not fetching.`;
+    if (error)
       throw new Error(
-        `Failed to get Scripture for ${reference} ${shortName}. Error: ${await response.json()}`,
+        `Failed to get Scripture for ${reference} ${shortName}. Error: ${error}`,
       );
 
-    const apiVerses: ApiScriptureContent = await response.json();
+    const apiVerses: ApiScriptureContent = responseContents;
     const verses = mapApiVerseRangeToContent(apiVerses, versesUrl);
 
     // Save verses to cache
