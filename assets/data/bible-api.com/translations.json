@@ -33,5 +33,12 @@
     "id": "oeb-cw",
     "language": "English (UK)",
     "license": "Public Domain"
+  },
+  {
+    "shortName": "OEB-US",
+    "name": "Open English Bible, US Edition",
+    "id": "oeb-us",
+    "language": "English (US)",
+    "license": "Public Domain"
   }
 ]

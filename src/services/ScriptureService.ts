@@ -219,10 +219,14 @@ export const getScripture = (
     let responseContents: any;
     let error: any | undefined;
     if (isDev()) {
-      const response = await fetch(versesUrl);
-      responseContents = await response.json();
+      try {
+        const response = await fetch(versesUrl);
+        responseContents = await response.json();
 
-      if (!response.ok) error = responseContents;
+        if (!response.ok) error = responseContents;
+      } catch (e) {
+        error = e;
+      }
     } else error = `Not in dev mode. Not fetching.`;
     if (error)
       throw new Error(
@@ -269,7 +273,7 @@ async function cacheAllScripture() {
     }
   });
 
-  await Promise.all([...getScripturePromises.values()]);
+  await Promise.allSettled([...getScripturePromises.values()]);
 
   if (isWeb())
     localStorage.setItem('scriptureCache', JSON.stringify(scriptureCache));
