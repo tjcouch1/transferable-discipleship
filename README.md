@@ -10,14 +10,6 @@ Simple, Accessible, and Transferable Christian discipleship app in React Native
 - Automatically generated software library attribution page
 - Easy content updates
 
-## Things left to adapt this from the template
-
-4. Customize the icons, content data, and theme data in the `assets` folder:
-    - `adaptive-icon.png` - Icon used in Android
-    - `favicon.png` - Icon used in web
-    - `icon.png` - Icon used in iOS
-    - `splash.png` - Loading splash screen image
-
 ## Development Environment Setup
 
 1. Install Node
@@ -42,6 +34,15 @@ Run on your preferred platform:
 
 You can build, publish, and update this app using [EAS](https://docs.expo.dev/eas/) with the following instructions.
 
+### Publishing Environment Setup
+
+#### Apple Environment Variables
+
+You need to tell Expo about your [Apple credentials](https://docs.expo.dev/submit/ios/#2-start-the-submission) in some way. One way is by setting the following environment variables:
+
+- `EXPO_APPLE_ID` (or set it in [`eas.json`](https://docs.expo.dev/eas/json/#appleid))
+- [`EXPO_APPLE_APP_SPECIFIC_PASSWORD`](https://github.com/expo/fyi/blob/main/apple-app-specific-password.md)
+
 ### Pre-build setup
 
 There are a few things you need to do before building and publishing the app.
@@ -52,7 +53,7 @@ TODO
 
 #### Update software license attribution
 
-TODO
+`npm run licenses`
 
 ## Building and publishing preview builds
 
@@ -68,6 +69,8 @@ https://docs.expo.dev/build/internal-distribution/#configure-app-signing
 
 https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribution
 
+`eas device:create`
+
 #### Publishing updates to preview builds
 
 `eas update --branch preview --message "Update message"`
@@ -75,6 +78,13 @@ https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribut
 ### Building and publishing releases
 
 https://docs.expo.dev/distribution/introduction/
+
+Build first. Then run the following commands to publish the latest build on Expo's servers:
+
+- [`eas submit --platform ios`](https://docs.expo.dev/submit/ios/)
+- [`eas submit --platform android`](https://docs.expo.dev/submit/android/)
+
+Note: looks like you can maybe provide `--profile production` to make sure it selects the production build, but it's unclear. Needs testing.
 
 #### Publishing updates to releases
 

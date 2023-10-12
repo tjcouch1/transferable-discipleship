@@ -39,6 +39,18 @@ export function isDev() {
 }
 
 /**
+ * Returns true if this app should use variable font
+ *
+ * React Native does not support variable fonts. Since the target is React Native,
+ * we will ignore the fact that web does support variable fonts for consistency
+ *
+ * More info at https://github.com/expo/expo/issues/9149
+ */
+export function supportsVariableFont() {
+  return false // Platform.OS === 'web';
+}
+
+/**
  * Transforms the string into its superscript unicode equivalent. Currently only works with 0-9.
  *
  * Thanks for the idea to sinewave440hz at https://stackoverflow.com/a/45832410

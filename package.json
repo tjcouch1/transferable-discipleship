@@ -11,7 +11,8 @@
     "expo:upgrade": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo install --fix",
     "postinstall": "npx patch-package",
     "licenses": "license-checker --json --out assets/data/licenses/licenses-raw.json --customPath lib/license-checker.json && ts-node lib/transform-licenses-content.ts assets/data/licenses/licenses-raw.json assets/data/licenses/licenses.json assets/fonts",
-    "build:android-preview": "eas build -p android --profile preview"
+    "build:android-preview": "eas build -p android --profile preview",
+    "build:ios-preview": "eas build -p ios --profile preview"
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",

@@ -21,8 +21,10 @@ import { StyleProp, Text as ReactText, TextStyle } from 'react-native';
 import theme from '../../Theme';
 import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
-import { isString } from '../../util/Util';
+import { supportsVariableFont, isString } from '../../util/Util';
 import { GestureResponderEvent } from 'react-native';
+
+const DEFAULT_FONT_FAMILY = 'OpenSauceOne';
 
 /** The base data that every text object must have. All text data object data types should extend TextDataObjectBase */
 export type TextDataObjectBase = { text: string };
@@ -90,8 +92,76 @@ export const Text = (props: TextProps) => {
   };
 
   const designStyle = designStyles[design];
+  let styles = [designStyle.lineText, style];
+
+  // Bake font styles into the family on iOS
+  if (!supportsVariableFont()) {
+    // Flatten styles to make them easier to deal with
+    // Assert so we don't have weird problems with readonly entries in the array
+    styles = styles.flat(5) as TextStyle[];
+
+    // Find the highest-precedence font family, weight, and italic
+    let highestStyleIndex = -1;
+    let highestFontFamily: TextStyle['fontFamily'] = undefined;
+    let highestFontWeight: TextStyle['fontWeight'] = undefined;
+    let highestFontStyle: TextStyle['fontStyle'] = undefined;
+    for (let i = styles.length - 1; i >= 0; i--) {
+      const styleEntry = styles[i];
+      if (!styleEntry || typeof styleEntry !== 'object' || styleEntry === null)
+        continue;
+
+      // Keep track of the highest actual TextStyle so we can set the font properties on it
+      if (highestStyleIndex < 0) highestStyleIndex = i;
+
+      const { fontWeight, fontStyle, fontFamily, ...textStyle } =
+        styleEntry as TextStyle;
+
+      // Remove these extra properties because they supposedly cause issues just being on the style at all
+      styles[i] = textStyle;
+
+      if (fontFamily && !highestFontFamily) highestFontFamily = fontFamily;
+      if (fontWeight && !highestFontWeight) highestFontWeight = fontWeight;
+      if (fontStyle && !highestFontStyle) highestFontStyle = fontStyle;
+
+      if (highestFontFamily && highestFontWeight && highestFontStyle) break;
+    }
+
+    // If we found some font styles to set
+    if (highestFontFamily || highestFontWeight || highestFontStyle) {
+      // Set font family to default if we didn't find one
+      if (!highestFontFamily) highestFontFamily = DEFAULT_FONT_FAMILY;
+
+      // Set up the font family we're supposed to use
+      const weight = parseInt(highestFontWeight || '');
+      // normal is 400, and bold is 700
+      const isBold =
+        highestFontWeight === 'bold' ||
+        (!Number.isNaN(weight) && weight >= 700);
+      const isItalic = highestFontStyle === 'italic';
+      const styledFontFamily = `${highestFontFamily}${isBold ? '_bold' : ''}${
+        isItalic ? '_italic' : ''
+      }`;
+
+      if (highestStyleIndex < 0) {
+        // If we didn't find an actual TextStyle, warn that this is unexpected. Please investigate
+        console.warn(
+          `Unexpectedly found font styling but not an actual TextStyle object (please investigate), so adding new font style object for text ${text}`,
+        );
+        styles.push({
+          fontFamily: styledFontFamily,
+        } as TextStyle);
+      } else {
+        // We found a TextStyle to put the font styles on. Put them on
+        styles[highestStyleIndex] = {
+          ...(styles[highestStyleIndex] as TextStyle),
+          fontFamily: styledFontFamily,
+        } as TextStyle;
+      }
+    }
+  }
+
   return (
-    <ReactText onPress={onPress} style={[designStyle.lineText, style]}>
+    <ReactText onPress={onPress} style={styles}>
       {text}
     </ReactText>
   );
@@ -100,7 +170,7 @@ export const Text = (props: TextProps) => {
 const designStyles = createDesignStyleSheets(
   {
     lineText: {
-      fontFamily: 'OpenSauceOne',
+      fontFamily: DEFAULT_FONT_FAMILY,
       fontSize: 20,
       color: theme.text.lineText,
     },

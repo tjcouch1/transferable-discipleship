@@ -50,9 +50,19 @@ export default function App() {
   // Get an array of the screens in the app
   const screens = useMemo(() => [...appScreens.screens.values()], [appScreens]);
 
+  // WARNING: Because iOS does not support fonts well, we are using special naming conventions
+  // here to add bold and italic. If you want a font family to support bold and italic on iOS,
+  // you must add `<font_family>_bold`, `<font_family>_italic`, and `<font_family>_bold_italic`
+  // Read more at https://github.com/expo/expo/issues/9149
   const [fontsLoaded] = useFonts({
     LibreFranklin: require('./assets/fonts/LibreFranklin-VariableFont_wght.ttf'),
+    LibreFranklin_bold: require('./assets/fonts/LibreFranklin-Bold.ttf'),
+    LibreFranklin_italic: require('./assets/fonts/LibreFranklin-Italic.ttf'),
+    LibreFranklin_bold_italic: require('./assets/fonts/LibreFranklin-BoldItalic.ttf'),
     OpenSauceOne: require('./assets/fonts/OpenSauceOne-Regular.ttf'),
+    OpenSauceOne_bold: require('./assets/fonts/OpenSauceOne-Bold.ttf'),
+    OpenSauceOne_italic: require('./assets/fonts/OpenSauceOne-Italic.ttf'),
+    OpenSauceOne_bold_italic: require('./assets/fonts/OpenSauceOne-BoldItalic.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
