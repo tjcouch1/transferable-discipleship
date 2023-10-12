@@ -1424,6 +1424,7 @@
                           "type": "Text",
                           "text": "Confession",
                           "style": {
+                            "alignSelf": "flex-start",
                             "fontWeight": "bold"
                           }
                         },
@@ -1460,6 +1461,7 @@
                           "type": "Text",
                           "text": "Be filled with the Spirit to walk in light of God's forgiveness and empowerment.",
                           "style": {
+                            "alignSelf": "flex-start",
                             "fontWeight": "bold"
                           }
                         },
