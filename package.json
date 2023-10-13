@@ -1,6 +1,6 @@
 {
   "name": "transferable-discipleship",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "npm run web",
@@ -13,7 +13,11 @@
     "postinstall": "npx patch-package",
     "licenses": "license-checker --json --out assets/data/licenses/licenses-raw.json --customPath lib/license-checker.json && ts-node lib/transform-licenses-content.ts assets/data/licenses/licenses-raw.json assets/data/licenses/licenses.json assets/fonts",
     "build:preview-android": "eas build -p android --profile preview",
-    "build:preview-ios": "eas build -p ios --profile preview"
+    "build:preview-ios": "eas build -p ios --profile preview",
+    "build:preview-all": "eas build -p all --profile preview",
+    "build:production-android": "eas build -p android --profile production",
+    "build:production-ios": "eas build -p ios --profile production",
+    "build:production-all": "eas build -p all --profile production"
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
