@@ -21,14 +21,11 @@ Simple, Accessible, and Transferable Christian discipleship app in React Native
 
 Run `npm run licenses` to build the software library licenses file (displayed in the app for attribution purposes).
 
-## To run
+## To run locally
 
-Run on your preferred platform:
+Run on your preferred platform on the same network:
 
-- `npm start` - runs in the web browser, and allows you to use the expo app to test the app on android and ios
-- `npm run android`
-- `npm run ios`
-   - Note: you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
+- `npm start` - runs in the web browser and allows you to use the Expo Go app to test the app on Android and iOS
 
 ## Publishing
 
@@ -45,7 +42,7 @@ You need to tell Expo about your [Apple credentials](https://docs.expo.dev/submi
 
 ### Pre-build setup
 
-There are a few things you need to do before building and publishing the app.
+There are a few things you need to do before building and publishing the app every time you build and publish.
 
 #### Update Scripture cache
 
@@ -59,17 +56,21 @@ TODO
 
 ### Create an Android Preview `.apk` to install on your device
 
-`npm run build:android-preview`
+`npm run build:preview-android`
 
 ### Create an iOS Preview build to install on your device
 
-https://docs.expo.dev/build/internal-distribution/#configure-app-signing
+Before building, you must register devices on which to use the preview build.
 
 #### Register devices to use the iOS Preview build
 
 https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribution
 
 `eas device:create`
+
+#### Build the iOS Preview
+
+`npm run build:preview-ios`
 
 #### Publishing updates to preview builds
 

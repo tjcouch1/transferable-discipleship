@@ -16,7 +16,7 @@
  * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -54,7 +54,7 @@ export default function App() {
   // here to add bold and italic. If you want a font family to support bold and italic on iOS,
   // you must add `<font_family>_bold`, `<font_family>_italic`, and `<font_family>_bold_italic`
   // Read more at https://github.com/expo/expo/issues/9149
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     LibreFranklin: require('./assets/fonts/LibreFranklin-VariableFont_wght.ttf'),
     LibreFranklin_bold: require('./assets/fonts/LibreFranklin-Bold.ttf'),
     LibreFranklin_italic: require('./assets/fonts/LibreFranklin-Italic.ttf'),
@@ -65,11 +65,31 @@ export default function App() {
     OpenSauceOne_bold_italic: require('./assets/fonts/OpenSauceOne-BoldItalic.ttf'),
   });
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) await hideAsync();
-  }, [fontsLoaded]);
+  // Wait a few seconds to see if the fonts will load before just showing the app
+  // Unfortunately, it seems `useFonts` doesn't throw an error if the fonts don't
+  // come through over websocket from webpack (for example, if you're running the
+  // app over the network, and you didn't port forward the webpack port). So let's
+  // just set a timeout fail-safe.
+  const [isWaitingForFontLoading, setIsWaitingForFontLoading] = useState(true);
+  // Only run the timer once
+  useEffect(() => {
+    setTimeout(() => {
+      setIsWaitingForFontLoading(false);
+    }, 5000);
+  }, []);
 
-  if (!fontsLoaded) return;
+  const onLayoutRootView = useCallback(async () => {
+    // When the timer runs out, if the fonts haven't responded, throw an error and let the app load
+    if (!isWaitingForFontLoading && !fontsLoaded && !fontError)
+      console.error('Timed out waiting for fonts to load!');
+    // If the timer runs out or the fonts respond, show the app
+    if (!isWaitingForFontLoading || fontsLoaded || fontError) {
+      if (fontError) console.error(fontError);
+      await hideAsync();
+    }
+  }, [fontsLoaded, fontError, isWaitingForFontLoading]);
+
+  if (isWaitingForFontLoading && !fontsLoaded && !fontError) return;
 
   return (
     <SafeAreaView
