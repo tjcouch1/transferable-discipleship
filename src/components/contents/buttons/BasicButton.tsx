@@ -78,8 +78,8 @@ const designStyles = createDesignStyleSheets(
     answer: {
       navButton: {
         backgroundColor: theme.button.backgroundAnswer,
-        padding: 5,
-        borderRadius: 4,
+        padding: 10,
+        borderRadius: 6,
         width: 'auto',
       },
       navButtonText: {

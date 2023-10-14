@@ -56,6 +56,7 @@ export function Image({ image: source, style }: ImageProps) {
       <TouchableWithoutFeedback onPress={() => setIsModal(!isModal)}>
         <ReactImage
           source={getImageSource(source)}
+          aria-label={source}
           style={[
             isWeb() || isRemote(source)
               ? { width: defaultSize, height: defaultSize }
