@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "initialScreen": "Home",
   "screens": [
     {
@@ -3046,7 +3046,7 @@
                     {
                       "type": "ActionButton",
                       "design": "answer",
-                      "text": "Privacy Policy",
+                      "text": "Expo Privacy Policy",
                       "action": {
                         "type": "link",
                         "to": "https://expo.dev/privacy-explained#expo-and-end-user-data"
