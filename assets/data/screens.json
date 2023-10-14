@@ -1953,7 +1953,7 @@
                     },
                     {
                       "type": "Slide",
-                      "headerText": "Make a plan",
+                      "headerText": "Make prayer a part of your day",
                       "contentDesign": "tight",
                       "contents": [
                         "Make a conscious effort to make prayer a part of your day, moment by moment."
@@ -3023,6 +3023,33 @@
                       "action": {
                         "type": "link",
                         "to": "https://github.com/marcologous/Open-Sauce-Fonts"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "Slide",
+                  "headerText": "Privacy Policy",
+                  "contentDesign": "tight",
+                  "contents": [
+                    "We intend to take and keep as little information about you as possible; we have no interest in your personal information. Privacy policy generated with the help of Termly. View our privacy policy here:",
+                    {
+                      "type": "ActionButton",
+                      "design": "answer",
+                      "text": "Privacy Policy",
+                      "action": {
+                        "type": "link",
+                        "to": "https://tjcouch1.github.io/transferable-discipleship/privacy-policy.html"
+                      }
+                    },
+                    "On opening the app, the app will send an HTTPS request to a remote server to check for updates. It will share only information relevant to receiving updates like operating system. This service is provided by Expo. See more information here:",
+                    {
+                      "type": "ActionButton",
+                      "design": "answer",
+                      "text": "Privacy Policy",
+                      "action": {
+                        "type": "link",
+                        "to": "https://expo.dev/privacy-explained#expo-and-end-user-data"
                       }
                     }
                   ]
