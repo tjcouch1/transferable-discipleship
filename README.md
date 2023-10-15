@@ -89,4 +89,4 @@ Note: looks like you can maybe provide `--profile production` to make sure it se
 
 #### Publishing updates to releases
 
-https://docs.expo.dev/eas-update/getting-started/#publish-an-update
+`eas update --branch production --message "vX.Y.Z-update-N Update message"`
