@@ -2940,7 +2940,7 @@
               },
               "contentDesign": "tight",
               "contents": [
-                "- Disciple-making content of the app compiled by TJ Couch.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
+                "- Disciple-making content of the app created by Wesley Skinner; edited and implemented by TJ Couch.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
                 {
                   "type": "ActionButton",
                   "design": "answer",
@@ -2972,7 +2972,7 @@
                   "headerText": "Transferable Discipleship",
                   "contentDesign": "tight",
                   "contents": [
-                    "Transferable Discipleship Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below."
+                    "Transferable Discipleship Copyright 2023 Wesley Skinner and TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below."
                   ]
                 },
                 {
