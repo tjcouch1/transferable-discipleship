@@ -53,7 +53,11 @@ export const ActionFactory: {
   link:
     ({ to }: PropsWithNavigation<LinkActionData>) =>
     async () => {
-      if (await Linking.canOpenURL(to)) Linking.openURL(to);
+      // Fix the discipleship%2Dapp%2Dtemplate link that is encoded to prevent accidental replacement when customizing the template
+      const toUrl = to?.includes('discipleship%2Dapp%2Dtemplate')
+        ? to.replace(/%2D/g, '-')
+        : to;
+      if (await Linking.canOpenURL(toUrl)) Linking.openURL(toUrl);
     },
 };
 
