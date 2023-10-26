@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.js": "/transferable-discipleship/app/static/js/main.a3a54003.js",
+    "static/js/914.d67f817c.js": "/transferable-discipleship/app/static/js/914.d67f817c.js",
+    "static/media/spiritual-multiplication.png": "/transferable-discipleship/app/static/media/spiritual-multiplication.e10192ebfcd5f0d37389.png",
+    "static/media/invite.png": "/transferable-discipleship/app/static/media/invite.49768f286d7b0fbbd742.png",
+    "static/media/cycles-of-involvement.png": "/transferable-discipleship/app/static/media/cycles-of-involvement.97a635f5d1de2d497379.png",
+    "static/media/nations.png": "/transferable-discipleship/app/static/media/nations.b24576a1cc031e152266.png",
+    "static/media/LibreFranklin-VariableFont_wght.ttf": "/transferable-discipleship/app/static/media/LibreFranklin-VariableFont_wght.b6fbb7c6d08be7baa7d7.ttf",
+    "static/media/LibreFranklin-Italic.ttf": "/transferable-discipleship/app/static/media/LibreFranklin-Italic.586ba68fd7aea356ac7e.ttf",
+    "static/media/LibreFranklin-BoldItalic.ttf": "/transferable-discipleship/app/static/media/LibreFranklin-BoldItalic.9cae17e361a70f9f1336.ttf",
+    "static/media/LibreFranklin-Bold.ttf": "/transferable-discipleship/app/static/media/LibreFranklin-Bold.f8a6adeeee2d88b5e4e6.ttf",
+    "static/media/OpenSauceOne-BoldItalic.ttf": "/transferable-discipleship/app/static/media/OpenSauceOne-BoldItalic.767b99c84ce8cabbc079.ttf",
+    "static/media/OpenSauceOne-Italic.ttf": "/transferable-discipleship/app/static/media/OpenSauceOne-Italic.865f6efc0978311dbd85.ttf",
+    "static/media/OpenSauceOne-Bold.ttf": "/transferable-discipleship/app/static/media/OpenSauceOne-Bold.b61d766d8e29bb5614f0.ttf",
+    "static/media/OpenSauceOne-Regular.ttf": "/transferable-discipleship/app/static/media/OpenSauceOne-Regular.ad899c4b043bde24150b.ttf",
+    "favicon.ico": "/transferable-discipleship/app/favicon.ico",
+    "index.html": "/transferable-discipleship/app/index.html",
+    "static/media/favicon.png": "/transferable-discipleship/app/static/media/favicon.37b50305065f3455c695.png",
+    "favicon-32.png": "/transferable-discipleship/app/favicon-32.png",
+    "manifest.json": "/transferable-discipleship/app/manifest.json",
+    "favicon-16.png": "/transferable-discipleship/app/favicon-16.png",
+    "serve.json": "/transferable-discipleship/app/serve.json",
+    "main.a3a54003.js.map": "/transferable-discipleship/app/static/js/main.a3a54003.js.map",
+    "914.d67f817c.js.map": "/transferable-discipleship/app/static/js/914.d67f817c.js.map"
+  },
+  "entrypoints": [
+    "static/js/914.d67f817c.js",
+    "static/js/main.a3a54003.js"
+  ]
+}
