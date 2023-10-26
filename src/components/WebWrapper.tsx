@@ -18,13 +18,13 @@
 
 import { PropsWithChildren } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { isWeb } from '../util/Util';
+import { isDev, isWeb } from '../util/Util';
 
 /**
  * Wraps the application in a "phone" layout on web for easy preview
  */
 export default function WebWrapper({ children }: PropsWithChildren) {
-  return isWeb() ? (
+  return isWeb() && isDev() ? (
     <View style={[styles.screen]}>
       <View style={[styles.phone]}>{children}</View>
     </View>

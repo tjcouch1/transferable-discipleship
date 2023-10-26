@@ -1,6 +1,24 @@
 # transferable-discipleship
 Simple, Accessible, and Transferable Christian discipleship app in React Native
 
+## Run the App
+
+### Web
+
+[Open Transferable Discipleship in your browser now!](https://tjcouch1.github.io/transferable-discipleship/app/index.html)
+
+### Google Play Store
+
+[Download Transferable Discipleship for Android on the Google Play Store](https://play.google.com/store/apps/details?id=com.tjcouch.transferablediscipleship)
+
+### App Store
+
+Coming soon
+
+### Privacy Policy
+
+[Transferable Discipleship Privacy Policy](https://tjcouch1.github.io/transferable-discipleship/privacy-policy.html)
+
 ## Features
 
 - Multi-screen content and Scripture application
