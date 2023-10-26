@@ -28,6 +28,7 @@ import { isWeb } from '../../util/Util';
 import { useState } from 'react';
 // Thanks to Yahia Naguib at https://stackoverflow.com/a/61130824 for sharing how to get babel to include this package
 import ImageView from 'better-react-native-image-viewing';
+import { openURL } from 'expo-linking';
 
 /** Simple defining data for displaying images */
 export interface ImageContentData extends ContentDataBase {
@@ -53,7 +54,12 @@ export function Image({ image: source, style }: ImageProps) {
 
   return (
     <>
-      <TouchableWithoutFeedback onPress={() => setIsModal(!isModal)}>
+      <TouchableWithoutFeedback
+        onPress={() =>
+          isWeb()
+            ? window.open(getImageSource(source).toString(), '_blank')
+            : setIsModal(!isModal)
+        }>
         <ReactImage
           source={getImageSource(source)}
           aria-label={source}

@@ -17,11 +17,10 @@
  */
 
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { ButtonDataBase } from '../components/contents/buttons/Buttons';
-import { BasicButtonData } from '../components/contents/buttons/BasicButton';
 import { RouteProp } from '@react-navigation/native';
 import { pathJoin } from './PathUtil';
-import { Linking } from 'react-native';
+import { openURL } from 'expo-linking';
+import { isWeb } from './Util';
 
 //----- ACTION TYPES -----//
 
@@ -53,11 +52,14 @@ export const ActionFactory: {
   link:
     ({ to }: PropsWithNavigation<LinkActionData>) =>
     async () => {
-      // Fix the discipleship%2Dapp%2Dtemplate link that is encoded to prevent accidental replacement when customizing the template
-      const toUrl = to?.includes('discipleship%2Dapp%2Dtemplate')
-        ? to.replace(/%2D/g, '-')
-        : to;
-      if (await Linking.canOpenURL(toUrl)) Linking.openURL(toUrl);
+      if (to) {
+        // Fix the discipleship%2Dapp%2Dtemplate link that is encoded to prevent accidental replacement when customizing the template
+        const toUrl = to?.includes('discipleship%2Dapp%2Dtemplate')
+          ? to.replace(/%2D/g, '-')
+          : to;
+        if (isWeb()) window.open(toUrl, '_blank');
+        else openURL(toUrl);
+      }
     },
 };
 
