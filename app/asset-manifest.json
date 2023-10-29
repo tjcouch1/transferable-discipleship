@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/transferable-discipleship/app/static/js/main.66a5130d.js",
+    "main.js": "/transferable-discipleship/app/static/js/main.f725fcef.js",
     "static/js/825.4fb13a96.js": "/transferable-discipleship/app/static/js/825.4fb13a96.js",
     "static/media/spiritual-multiplication.png": "/transferable-discipleship/app/static/media/spiritual-multiplication.e10192ebfcd5f0d37389.png",
     "static/media/invite.png": "/transferable-discipleship/app/static/media/invite.49768f286d7b0fbbd742.png",
@@ -21,11 +21,11 @@
     "manifest.json": "/transferable-discipleship/app/manifest.json",
     "favicon-16.png": "/transferable-discipleship/app/favicon-16.png",
     "serve.json": "/transferable-discipleship/app/serve.json",
-    "main.66a5130d.js.map": "/transferable-discipleship/app/static/js/main.66a5130d.js.map",
+    "main.f725fcef.js.map": "/transferable-discipleship/app/static/js/main.f725fcef.js.map",
     "825.4fb13a96.js.map": "/transferable-discipleship/app/static/js/825.4fb13a96.js.map"
   },
   "entrypoints": [
     "static/js/825.4fb13a96.js",
-    "static/js/main.66a5130d.js"
+    "static/js/main.f725fcef.js"
   ]
 }

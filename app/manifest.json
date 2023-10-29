@@ -5,6 +5,7 @@
   "name": "transferable-discipleship",
   "short_name": "transferable-discipleship",
   "start_url": "/?utm_source=web_app_manifest",
+  "scope": ".",
   "orientation": "portrait",
   "related_applications": [
     {
