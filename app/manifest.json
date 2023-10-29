@@ -4,7 +4,7 @@
   "lang": "en",
   "name": "Transferable Discipleship",
   "short_name": "Transferable Discipleship",
-  "start_url": "transferable-discipleship/app/?utm_source=web_app_manifest",
+  "start_url": "./?utm_source=web_app_manifest",
   "orientation": "portrait",
   "related_applications": [
     {
