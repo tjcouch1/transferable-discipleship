@@ -23,7 +23,7 @@ import {
   StyleSheet,
   useColorScheme,
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, Route } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { getAppScreens } from './src/services/ScreenService';
 import { Screens } from './src/components/screens/Screens';
@@ -34,6 +34,9 @@ import theme from './src/Theme';
 import { isWeb } from './src/util/Util';
 import { preventAutoHideAsync, hideAsync } from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
+
+/** Web only: sessionStorage key used to save and to restore the route stack on refresh */
+const ROUTE_STACK_KEY = 'route-stack';
 
 preventAutoHideAsync();
 
@@ -49,6 +52,16 @@ export default function App() {
   const appScreens = useMemo(() => getAppScreens(), []);
   // Get an array of the screens in the app
   const screens = useMemo(() => [...appScreens.screens.values()], [appScreens]);
+
+  // Web only: Restore the route stack on refresh if in same session
+  const restoredRoutes = useMemo<Route<string>[] | undefined>(() => {
+    if (!isWeb()) return undefined;
+
+    const routeStackJson = sessionStorage.getItem(ROUTE_STACK_KEY);
+    if (!routeStackJson) return undefined;
+
+    return JSON.parse(routeStackJson).map((route: string) => ({ name: route }));
+  }, []);
 
   // WARNING: Because iOS does not support fonts well, we are using special naming conventions
   // here to add bold and italic. If you want a font family to support bold and italic on iOS,
@@ -97,12 +110,41 @@ export default function App() {
       onLayout={onLayoutRootView}>
       <ContentsModuleContext.Provider value={ContentsModule}>
         <WebWrapper>
-          <NavigationContainer>
+          <NavigationContainer
+            initialState={
+              restoredRoutes
+                ? {
+                    routes: restoredRoutes,
+                  }
+                : undefined
+            }>
             <StatusBar
               barStyle={isDarkMode ? 'light-content' : 'dark-content'}
               backgroundColor={backgroundStyle.backgroundColor}
             />
-            <Stack.Navigator initialRouteName={appScreens.initialScreen}>
+            <Stack.Navigator
+              initialRouteName={appScreens.initialScreen}
+              screenListeners={
+                // Web only: Persist the route stack on changes so we can restore it later
+                isWeb()
+                  ? {
+                      // Looks like the types for this event are wrong :( so just use any
+                      state: (e: any) => {
+                        const routeStack = e?.data?.state?.routes?.map(
+                          (route: Route<string>) => route.name,
+                        );
+                        sessionStorage.setItem(
+                          ROUTE_STACK_KEY,
+                          JSON.stringify(
+                            !routeStack || routeStack.length === 0
+                              ? null
+                              : routeStack,
+                          ),
+                        );
+                      },
+                    }
+                  : undefined
+              }>
               {screens.map(screen => (
                 <Stack.Screen
                   name={screen.id}
