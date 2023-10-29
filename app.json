@@ -41,7 +41,7 @@
           ]
         }
       },
-      "startUrl": "transferable-discipleship/app/?utm_source=web_app_manifest",
+      "startUrl": "./?utm_source=web_app_manifest",
     },
     "extra": {
       "eas": {
