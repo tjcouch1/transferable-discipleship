@@ -2,10 +2,9 @@
   "background_color": "#ebecec",
   "display": "standalone",
   "lang": "en",
-  "name": "transferable-discipleship",
-  "short_name": "transferable-discipleship",
-  "start_url": "/?utm_source=web_app_manifest",
-  "scope": ".",
+  "name": "Transferable Discipleship",
+  "short_name": "Transferable Discipleship",
+  "start_url": "transferable-discipleship/app/?utm_source=web_app_manifest",
   "orientation": "portrait",
   "related_applications": [
     {
