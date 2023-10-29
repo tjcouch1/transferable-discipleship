@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "transferable-discipleship",
+    "name": "Transferable Discipleship",
     "slug": "transferable-discipleship",
     "version": "0.1.1",
     "orientation": "portrait",
@@ -40,7 +40,8 @@
             "better-react-native-image-viewing"
           ]
         }
-      }
+      },
+      "startUrl": "transferable-discipleship/app/?utm_source=web_app_manifest",
     },
     "extra": {
       "eas": {
