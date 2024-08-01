@@ -1,5 +1,5 @@
 # discipleship-app-template
-Christian discipleship app template in React Native
+Christian discipleship app template in React Native
 
 ## Features
 
@@ -30,7 +30,7 @@ Christian discipleship app template in React Native
     - `splash.png` - Loading splash screen image
     - `data/screens.json` - Content for the app
       - Regarding the `Home/About` and `Home/About/Credits` screens specifically, we request that you only add to or restructure and somehow include all the content in these screens in order to credit those whose technologies went into making this template possible and to comply with licensing needs. Otherwise, you're free to modify the content as you desire!
-      - To edit with type support, you can put the contents of `data/screens.json` in `src/services/ScreenService.ts` in place of `require('../../assets/data/screens.json')`. We [plan to add JSON schemas](https://github.com/tjcouch1/discipleship-app-template/issues/25) at some point.
+      - To edit with type support, you can put the contents of `data/screens.json` in `src/services/ScreenService.ts` in place of `require('../../assets/data/screens.json')`. We [plan to add JSON schemas](https://github.com/tjcouch1/discipleship%2Dapp%2Dtemplate/issues/25) at some point.
     - `data/colors.json` - Theme colors for the app
     - `fonts` - contains fonts used in the app. Must also update in `App.tsx` and `src/components/contents/Text.tsx`
       - To ensure including the license information for each font works properly, make sure each font family has the font family name at the start of each file name, and make sure each font family has its license in the same directory with the name `<font_family>.LICENSE`
@@ -51,22 +51,28 @@ Christian discipleship app template in React Native
 
 Run `npm run licenses` to build the software library licenses file (displayed in the app for attribution purposes).
 
-## To run
+## To run locally
 
-Run on your preferred platform:
+Run on your preferred platform on the same network:
 
-- `npm start` - runs in the web browser, and allows you to use the expo app to test the app on android and ios
-- `npm run android`
-- `npm run ios`
-   - Note: you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
+- `npm start` - runs in the web browser and allows you to use the Expo Go app to test the app on Android and iOS
 
 ## Publishing
 
 You can build, publish, and update this app using [EAS](https://docs.expo.dev/eas/) with the following instructions.
 
+### Publishing Environment Setup
+
+#### Apple Environment Variables
+
+You need to tell Expo about your [Apple credentials](https://docs.expo.dev/submit/ios/#2-start-the-submission) in some way. One way is by setting the following environment variables:
+
+- `EXPO_APPLE_ID` (or set it in [`eas.json`](https://docs.expo.dev/eas/json/#appleid))
+- [`EXPO_APPLE_APP_SPECIFIC_PASSWORD`](https://github.com/expo/fyi/blob/main/apple-app-specific-password.md)
+
 ### Pre-build setup
 
-There are a few things you need to do before building and publishing the app.
+There are a few things you need to do before building and publishing the app every time you build and publish.
 
 #### Update Scripture cache
 
@@ -74,21 +80,27 @@ TODO
 
 #### Update software license attribution
 
-TODO
+`npm run licenses`
 
 ## Building and publishing preview builds
 
 ### Create an Android Preview `.apk` to install on your device
 
-`npm run build:android-preview`
+`npm run build:preview-android`
 
 ### Create an iOS Preview build to install on your device
 
-https://docs.expo.dev/build/internal-distribution/#configure-app-signing
+Before building, you must register devices on which to use the preview build.
 
 #### Register devices to use the iOS Preview build
 
 https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribution
+
+`eas device:create`
+
+#### Build the iOS Preview
+
+`npm run build:preview-ios`
 
 #### Publishing updates to preview builds
 
@@ -98,6 +110,13 @@ https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribut
 
 https://docs.expo.dev/distribution/introduction/
 
+Build first. Then run the following commands to publish the latest build on Expo's servers:
+
+- [`eas submit --platform ios`](https://docs.expo.dev/submit/ios/)
+- [`eas submit --platform android`](https://docs.expo.dev/submit/android/)
+
+Note: looks like you can maybe provide `--profile production` to make sure it selects the production build, but it's unclear. Needs testing.
+
 #### Publishing updates to releases
 
-https://docs.expo.dev/eas-update/getting-started/#publish-an-update
+`eas update --branch production --message "vX.Y.Z-update-N Update message"`

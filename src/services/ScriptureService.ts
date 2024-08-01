@@ -20,8 +20,9 @@
  * ScriptureService.ts - Handles getting Scripture text
  */
 
+import { ScrRangeDisplayContentData } from '../components/contents/ScrRangeDisplay';
 import { ScriptureSlideContentData } from '../components/contents/ScriptureSlide';
-import { isWeb } from '../util/Util';
+import { isDev, isString, isWeb } from '../util/Util';
 import { forEachContent } from './ScreenService';
 
 const defaultShortName = 'WEB';
@@ -202,18 +203,11 @@ export const getScripture = (
   const translationId = translationInfo.id;
   if (scriptureCache[translationId]) {
     const cachedVerses = scriptureCache[translationId].verses[reference];
-    if (cachedVerses) {
-      console.log(
-        `Found ${reference}${
-          'then' in cachedVerses ? ' promise' : ''
-        } in cache`,
-      );
-      return Promise.resolve(cachedVerses);
-    }
+    if (cachedVerses) return Promise.resolve(cachedVerses);
   }
 
   // Get verses from server
-  console.warn(`Did not find ${reference} in cache. Caching`);
+  if (isDev()) console.warn(`Did not find ${reference} in cache. Caching`);
   const versesUrl = `${scriptureUrl}${reference}?translation=${translationId}`;
   if (!scriptureCache[translationId])
     scriptureCache[translationId] = {
@@ -222,13 +216,24 @@ export const getScripture = (
       verses: {},
     };
   const versesPromise = (async () => {
-    const response = await fetch(versesUrl);
-    if (!response.ok)
+    let responseContents: any;
+    let error: any | undefined;
+    if (isDev()) {
+      try {
+        const response = await fetch(versesUrl);
+        responseContents = await response.json();
+
+        if (!response.ok) error = responseContents;
+      } catch (e) {
+        error = e;
+      }
+    } else error = `Not in dev mode. Not fetching.`;
+    if (error)
       throw new Error(
-        `Failed to get Scripture for ${reference} ${shortName}. Error: ${await response.json()}`,
+        `Failed to get Scripture for ${reference} ${shortName}. Error: ${error}`,
       );
 
-    const apiVerses: ApiScriptureContent = await response.json();
+    const apiVerses: ApiScriptureContent = responseContents;
     const verses = mapApiVerseRangeToContent(apiVerses, versesUrl);
 
     // Save verses to cache
@@ -248,20 +253,27 @@ export const getScripture = (
 async function cacheAllScripture() {
   const getScripturePromises: Set<ReturnType<typeof getScripture>> = new Set();
   forEachContent(content => {
-    const scriptureSlide = content as ScriptureSlideContentData;
-    if (scriptureSlide.scripture) {
-      const scriptures = Array.isArray(scriptureSlide.scripture)
-        ? scriptureSlide.scripture
-        : [scriptureSlide.scripture];
-      scriptures.forEach(scripture =>
-        getScripturePromises.add(getScripture(scripture.reference)),
-      );
+    if (!isString(content)) {
+      if ('scripture' in content) {
+        const scriptureSlide = content as ScriptureSlideContentData;
+        if (scriptureSlide.scripture) {
+          const scriptures = Array.isArray(scriptureSlide.scripture)
+            ? scriptureSlide.scripture
+            : [scriptureSlide.scripture];
+          scriptures.forEach(scripture =>
+            getScripturePromises.add(getScripture(scripture.reference)),
+          );
+        }
+      } else if ('reference' in content) {
+        const scrRangeDisplay = content as ScrRangeDisplayContentData;
+        if (scrRangeDisplay.reference) {
+          getScripturePromises.add(getScripture(scrRangeDisplay.reference));
+        }
+      }
     }
   });
 
-  // console.log(`Found ${getScripturePromises.size} unique Scripture references`)
-
-  await Promise.all(getScripturePromises.values());
+  await Promise.allSettled([...getScripturePromises.values()]);
 
   if (isWeb())
     localStorage.setItem('scriptureCache', JSON.stringify(scriptureCache));

@@ -313,7 +313,7 @@
           "contents": [
             {
               "type": "Header",
-              "headerText": "About TD",
+              "headerText": "About Discipleship App Template",
               "lineTexts": [
                 "Discipleship App Template is a tool for simple, reproducible Christian discipleship."
               ],
@@ -321,7 +321,10 @@
             },
             {
               "type": "Slide",
-              "headerText": "Feedback?",
+              "headerText": {
+                "text": "Feedback?",
+                "style": { "color": "#9c9fa1" }
+              },
               "contentDesign": "tight",
               "contents": [
                 "Found a problem? Want a feature? Other feedback?",
@@ -338,7 +341,10 @@
             },
             {
               "type": "Slide",
-              "headerText": "Create Your Own Discipleship App",
+              "headerText": {
+                "text": "Create Your Own Discipleship App",
+                "style": { "color": "#9c9fa1" }
+              },
               "contentDesign": "tight",
               "contents": [
                 "This app was created using discipleship‑app‑template. Want to make your own discipleship app like this one?",
@@ -348,14 +354,17 @@
                   "text": "Fork the template on GitHub!",
                   "action": {
                     "type": "link",
-                    "to": "https://github.com/tjcouch1/discipleship-app-template"
+                    "to": "https://github.com/tjcouch1/discipleship%2Dapp%2Dtemplate"
                   }
                 }
               ]
             },
             {
               "type": "Slide",
-              "headerText": "Credits and Licensing",
+              "headerText": {
+                "text": "Credits and Licensing",
+                "style": { "color": "#9c9fa1" }
+              },
               "contentDesign": "tight",
               "contents": [
                 "- Disciple-making content of the app compiled by <content_creator>.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
@@ -395,7 +404,7 @@
                 },
                 {
                   "type": "Slide",
-                  "headerText": "discipleship‑app‑template",
+                  "headerText": "Discipleship App Template",
                   "contentDesign": "tight",
                   "contents": [
                     "This app was created using discipleship‑app‑template Copyright 2023 TJ Couch.\ntjcouch1@gmail.com\nLicensed under the GPL-3.0-only License.\nMore information on the Software Licenses page linked below."

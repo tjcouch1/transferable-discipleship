@@ -72,7 +72,7 @@ export const ScriptureSlide = ({
       contents.push({
         type: 'Text',
         design: 'subheader',
-        style: designStyle.subheader,
+        style: [designStyle.subheader, designStyle.contents],
         text: scr.reference,
       });
 
@@ -92,6 +92,7 @@ export const ScriptureSlide = ({
     contents.push({
       type: 'ScrRangeDisplay',
       reference: scr.reference,
+      style: designStyle.contents,
     } as ScrRangeDisplayContentData);
 
     if (showButton)
@@ -123,8 +124,11 @@ const designStyles = createDesignStyleSheets(
   {
     subheader: {
       fontSize: 18,
+      fontWeight: '700',
+    },
+    contents: {
       textAlign: 'left',
-      width: '100%',
+      alignSelf: 'flex-start',
     },
   },
   {},
