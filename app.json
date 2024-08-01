@@ -12,7 +12,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/930605a3-c488-49fe-bf0f-361326b19d41"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -22,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.tjcouch.discipleshipapptemplate"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -31,6 +33,14 @@
           "include": ["better-react-native-image-viewing"]
         }
       }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "930605a3-c488-49fe-bf0f-361326b19d41"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }

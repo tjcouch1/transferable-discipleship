@@ -20,8 +20,10 @@
  * ScreenService.ts - Handles getting the page structure
  */
 
+import { ViewStyle } from 'react-native';
 import { ContentListData } from '../components/contents/ContentList';
 import { ContentData } from '../components/contents/Contents';
+import { HeaderContentData } from '../components/contents/Header';
 import { ContentListScreenData } from '../components/screens/ContentListScreen';
 import {
   SerializedAppData,
@@ -30,7 +32,7 @@ import {
   ScreenMap,
 } from '../components/screens/Screens';
 import { ROOT_PATH, PATH_DELIMITER, pathJoin } from '../util/PathUtil';
-import { APP_VERSION } from '../util/Util';
+import { APP_VERSION, isDev } from '../util/Util';
 
 const serializedAppDataNew: SerializedAppData = require('../../assets/data/screens.json');
 
@@ -98,7 +100,7 @@ function addSubscreensToMap(
  * @returns app data to use in the app
  */
 function deserializeAppData(appData: SerializedAppData): AppData {
-  return {
+  const deserializedAppData = {
     ...appData,
     initialScreen: pathJoin(ROOT_PATH, appData.initialScreen),
     screens: addSubscreensToMap(new Map<string, ScreenData>(), ROOT_PATH, [
@@ -106,6 +108,23 @@ function deserializeAppData(appData: SerializedAppData): AppData {
       licensesScreen,
     ]),
   };
+
+  // If we're in development, add a red border around the title screen header
+  if (isDev()) {
+    const initialScreen = deserializedAppData.screens.get(
+      deserializedAppData.initialScreen,
+    ) as ContentListScreenData;
+    if (initialScreen) {
+      const header = initialScreen.contents[0] as HeaderContentData;
+      header.style = {
+        borderColor: '#FF0000',
+        borderWidth: 5,
+        ...(header.style as ViewStyle),
+      };
+    }
+  }
+
+  return deserializedAppData;
 }
 
 const appScreens = deserializeAppData(serializedAppDataNew);
