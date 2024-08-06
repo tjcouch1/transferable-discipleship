@@ -15,9 +15,7 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/930605a3-c488-49fe-bf0f-361326b19d41"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -30,11 +28,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
+      "bundler": "metro",
       "build": {
         "babel": {
-          "include": [
-            "better-react-native-image-viewing"
-          ]
+          "include": ["better-react-native-image-viewing"]
         }
       }
     },
@@ -46,8 +43,6 @@
     "runtimeVersion": {
       "policy": "appVersion"
     },
-    "plugins": [
-      "expo-font"
-    ]
+    "plugins": ["expo-font"]
   }
 }
