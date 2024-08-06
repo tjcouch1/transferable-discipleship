@@ -4583,7 +4583,7 @@
     },
     {
       "type": "Slide",
-      "headerText": "expo-updates@0.18.16",
+      "headerText": "expo-updates@0.18.15",
       "contentDesign": "tight",
       "contents": [
         "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.\n----\nPublisher: 650 Industries, Inc.\nhttps://github.com/expo/expo\nLicense: MIT\n----\n<p>\n  <a href=\"https://docs.expo.dev/versions/latest/sdk/updates/\">\n    <img\n      src=\"../../.github/resources/expo-updates.svg\"\n      alt=\"expo-updates\"\n      height=\"64\" />\n  </a>\n</p>\n\nThe `expo-updates` module allows your app to download and manage remote updates to your application code.\n\nThis module works with a server that implements the [Expo Update protocol](https://docs.expo.dev/technical-specs/expo-updates-1/).\n\nThe [EAS Update](https://docs.expo.dev/eas-update/introduction/) hosted service implements this protocol.\n\nTo build a custom server that implements the protocol, see the example server source code [here](https://github.com/expo/custom-expo-updates-server).\n\n## Important documentation links\n\n- [Getting started](https://docs.expo.dev/eas-update/getting-started/)\n- [How EAS Update works](https://docs.expo.dev/eas-update/how-it-works/)\n- [Debugging](https://docs.expo.dev/eas-update/debug/)\n- [Migration from Classic Updates](https://docs.expo.dev/eas-update/migrate-from-classic-updates/)\n- [Updates JS API](https://docs.expo.dev/versions/latest/sdk/updates/)\n\n# Installation in bare React Native projects\n\nLearn how to install expo-updates in your project in the [Installing expo-updates documentation page](https://docs.expo.dev/bare/installing-updates/)."
