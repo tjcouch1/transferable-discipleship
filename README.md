@@ -1,4 +1,5 @@
 # discipleship-app-template
+
 Christian discipleship app template in React Native
 
 ## Features
@@ -14,31 +15,31 @@ Christian discipleship app template in React Native
 
 1. Fork this repo! https://github.com/tjcouch1/discipleship-app-template
 2. Find and Replace all of the following strings with your desired information:
-    - Discipleship App Template -> app name
-    - discipleship-app-template -> repository name
-    - <repo_url> -> repository url (ex: https://github.com/tjcouch1/discipleship-app-template)
-    - <content_creator> -> content creator's name
-    - <contact_email> -> preferred email address for contact about the app
+   - Discipleship App Template -> app name
+   - discipleship-app-template -> repository name
+   - <repo_url> -> repository url (ex: https://github.com/tjcouch1/discipleship-app-template)
+   - <content_creator> -> content creator's name
+   - <contact_email> -> preferred email address for contact about the app
 3. Revise the following files to fit your application's needs:
-    - `package.json`
-    - `README.md`
-    - `app.json`
+   - `package.json`
+   - `README.md`
+   - `app.json`
 4. Customize the icons, content data, and theme data in the `assets` folder:
-    - `adaptive-icon.png` - Icon used in Android
-    - `favicon.png` - Icon used in web
-    - `icon.png` - Icon used in iOS
-    - `splash.png` - Loading splash screen image
-    - `data/screens.json` - Content for the app
-      - Regarding the `Home/About` and `Home/About/Credits` screens specifically, we request that you only add to or restructure and somehow include all the content in these screens in order to credit those whose technologies went into making this template possible and to comply with licensing needs. Otherwise, you're free to modify the content as you desire!
-      - To edit with type support, you can put the contents of `data/screens.json` in `src/services/ScreenService.ts` in place of `require('../../assets/data/screens.json')`. We [plan to add JSON schemas](https://github.com/tjcouch1/discipleship%2Dapp%2Dtemplate/issues/25) at some point.
-    - `data/colors.json` - Theme colors for the app
-    - `fonts` - contains fonts used in the app. Must also update in `App.tsx` and `src/components/contents/Text.tsx`
-      - To ensure including the license information for each font works properly, make sure each font family has the font family name at the start of each file name, and make sure each font family has its license in the same directory with the name `<font_family>.LICENSE`
-    - `images` - contains images used in the app. Must also update in `src/services/ImageService.ts`
+   - `adaptive-icon.png` - Icon used in Android
+   - `favicon.png` - Icon used in web
+   - `icon.png` - Icon used in iOS
+   - `splash.png` - Loading splash screen image
+   - `data/screens.json` - Content for the app
+     - Regarding the `Home/About` and `Home/About/Credits` screens specifically, we request that you only add to or restructure and somehow include all the content in these screens in order to credit those whose technologies went into making this template possible and to comply with licensing needs. Otherwise, you're free to modify the content as you desire!
+     - To edit with type support, you can put the contents of `data/screens.json` in `src/services/ScreenService.ts` in place of `require('../../assets/data/screens.json')`. We [plan to add JSON schemas](https://github.com/tjcouch1/discipleship%2Dapp%2Dtemplate/issues/25) at some point.
+   - `data/colors.json` - Theme colors for the app
+   - `fonts` - contains fonts used in the app. Must also update in `App.tsx` and `src/components/contents/Text.tsx`
+     - To ensure including the license information for each font works properly, make sure each font family has the font family name at the start of each file name, and make sure each font family has its license in the same directory with the name `<font_family>.LICENSE`
+   - `images` - contains images used in the app. Must also update in `src/services/ImageService.ts`
 5. Configure [EAS](https://docs.expo.dev/eas/) to prepare for [publishing](#publishing)
-    - Install EAS CLI: `npm install --global eas-cli`
-    - Login to EAS with your [Expo account](https://expo.dev/): `eas login`
-    - Link EAS to this project: `eas update:configure`
+   - Install EAS CLI: `npm install --global eas-cli`
+   - Login to EAS with your [Expo account](https://expo.dev/): `eas login`
+   - Link EAS to this project: `eas update:configure`
 
 ## Development Environment Setup
 
@@ -47,7 +48,7 @@ Christian discipleship app template in React Native
 3. Navigate to the `discipleship-app-template` folder created by `git clone`
 4. Run `npm install`
 
-### Build license 
+### Build license
 
 Run `npm run licenses` to build the software library licenses file (displayed in the app for attribution purposes).
 
@@ -76,7 +77,11 @@ There are a few things you need to do before building and publishing the app eve
 
 #### Update Scripture cache
 
-TODO
+1. [Start the application locally](#to-run-locally) in dev mode and open in the web browser.
+2. Wait a bit to make sure Scripture calls have succeeded
+   - If there are console errors about not retrieving all Scriptures, it may be a rate limit issue with the server. Please refresh and wait a few times to see if the Scriptures finish caching
+3. Copy the local storage value `scriptureCache` and paste it into `./assets/data/scripture.json`.
+4. Reload the page and make sure there are no caching messages like "Did not find \_\_\_ in cache. Caching".
 
 #### Update software license attribution
 
