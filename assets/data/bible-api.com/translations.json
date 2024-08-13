@@ -7,9 +7,37 @@
     "license": "Public Domain"
   },
   {
+    "shortName": "BKR",
+    "name": "Bible kralická",
+    "id": "bkr",
+    "language": "Czech",
+    "license": "Public Domain"
+  },
+  {
+    "shortName": "ASV",
+    "name": "American Standard Version (1901)",
+    "id": "asv",
+    "language": "English",
+    "license": "Public Domain"
+  },
+  {
     "shortName": "BBE",
     "name": "Bible in Basic English",
     "id": "bbe",
+    "language": "English",
+    "license": "Public Domain"
+  },
+  {
+    "shortName": "DARBY",
+    "name": "Darby Bible",
+    "id": "darby",
+    "language": "English",
+    "license": "Public Domain"
+  },
+  {
+    "shortName": "DRA",
+    "name": "Douay-Rheims 1899 American Edition",
+    "id": "dra",
     "language": "English",
     "license": "Public Domain"
   },
@@ -28,9 +56,23 @@
     "license": "Public Domain"
   },
   {
+    "shortName": "YLT",
+    "name": "Young's Literal Translation",
+    "id": "ylt",
+    "language": "English",
+    "license": "Public Domain"
+  },
+  {
     "shortName": "OEBCW",
     "name": "Open English Bible, Commonwealth Edition",
     "id": "oeb-cw",
+    "language": "English (UK)",
+    "license": "Public Domain"
+  },
+  {
+    "shortName": "WEBBE",
+    "name": "World English Bible, British Edition",
+    "id": "webbe",
     "language": "English (UK)",
     "license": "Public Domain"
   },
@@ -39,6 +81,27 @@
     "name": "Open English Bible, US Edition",
     "id": "oeb-us",
     "language": "English (US)",
+    "license": "Public Domain"
+  },
+  {
+    "shortName": "CLEMENTINE",
+    "name": "Clementine Latin Vulgate",
+    "id": "clementine",
+    "language": "Latin",
+    "license": "Public Domain"
+  },
+  {
+    "shortName": "ALMEIDA",
+    "name": "João Ferreira de Almeida",
+    "id": "almeida",
+    "language": "Portuguese",
+    "license": "Public Domain"
+  },
+  {
+    "shortName": "RCCV",
+    "name": "Protestant Romanian Corrected Cornilescu Version",
+    "id": "rccv",
+    "language": "Romanian",
     "license": "Public Domain"
   }
 ]

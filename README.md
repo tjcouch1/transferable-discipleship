@@ -1,4 +1,5 @@
 # transferable-discipleship
+
 Simple, Accessible, and Transferable Christian discipleship app in React Native
 
 ## Run the App
@@ -35,7 +36,7 @@ Coming soon
 3. Navigate to the `transferable-discipleship` folder created by `git clone`
 4. Run `npm install`
 
-### Build license 
+### Build license
 
 Run `npm run licenses` to build the software library licenses file (displayed in the app for attribution purposes).
 
@@ -64,7 +65,11 @@ There are a few things you need to do before building and publishing the app eve
 
 #### Update Scripture cache
 
-TODO
+1. [Start the application locally](#to-run-locally) in dev mode and open in the web browser.
+2. Wait a bit to make sure Scripture calls have succeeded
+   - If there are console errors about not retrieving all Scriptures, it may be a rate limit issue with the server. Please refresh and wait a few times to see if the Scriptures finish caching
+3. Copy the local storage value `scriptureCache` and paste it into `./assets/data/scripture.json`.
+4. Reload the page and make sure there are no caching messages like "Did not find \_\_\_ in cache. Caching".
 
 #### Update software license attribution
 
