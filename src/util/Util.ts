@@ -47,7 +47,7 @@ export function isDev() {
  * More info at https://github.com/expo/expo/issues/9149
  */
 export function supportsVariableFont() {
-  return false // Platform.OS === 'web';
+  return false; // Platform.OS === 'web';
 }
 
 /**
