@@ -103,12 +103,24 @@ https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribut
 
 https://docs.expo.dev/distribution/introduction/
 
-Build first. Then run the following commands to publish the latest build on Expo's servers:
+Build first:
+
+`npm run build:production-android`
+`npm run build:production-ios`
+`npm run build:production-all`
+
+Then run the following commands to publish the latest build on Expo's servers:
 
 - [`eas submit --platform ios`](https://docs.expo.dev/submit/ios/)
 - [`eas submit --platform android`](https://docs.expo.dev/submit/android/)
 
 Note: looks like you can maybe provide `--profile production` to make sure it selects the production build, but it's unclear. Needs testing.
+
+Alternatively, you can build and submit in one step:
+
+`eas build --auto-submit`
+
+Note: this has not been tested. I imagine this submits android and ios in production.
 
 #### Publishing updates to releases
 

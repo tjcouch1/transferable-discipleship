@@ -22,13 +22,13 @@
     "build:production-all": "eas build -p all --profile production"
   },
   "dependencies": {
-    "@expo/metro-runtime": "~3.2.1",
+    "@expo/metro-runtime": "~3.2.3",
     "@react-navigation/native": "^6.1.2",
     "@react-navigation/native-stack": "^6.9.8",
     "better-react-native-image-viewing": "^0.2.7",
-    "expo": "~51.0.26",
+    "expo": "~51.0.28",
     "expo-constants": "~16.0.2",
-    "expo-dev-client": "~4.0.21",
+    "expo-dev-client": "~4.0.23",
     "expo-file-system": "~17.0.1",
     "expo-font": "~12.0.9",
     "expo-linking": "~6.3.1",
