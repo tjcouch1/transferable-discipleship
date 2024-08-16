@@ -2,7 +2,7 @@
   "expo": {
     "name": "Transferable Discipleship",
     "slug": "transferable-discipleship",
-    "version": "0.1.2",
+    "version": "2.1.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
