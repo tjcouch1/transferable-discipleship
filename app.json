@@ -28,7 +28,7 @@
         "backgroundColor": "#ebecec"
       },
       "package": "com.tjcouch.transferablediscipleship",
-      "versionCode": 2
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png",
