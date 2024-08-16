@@ -19,7 +19,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "0.1.2",
+      "buildNumber": "2.1.2",
       "bundleIdentifier": "com.gmail.mchrogers.transferablediscipleship"
     },
     "android": {
