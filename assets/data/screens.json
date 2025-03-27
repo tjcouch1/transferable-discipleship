@@ -3145,11 +3145,11 @@
                   "scripture": {
                     "reference": "Genesis 2:15, 3:8",
                     "revealedButton": {
-                      "text": "We were created for discipleship"
+                      "text": "We were created for discipleship. Before the sin entered the world, Adam did the work God gave him and walked with Him."
                     }
                   }
                 },
-                "The benefits are far reaching: Healthy community, Greater Campus Impact, Leaves a Legacy."
+                "The benefits are far reaching: \n\nHealthy community: There is more depth to relationships \n\nGreater Campus Impact: If we have 20 students being discipled and they all disciple 2 people, that becomes 60 students growing in their faith \n\nLeaves a Legacy: By multiplying your faith through other people, you in turn are replacing yourself since you’re only here for a limited time."
               ]
             },
             {
@@ -3176,10 +3176,8 @@
             {
               "type": "Slide",
               "headerText": "Does this sound like something you’re up for?",
-              "contentDesign": "tight",
-              "contents": [
-                "If so, let's get started on this journey of discipleship together!"
-              ]
+              "canClose": false,
+              "contentDesign": "tight"
             }
           ]
         }
