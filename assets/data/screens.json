@@ -18,6 +18,14 @@
         },
         {
           "type": "ActionButton",
+          "text": "The Challenge",
+          "action": {
+            "type": "navigate",
+            "to": "The Challenge"
+          }
+        },
+        {
+          "type": "ActionButton",
           "text": "Basics",
           "action": {
             "type": "navigate",
@@ -46,14 +54,6 @@
           "action": {
             "type": "navigate",
             "to": "About"
-          }
-        },
-        {
-          "type": "ActionButton",
-          "text": "The Challenge",
-          "action": {
-            "type": "navigate",
-            "to": "TheChallenge"
           }
         }
       ],
@@ -3084,7 +3084,7 @@
           ]
         },
         {
-          "id": "TheChallenge",
+          "id": "The Challenge",
           "type": "ContentListScreen",
           "contents": [
             {
