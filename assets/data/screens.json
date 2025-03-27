@@ -47,6 +47,14 @@
             "type": "navigate",
             "to": "About"
           }
+        },
+        {
+          "type": "ActionButton",
+          "text": "The Challenge",
+          "action": {
+            "type": "navigate",
+            "to": "TheChallenge"
+          }
         }
       ],
       "subscreens": [
@@ -3071,6 +3079,106 @@
                     }
                   ]
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "TheChallenge",
+          "type": "ContentListScreen",
+          "contents": [
+            {
+              "type": "Header",
+              "headerText": "The Challenge"
+            },
+            {
+              "type": "Slide",
+              "headerText": "Discipleship is the mandate of all believers",
+              "contentDesign": "tight",
+              "contents": [
+                {
+                  "type": "ScriptureSlide",
+                  "scripture": {
+                    "reference": "Matthew 28:18-20",
+                    "revealedButton": {
+                      "text": "Go therefore and make disciples"
+                    }
+                  }
+                },
+                "These verses are the core of what Cru is and what our mission is. Make disciples who make disciples who make disciples."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "So why discipleship?",
+              "contentDesign": "tight",
+              "contents": [
+                {
+                  "type": "ScriptureSlide",
+                  "scripture": {
+                    "reference": "Acts 1:8",
+                    "revealedButton": {
+                      "text": "Jesus commanded it"
+                    }
+                  }
+                },
+                {
+                  "type": "ScriptureSlide",
+                  "scripture": {
+                    "reference": "Luke 2:52",
+                    "revealedButton": {
+                      "text": "Jesus modeled it, he grew"
+                    }
+                  }
+                },
+                {
+                  "type": "ScriptureSlide",
+                  "scripture": {
+                    "reference": "Mark 3:13-19",
+                    "revealedButton": {
+                      "text": "Jesus modeled it, he had 12"
+                    }
+                  }
+                },
+                {
+                  "type": "ScriptureSlide",
+                  "scripture": {
+                    "reference": "Genesis 2:15, 3:8",
+                    "revealedButton": {
+                      "text": "We were created for discipleship"
+                    }
+                  }
+                },
+                "The benefits are far reaching: Healthy community, Greater Campus Impact, Leaves a Legacy."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "What is discipleship?",
+              "contentDesign": "tight",
+              "contents": [
+                "A disciple is someone who learns how to grow, live, and express the Christian life and repeats the process with others.",
+                "Discipleship is the process of one person helping another person in that process.",
+                "Discipleship includes four main things: Content, Community, Context, Continuation."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "Expectations",
+              "contentDesign": "tight",
+              "contents": [
+                "Willingness to grow in the Biblical Foundations in order to pass them on.",
+                "Willingness to be stretched and challenged.",
+                "Commitment to meeting weekly/bi-weekly - be on time, be consistent.",
+                "A willingness to take steps of faith, including learning how to share your faith with others."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "Does this sound like something you’re up for?",
+              "contentDesign": "tight",
+              "contents": [
+                "If so, let's get started on this journey of discipleship together!"
               ]
             }
           ]
