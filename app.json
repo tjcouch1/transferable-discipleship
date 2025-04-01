@@ -20,7 +20,10 @@
     "ios": {
       "supportsTablet": true,
       "buildNumber": "2.1.2",
-      "bundleIdentifier": "com.gmail.mchrogers.transferablediscipleship"
+      "bundleIdentifier": "com.gmail.mchrogers.transferablediscipleship",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {

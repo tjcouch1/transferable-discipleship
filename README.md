@@ -14,7 +14,7 @@ Simple, Accessible, and Transferable Christian discipleship app in React Native
 
 ### App Store
 
-Coming soon
+[Download Transferable Discipleship for iOS on the App Store](https://apps.apple.com/us/app/transferable-discipleship-2-0/id1532921872)
 
 ### Privacy Policy
 
