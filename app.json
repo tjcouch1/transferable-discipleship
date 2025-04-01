@@ -2,7 +2,7 @@
   "expo": {
     "name": "Transferable Discipleship",
     "slug": "transferable-discipleship",
-    "version": "0.1.1",
+    "version": "2.1.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -16,13 +16,14 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/97ad893f-12a9-4da7-baaf-c8f468dd9583"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "2",
-      "bundleIdentifier": "com.tjcouch.transferablediscipleship"
+      "buildNumber": "2.1.2",
+      "bundleIdentifier": "com.gmail.mchrogers.transferablediscipleship",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -30,16 +31,14 @@
         "backgroundColor": "#ebecec"
       },
       "package": "com.tjcouch.transferablediscipleship",
-      "versionCode": 2
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro",
       "build": {
         "babel": {
-          "include": [
-            "better-react-native-image-viewing"
-          ]
+          "include": ["better-react-native-image-viewing"]
         }
       },
       "startUrl": "./?utm_source=web_app_manifest"
