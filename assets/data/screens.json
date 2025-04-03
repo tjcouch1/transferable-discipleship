@@ -3102,13 +3102,33 @@
               "contentDesign": "tight",
               "contents": [
                 {
-                  "type": "ScriptureSlide",
-                  "scripture": {
-                    "reference": "Matthew 28:18-20",
-                    "revealedButton": {
-                      "text": "Go therefore and make disciples"
-                    }
+                  "type": "Text",
+                  "text": "Matthew 28:18-20",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
                   }
+                },
+                {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Matthew 28:18-20",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }  
+                },
+                {
+                  "type":"ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
+                      "text": "Go and make disciples"
+                    }
+                  ]
                 },
                 "These verses are the core of what Cru is and what our mission is. Make disciples who make disciples who make disciples."
               ]
@@ -3120,40 +3140,120 @@
               "contentDesign": "tight",
               "contents": [
                 {
-                  "type": "ScriptureSlide",
-                  "scripture": {
-                    "reference": "Acts 1:8",
-                    "revealedButton": {
+                  "type": "Text",
+                  "text": "Acts 1:8",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Acts 1:8",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }  
+                },
+                {
+                  "type":"ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
                       "text": "Jesus commanded it"
                     }
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": "Luke 2:52",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
                   }
                 },
                 {
-                  "type": "ScriptureSlide",
-                  "scripture": {
-                    "reference": "Luke 2:52",
-                    "revealedButton": {
-                      "text": "Jesus modeled it, he grew"
+                  "type": "ScrRangeDisplay",
+                  "reference": "Luke 2:52",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }  
+                },
+                {
+                  "type":"ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
+                      "text": "Jesus commanded it"
                     }
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": "Mark 3:13-19",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
                   }
                 },
                 {
-                  "type": "ScriptureSlide",
-                  "scripture": {
-                    "reference": "Mark 3:13-19",
-                    "revealedButton": {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Mark 3:13-19",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }  
+                },
+                {
+                  "type":"ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
                       "text": "Jesus modeled it, he had 12"
                     }
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": "Genesis 2:15, 3:8",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
                   }
                 },
                 {
-                  "type": "ScriptureSlide",
-                  "scripture": {
-                    "reference": "Genesis 2:15, 3:8",
-                    "revealedButton": {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Genesis 2:15, 3:8",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }  
+                },
+                {
+                  "type":"ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
                       "text": "We were created for discipleship. Before the sin entered the world, Adam did the work God gave him and walked with Him."
                     }
-                  }
+                  ]
                 },
                 "The benefits are far reaching: ",
                 "Healthy community: There is more depth to relationships",
