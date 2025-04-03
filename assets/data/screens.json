@@ -3098,6 +3098,7 @@
             {
               "type": "Slide",
               "headerText": "Discipleship is the mandate of all believers",
+              "canClose": false,
               "contentDesign": "tight",
               "contents": [
                 {
@@ -3115,6 +3116,7 @@
             {
               "type": "Slide",
               "headerText": "So why discipleship?",
+              "canClose": false,
               "contentDesign": "tight",
               "contents": [
                 {
@@ -3161,6 +3163,7 @@
             },
             {
               "type": "Slide",
+              "canClose": false,
               "headerText": "What is discipleship?",
               "contentDesign": "tight",
               "contents": [
@@ -3176,19 +3179,56 @@
             {
               "type": "Slide",
               "headerText": "Expectations",
+              "canClose": false,
               "contentDesign": "tight",
               "contents": [
-                "Willingness to grow in the Biblical Foundations in order to pass them on.",
-                "Willingness to be stretched and challenged.",
-                "Commitment to meeting weekly/bi-weekly - be on time, be consistent.",
-                "A willingness to take steps of faith, including learning how to share your faith with others."
+                {
+                  "type": "Text",
+                  "text": "Willingness to grow in the Biblical Foundations in order to pass them on.",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold"
+                  }
+                },
+                {
+                  "type": "Text",
+                  "text": "Willingness to be stretched and challenged.",
+                  "style": {
+                    "alignSelf": "flex-start"
+                  }
+                },
+                {
+                  "type": "Text",
+                  "text": "Commitment to meeting weekly/bi-weekly - be on time, be consistent. Things come up sometimes, but discipleship needs to be a priority",
+                  "style": {
+                    "alignSelf": "flex-start"
+                  }
+                },
+                {
+                  "type": "Text",
+                  "text": "A willingness to take steps of faith, including learning how to share your faith with others.",
+                  "style": {
+                    "alignSelf": "flex-start"
+                  }
+                }
               ]
             },
             {
               "type": "Slide",
               "headerText": "Does this sound like something you’re up for?",
               "canClose": false,
-              "contentDesign": "tight"
+              "contentDesign": "tight",
+              "contents": [
+                {
+                  "type": "Text",
+                  "text": "If so, let's get started on this journey of discipleship together!",
+                  "style": {
+                    "alignSelf": "center",
+                    "fontWeight": "bold",
+                    "fontSize": 18
+                  }
+                }
+              ]
             }
           ]
         }
