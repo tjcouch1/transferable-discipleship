@@ -95,11 +95,22 @@ https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribut
 
 `npm run build:preview-ios`
 
-#### Publishing updates to preview builds
+### Publishing updates to preview builds
 
 `eas update --branch preview --message "Update message"`
 
-### Building and publishing releases
+### Create and serve a web preview build
+
+```bash
+npm run build:production-web
+npm run preview-build:web
+```
+
+- This is currently not functional. See https://github.com/tjcouch1/transferable-discipleship/issues/24
+
+## Building and publishing releases
+
+### Android and iOS
 
 https://docs.expo.dev/distribution/introduction/
 
@@ -122,6 +133,16 @@ Alternatively, you can build and submit in one step:
 
 Note: this has not been tested. I imagine this submits android and ios in production.
 
-#### Publishing updates to releases
+### Publishing updates to releases
 
 `eas update --branch production --message "vX.Y.Z-update-N Update message"`
+
+### Web
+
+Build first:
+
+`npm run build:production-web`
+
+Then commit the contents of the `dist` folder into the `app` folder of the `gh-pages` branch.
+
+- This is currently not functional. See https://github.com/tjcouch1/transferable-discipleship/issues/24
