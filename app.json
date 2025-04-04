@@ -2,7 +2,7 @@
   "expo": {
     "name": "Transferable Discipleship",
     "slug": "transferable-discipleship",
-    "version": "2.1.2",
+    "version": "2.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -19,7 +19,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "2.1.2",
+      "buildNumber": "2.2.0",
       "bundleIdentifier": "com.gmail.mchrogers.transferablediscipleship",
       "config": {
         "usesNonExemptEncryption": false
@@ -31,7 +31,7 @@
         "backgroundColor": "#ebecec"
       },
       "package": "com.tjcouch.transferablediscipleship",
-      "versionCode": 3
+      "versionCode": 4
     },
     "web": {
       "favicon": "./assets/favicon.png",

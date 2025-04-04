@@ -1,6 +1,6 @@
 {
   "name": "transferable-discipleship",
-  "version": "0.1.2",
+  "version": "2.2.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "npm run web",
@@ -12,8 +12,8 @@
     "expo:upgrade": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo install --fix",
     "postinstall": "npx patch-package",
     "licenses": "license-checker --json --out assets/data/licenses/licenses-raw.json --customPath lib/license-checker.json && ts-node lib/transform-licenses-content.ts assets/data/licenses/licenses-raw.json assets/data/licenses/licenses.json assets/fonts",
-    "build:production-web": "expo export:web",
-    "preview-build:web": "serve web-build --single",
+    "build:production-web": "expo export --platform web",
+    "preview-build:web": "serve dist --single",
     "build:preview-android": "eas build -p android --profile preview",
     "build:preview-ios": "eas build -p ios --profile preview",
     "build:preview-all": "eas build -p all --profile preview",
