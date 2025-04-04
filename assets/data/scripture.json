@@ -2623,6 +2623,85 @@
           }
         ],
         "sourceUrl": "https://bible-api.com/John 4:39-42?translation=web"
+      },
+      "Luke 2:52": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Luke 2:52",
+        "verses": [
+          {
+            "verse": 52,
+            "text": "And Jesus increased in wisdom and stature, and in favor with God and men.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Luke 2:52?translation=web"
+      },
+      "Mark 3:13-19": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Mark 3:13-19",
+        "verses": [
+          {
+            "verse": 13,
+            "text": "He went up into the mountain, and called to himself those whom he wanted, and they went to him.\n"
+          },
+          {
+            "verse": 14,
+            "text": "He appointed twelve, that they might be with him, and that he might send them out to preach,\n"
+          },
+          {
+            "verse": 15,
+            "text": "and to have authority to heal sicknesses and to cast out demons:\n"
+          },
+          {
+            "verse": 16,
+            "text": "Simon (to whom he gave the name Peter);\n"
+          },
+          {
+            "verse": 17,
+            "text": "James the son of Zebedee; and John, the brother of James, (whom he called Boanerges, which means, Sons of Thunder);\n"
+          },
+          {
+            "verse": 18,
+            "text": "Andrew; Philip; Bartholomew; Matthew; Thomas; James, the son of Alphaeus; Thaddaeus; Simon the Zealot;\n"
+          },
+          {
+            "verse": 19,
+            "text": "and Judas Iscariot, who also betrayed him.\nThen he came into a house.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Mark 3:13-19?translation=web"
+      },
+      "Genesis 2:15, 3:8": {
+        "resourceInfo": {
+          "shortName": "WEB",
+          "name": "World English Bible",
+          "id": "web",
+          "language": "English",
+          "license": "Public Domain"
+        },
+        "reference": "Genesis 2:15,3:8",
+        "verses": [
+          {
+            "verse": 15,
+            "text": "Yahweh God took the man, and put him into the garden of Eden to cultivate and keep it.\n"
+          },
+          {
+            "verse": 8,
+            "text": "They heard Yahweh God’s voice walking in the garden in the cool of the day, and the man and his wife hid themselves from the presence of Yahweh God among the trees of the garden.\n"
+          }
+        ],
+        "sourceUrl": "https://bible-api.com/Genesis 2:15, 3:8?translation=web"
       }
     }
   }

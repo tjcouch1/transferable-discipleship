@@ -18,6 +18,14 @@
         },
         {
           "type": "ActionButton",
+          "text": "The Challenge",
+          "action": {
+            "type": "navigate",
+            "to": "The Challenge"
+          }
+        },
+        {
+          "type": "ActionButton",
           "text": "Basics",
           "action": {
             "type": "navigate",
@@ -3070,6 +3078,255 @@
                       }
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "The Challenge",
+          "type": "ContentListScreen",
+          "contents": [
+            {
+              "type": "Header",
+              "headerText": "The Challenge",
+              "lineTexts": [
+                "The goal of discipleship is to take what you learn and pass it on to someone else.",
+                "Use this screen to challenge someone to walk with you through discipleship."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "Discipleship is the mandate of all believers",
+              "canClose": false,
+              "contentDesign": "tight",
+              "contents": [
+                {
+                  "type": "Text",
+                  "text": "Matthew 28:18-20",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Matthew 28:18-20",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
+                      "text": "Go and make disciples"
+                    }
+                  ]
+                },
+                "These verses are the core of what Cru is and what our mission is. Make disciples who make disciples who make disciples."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "So why discipleship?",
+              "canClose": false,
+              "contentDesign": "tight",
+              "contents": [
+                {
+                  "type": "Text",
+                  "text": "Acts 1:8",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Acts 1:8",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
+                      "text": "Jesus commanded it"
+                    }
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": "Luke 2:52",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Luke 2:52",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
+                      "text": "Jesus commanded it"
+                    }
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": "Mark 3:13-19",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Mark 3:13-19",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
+                      "text": "Jesus modeled it, he had 12"
+                    }
+                  ]
+                },
+                {
+                  "type": "Text",
+                  "text": "Genesis 2:15, 3:8",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ScrRangeDisplay",
+                  "reference": "Genesis 2:15, 3:8",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontStyle": "italic",
+                    "paddingLeft": 35
+                  }
+                },
+                {
+                  "type": "ToggleButton",
+                  "design": "answer",
+                  "text": "Tap to reveal answer",
+                  "altButtons": [
+                    {
+                      "design": "answer",
+                      "text": "We were created for discipleship. Before sin entered the world, Adam did the work God gave him and walked with Him."
+                    }
+                  ]
+                },
+                "The benefits are far reaching: ",
+                "Healthy community: There is more depth to relationships",
+                "Greater Campus Impact: If we have 20 students being discipled and they all disciple 2 students, that becomes 60 students growing in their faith",
+                "Leaves a Legacy: By multiplying your faith through other people, you in turn are replacing yourself since you’re only here for a limited time."
+              ]
+            },
+            {
+              "type": "Slide",
+              "canClose": false,
+              "headerText": "What is discipleship?",
+              "contentDesign": "tight",
+              "contents": [
+                "A disciple is someone who learns how to grow, live, and express the Christian life and repeats the process with others.",
+                "Discipleship is the process of one person helping another person in that process.",
+                "Discipleship includes four main things:",
+                "Content: growing in your relationship with God through the Bible and prayer.",
+                "Community: Growing in faith is not a solitary endeavor. We need fellow believers to provide encouragement, guidance, and support, especially in identifying areas of sin that we might overlook. Building relationships with other Christians who can assist you on your spiritual journey is crucial, and your discipleship relationship plays a significant role in this process.",
+                "Context: You have a unique opportunity to reach people with the Gospel through your classes, clubs, and groups on campus. Your sphere of influence gives you a special ability to reach people that others may not be able to.",
+                "Continuation: Discipleship is about investing in others so that they can invest in others. It's about creating a legacy of faith that extends beyond your own life and reaches future generations."
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "Expectations",
+              "canClose": false,
+              "contentDesign": "tight",
+              "contents": [
+                {
+                  "type": "Text",
+                  "text": "Willingness to grow in the Biblical Foundations in order to pass them on.",
+                  "style": {
+                    "alignSelf": "flex-start",
+                    "fontWeight": "bold"
+                  }
+                },
+                {
+                  "type": "Text",
+                  "text": "Willingness to be stretched and challenged.",
+                  "style": {
+                    "alignSelf": "flex-start"
+                  }
+                },
+                {
+                  "type": "Text",
+                  "text": "Commitment to meeting weekly/bi-weekly - be on time, be consistent. Things come up sometimes, but discipleship needs to be a priority",
+                  "style": {
+                    "alignSelf": "flex-start"
+                  }
+                },
+                {
+                  "type": "Text",
+                  "text": "A willingness to take steps of faith, including learning how to share your faith with others.",
+                  "style": {
+                    "alignSelf": "flex-start"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": "Does this sound like something you’re up for?",
+              "canClose": false,
+              "contentDesign": "tight",
+              "contents": [
+                {
+                  "type": "Text",
+                  "text": "If so, let's get started on this journey of discipleship together!",
+                  "style": {
+                    "alignSelf": "center",
+                    "fontWeight": "bold",
+                    "fontSize": 18
+                  }
                 }
               ]
             }
