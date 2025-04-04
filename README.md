@@ -97,6 +97,8 @@ https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribut
 
 ### Publishing updates to preview builds
 
+Updates must be performed on the same version as the build you are targeting. For example, if you release build 2.1.2, updates must be done on 2.1.2. You can use 2.1.2-update-N in some contexts, but do not change the version in `app.json`.
+
 `eas update --branch preview --message "Update message"`
 
 ### Create and serve a web preview build
@@ -134,6 +136,8 @@ Alternatively, you can build and submit in one step:
 Note: this has not been tested. I imagine this submits android and ios in production.
 
 ### Publishing updates to releases
+
+Updates must be performed on the same version as the build you are targeting. For example, if you release build 2.1.2, updates must be done on 2.1.2. You can use 2.1.2-update-N in some contexts, but do not change the version in `app.json`.
 
 `eas update --branch production --message "vX.Y.Z-update-N Update message"`
 
