@@ -3117,10 +3117,10 @@
                     "alignSelf": "flex-start",
                     "fontStyle": "italic",
                     "paddingLeft": 35
-                  }  
+                  }
                 },
                 {
-                  "type":"ToggleButton",
+                  "type": "ToggleButton",
                   "design": "answer",
                   "text": "Tap to reveal answer",
                   "altButtons": [
@@ -3155,10 +3155,10 @@
                     "alignSelf": "flex-start",
                     "fontStyle": "italic",
                     "paddingLeft": 35
-                  }  
+                  }
                 },
                 {
-                  "type":"ToggleButton",
+                  "type": "ToggleButton",
                   "design": "answer",
                   "text": "Tap to reveal answer",
                   "altButtons": [
@@ -3184,10 +3184,10 @@
                     "alignSelf": "flex-start",
                     "fontStyle": "italic",
                     "paddingLeft": 35
-                  }  
+                  }
                 },
                 {
-                  "type":"ToggleButton",
+                  "type": "ToggleButton",
                   "design": "answer",
                   "text": "Tap to reveal answer",
                   "altButtons": [
@@ -3213,10 +3213,10 @@
                     "alignSelf": "flex-start",
                     "fontStyle": "italic",
                     "paddingLeft": 35
-                  }  
+                  }
                 },
                 {
-                  "type":"ToggleButton",
+                  "type": "ToggleButton",
                   "design": "answer",
                   "text": "Tap to reveal answer",
                   "altButtons": [
@@ -3242,16 +3242,16 @@
                     "alignSelf": "flex-start",
                     "fontStyle": "italic",
                     "paddingLeft": 35
-                  }  
+                  }
                 },
                 {
-                  "type":"ToggleButton",
+                  "type": "ToggleButton",
                   "design": "answer",
                   "text": "Tap to reveal answer",
                   "altButtons": [
                     {
                       "design": "answer",
-                      "text": "We were created for discipleship. Before the sin entered the world, Adam did the work God gave him and walked with Him."
+                      "text": "We were created for discipleship. Before sin entered the world, Adam did the work God gave him and walked with Him."
                     }
                   ]
                 },
