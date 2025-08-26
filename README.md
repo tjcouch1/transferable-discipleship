@@ -63,6 +63,14 @@ You need to tell Expo about your [Apple credentials](https://docs.expo.dev/submi
 
 There are a few things you need to do before building and publishing the app every time you build and publish.
 
+#### Bump versions
+
+Increase the version number in the following ways if it has not already been done since the previous release:
+
+1. Run `npm version ${version_semver} --git-tag-version false` to change in `package.json` and `package-lock.json`
+2. Manually bump in `app.json` - two [semver](https://semver.org/) locations; one integer android version code (do not change this if you are just [doing an update](#publishing-updates-to-releases))
+3. Manually bump in `screens.json` - one [semver](https://semver.org/) location
+
 #### Update Scripture cache
 
 1. [Start the application locally](#to-run-locally) in dev mode and open in the web browser.
@@ -134,6 +142,8 @@ Alternatively, you can build and submit in one step:
 `eas build --auto-submit`
 
 Note: this has not been tested. I imagine this submits android and ios in production.
+
+Once you have submitted the build, go to the [Apple Developer](https://developer.apple.com/account) and [Google Play Console](https://play.google.com/console) to release the app.
 
 ### Publishing updates to releases
 
