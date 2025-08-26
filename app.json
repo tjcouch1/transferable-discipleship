@@ -30,6 +30,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ebecec"
       },
+      "edgeToEdgeEnabled": true,
       "package": "com.tjcouch.transferablediscipleship",
       "versionCode": 4
     },
