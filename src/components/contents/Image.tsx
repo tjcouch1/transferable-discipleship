@@ -16,23 +16,28 @@
  * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { ImageStyle, StyleProp, TouchableWithoutFeedback } from 'react-native';
-import { ContentDataBase } from './Contents';
-import { Image as ReactImage } from 'react-native';
+import {
+  ImageStyle,
+  ImageURISource,
+  StyleProp,
+  TouchableWithoutFeedback,
+} from "react-native";
+import { ContentDataBase } from "./Contents";
+import { Image as ReactImage } from "react-native";
 import {
   ImageUrl,
   getImageSource,
   isRemote,
-} from '../../services/ImageService';
-import { isWeb } from '../../util/Util';
-import { useState } from 'react';
+} from "../../services/ImageService";
+import { isWeb } from "../../util/Util";
+import { useState } from "react";
 // Thanks to Yahia Naguib at https://stackoverflow.com/a/61130824 for sharing how to get babel to include this package
-import ImageView from 'better-react-native-image-viewing';
-import { openURL } from 'expo-linking';
+import ImageView from "better-react-native-image-viewing";
+import { openURL } from "expo-linking";
 
 /** Simple defining data for displaying images */
 export interface ImageContentData extends ContentDataBase {
-  type: 'Image';
+  type: "Image";
   image: ImageUrl;
   attribution?: string;
   style?: StyleProp<ImageStyle>;
@@ -42,7 +47,7 @@ export interface ImageContentData extends ContentDataBase {
  * Data that defines Image but without the type
  * (useful for when you want to use Image in another component)
  */
-export type ImageData = Omit<ImageContentData, 'type'>;
+export type ImageData = Omit<ImageContentData, "type">;
 
 /** Props the Image needs to function */
 export interface ImageProps extends ImageData {}
@@ -52,14 +57,22 @@ export function Image({ image: source, style }: ImageProps) {
 
   const defaultSize = 75 * (isWeb() && isModal ? 3 : 1);
 
+  console.log(getImageSource(source));
+
   return (
     <>
       <TouchableWithoutFeedback
         onPress={() =>
           isWeb()
-            ? window.open(getImageSource(source).toString(), '_blank')
+            ? window.open(
+                // On the web, the other returned type `ImageRequireSource` gets evaluated into an
+                // `ImageURISource`, and we need the uri out of it
+                (getImageSource(source) as ImageURISource).uri,
+                "_blank"
+              )
             : setIsModal(!isModal)
-        }>
+        }
+      >
         <ReactImage
           source={getImageSource(source)}
           aria-label={source}
