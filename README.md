@@ -112,11 +112,11 @@ Updates must be performed on the same version as the build you are targeting. Fo
 ### Create and serve a web preview build
 
 ```bash
-npm run build:production-web
+npm run build:preview-web
 npm run preview-build:web
 ```
 
-- This is currently not functional. See https://github.com/tjcouch1/transferable-discipleship/issues/24
+- This is currently not fully functional. See https://github.com/tjcouch1/transferable-discipleship/issues/24
 
 ## Building and publishing releases
 
@@ -143,7 +143,7 @@ Alternatively, you can build and submit in one step:
 
 Note: this has not been tested. I imagine this submits android and ios in production.
 
-Once you have submitted the build, go to the [Apple Developer](https://developer.apple.com/account) and [Google Play Console](https://play.google.com/console) to release the app.
+Once you have submitted the build, go to [Apple App Store Connect](https://appstoreconnect.apple.com/apps) and [Google Play Console](https://play.google.com/console) to release the app.
 
 ### Publishing updates to releases
 
@@ -159,4 +159,4 @@ Build first:
 
 Then commit the contents of the `dist` folder into the `app` folder of the `gh-pages` branch.
 
-- This is currently not functional. See https://github.com/tjcouch1/transferable-discipleship/issues/24
+- This is currently not fully functional. See https://github.com/tjcouch1/transferable-discipleship/issues/24
