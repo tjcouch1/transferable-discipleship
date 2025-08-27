@@ -1,0 +1,26 @@
+diff --git a/node_modules/@expo/cli/build/src/start/server/webTemplate.js b/node_modules/@expo/cli/build/src/start/server/webTemplate.js
+index 9f80ef5..60744e3 100644
+--- a/node_modules/@expo/cli/build/src/start/server/webTemplate.js
++++ b/node_modules/@expo/cli/build/src/start/server/webTemplate.js
+@@ -50,6 +50,7 @@ async function createTemplateHtmlFromExpoConfigAsync(projectRoot, { scripts, css
+ }).exp }) {
+     var _exp_web, _exp_web1, _exp_web2;
+     return createTemplateHtmlAsync(projectRoot, {
++        config: exp,
+         langIsoCode: ((_exp_web = exp.web) == null ? void 0 : _exp_web.lang) ?? 'en',
+         scripts,
+         cssLinks,
+@@ -76,11 +77,12 @@ function getFileFromLocalPublicFolder(projectRoot, { publicFolder, filePath }) {
+     }
+     return _fs().default.promises.readFile(filePath, 'utf8');
+ }
+-async function createTemplateHtmlAsync(projectRoot, { scripts, cssLinks, description, langIsoCode, title, themeColor }) {
++async function createTemplateHtmlAsync(projectRoot, { config, scripts, cssLinks, description, langIsoCode, title, themeColor }) {
+     // Resolve the best possible index.html template file.
+     let contents = await getTemplateIndexHtmlAsync(projectRoot);
+     contents = contents.replace('%LANG_ISO_CODE%', langIsoCode);
+     contents = contents.replace('%WEB_TITLE%', title);
++    contents = contents.replace('%BASE_URL%', config.experiments.baseUrl);
+     contents = (0, _html.appendScriptsToHtml)(contents, scripts);
+     if (cssLinks) {
+         contents = (0, _html.appendLinkToHtml)(contents, cssLinks.map((href)=>[
