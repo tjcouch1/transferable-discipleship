@@ -116,8 +116,6 @@ npm run build:preview-web
 npm run preview-build:web
 ```
 
-- This is currently not fully functional. See https://github.com/tjcouch1/transferable-discipleship/issues/24
-
 ## Building and publishing releases
 
 ### Android and iOS
@@ -157,6 +155,8 @@ Build first:
 
 `npm run build:production-web`
 
-Then commit the contents of the `dist` folder into the `app` folder of the `gh-pages` branch.
+Then deploy:
 
-- This is currently not fully functional. See https://github.com/tjcouch1/transferable-discipleship/issues/24
+`npm run deploy:web`
+
+This command pushes the contents of the `gh-pages-staging` folder to the `gh-pages` branch.
