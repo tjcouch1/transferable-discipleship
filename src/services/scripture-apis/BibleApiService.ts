@@ -22,6 +22,7 @@ import {
   ScriptureVerseContent,
 } from "./IScriptureApiService";
 import {
+  ApiRateLimitInfo,
   MultiScriptureCache,
   ScriptureApiServiceBase,
   ScriptureVerseContentByVerseRef,
@@ -29,6 +30,11 @@ import {
 } from "./ScriptureApiServiceBase";
 
 const SCRIPTURE_URL = "https://bible-api.com/";
+
+const RATE_LIMIT_INFO: ApiRateLimitInfo = Object.freeze({
+  maxNumRequests: 15,
+  timeSpanMs: 30 * 1000,
+});
 
 /** Scripture cache containing verses in our desired format and info about where we got them */
 const initialScriptureCache: MultiScriptureCache = require("../../../assets/data/bible-api.com/scripture.json");
@@ -127,8 +133,11 @@ class BibleApiService extends ScriptureApiServiceBase {
     return SCRIPTURE_URL;
   }
 
+  protected override get rateLimitInfo(): ApiRateLimitInfo {
+    return RATE_LIMIT_INFO;
+  }
+
   override getInitialCache(): MultiScriptureCache {
-    // TODO: Fill cache
     return initialScriptureCache;
   }
 

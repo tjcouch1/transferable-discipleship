@@ -138,3 +138,12 @@ export function debounce<TFunc extends (...args: any[]) => any>(
     return promise;
   };
 }
+
+/**
+ * Returns a promise that resolves after a duration in milliseconds
+ *
+ * @param ms number of milliseconds to wait asynchronously
+ */
+export function wait(ms: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, ms));
+}

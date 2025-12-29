@@ -24,7 +24,7 @@ import {
   ScriptureVerseRangeContent,
 } from "./IScriptureApiService";
 import { englishNameToBookId } from "../../util/ScriptureUtils";
-import { debounce, deepClone, isDev, isWeb } from "../../util/Util";
+import { debounce, deepClone, isDev, isWeb, wait } from "../../util/Util";
 
 /**
  * Regex to run on Scripture references to get Scripture reference details
@@ -68,7 +68,27 @@ function extractVerseContentsFromVerses(
   return verseContents;
 }
 
-// #endregion
+// #endregion handling verses
+
+// #region rate limits
+
+/**
+ * Information about the service's API rate limits.
+ */
+export type ApiRateLimitInfo = {
+  /** How many requests are allowed to be sent in a `timeSpanMs`-long time period */
+  maxNumRequests: number;
+  /** Duration in milliseconds during which `maxNumRequests` are allowed to be sent */
+  timeSpanMs: number;
+};
+
+/** Rate limit info to use by default. This means unlimited */
+const DEFAULT_RATE_LIMIT_INFO: ApiRateLimitInfo = {
+  maxNumRequests: -1,
+  timeSpanMs: -1,
+};
+
+// #endregion rate limits
 
 // #region caching
 
@@ -127,6 +147,18 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
    * newly retrieved Scripture verses if {@link SHOULD_FETCH} is `true`.
    */
   private readonly scriptureCache: MultiScriptureCache;
+
+  /**
+   * Timestamps (`Date.now()`) when verses were last fetched. Oldest should be at index 0, and entries should
+   * be removed when they are older than {@link ApiRateLimitInfo.timeSpanMs} old. If the oldest entry is
+   * younger than {@link ApiRateLimitInfo.timeSpanMs} old and the array is
+   * {@link ApiRateLimitInfo.maxNumRequests} long, the next request needs to wait until the oldest entry is
+   * older than {@link ApiRateLimitInfo.timeSpanMs} old.
+   *
+   * If `undefined`, there is no rate limit
+   */
+  private readonly latestApiRequestTimestamps: number[] | undefined;
+
   /**
    * Promise of the single call to `getTranslationsFromApi` in `getTranslations`. This ensures we only call
    * `getTranslationsFromApi` once.
@@ -139,7 +171,12 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
     this.initialScriptureCache = SHOULD_FETCH
       ? deepClone(this.scriptureCache)
       : {};
+
+    if (this.rateLimitInfo.maxNumRequests >= 0)
+      this.latestApiRequestTimestamps = [];
   }
+
+  // #region abstract methods
 
   abstract getServiceId(): string;
 
@@ -173,10 +210,69 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
     shortName: string
   ): Promise<VersesFromApi>;
 
+  // #endregion abstract methods
+
+  // #region methods that specify information about the implementing service
+
+  /**
+   * Information about the service's API rate limits. Retrieving verses is limited to these specifications.
+   *
+   * @returns object containing information about the rate limits on this service's API. Specify -1 on any
+   * property to indicate this service is not rate limited
+   */
+  protected get rateLimitInfo(): ApiRateLimitInfo {
+    return DEFAULT_RATE_LIMIT_INFO;
+  }
+
+  // #endregion methods that specify information about the implementing service
+
+  // #region methods to handle Scripture data rate limits
+
+  /** Waits for any rate limit restrictions if applicable. Also records that an API request will be executed */
+  private async waitForRateLimit(): Promise<void> {
+    // If the timestamps array doesn't exist, there is no rate limit
+    if (!this.latestApiRequestTimestamps) return;
+
+    // Cache the rate limit info so we don't get it a bunch of times in this method
+    const rateLimitInfo = this.rateLimitInfo;
+
+    if (rateLimitInfo.maxNumRequests === 0)
+      throw new Error(
+        "Rate limit set to 0 requests! Cannot request. Something must be wrong here"
+      );
+
+    // Keep looking for an open slot to make a request until we get a slot
+    while (true) {
+      // Remove old requests
+      const now = Date.now();
+      const lastOldRequestIndex = this.latestApiRequestTimestamps.findLastIndex(
+        (requestTimestamp) => now - rateLimitInfo.timeSpanMs > requestTimestamp
+      );
+      if (lastOldRequestIndex >= 0)
+        this.latestApiRequestTimestamps.splice(0, lastOldRequestIndex + 1);
+
+      // If there are fewer young requests than are allowed, there is room for another, so add it and be done
+      if (
+        this.latestApiRequestTimestamps.length < rateLimitInfo.maxNumRequests
+      ) {
+        this.latestApiRequestTimestamps.push(Date.now());
+        return;
+      }
+
+      // Wait for the oldest request to expire and try again
+      await wait(now - this.latestApiRequestTimestamps[0]);
+    }
+  }
+
+  // #endregion methods to handle Scripture data rate limits
+
+  // #region helpers for getting Scripture data one-at-a-time
+
   /**
    * Do not use directly; see {@link getVerseContentsSerial}.
    *
-   * Fetch verses from the API and save them to the cache.
+   * Fetch verses from the API and save them to the cache. Obeys the rate limits specified by
+   * {@link ScriptureApiServiceBase.rateLimitInfo}.
    *
    * @param verseRef the verse ref requested. Properly supports verse ranges
    * @param translationInfo information about the translation whose verses we are caching
@@ -187,6 +283,8 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
     verseRef: VerseRef,
     translationInfo: BibleTranslationInfo
   ): Promise<ScriptureVerseContent[]> {
+    await this.waitForRateLimit();
+
     let verses: VersesFromApi;
     try {
       verses = await this.getVersesFromApi(verseRef, translationInfo.shortName);
@@ -347,6 +445,10 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
     return allVerseContents;
   }
 
+  // #endregion helpers for getting Scripture data one-at-a-time
+
+  // #region methods for getting Scripture data
+
   async getScripture(
     reference: string,
     shortName: string
@@ -388,6 +490,10 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
     };
   }
 
+  // #endregion methods for getting Scripture data
+
+  // #region methods for getting translation info
+
   getTranslations(): Promise<BibleTranslationInfo[]> {
     if (this.translationInfoPromise) return this.translationInfoPromise;
 
@@ -428,6 +534,10 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
     if (!resourceInfo) throw new Error(`Translation id ${id} not found`);
     return resourceInfo;
   }
+
+  // #endregion methods for getting translation info
+
+  // #region caching methods
 
   /**
    * Get the verse text in the verse reference from the cache
@@ -536,4 +646,6 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
       );
     }
   }
+
+  // #endregion caching methods
 }
