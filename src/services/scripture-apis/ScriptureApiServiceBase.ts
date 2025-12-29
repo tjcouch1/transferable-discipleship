@@ -127,6 +127,11 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
    * newly retrieved Scripture verses if {@link SHOULD_FETCH} is `true`.
    */
   private readonly scriptureCache: MultiScriptureCache;
+  /**
+   * Promise of the single call to `getTranslationsFromApi` in `getTranslations`. This ensures we only call
+   * `getTranslationsFromApi` once.
+   */
+  private translationInfoPromise: Promise<BibleTranslationInfo[]> | undefined;
 
   constructor() {
     this.scriptureCache = this.getInitialCache();
@@ -137,10 +142,19 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
   }
 
   abstract getServiceId(): string;
-  abstract getTranslations(): Promise<BibleTranslationInfo[]>;
 
   /** Get the initial state of the cache as known at startup */
   protected abstract getInitialCache(): MultiScriptureCache;
+
+  /**
+   * Method for getting information about available Bible translations on this API and transforming them into a
+   * format usable throughout the application. This is only called once per service, and the result is cached
+   * and used for the lifetime of the service.
+   *
+   * Note: This *will* be called even if fetching and caching is enabled. It is up to the implementing service
+   * to handle offline calls.
+   */
+  protected abstract getTranslationsFromApi(): Promise<BibleTranslationInfo[]>;
 
   /**
    * Method for fetching verses from the API and transforming them into a format usable throughout the application.
@@ -374,6 +388,14 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
     };
   }
 
+  getTranslations(): Promise<BibleTranslationInfo[]> {
+    if (this.translationInfoPromise) return this.translationInfoPromise;
+
+    this.translationInfoPromise = this.getTranslationsFromApi();
+
+    return this.translationInfoPromise;
+  }
+
   /**
    * Get information about a translation by short name
    *
@@ -383,7 +405,6 @@ export abstract class ScriptureApiServiceBase implements IScriptureApiService {
   protected async getTranslation(
     shortName: string
   ): Promise<BibleTranslationInfo> {
-    // TODO: cache `this.getTranslations`
     const resourceInfo = (await this.getTranslations()).find(
       (resInfo) => resInfo.shortName === shortName
     );

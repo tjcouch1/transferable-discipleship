@@ -61,11 +61,7 @@ export type ScriptureVerseRangeContent = {
 export interface IScriptureApiService {
   /** Get a unique ID to identify this Scripture API service */
   getServiceId(): string;
-  /** Get information about available Bible translations on this API. Does not necessarily need to be cached as it
-   * will only be called once from outside the service
-   *
-   * TODO: CACHE?
-   */
+  /** Get information about available Bible translations on this API */
   getTranslations(): Promise<BibleTranslationInfo[]>;
   /**
    * Get verses at a particular reference

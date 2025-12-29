@@ -132,7 +132,7 @@ class BibleApiService extends ScriptureApiServiceBase {
     return initialScriptureCache;
   }
 
-  override async getTranslations(): Promise<BibleTranslationInfo[]> {
+  override async getTranslationsFromApi(): Promise<BibleTranslationInfo[]> {
     return bibleApiAvailableTranslations;
   }
 
