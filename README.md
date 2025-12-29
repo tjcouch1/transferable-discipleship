@@ -83,42 +83,46 @@ Increase the version number in the following ways if it has not already been don
 
 `npm run licenses`
 
-## Building and publishing preview builds
+### Building and publishing preview builds
 
-### Create an Android Preview `.apk` to install on your device
+Don't forget the [Pre-build setup](#pre-build-setup) before building and publishing.
+
+#### Create an Android Preview `.apk` to install on your device
 
 `npm run build:preview-android`
 
-### Create an iOS Preview build to install on your device
+#### Create an iOS Preview build to install on your device
 
 Before building, you must register devices on which to use the preview build.
 
-#### Register devices to use the iOS Preview build
+##### Register devices to use the iOS Preview build
 
 https://docs.expo.dev/build/internal-distribution/#setting-up-internal-distribution
 
 `eas device:create`
 
-#### Build the iOS Preview
+##### Build the iOS Preview
 
 `npm run build:preview-ios`
 
-### Publishing updates to preview builds
+#### Publishing updates to preview builds
 
 Updates must be performed on the same version as the build you are targeting. For example, if you release build 2.1.2, updates must be done on 2.1.2. You can use 2.1.2-update-N in some contexts, but do not change the version in `app.json`.
 
 `eas update --branch preview --message "Update message"`
 
-### Create and serve a web preview build
+#### Create and serve a web preview build
 
 ```bash
 npm run build:preview-web
 npm run preview-build:web
 ```
 
-## Building and publishing releases
+### Building and publishing releases
 
-### Android and iOS
+Don't forget the [Pre-build setup](#pre-build-setup) before building and publishing.
+
+#### Android and iOS
 
 https://docs.expo.dev/distribution/introduction/
 
@@ -143,13 +147,13 @@ Note: this has not been tested. I imagine this submits android and ios in produc
 
 Once you have submitted the build, go to [Apple App Store Connect](https://appstoreconnect.apple.com/apps) and [Google Play Console](https://play.google.com/console) to release the app.
 
-### Publishing updates to releases
+##### Publishing updates to releases
 
 Updates must be performed on the same version as the build you are targeting. For example, if you release build 2.1.2, updates must be done on 2.1.2. You can use 2.1.2-update-N in some contexts, but do not change the version in `app.json`.
 
 `eas update --branch production --message "vX.Y.Z-update-N Update message"`
 
-### Web
+#### Web
 
 Build first:
 

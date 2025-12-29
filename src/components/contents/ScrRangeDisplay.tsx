@@ -16,39 +16,41 @@
  * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { useCallback } from 'react';
-import usePromise from '../../hooks/usePromise';
-import { getScripture } from '../../services/ScriptureService';
-import { ScriptureText } from '../ScriptureText';
-import { ContentDataBase } from './Contents';
-import { Text, TextDataObject } from './Text';
+import { useCallback } from "react";
+import usePromise from "../../hooks/usePromise";
+import { getScripture } from "../../services/ScriptureService";
+import { ScriptureText, ScriptureTextProps } from "../ScriptureText";
+import { ContentDataBase } from "./Contents";
+import { Text } from "./Text";
 
 export type ScrRangeDisplayContentData = ContentDataBase & {
-  type: 'ScrRangeDisplay';
+  type: "ScrRangeDisplay";
   reference: string;
-} & Omit<TextDataObject, 'text'>;
+  shortName?: string;
+} & Omit<ScriptureTextProps, "scriptureText">;
 
 /**
  * Data that defines ScrRangeDisplay but without the type
  * (useful when you want to use ScrRangeDisplay in another component)
  */
-export type ScrRangeDisplayData = Omit<ScrRangeDisplayContentData, 'type'>;
+export type ScrRangeDisplayData = Omit<ScrRangeDisplayContentData, "type">;
 
 /** Props the ScrRangeDisplay needs to function */
 export interface ScrRangeDisplayProps extends ScrRangeDisplayData {}
 
 export const ScrRangeDisplay = ({
   reference,
+  shortName,
   ...textProps
 }: ScrRangeDisplayProps) => {
   const [scriptureText] = usePromise(
-    useCallback(() => getScripture(reference), []),
-    undefined,
+    useCallback(() => getScripture(reference, shortName), []),
+    undefined
   );
 
   return scriptureText ? (
     <ScriptureText scriptureText={scriptureText} {...textProps} />
   ) : (
-    <Text text={'loading'} {...textProps} />
+    <Text text={"loading"} {...textProps} />
   );
 };

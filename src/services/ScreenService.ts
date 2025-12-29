@@ -20,37 +20,37 @@
  * ScreenService.ts - Handles getting the page structure
  */
 
-import { ViewStyle } from 'react-native';
-import { ContentListData } from '../components/contents/ContentList';
-import { ContentData } from '../components/contents/Contents';
-import { HeaderContentData } from '../components/contents/Header';
-import { ContentListScreenData } from '../components/screens/ContentListScreen';
+import { ViewStyle } from "react-native";
+import { ContentListData } from "../components/contents/ContentList";
+import { ContentData } from "../components/contents/Contents";
+import { HeaderContentData } from "../components/contents/Header";
+import { ContentListScreenData } from "../components/screens/ContentListScreen";
 import {
   SerializedAppData,
   ScreenData,
   AppData,
   ScreenMap,
-} from '../components/screens/Screens';
-import { ROOT_PATH, PATH_DELIMITER, pathJoin } from '../util/PathUtil';
-import { APP_VERSION, isDev } from '../util/Util';
+} from "../components/screens/Screens";
+import { ROOT_PATH, PATH_DELIMITER, pathJoin } from "../util/PathUtil";
+import { APP_VERSION, isDev } from "../util/Util";
 
-const serializedAppDataNew: SerializedAppData = require('../../assets/data/screens.json');
+const serializedAppDataNew: SerializedAppData = require("../../assets/data/screens.json");
 
 /** Screen data for software license info. Accessed on path `app:/__licenses` */
-const licensesScreen = require('../../assets/data/licenses/licenses.json');
+const licensesScreen = require("../../assets/data/licenses/licenses.json");
 
 function assertScreenIdIsValid(screenId: string) {
   if (!screenId)
     throw new Error(
-      `Screen id ${screenId} is not valid! Must provide a non-empty string`,
+      `Screen id ${screenId} is not valid! Must provide a non-empty string`
     );
-  if (screenId === '..')
+  if (screenId === "..")
     throw new Error(
-      `Screen id ${screenId} is not valid! Cannot use reserved words`,
+      `Screen id ${screenId} is not valid! Cannot use reserved words`
     );
   if (screenId.includes(PATH_DELIMITER))
     throw new Error(
-      `Screen id ${screenId} is not valid! Cannot use ${PATH_DELIMITER} in screen id`,
+      `Screen id ${screenId} is not valid! Cannot use ${PATH_DELIMITER} in screen id`
     );
 }
 
@@ -64,9 +64,9 @@ function assertScreenIdIsValid(screenId: string) {
 function addSubscreensToMap(
   screenMap: ScreenMap,
   currentPath: string,
-  screens: ScreenData[] | undefined,
+  screens: ScreenData[] | undefined
 ): ScreenMap {
-  screens?.forEach(screen => {
+  screens?.forEach((screen) => {
     assertScreenIdIsValid(screen.id);
 
     const screenPath = pathJoin(currentPath, screen.id);
@@ -79,7 +79,7 @@ function addSubscreensToMap(
     screenMap.set(screenPath, screenClone);
 
     // Preserve original id as title if a title was not provided
-    if (!screenClone.title && screenClone.title !== '')
+    if (!screenClone.title && screenClone.title !== "")
       screenClone.title = screenClone.id;
 
     // Overwrite the existing id with the full path
@@ -112,12 +112,12 @@ function deserializeAppData(appData: SerializedAppData): AppData {
   // If we're in development, add a red border around the title screen header
   if (isDev()) {
     const initialScreen = deserializedAppData.screens.get(
-      deserializedAppData.initialScreen,
+      deserializedAppData.initialScreen
     ) as ContentListScreenData;
     if (initialScreen) {
       const header = initialScreen.contents[0] as HeaderContentData;
       header.style = {
-        borderColor: '#FF0000',
+        borderColor: "#FF0000",
         borderWidth: 5,
         ...(header.style as ViewStyle),
       };
@@ -137,15 +137,15 @@ export const getAppScreens = () => appScreens;
  * @returns Screen information
  */
 export const getScreenData = (path: string): ScreenData =>
-  appScreens.screens.get(path) || ({ id: 'NOT_FOUND' } as ScreenData);
+  appScreens.screens.get(path) || ({ id: "NOT_FOUND" } as ScreenData);
 
 function forEachContentOfContents(
   contents: ContentData[],
-  callback: (content: ContentData) => void,
+  callback: (content: ContentData) => void
 ) {
   if (!contents) return;
 
-  contents.forEach(content => {
+  contents.forEach((content) => {
     if (!content) return;
 
     callback(content);
@@ -156,11 +156,11 @@ function forEachContentOfContents(
 
 /** Runs a callback on every content in the screens recursively */
 export function forEachContent(callback: (content: ContentData) => void) {
-  appScreens.screens.forEach(screen => {
+  appScreens.screens.forEach((screen) => {
     if ((screen as ContentListScreenData).contents)
       forEachContentOfContents(
         (screen as ContentListScreenData).contents,
-        callback,
+        callback
       );
   });
 }

@@ -20,13 +20,13 @@
  * Shared utility functions
  */
 
-import Constants from 'expo-constants';
-import { Platform } from 'react-native';
+import Constants from "expo-constants";
+import { Platform } from "react-native";
 
-export const APP_VERSION = '0.0.0';
+export const APP_VERSION = "0.0.0";
 
 export function isWeb() {
-  return Platform.OS === 'web';
+  return Platform.OS === "web";
 }
 
 /** Returns true if running in expo go (or toggled on/off since then) */
@@ -58,16 +58,16 @@ export function supportsVariableFont() {
  */
 export function sup(str: string) {
   return str
-    .replace(/0/g, '\u2070')
-    .replace(/1/g, '\u00B9')
-    .replace(/2/g, '\u00B2')
-    .replace(/3/g, '\u00B3')
-    .replace(/4/g, '\u2074')
-    .replace(/5/g, '\u2075')
-    .replace(/6/g, '\u2076')
-    .replace(/7/g, '\u2077')
-    .replace(/8/g, '\u2078')
-    .replace(/9/g, '\u2079');
+    .replace(/0/g, "\u2070")
+    .replace(/1/g, "\u00B9")
+    .replace(/2/g, "\u00B2")
+    .replace(/3/g, "\u00B3")
+    .replace(/4/g, "\u2074")
+    .replace(/5/g, "\u2075")
+    .replace(/6/g, "\u2076")
+    .replace(/7/g, "\u2077")
+    .replace(/8/g, "\u2078")
+    .replace(/9/g, "\u2079");
 }
 
 /**
@@ -78,5 +78,63 @@ export function sup(str: string) {
  * Thanks to DRAX at https://stackoverflow.com/a/9436948
  */
 export function isString(o: unknown): o is string {
-  return typeof o === 'string' || o instanceof String;
+  return typeof o === "string" || o instanceof String;
+}
+
+/**
+ * If deepClone isn't used when copying properties between objects, you may be left with dangling
+ * references between the source and target of property copying operations.
+ *
+ * @param obj Object to clone
+ * @returns Duplicate copy of `obj` without any references back to the original one
+ */
+export function deepClone<T>(obj: T): T {
+  // Assert the return type matches what is expected
+  // eslint-disable-next-line no-type-assertion/no-type-assertion
+  return JSON.parse(JSON.stringify(obj)) as T;
+}
+
+/**
+ * Get a function that reduces calls to the function passed in
+ *
+ * @template T - A function type that takes any arguments and returns void. This is the type of the
+ *   function being debounced.
+ * @param fn The function to debounce
+ * @param delay How much delay in milliseconds after the most recent call to the debounced function
+ *   to call the function
+ * @returns Function that, when called, only calls the function passed in at maximum every delay ms
+ */
+// We don't know the parameter types since this function can be anything and can return anything
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function debounce<TFunc extends (...args: any[]) => any>(
+  fn: TFunc,
+  delay = 300
+): (...args: Parameters<TFunc>) => Promise<ReturnType<TFunc>> {
+  let timeout: ReturnType<typeof setTimeout>;
+  let promise: Promise<ReturnType<TFunc>> | undefined;
+  let promiseResolve: (
+    value: ReturnType<TFunc> | PromiseLike<ReturnType<TFunc>>
+  ) => void;
+  let promiseReject: (reason?: unknown) => void;
+
+  return (...args) => {
+    clearTimeout(timeout);
+    if (!promise)
+      promise = new Promise((resolve, reject) => {
+        promiseResolve = resolve;
+        promiseReject = reject;
+      });
+
+    timeout = setTimeout(async () => {
+      try {
+        promiseResolve(await fn(...args));
+      } catch (e) {
+        promiseReject(e);
+      } finally {
+        promise = undefined;
+      }
+    }, delay);
+
+    return promise;
+  };
 }
