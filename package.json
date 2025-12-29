@@ -1,6 +1,6 @@
 {
   "name": "transferable-discipleship",
-  "version": "2.2.1-update.1",
+  "version": "2.2.1-update.2",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "npm run web",
