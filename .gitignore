@@ -1,5 +1,6 @@
 node_modules/
 .expo/
+dist/
 gh-pages-staging/app/
 npm-debug.*
 *.jks
