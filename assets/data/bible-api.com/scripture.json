@@ -1,0 +1,1380 @@
+{
+  "WEB": {
+    "shortName": "WEB",
+    "name": "World English Bible",
+    "id": "web",
+    "language": "English",
+    "license": "Public Domain",
+    "apiId": "https://bible-api.com/",
+    "urls": [
+      "https://bible-api.com/Acts 17:24-28?translation=web",
+      "https://bible-api.com/Ephesians 2:1-3?translation=web",
+      "https://bible-api.com/Romans 3:23?translation=web",
+      "https://bible-api.com/Romans 6:23?translation=web",
+      "https://bible-api.com/Romans 3:21-26?translation=web",
+      "https://bible-api.com/Romans 4:2-8?translation=web",
+      "https://bible-api.com/Ephesians 2:4-5?translation=web",
+      "https://bible-api.com/Ephesians 2:8-9?translation=web",
+      "https://bible-api.com/Romans 5:6-8?translation=web",
+      "https://bible-api.com/Romans 5:18-19?translation=web",
+      "https://bible-api.com/John 14:6?translation=web",
+      "https://bible-api.com/1 Corinthians 15:3-8?translation=web",
+      "https://bible-api.com/2 Corinthians 5:21?translation=web",
+      "https://bible-api.com/John 3:16-18?translation=web",
+      "https://bible-api.com/Romans 10:8-10?translation=web",
+      "https://bible-api.com/Mark 1:15?translation=web",
+      "https://bible-api.com/Acts 3:19?translation=web",
+      "https://bible-api.com/2 Corinthians 5:15?translation=web",
+      "https://bible-api.com/Romans 15:4?translation=web",
+      "https://bible-api.com/John 17:17?translation=web",
+      "https://bible-api.com/2 Timothy 3:14-17?translation=web",
+      "https://bible-api.com/Matthew 4:4?translation=web",
+      "https://bible-api.com/Matthew 7:24-27?translation=web",
+      "https://bible-api.com/John 8:31-32?translation=web",
+      "https://bible-api.com/Deuteronomy 11:18-20?translation=web",
+      "https://bible-api.com/2 Corinthians 13:5?translation=web",
+      "https://bible-api.com/2 Corinthians 5:17?translation=web",
+      "https://bible-api.com/Ephesians 4:20-24?translation=web",
+      "https://bible-api.com/1 John 2:3-6?translation=web",
+      "https://bible-api.com/1 John 3:6?translation=web",
+      "https://bible-api.com/1 John 3:9-10?translation=web",
+      "https://bible-api.com/1 John 3:14?translation=web",
+      "https://bible-api.com/1 John 3:24?translation=web",
+      "https://bible-api.com/1 John 5:12-13?translation=web",
+      "https://bible-api.com/John 10:27-29?translation=web",
+      "https://bible-api.com/John 17:11-12?translation=web",
+      "https://bible-api.com/Ephesians 1:13-14?translation=web",
+      "https://bible-api.com/Romans 8:31-39?translation=web",
+      "https://bible-api.com/Hebrews 10:11-18?translation=web",
+      "https://bible-api.com/Genesis 1:1-2?translation=web",
+      "https://bible-api.com/2 Corinthians 3:17-18?translation=web",
+      "https://bible-api.com/Matthew 3:16-17?translation=web",
+      "https://bible-api.com/Romans 5:5?translation=web",
+      "https://bible-api.com/Ephesians 3:16?translation=web",
+      "https://bible-api.com/John 14:25-26?translation=web",
+      "https://bible-api.com/1 Corinthians 2:10-12?translation=web",
+      "https://bible-api.com/John 16:13-14?translation=web",
+      "https://bible-api.com/Acts 1:8?translation=web",
+      "https://bible-api.com/2 Peter 1:20-21?translation=web",
+      "https://bible-api.com/2 Timothy 1:13-14?translation=web",
+      "https://bible-api.com/Ezekiel 36:26-27?translation=web",
+      "https://bible-api.com/1 Corinthians 3:16?translation=web",
+      "https://bible-api.com/Acts 2:38?translation=web",
+      "https://bible-api.com/Galatians 5:16-25?translation=web",
+      "https://bible-api.com/Ephesians 5:15-20?translation=web",
+      "https://bible-api.com/Romans 8:1-2?translation=web",
+      "https://bible-api.com/Romans 8:3-4?translation=web",
+      "https://bible-api.com/Romans 8:5-11?translation=web",
+      "https://bible-api.com/Romans 8:12-13?translation=web",
+      "https://bible-api.com/Romans 8:14-16?translation=web",
+      "https://bible-api.com/1 John 1:9?translation=web",
+      "https://bible-api.com/1 John 5:14-15?translation=web",
+      "https://bible-api.com/John 16:23-24?translation=web",
+      "https://bible-api.com/Philippians 4:6-7?translation=web",
+      "https://bible-api.com/Hebrews 4:14-16?translation=web",
+      "https://bible-api.com/James 5:16?translation=web",
+      "https://bible-api.com/Exodus 32:11-14?translation=web",
+      "https://bible-api.com/Luke 22:41-42?translation=web",
+      "https://bible-api.com/Matthew 21:22?translation=web",
+      "https://bible-api.com/John 14:13?translation=web",
+      "https://bible-api.com/James 4:3?translation=web",
+      "https://bible-api.com/2 Corinthians 12:8-10?translation=web",
+      "https://bible-api.com/Luke 18:9-14?translation=web",
+      "https://bible-api.com/1 Thessalonians 5:17?translation=web",
+      "https://bible-api.com/Romans 8:26-28?translation=web",
+      "https://bible-api.com/Nehemiah 4:9?translation=web",
+      "https://bible-api.com/Matthew 7:7-11?translation=web",
+      "https://bible-api.com/Luke 11:13?translation=web",
+      "https://bible-api.com/Matthew 6:9?translation=web",
+      "https://bible-api.com/Matthew 6:10?translation=web",
+      "https://bible-api.com/Matthew 6:11?translation=web",
+      "https://bible-api.com/Matthew 6:12?translation=web",
+      "https://bible-api.com/Matthew 6:13?translation=web",
+      "https://bible-api.com/Matthew 28:18-20?translation=web",
+      "https://bible-api.com/Romans 10:14-15?translation=web",
+      "https://bible-api.com/2 Timothy 2:2?translation=web",
+      "https://bible-api.com/2 Corinthians 5:17-20?translation=web",
+      "https://bible-api.com/Deuteronomy 6:6-9?translation=web",
+      "https://bible-api.com/Acts 4:20?translation=web",
+      "https://bible-api.com/2 Peter 1:3-4?translation=web",
+      "https://bible-api.com/1 Corinthians 3:6-7?translation=web",
+      "https://bible-api.com/Galatians 3:3?translation=web",
+      "https://bible-api.com/Revelation 7:9-10?translation=web",
+      "https://bible-api.com/Luke 6:12-17?translation=web",
+      "https://bible-api.com/Luke 9:57-62?translation=web",
+      "https://bible-api.com/Acts 2:42?translation=web",
+      "https://bible-api.com/Luke 14:25-33?translation=web",
+      "https://bible-api.com/Mark 3:14?translation=web",
+      "https://bible-api.com/John 20:21?translation=web",
+      "https://bible-api.com/2 Timothy 2:15?translation=web",
+      "https://bible-api.com/1 Thessalonians 2:8?translation=web",
+      "https://bible-api.com/John 4:39-42?translation=web",
+      "https://bible-api.com/Luke 2:52?translation=web",
+      "https://bible-api.com/Mark 3:13-19?translation=web",
+      "https://bible-api.com/Genesis 2:15?translation=web",
+      "https://bible-api.com/Genesis 3:8?translation=web"
+    ],
+    "verses": {
+      "ACT": {
+        "1": {
+          "8": {
+            "verse": 8,
+            "text": "\nBut you will receive power when the Holy Spirit has come upon you. You will be witnesses to me in Jerusalem, in all Judea and Samaria, and to the uttermost parts of the earth.”\n"
+          }
+        },
+        "2": {
+          "38": {
+            "verse": 38,
+            "text": "Peter said to them, “Repent, and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of sins, and you will receive the gift of the Holy Spirit.\n"
+          },
+          "42": {
+            "verse": 42,
+            "text": "They continued steadfastly in the apostles’ teaching and fellowship, in the breaking of bread, and prayer.\n"
+          }
+        },
+        "3": {
+          "19": {
+            "verse": 19,
+            "text": "“Repent therefore, and turn again, that your sins may be blotted out, so that there may come times of refreshing from the presence of the Lord,\n"
+          }
+        },
+        "4": {
+          "20": {
+            "verse": 20,
+            "text": "for we can’t help telling the things which we saw and heard.”\n"
+          }
+        },
+        "17": {
+          "24": {
+            "verse": 24,
+            "text": "The God who made the world and all things in it, he, being Lord of heaven and earth, doesn’t dwell in temples made with hands,\n"
+          },
+          "25": {
+            "verse": 25,
+            "text": "neither is he served by men’s hands, as though he needed anything, seeing he himself gives to all life and breath, and all things.\n"
+          },
+          "26": {
+            "verse": 26,
+            "text": "He made from one blood every nation of men to dwell on all the surface of the earth, having determined appointed seasons, and the boundaries of their dwellings,\n"
+          },
+          "27": {
+            "verse": 27,
+            "text": "that they should seek the Lord, if perhaps they might reach out for him and find him, though he is not far from each one of us.\n"
+          },
+          "28": {
+            "verse": 28,
+            "text": "‘For in him we live, and move, and have our being.’ As some of your own poets have said, ‘For we are also his offspring.’\n"
+          }
+        }
+      },
+      "EPH": {
+        "1": {
+          "13": {
+            "verse": 13,
+            "text": "In him you also, having heard the word of the truth, the Good News of your salvation—in whom, having also believed, you were sealed with the promised Holy Spirit,\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "who is a pledge of our inheritance, to the redemption of God’s own possession, to the praise of his glory.\n"
+          }
+        },
+        "2": {
+          "1": {
+            "verse": 1,
+            "text": "You were made alive when you were dead in transgressions and sins,\n"
+          },
+          "2": {
+            "verse": 2,
+            "text": "in which you once walked according to the course of this world, according to the prince of the power of the air, the spirit who now works in the children of disobedience;\n"
+          },
+          "3": {
+            "verse": 3,
+            "text": "among whom we also all once lived in the lusts of our flesh, doing the desires of the flesh and of the mind, and were by nature children of wrath, even as the rest.\n"
+          },
+          "4": {
+            "verse": 4,
+            "text": "But God, being rich in mercy, for his great love with which he loved us,\n"
+          },
+          "5": {
+            "verse": 5,
+            "text": "even when we were dead through our trespasses, made us alive together with Christ (by grace you have been saved),\n"
+          },
+          "8": {
+            "verse": 8,
+            "text": "for by grace you have been saved through faith, and that not of yourselves; it is the gift of God,\n"
+          },
+          "9": {
+            "verse": 9,
+            "text": "not of works, that no one would boast.\n"
+          }
+        },
+        "3": {
+          "16": {
+            "verse": 16,
+            "text": "that he would grant you, according to the riches of his glory, that you may be strengthened with power through his Spirit in the inward man;\n"
+          }
+        },
+        "4": {
+          "20": {
+            "verse": 20,
+            "text": "But you did not learn Christ that way;\n"
+          },
+          "21": {
+            "verse": 21,
+            "text": "if indeed you heard him, and were taught in him, even as truth is in Jesus:\n"
+          },
+          "22": {
+            "verse": 22,
+            "text": "that you put away, as concerning your former way of life, the old man, that grows corrupt after the lusts of deceit;\n"
+          },
+          "23": {
+            "verse": 23,
+            "text": "and that you be renewed in the spirit of your mind,\n"
+          },
+          "24": {
+            "verse": 24,
+            "text": "and put on the new man, who in the likeness of God has been created in righteousness and holiness of truth.\n"
+          }
+        },
+        "5": {
+          "15": {
+            "verse": 15,
+            "text": "Therefore watch carefully how you walk, not as unwise, but as wise;\n"
+          },
+          "16": {
+            "verse": 16,
+            "text": "redeeming the time, because the days are evil.\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "Therefore don’t be foolish, but understand what the will of the Lord is.\n"
+          },
+          "18": {
+            "verse": 18,
+            "text": "Don’t be drunken with wine, in which is dissipation, but be filled with the Spirit,\n"
+          },
+          "19": {
+            "verse": 19,
+            "text": "speaking to one another in psalms, hymns, and spiritual songs; singing, and making melody in your heart to the Lord;\n"
+          },
+          "20": {
+            "verse": 20,
+            "text": "giving thanks always concerning all things in the name of our Lord Jesus Christ, to God, even the Father;\n"
+          }
+        }
+      },
+      "ROM": {
+        "3": {
+          "21": {
+            "verse": 21,
+            "text": "But now apart from the law, a righteousness of God has been revealed, being testified by the law and the prophets;\n"
+          },
+          "22": {
+            "verse": 22,
+            "text": "even the righteousness of God through faith in Jesus Christ to all and on all those who believe. For there is no distinction,\n"
+          },
+          "23": {
+            "verse": 23,
+            "text": "for all have sinned, and fall short of the glory of God;\n"
+          },
+          "24": {
+            "verse": 24,
+            "text": "being justified freely by his grace through the redemption that is in Christ Jesus;\n"
+          },
+          "25": {
+            "verse": 25,
+            "text": "whom God sent to be an atoning sacrifice, through faith in his blood, for a demonstration of his righteousness through the passing over of prior sins, in God’s forbearance;\n"
+          },
+          "26": {
+            "verse": 26,
+            "text": "to demonstrate his righteousness at this present time; that he might himself be just, and the justifier of him who has faith in Jesus.\n"
+          }
+        },
+        "4": {
+          "2": {
+            "verse": 2,
+            "text": "For if Abraham was justified by works, he has something to boast about, but not toward God.\n"
+          },
+          "3": {
+            "verse": 3,
+            "text": "For what does the Scripture say? “Abraham believed God, and it was accounted to him for righteousness.”\n"
+          },
+          "4": {
+            "verse": 4,
+            "text": "Now to him who works, the reward is not counted as grace, but as something owed.\n"
+          },
+          "5": {
+            "verse": 5,
+            "text": "But to him who doesn’t work, but believes in him who justifies the ungodly, his faith is accounted for righteousness.\n"
+          },
+          "6": {
+            "verse": 6,
+            "text": "Even as David also pronounces blessing on the man to whom God counts righteousness apart from works,\n"
+          },
+          "7": {
+            "verse": 7,
+            "text": "“Blessed are they whose iniquities are forgiven,\nwhose sins are covered.\n"
+          },
+          "8": {
+            "verse": 8,
+            "text": "Blessed is the man whom the Lord will by no means charge with sin.”\n\n"
+          }
+        },
+        "5": {
+          "5": {
+            "verse": 5,
+            "text": "and hope doesn’t disappoint us, because God’s love has been poured out into our hearts through the Holy Spirit who was given to us.\n"
+          },
+          "6": {
+            "verse": 6,
+            "text": "For while we were yet weak, at the right time Christ died for the ungodly.\n"
+          },
+          "7": {
+            "verse": 7,
+            "text": "For one will hardly die for a righteous man. Yet perhaps for a righteous person someone would even dare to die.\n"
+          },
+          "8": {
+            "verse": 8,
+            "text": "But God commends his own love toward us, in that while we were yet sinners, Christ died for us.\n"
+          },
+          "18": {
+            "verse": 18,
+            "text": "So then as through one trespass, all men were condemned; even so through one act of righteousness, all men were justified to life.\n"
+          },
+          "19": {
+            "verse": 19,
+            "text": "For as through the one man’s disobedience many were made sinners, even so through the obedience of the one, many will be made righteous.\n"
+          }
+        },
+        "6": {
+          "23": {
+            "verse": 23,
+            "text": "For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.\n"
+          }
+        },
+        "8": {
+          "1": {
+            "verse": 1,
+            "text": "There is therefore now no condemnation to those who are in Christ Jesus, who don’t walk according to the flesh, but according to the Spirit.\n"
+          },
+          "2": {
+            "verse": 2,
+            "text": "For the law of the Spirit of life in Christ Jesus made me free from the law of sin and of death.\n"
+          },
+          "3": {
+            "verse": 3,
+            "text": "For what the law couldn’t do, in that it was weak through the flesh, God did, sending his own Son in the likeness of sinful flesh and for sin, he condemned sin in the flesh;\n"
+          },
+          "4": {
+            "verse": 4,
+            "text": "that the ordinance of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.\n"
+          },
+          "5": {
+            "verse": 5,
+            "text": "For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit, the things of the Spirit.\n"
+          },
+          "6": {
+            "verse": 6,
+            "text": "For the mind of the flesh is death, but the mind of the Spirit is life and peace;\n"
+          },
+          "7": {
+            "verse": 7,
+            "text": "because the mind of the flesh is hostile towards God; for it is not subject to God’s law, neither indeed can it be.\n"
+          },
+          "8": {
+            "verse": 8,
+            "text": "Those who are in the flesh can’t please God.\n"
+          },
+          "9": {
+            "verse": 9,
+            "text": "But you are not in the flesh but in the Spirit, if it is so that the Spirit of God dwells in you. But if any man doesn’t have the Spirit of Christ, he is not his.\n"
+          },
+          "10": {
+            "verse": 10,
+            "text": "If Christ is in you, the body is dead because of sin, but the spirit is alive because of righteousness.\n"
+          },
+          "11": {
+            "verse": 11,
+            "text": "But if the Spirit of him who raised up Jesus from the dead dwells in you, he who raised up Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you.\n"
+          },
+          "12": {
+            "verse": 12,
+            "text": "So then, brothers, we are debtors, not to the flesh, to live after the flesh.\n"
+          },
+          "13": {
+            "verse": 13,
+            "text": "For if you live after the flesh, you must die; but if by the Spirit you put to death the deeds of the body, you will live.\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "For as many as are led by the Spirit of God, these are children of God.\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "For you didn’t receive the spirit of bondage again to fear, but you received the Spirit of adoption, by whom we cry, “Abba! Father!”\n"
+          },
+          "16": {
+            "verse": 16,
+            "text": "The Spirit himself testifies with our spirit that we are children of God;\n"
+          },
+          "26": {
+            "verse": 26,
+            "text": "In the same way, the Spirit also helps our weaknesses, for we don’t know how to pray as we ought. But the Spirit himself makes intercession for us with groanings which can’t be uttered.\n"
+          },
+          "27": {
+            "verse": 27,
+            "text": "He who searches the hearts knows what is on the Spirit’s mind, because he makes intercession for the saints according to God.\n"
+          },
+          "28": {
+            "verse": 28,
+            "text": "We know that all things work together for good for those who love God, to those who are called according to his purpose.\n"
+          },
+          "31": {
+            "verse": 31,
+            "text": "What then shall we say about these things? If God is for us, who can be against us?\n"
+          },
+          "32": {
+            "verse": 32,
+            "text": "He who didn’t spare his own Son, but delivered him up for us all, how would he not also with him freely give us all things?\n"
+          },
+          "33": {
+            "verse": 33,
+            "text": "Who could bring a charge against God’s chosen ones? It is God who justifies.\n"
+          },
+          "34": {
+            "verse": 34,
+            "text": "Who is he who condemns? It is Christ who died, yes rather, who was raised from the dead, who is at the right hand of God, who also makes intercession for us.\n"
+          },
+          "35": {
+            "verse": 35,
+            "text": "Who shall separate us from the love of Christ? Could oppression, or anguish, or persecution, or famine, or nakedness, or peril, or sword?\n"
+          },
+          "36": {
+            "verse": 36,
+            "text": "Even as it is written,\n“For your sake we are killed all day long.\nWe were accounted as sheep for the slaughter.”\n"
+          },
+          "37": {
+            "verse": 37,
+            "text": "No, in all these things, we are more than conquerors through him who loved us.\n"
+          },
+          "38": {
+            "verse": 38,
+            "text": "For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers,\n"
+          },
+          "39": {
+            "verse": 39,
+            "text": "nor height, nor depth, nor any other created thing, will be able to separate us from God’s love, which is in Christ Jesus our Lord.\n"
+          }
+        },
+        "10": {
+          "8": {
+            "verse": 8,
+            "text": "But what does it say? “The word is near you, in your mouth, and in your heart”; that is, the word of faith, which we preach:\n"
+          },
+          "9": {
+            "verse": 9,
+            "text": "that if you will confess with your mouth that Jesus is Lord, and believe in your heart that God raised him from the dead, you will be saved.\n"
+          },
+          "10": {
+            "verse": 10,
+            "text": "For with the heart, one believes unto righteousness; and with the mouth confession is made unto salvation.\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "How then will they call on him in whom they have not believed? How will they believe in him whom they have not heard? How will they hear without a preacher?\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "And how will they preach unless they are sent? As it is written:\n“How beautiful are the feet of those who preach the Good News of peace,\nwho bring glad tidings of good things!”\n"
+          }
+        },
+        "15": {
+          "4": {
+            "verse": 4,
+            "text": "For whatever things were written before were written for our learning, that through perseverance and through encouragement of the Scriptures we might have hope.\n"
+          }
+        }
+      },
+      "JHN": {
+        "3": {
+          "16": {
+            "verse": 16,
+            "text": "\nFor God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.\n\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "\nFor God didn’t send his Son into the world to judge the world, but that the world should be saved through him.\n\n"
+          },
+          "18": {
+            "verse": 18,
+            "text": "\nHe who believes in him is not judged. He who doesn’t believe has been judged already, because he has not believed in the name of the one and only Son of God.\n\n"
+          }
+        },
+        "4": {
+          "39": {
+            "verse": 39,
+            "text": "From that city many of the Samaritans believed in him because of the word of the woman, who testified, “He told me everything that I did.”\n"
+          },
+          "40": {
+            "verse": 40,
+            "text": "So when the Samaritans came to him, they begged him to stay with them. He stayed there two days.\n"
+          },
+          "41": {
+            "verse": 41,
+            "text": "Many more believed because of his word.\n"
+          },
+          "42": {
+            "verse": 42,
+            "text": "They said to the woman, “Now we believe, not because of your speaking; for we have heard for ourselves, and know that this is indeed the Christ, the Savior of the world.”\n"
+          }
+        },
+        "8": {
+          "31": {
+            "verse": 31,
+            "text": "Jesus therefore said to those Jews who had believed him,\n“If you remain in my word, then you are truly my disciples.\n\n"
+          },
+          "32": {
+            "verse": 32,
+            "text": "\nYou will know the truth, and the truth will make you free.”\n\n"
+          }
+        },
+        "10": {
+          "27": {
+            "verse": 27,
+            "text": "\nMy sheep hear my voice, and I know them, and they follow me.\n\n"
+          },
+          "28": {
+            "verse": 28,
+            "text": "\nI give eternal life to them. They will never perish, and no one will snatch them out of my hand.\n\n"
+          },
+          "29": {
+            "verse": 29,
+            "text": "\nMy Father, who has given them to me, is greater than all. No one is able to snatch them out of my Father’s hand.\n\n"
+          }
+        },
+        "14": {
+          "6": {
+            "verse": 6,
+            "text": "Jesus said to him,\n“I am the way, the truth, and the life. No one comes to the Father, except through me.\n\n"
+          },
+          "13": {
+            "verse": 13,
+            "text": "\nWhatever you will ask in my name, that will I do, that the Father may be glorified in the Son.\n\n"
+          },
+          "25": {
+            "verse": 25,
+            "text": "\nI have said these things to you, while still living with you.\n\n"
+          },
+          "26": {
+            "verse": 26,
+            "text": "\nBut the Counselor, the Holy Spirit, whom the Father will send in my name, he will teach you all things, and will remind you of all that I said to you.\n\n"
+          }
+        },
+        "16": {
+          "13": {
+            "verse": 13,
+            "text": "\nHowever when he, the Spirit of truth, has come, he will guide you into all truth, for he will not speak from himself; but whatever he hears, he will speak. He will declare to you things that are coming.\n\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "\nHe will glorify me, for he will take from what is mine, and will declare it to you.\n\n"
+          },
+          "23": {
+            "verse": 23,
+            "text": "\n“In that day you will ask me no questions. Most certainly I tell you, whatever you may ask of the Father in my name, he will give it to you.\n\n"
+          },
+          "24": {
+            "verse": 24,
+            "text": "\nUntil now, you have asked nothing in my name. Ask, and you will receive, that your joy may be made full.\n\n"
+          }
+        },
+        "17": {
+          "11": {
+            "verse": 11,
+            "text": "\nI am no more in the world, but these are in the world, and I am coming to you. Holy Father, keep them through your name which you have given me, that they may be one, even as we are.\n\n"
+          },
+          "12": {
+            "verse": 12,
+            "text": "\nWhile I was with them in the world, I kept them in your name. Those whom you have given me I have kept. None of them is lost, except the son of destruction, that the Scripture might be fulfilled.\n\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "\nSanctify them in your truth. Your word is truth.\n"
+          }
+        },
+        "20": {
+          "21": {
+            "verse": 21,
+            "text": "Jesus therefore said to them again,\n“Peace be to you. As the Father has sent me, even so I send you.”\n"
+          }
+        }
+      },
+      "1CO": {
+        "2": {
+          "10": {
+            "verse": 10,
+            "text": "But to us, God revealed them through the Spirit. For the Spirit searches all things, yes, the deep things of God.\n"
+          },
+          "11": {
+            "verse": 11,
+            "text": "For who among men knows the things of a man, except the spirit of the man, which is in him? Even so, no one knows the things of God, except God’s Spirit.\n"
+          },
+          "12": {
+            "verse": 12,
+            "text": "But we received, not the spirit of the world, but the Spirit which is from God, that we might know the things that were freely given to us by God.\n"
+          }
+        },
+        "3": {
+          "6": {
+            "verse": 6,
+            "text": "I planted. Apollos watered. But God gave the increase.\n"
+          },
+          "7": {
+            "verse": 7,
+            "text": "So then neither he who plants is anything, nor he who waters, but God who gives the increase.\n"
+          },
+          "16": {
+            "verse": 16,
+            "text": "Don’t you know that you are a temple of God, and that God’s Spirit lives in you?\n"
+          }
+        },
+        "15": {
+          "3": {
+            "verse": 3,
+            "text": "For I delivered to you first of all that which I also received: that Christ died for our sins according to the Scriptures,\n"
+          },
+          "4": {
+            "verse": 4,
+            "text": "that he was buried, that he was raised on the third day according to the Scriptures,\n"
+          },
+          "5": {
+            "verse": 5,
+            "text": "and that he appeared to Cephas, then to the twelve.\n"
+          },
+          "6": {
+            "verse": 6,
+            "text": "Then he appeared to over five hundred brothers at once, most of whom remain until now, but some have also fallen asleep.\n"
+          },
+          "7": {
+            "verse": 7,
+            "text": "Then he appeared to James, then to all the apostles,\n"
+          },
+          "8": {
+            "verse": 8,
+            "text": "and last of all, as to the child born at the wrong time, he appeared to me also.\n"
+          }
+        }
+      },
+      "2CO": {
+        "3": {
+          "17": {
+            "verse": 17,
+            "text": "Now the Lord is the Spirit and where the Spirit of the Lord is, there is liberty.\n"
+          },
+          "18": {
+            "verse": 18,
+            "text": "But we all, with unveiled face seeing the glory of the Lord as in a mirror, are transformed into the same image from glory to glory, even as from the Lord, the Spirit.\n"
+          }
+        },
+        "5": {
+          "15": {
+            "verse": 15,
+            "text": "He died for all, that those who live should no longer live to themselves, but to him who for their sakes died and rose again.\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "Therefore if anyone is in Christ, he is a new creation. The old things have passed away. Behold, all things have become new.\n"
+          },
+          "18": {
+            "verse": 18,
+            "text": "But all things are of God, who reconciled us to himself through Jesus Christ, and gave to us the ministry of reconciliation;\n"
+          },
+          "19": {
+            "verse": 19,
+            "text": "namely, that God was in Christ reconciling the world to himself, not reckoning to them their trespasses, and having committed to us the word of reconciliation.\n"
+          },
+          "20": {
+            "verse": 20,
+            "text": "We are therefore ambassadors on behalf of Christ, as though God were entreating by us: we beg you on behalf of Christ, be reconciled to God.\n"
+          },
+          "21": {
+            "verse": 21,
+            "text": "For him who knew no sin he made to be sin on our behalf; so that in him we might become the righteousness of God.\n"
+          }
+        },
+        "12": {
+          "8": {
+            "verse": 8,
+            "text": "Concerning this thing, I begged the Lord three times that it might depart from me.\n"
+          },
+          "9": {
+            "verse": 9,
+            "text": "He has said to me,\n“My grace is sufficient for you, for my power is made perfect in weakness.” Most gladly therefore I will rather glory in my weaknesses, that the power of Christ may rest on me.\n"
+          },
+          "10": {
+            "verse": 10,
+            "text": "Therefore I take pleasure in weaknesses, in injuries, in necessities, in persecutions, in distresses, for Christ’s sake. For when I am weak, then am I strong.\n"
+          }
+        },
+        "13": {
+          "5": {
+            "verse": 5,
+            "text": "Examine your own selves, whether you are in the faith. Test your own selves. Or don’t you know as to your own selves, that Jesus Christ is in you?—unless indeed you are disqualified.\n"
+          }
+        }
+      },
+      "MRK": {
+        "1": {
+          "15": {
+            "verse": 15,
+            "text": "and saying,\n“The time is fulfilled, and God’s Kingdom is at hand! Repent, and believe in the Good News.”\n"
+          }
+        },
+        "3": {
+          "13": {
+            "verse": 13,
+            "text": "He went up into the mountain, and called to himself those whom he wanted, and they went to him.\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "He appointed twelve, that they might be with him, and that he might send them out to preach,\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "and to have authority to heal sicknesses and to cast out demons:\n"
+          },
+          "16": {
+            "verse": 16,
+            "text": "Simon (to whom he gave the name Peter);\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "James the son of Zebedee; and John, the brother of James, (whom he called Boanerges, which means, Sons of Thunder);\n"
+          },
+          "18": {
+            "verse": 18,
+            "text": "Andrew; Philip; Bartholomew; Matthew; Thomas; James, the son of Alphaeus; Thaddaeus; Simon the Zealot;\n"
+          },
+          "19": {
+            "verse": 19,
+            "text": "and Judas Iscariot, who also betrayed him.\nThen he came into a house.\n"
+          }
+        }
+      },
+      "2TI": {
+        "1": {
+          "13": {
+            "verse": 13,
+            "text": "Hold the pattern of sound words which you have heard from me, in faith and love which is in Christ Jesus.\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "That good thing which was committed to you, guard through the Holy Spirit who dwells in us.\n"
+          }
+        },
+        "2": {
+          "2": {
+            "verse": 2,
+            "text": "The things which you have heard from me among many witnesses, commit the same to faithful men, who will be able to teach others also.\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "Give diligence to present yourself approved by God, a workman who doesn’t need to be ashamed, properly handling the Word of Truth.\n"
+          }
+        },
+        "3": {
+          "14": {
+            "verse": 14,
+            "text": "But you remain in the things which you have learned and have been assured of, knowing from whom you have learned them.\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "From infancy, you have known the holy Scriptures which are able to make you wise for salvation through faith, which is in Christ Jesus.\n"
+          },
+          "16": {
+            "verse": 16,
+            "text": "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness,\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "that the man of God may be complete, thoroughly equipped for every good work.\n"
+          }
+        }
+      },
+      "MAT": {
+        "3": {
+          "16": {
+            "verse": 16,
+            "text": "Jesus, when he was baptized, went up directly from the water: and behold, the heavens were opened to him. He saw the Spirit of God descending as a dove, and coming on him.\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "Behold, a voice out of the heavens said, “This is my beloved Son, with whom I am well pleased.”\n"
+          }
+        },
+        "4": {
+          "4": {
+            "verse": 4,
+            "text": "But he answered,\n“It is written, ‘Man shall not live by bread alone, but by every word that proceeds out of the mouth of God.’”\n"
+          }
+        },
+        "6": {
+          "9": {
+            "verse": 9,
+            "text": "\nPray like this: ‘Our Father in heaven, may your name be kept holy.\n\n"
+          },
+          "10": {
+            "verse": 10,
+            "text": "\nLet your Kingdom come. Let your will be done, as in heaven, so on earth.\n\n"
+          },
+          "11": {
+            "verse": 11,
+            "text": "\nGive us today our daily bread.\n\n"
+          },
+          "12": {
+            "verse": 12,
+            "text": "\nForgive us our debts, as we also forgive our debtors.\n\n"
+          },
+          "13": {
+            "verse": 13,
+            "text": "\nBring us not into temptation, but deliver us from the evil one. For yours is the Kingdom, the power, and the glory forever. Amen.’\n"
+          }
+        },
+        "7": {
+          "7": {
+            "verse": 7,
+            "text": "\n“Ask, and it will be given you. Seek, and you will find. Knock, and it will be opened for you.\n\n"
+          },
+          "8": {
+            "verse": 8,
+            "text": "\nFor everyone who asks receives. He who seeks finds. To him who knocks it will be opened.\n\n"
+          },
+          "9": {
+            "verse": 9,
+            "text": "\nOr who is there among you, who, if his son asks him for bread, will give him a stone?\n\n"
+          },
+          "10": {
+            "verse": 10,
+            "text": "\nOr if he asks for a fish, who will give him a serpent?\n\n"
+          },
+          "11": {
+            "verse": 11,
+            "text": "\nIf you then, being evil, know how to give good gifts to your children, how much more will your Father who is in heaven give good things to those who ask him!\n\n"
+          },
+          "24": {
+            "verse": 24,
+            "text": "\n“Everyone therefore who hears these words of mine, and does them, I will liken him to a wise man, who built his house on a rock.\n\n"
+          },
+          "25": {
+            "verse": 25,
+            "text": "\nThe rain came down, the floods came, and the winds blew, and beat on that house; and it didn’t fall, for it was founded on the rock.\n\n"
+          },
+          "26": {
+            "verse": 26,
+            "text": "\nEveryone who hears these words of mine, and doesn’t do them will be like a foolish man, who built his house on the sand.\n\n"
+          },
+          "27": {
+            "verse": 27,
+            "text": "\nThe rain came down, the floods came, and the winds blew, and beat on that house; and it fell—and great was its fall.”\n"
+          }
+        },
+        "21": {
+          "22": {
+            "verse": 22,
+            "text": "\nAll things, whatever you ask in prayer, believing, you will receive.”\n"
+          }
+        },
+        "28": {
+          "18": {
+            "verse": 18,
+            "text": "Jesus came to them and spoke to them, saying,\n“All authority has been given to me in heaven and on earth.\n\n"
+          },
+          "19": {
+            "verse": 19,
+            "text": "\nGo\nand make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit,\n\n"
+          },
+          "20": {
+            "verse": 20,
+            "text": "\nteaching them to observe all things that I commanded you. Behold, I am with you always, even to the end of the age.” Amen.\n"
+          }
+        }
+      },
+      "DEU": {
+        "6": {
+          "6": {
+            "verse": 6,
+            "text": "These words, which I command you today, shall be on your heart;\n"
+          },
+          "7": {
+            "verse": 7,
+            "text": "and you shall teach them diligently to your children, and shall talk of them when you sit in your house, and when you walk by the way, and when you lie down, and when you rise up.\n"
+          },
+          "8": {
+            "verse": 8,
+            "text": "You shall bind them for a sign on your hand, and they shall be for frontlets between your eyes.\n"
+          },
+          "9": {
+            "verse": 9,
+            "text": "You shall write them on the door posts of your house, and on your gates.\n"
+          }
+        },
+        "11": {
+          "18": {
+            "verse": 18,
+            "text": "Therefore you shall lay up these my words in your heart and in your soul. You shall bind them for a sign on your hand, and they shall be for frontlets between your eyes.\n"
+          },
+          "19": {
+            "verse": 19,
+            "text": "You shall teach them to your children, talking of them, when you sit in your house, and when you walk by the way, and when you lie down, and when you rise up.\n"
+          },
+          "20": {
+            "verse": 20,
+            "text": "You shall write them on the door posts of your house, and on your gates;\n"
+          }
+        }
+      },
+      "1JN": {
+        "1": {
+          "9": {
+            "verse": 9,
+            "text": "If we confess our sins, he is faithful and righteous to forgive us the sins, and to cleanse us from all unrighteousness.\n"
+          }
+        },
+        "2": {
+          "3": {
+            "verse": 3,
+            "text": "This is how we know that we know him: if we keep his commandments.\n"
+          },
+          "4": {
+            "verse": 4,
+            "text": "One who says, “I know him,” and doesn’t keep his commandments, is a liar, and the truth isn’t in him.\n"
+          },
+          "5": {
+            "verse": 5,
+            "text": "But whoever keeps his word, God’s love has most certainly been perfected in him. This is how we know that we are in him:\n"
+          },
+          "6": {
+            "verse": 6,
+            "text": "he who says he remains in him ought himself also to walk just like he walked.\n"
+          }
+        },
+        "3": {
+          "6": {
+            "verse": 6,
+            "text": "Whoever remains in him doesn’t sin. Whoever sins hasn’t seen him and doesn’t know him.\n"
+          },
+          "9": {
+            "verse": 9,
+            "text": "Whoever is born of God doesn’t commit sin, because his seed remains in him; and he can’t sin, because he is born of God.\n"
+          },
+          "10": {
+            "verse": 10,
+            "text": "In this the children of God are revealed, and the children of the devil. Whoever doesn’t do righteousness is not of God, neither is he who doesn’t love his brother.\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "We know that we have passed out of death into life, because we love the brothers. He who doesn’t love his brother remains in death.\n"
+          },
+          "24": {
+            "verse": 24,
+            "text": "He who keeps his commandments remains in him, and he in him. By this we know that he remains in us, by the Spirit which he gave us.\n"
+          }
+        },
+        "5": {
+          "12": {
+            "verse": 12,
+            "text": "He who has the Son has the life. He who doesn’t have God’s Son doesn’t have the life.\n"
+          },
+          "13": {
+            "verse": 13,
+            "text": "These things I have written to you who believe in the name of the Son of God, that you may know that you have eternal life, and that you may continue to believe in the name of the Son of God.\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "This is the boldness which we have toward him, that, if we ask anything according to his will, he listens to us.\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "And if we know that he listens to us, whatever we ask, we know that we have the petitions which we have asked of him.\n"
+          }
+        }
+      },
+      "HEB": {
+        "4": {
+          "14": {
+            "verse": 14,
+            "text": "Having then a great high priest, who has passed through the heavens, Jesus, the Son of God, let us hold tightly to our confession.\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "For we don’t have a high priest who can’t be touched with the feeling of our infirmities, but one who has been in all points tempted like we are, yet without sin.\n"
+          },
+          "16": {
+            "verse": 16,
+            "text": "Let us therefore draw near with boldness to the throne of grace, that we may receive mercy, and may find grace for help in time of need.\n"
+          }
+        },
+        "10": {
+          "11": {
+            "verse": 11,
+            "text": "Every priest indeed stands day by day serving and often offering the same sacrifices, which can never take away sins,\n"
+          },
+          "12": {
+            "verse": 12,
+            "text": "but he, when he had offered one sacrifice for sins forever, sat down on the right hand of God;\n"
+          },
+          "13": {
+            "verse": 13,
+            "text": "from that time waiting until his enemies are made the footstool of his feet.\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "For by one offering he has perfected forever those who are being sanctified.\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "The Holy Spirit also testifies to us, for after saying,\n"
+          },
+          "16": {
+            "verse": 16,
+            "text": "“This is the covenant that I will make with them:\n‘After those days,’ says the Lord,\n‘I will put my laws on their heart,\nI will also write them on their mind;’”\nthen he says,\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "“I will remember their sins and their iniquities no more.”\n"
+          },
+          "18": {
+            "verse": 18,
+            "text": "Now where remission of these is, there is no more offering for sin.\n"
+          }
+        }
+      },
+      "GEN": {
+        "1": {
+          "1": {
+            "verse": 1,
+            "text": "In the beginning, God created the heavens and the earth.\n"
+          },
+          "2": {
+            "verse": 2,
+            "text": "The earth was formless and empty. Darkness was on the surface of the deep and God’s Spirit was hovering over the surface of the waters.\n"
+          }
+        },
+        "2": {
+          "15": {
+            "verse": 15,
+            "text": "Yahweh God took the man, and put him into the garden of Eden to cultivate and keep it.\n"
+          }
+        },
+        "3": {
+          "8": {
+            "verse": 8,
+            "text": "They heard Yahweh God’s voice walking in the garden in the cool of the day, and the man and his wife hid themselves from the presence of Yahweh God among the trees of the garden.\n"
+          }
+        }
+      },
+      "2PE": {
+        "1": {
+          "3": {
+            "verse": 3,
+            "text": "seeing that his divine power has granted to us all things that pertain to life and godliness, through the knowledge of him who called us by his own glory and virtue;\n"
+          },
+          "4": {
+            "verse": 4,
+            "text": "by which he has granted to us his precious and exceedingly great promises; that through these you may become partakers of the divine nature, having escaped from the corruption that is in the world by lust.\n"
+          },
+          "20": {
+            "verse": 20,
+            "text": "knowing this first, that no prophecy of Scripture is of private interpretation.\n"
+          },
+          "21": {
+            "verse": 21,
+            "text": "For no prophecy ever came by the will of man: but holy men of God spoke, being moved by the Holy Spirit.\n"
+          }
+        }
+      },
+      "EZK": {
+        "36": {
+          "26": {
+            "verse": 26,
+            "text": "I will also give you a new heart, and I will put a new spirit within you. I will take away the stony heart out of your flesh, and I will give you a heart of flesh.\n"
+          },
+          "27": {
+            "verse": 27,
+            "text": "I will put my Spirit within you, and cause you to walk in my statutes. You will keep my ordinances and do them.\n"
+          }
+        }
+      },
+      "GAL": {
+        "3": {
+          "3": {
+            "verse": 3,
+            "text": "Are you so foolish? Having begun in the Spirit, are you now completed in the flesh?\n"
+          }
+        },
+        "5": {
+          "16": {
+            "verse": 16,
+            "text": "But I say, walk by the Spirit, and you won’t fulfill the lust of the flesh.\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "For the flesh lusts against the Spirit, and the Spirit against the flesh; and these are contrary to one another, that you may not do the things that you desire.\n"
+          },
+          "18": {
+            "verse": 18,
+            "text": "But if you are led by the Spirit, you are not under the law.\n"
+          },
+          "19": {
+            "verse": 19,
+            "text": "Now the deeds of the flesh are obvious, which are: adultery, sexual immorality, uncleanness, lustfulness,\n"
+          },
+          "20": {
+            "verse": 20,
+            "text": "idolatry, sorcery, hatred, strife, jealousies, outbursts of anger, rivalries, divisions, heresies,\n"
+          },
+          "21": {
+            "verse": 21,
+            "text": "envy, murders, drunkenness, orgies, and things like these; of which I forewarn you, even as I also forewarned you, that those who practice such things will not inherit God’s Kingdom.\n"
+          },
+          "22": {
+            "verse": 22,
+            "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith,\n"
+          },
+          "23": {
+            "verse": 23,
+            "text": "gentleness, and self-control. Against such things there is no law.\n"
+          },
+          "24": {
+            "verse": 24,
+            "text": "Those who belong to Christ have crucified the flesh with its passions and lusts.\n"
+          },
+          "25": {
+            "verse": 25,
+            "text": "If we live by the Spirit, let’s also walk by the Spirit.\n"
+          }
+        }
+      },
+      "PHP": {
+        "4": {
+          "6": {
+            "verse": 6,
+            "text": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God.\n"
+          },
+          "7": {
+            "verse": 7,
+            "text": "And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.\n"
+          }
+        }
+      },
+      "JAS": {
+        "4": {
+          "3": {
+            "verse": 3,
+            "text": "You ask, and don’t receive, because you ask with wrong motives, so that you may spend it on your pleasures.\n"
+          }
+        },
+        "5": {
+          "16": {
+            "verse": 16,
+            "text": "Confess your offenses to one another, and pray for one another, that you may be healed. The insistent prayer of a righteous person is powerfully effective.\n"
+          }
+        }
+      },
+      "EXO": {
+        "32": {
+          "11": {
+            "verse": 11,
+            "text": "Moses begged Yahweh his God, and said, “Yahweh, why does your wrath burn hot against your people, that you have brought out of the land of Egypt with great power and with a mighty hand?\n"
+          },
+          "12": {
+            "verse": 12,
+            "text": "Why should the Egyptians speak, saying, ‘He brought them out for evil, to kill them in the mountains, and to consume them from the surface of the earth?’ Turn from your fierce wrath, and repent of this evil against your people.\n"
+          },
+          "13": {
+            "verse": 13,
+            "text": "Remember Abraham, Isaac, and Israel, your servants, to whom you swore by your own self, and said to them, ‘I will multiply your offspring as the stars of the sky, and all this land that I have spoken of I will give to your offspring, and they shall inherit it forever.’”\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "Yahweh repented of the evil which he said he would do to his people.\n"
+          }
+        }
+      },
+      "LUK": {
+        "2": {
+          "52": {
+            "verse": 52,
+            "text": "And Jesus increased in wisdom and stature, and in favor with God and men.\n"
+          }
+        },
+        "6": {
+          "12": {
+            "verse": 12,
+            "text": "In these days, he went out to the mountain to pray, and he continued all night in prayer to God.\n"
+          },
+          "13": {
+            "verse": 13,
+            "text": "When it was day, he called his disciples, and from them he chose twelve, whom he also named apostles:\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "Simon, whom he also named Peter; Andrew, his brother; James; John; Philip; Bartholomew;\n"
+          },
+          "15": {
+            "verse": 15,
+            "text": "Matthew; Thomas; James, the son of Alphaeus; Simon, who was called the Zealot;\n"
+          },
+          "16": {
+            "verse": 16,
+            "text": "Judas the son of James; and Judas Iscariot, who also became a traitor.\n"
+          },
+          "17": {
+            "verse": 17,
+            "text": "He came down with them, and stood on a level place, with a crowd of his disciples, and a great number of the people from all Judea and Jerusalem, and the sea coast of Tyre and Sidon, who came to hear him and to be healed of their diseases;\n"
+          }
+        },
+        "9": {
+          "57": {
+            "verse": 57,
+            "text": "As they went on the way, a certain man said to him, “I want to follow you wherever you go, Lord.”\n"
+          },
+          "58": {
+            "verse": 58,
+            "text": "Jesus said to him,\n“The foxes have holes, and the birds of the sky have nests, but the Son of Man has no place to lay his head.”\n"
+          },
+          "59": {
+            "verse": 59,
+            "text": "He said to another,\n“Follow me!”\nBut he said, “Lord, allow me first to go and bury my father.”\n"
+          },
+          "60": {
+            "verse": 60,
+            "text": "But Jesus said to him,\n“Leave the dead to bury their own dead, but you go and announce God’s Kingdom.”\n"
+          },
+          "61": {
+            "verse": 61,
+            "text": "Another also said, “I want to follow you, Lord, but first allow me to say good-bye to those who are at my house.”\n"
+          },
+          "62": {
+            "verse": 62,
+            "text": "But Jesus said to him,\n“No one, having put his hand to the plow, and looking back, is fit for God’s Kingdom.”\n"
+          }
+        },
+        "11": {
+          "13": {
+            "verse": 13,
+            "text": "\nIf you then, being evil, know how to give good gifts to your children, how much more will your heavenly Father give the Holy Spirit to those who ask him?”\n"
+          }
+        },
+        "14": {
+          "25": {
+            "verse": 25,
+            "text": "Now great multitudes were going with him. He turned and said to them,\n"
+          },
+          "26": {
+            "verse": 26,
+            "text": "\n“If anyone comes to me, and doesn’t disregard\nhis own father, mother, wife, children, brothers, and sisters, yes, and his own life also, he can’t be my disciple.\n\n"
+          },
+          "27": {
+            "verse": 27,
+            "text": "\nWhoever doesn’t bear his own cross, and come after me, can’t be my disciple.\n\n"
+          },
+          "28": {
+            "verse": 28,
+            "text": "\nFor which of you, desiring to build a tower, doesn’t first sit down and count the cost, to see if he has enough to complete it?\n\n"
+          },
+          "29": {
+            "verse": 29,
+            "text": "\nOr perhaps, when he has laid a foundation, and is not able to finish, everyone who sees begins to mock him,\n\n"
+          },
+          "30": {
+            "verse": 30,
+            "text": "\nsaying, ‘This man began to build, and wasn’t able to finish.’\n\n"
+          },
+          "31": {
+            "verse": 31,
+            "text": "\nOr what king, as he goes to encounter another king in war, will not sit down first and consider whether he is able with ten thousand to meet him who comes against him with twenty thousand?\n\n"
+          },
+          "32": {
+            "verse": 32,
+            "text": "\nOr else, while the other is yet a great way off, he sends an envoy, and asks for conditions of peace.\n\n"
+          },
+          "33": {
+            "verse": 33,
+            "text": "\nSo therefore whoever of you who doesn’t renounce all that he has, he can’t be my disciple.\n\n"
+          }
+        },
+        "18": {
+          "9": {
+            "verse": 9,
+            "text": "He spoke also this parable to certain people who were convinced of their own righteousness, and who despised all others.\n"
+          },
+          "10": {
+            "verse": 10,
+            "text": "\n“Two men went up into the temple to pray; one was a Pharisee, and the other was a tax collector.\n\n"
+          },
+          "11": {
+            "verse": 11,
+            "text": "\nThe Pharisee stood and prayed to himself like this: ‘God, I thank you, that I am not like the rest of men, extortionists, unrighteous, adulterers, or even like this tax collector.\n\n"
+          },
+          "12": {
+            "verse": 12,
+            "text": "\nI fast twice a week. I give tithes of all that I get.’\n\n"
+          },
+          "13": {
+            "verse": 13,
+            "text": "\nBut the tax collector, standing far away, wouldn’t even lift up his eyes to heaven, but beat his breast, saying, ‘God, be merciful to me, a sinner!’\n\n"
+          },
+          "14": {
+            "verse": 14,
+            "text": "\nI tell you, this man went down to his house justified rather than the other; for everyone who exalts himself will be humbled, but he who humbles himself will be exalted.”\n"
+          }
+        },
+        "22": {
+          "41": {
+            "verse": 41,
+            "text": "He was withdrawn from them about a stone’s throw, and he knelt down and prayed,\n"
+          },
+          "42": {
+            "verse": 42,
+            "text": "saying,\n“Father, if you are willing, remove this cup from me. Nevertheless, not my will, but yours, be done.”\n"
+          }
+        }
+      },
+      "1TH": {
+        "2": {
+          "8": {
+            "verse": 8,
+            "text": "Even so, affectionately longing for you, we were well pleased to impart to you, not the Good News of God only, but also our own souls, because you had become very dear to us.\n"
+          }
+        },
+        "5": {
+          "17": {
+            "verse": 17,
+            "text": "Pray without ceasing.\n"
+          }
+        }
+      },
+      "NEH": {
+        "4": {
+          "9": {
+            "verse": 9,
+            "text": "But we made our prayer to our God, and set a watch against them day and night, because of them.\n"
+          }
+        }
+      },
+      "REV": {
+        "7": {
+          "9": {
+            "verse": 9,
+            "text": "After these things I looked, and behold, a great multitude, which no man could count, out of every nation and of all tribes, peoples, and languages, standing before the throne and before the Lamb, dressed in white robes, with palm branches in their hands.\n"
+          },
+          "10": {
+            "verse": 10,
+            "text": "They cried with a loud voice, saying, “Salvation be to our God, who sits on the throne, and to the Lamb!”\n"
+          }
+        }
+      }
+    }
+  }
+}

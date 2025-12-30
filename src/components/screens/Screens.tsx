@@ -16,15 +16,15 @@
  * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { HeaderWithButtons, HeaderWithButtonsData } from './HeaderWithButtons';
-import { ContentListScreen, ContentListScreenData } from './ContentListScreen';
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { HeaderWithButtons, HeaderWithButtonsData } from "./HeaderWithButtons";
+import { ContentListScreen, ContentListScreenData } from "./ContentListScreen";
 
 //----- SCREEN TYPES -----//
 
 /** All available screen components */
 export const Screens: {
-  [pageType: string]: (props: NativeStackScreenProps<any>) => JSX.Element;
+  [pageType: string]: (props: NativeStackScreenProps<any>) => React.JSX.Element;
 } = {
   HeaderWithButtons,
   ContentListScreen,
@@ -70,6 +70,6 @@ export interface SerializedAppData {
  * Data that defines the whole app.
  * Transformed from SerializedAppData for use in the app.
  */
-export interface AppData extends Omit<SerializedAppData, 'screens'> {
+export interface AppData extends Omit<SerializedAppData, "screens"> {
   screens: ScreenMap;
 }

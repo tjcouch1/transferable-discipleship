@@ -1,5 +1,5 @@
 {
-  "version": "2.2.1",
+  "version": "2.2.1-update.2",
   "initialScreen": "Home",
   "screens": [
     {
@@ -2948,7 +2948,7 @@
               },
               "contentDesign": "tight",
               "contents": [
-                "- Disciple-making content of the app created by Wesley Skinner; edited and implemented by TJ Couch.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from World English Bible (WEB).\n- Scripture data retrieved and cached from Tim Morgan's bible-api.com",
+                "- Disciple-making content of the app created by Wesley Skinner; edited and implemented by TJ Couch.\n- discipleship‑app‑template developed by TJ Couch.\n- Scripture quoted from New English Translation (NET).",
                 {
                   "type": "ActionButton",
                   "design": "answer",
@@ -2993,17 +2993,17 @@
                 },
                 {
                   "type": "Slide",
-                  "headerText": "Scripture",
+                  "headerText": "New English Translation",
                   "contentDesign": "tight",
                   "contents": [
-                    "The Scripture included in this app is from the World English Bible translation. The World English Bible is public domain.",
+                    "The Scripture included in this app is from the New English Translation. Scripture data retrieved and cached from AO Lab's bible-api.pages.dev. Scripture quoted by permission. Quotations designated (NET) are from the NET Bible® copyright ©1996, 2019 by Biblical Studies Press, L.L.C. https://netbible.com All rights reserved.",
                     {
                       "type": "ActionButton",
                       "design": "answer",
-                      "text": "WorldEnglish.Bible",
+                      "text": "netbible.com",
                       "action": {
                         "type": "link",
-                        "to": "https://worldenglish.bible/"
+                        "to": "https://netbible.com/"
                       }
                     }
                   ]

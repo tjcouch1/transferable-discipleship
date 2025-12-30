@@ -20,263 +20,117 @@
  * ScriptureService.ts - Handles getting Scripture text
  */
 
-import { ScrRangeDisplayContentData } from '../components/contents/ScrRangeDisplay';
-import { ScriptureSlideContentData } from '../components/contents/ScriptureSlide';
-import { isDev, isString, isWeb } from '../util/Util';
-import { forEachContent } from './ScreenService';
+import type { ScrRangeDisplayContentData } from "../components/contents/ScrRangeDisplay";
+import type { ScriptureSlideContentData } from "../components/contents/ScriptureSlide";
+import { isString } from "../util/Util";
+import { forEachContent } from "./ScreenService";
+import type {
+  IScriptureApiService,
+  BibleTranslationInfo,
+  ScriptureVerseRangeContent,
+} from "./scripture-apis/IScriptureApiService";
+import { bibleApiService } from "./scripture-apis/BibleApiService";
+import { bibleHelloAOApiService } from "./scripture-apis/BibleHelloAOApiService";
+import { SHOULD_FETCH } from "./scripture-apis/ScriptureApiServiceBase";
 
-const defaultShortName = 'WEB';
+/** The shortName of the default translation to use throughout the application */
+export const DEFAULT_SHORT_NAME: string = "NET";
 
-/** Example query from https://bible-api.com/romans+12:1-2 */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-/* const bibleApiScriptureContentExample: ApiScriptureContent = {
-  reference: 'Romans 12:1-2',
-  verses: [
-    {
-      book_id: 'ROM',
-      book_name: 'Romans',
-      chapter: 12,
-      verse: 1,
-      text: 'Therefore I urge you, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God, which is your spiritual service.\n',
-    },
-    {
-      book_id: 'ROM',
-      book_name: 'Romans',
-      chapter: 12,
-      verse: 2,
-      text: 'Don’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.\n',
-    },
-  ],
-  text: 'Therefore I urge you, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God, which is your spiritual service.\nDon’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.\n',
-  translation_id: 'web',
-  translation_name: 'World English Bible',
-  translation_note: 'Public Domain',
-}; */
+const SCRIPTURE_API_SERVICES = [bibleApiService, bibleHelloAOApiService];
 
-// listed at https://bible-api.com/. Did not finish
-const bibleApiAvailableTranslations: ScriptureResourceInfo[] = require('../../assets/data/bible-api.com/translations.json');
+const SCRIPTURE_API_SERVICES_BY_ID: {
+  [apiId: string]: IScriptureApiService | undefined;
+} = Object.fromEntries(
+  SCRIPTURE_API_SERVICES.map((service) => [service.getServiceId(), service])
+);
 
-/** Information about the Scripture Resource */
-export type ScriptureResourceInfo = {
-  /** Translation shortName */
-  shortName: string;
-  /** Translation long name */
-  name: string;
-  /** Translation id that is used to look up references */
-  id: string;
-  /** Translation language */
-  language: string;
-  /** Translation license */
-  license: string;
-};
+let translationsCached: BibleTranslationInfo[] | undefined;
+/** Get a list of information about available translations. */
+export async function getTranslations(): Promise<BibleTranslationInfo[]> {
+  if (translationsCached) return translationsCached;
 
-/** Verse contents and metadata from bible-api.com */
-type ApiVerseContent = {
-  /** book short name index */
-  book_id: string;
-  /** book long name */
-  book_name: string;
-  /** chapter number */
-  chapter: number;
-  /** verse number */
-  verse: number;
-  /** Scripture text at this verse */
-  text: string;
-};
+  translationsCached = (
+    await Promise.all(
+      Object.values(SCRIPTURE_API_SERVICES_BY_ID).map((service) =>
+        service?.getTranslations()
+      )
+    )
+  )
+    .filter((translations) => !!translations)
+    .flat();
 
-/** Scripture contents and metadata from bible-api.com */
-type ApiScriptureContent = {
-  /** Scripture reference as a string */
-  reference: string;
-  /** verse contents */
-  verses: ApiVerseContent[];
-  /** Concatenated Scripture text at each verse in the range */
-  text: string;
-  /** Translation shortName */
-  translation_id: string;
-  /** Translation long name */
-  translation_name: string;
-  /** Translation license */
-  translation_note: string;
-};
+  return translationsCached;
+}
 
-/** Contents of the verse */
-export type ScriptureVerseContent = {
-  /** verse number */
-  verse: number;
-  /** Scripture text at this verse */
-  text: string;
-};
-
-/** Range of Scripture verses */
-export type ScriptureVerseRangeContent = {
-  /** Information about the Scripture resource with this verse range */
-  resourceInfo: ScriptureResourceInfo;
-  /** Scripture reference as a string */
-  reference: string;
-  /** verse contents */
-  verses: ScriptureVerseContent[];
-  /** URL from which we fetched these verses */
-  sourceUrl: string;
-};
-
-type ScriptureCache = ScriptureResourceInfo & {
-  /** Base url from which we fetched these verses */
-  sourceUrl: string;
-  verses: {
-    [reference: string]:
-      | ScriptureVerseRangeContent
-      | Promise<ScriptureVerseRangeContent>;
-  };
-};
-
-type MultiScriptureCache = {
-  [id: string]: ScriptureCache;
-};
-
-/**
- * Get a list of information about available translations
- * TODO: make some kind of initialize function that grabs these from server. Or just make all this lazy-load async, which is probably better
- */
-export const getTranslations = (): ScriptureResourceInfo[] =>
-  bibleApiAvailableTranslations;
-
-/**
- * Get information about a translation by short name
- * @param shortName which translation to get information about
- * @returns information about the translation requested
- */
-export const getTranslation = (shortName: string): ScriptureResourceInfo => {
-  const resourceInfo = bibleApiAvailableTranslations.find(
-    resInfo => resInfo.shortName === shortName,
+async function getScriptureApiServiceByShortName(
+  shortName: string
+): Promise<IScriptureApiService> {
+  const translation = (await getTranslations()).find(
+    (translationInfo) => translationInfo.shortName === shortName
   );
-  if (!resourceInfo)
-    throw new Error(`Translation shortName ${shortName} not found`);
-  return resourceInfo;
-};
 
-/**
- * Get information about a translation by id
- * @param id which translation to get information about by api translation id
- * @returns information about the translation requested
- */
-export const getTranslationById = (id: string): ScriptureResourceInfo => {
-  const resourceInfo = bibleApiAvailableTranslations.find(
-    resInfo => resInfo.id === id,
-  );
-  if (!resourceInfo) throw new Error(`Translation id ${id} not found`);
-  return resourceInfo;
-};
+  if (!translation)
+    throw new Error(
+      `Could not find a Scripture API service serving shortName ${shortName}`
+    );
 
-const mapApiVerseToContent = (
-  apiVerse: ApiVerseContent,
-): ScriptureVerseContent => ({ verse: apiVerse.verse, text: apiVerse.text });
+  const service = SCRIPTURE_API_SERVICES_BY_ID[translation.apiId];
 
-const mapApiVerseRangeToContent = (
-  apiVerseRange: ApiScriptureContent,
-  sourceUrl: string,
-): ScriptureVerseRangeContent => ({
-  resourceInfo: getTranslationById(apiVerseRange.translation_id),
-  reference: apiVerseRange.reference,
-  verses: apiVerseRange.verses.map(apiVerse => mapApiVerseToContent(apiVerse)),
-  sourceUrl,
-});
+  if (!service)
+    throw new Error(
+      `Could not find service ${translation.apiId} that is supposed to serve shortName ${shortName}`
+    );
+
+  return service;
+}
 
 // #region retrieving and caching Scripture
-
-/** Scripture cache containing verses in our desired format and info about where we got them */
-const scriptureCache: MultiScriptureCache = require('../../assets/data/scripture.json');
-
-const scriptureUrl = 'https://bible-api.com/';
 
 /**
  * Get Scripture verses from a string reference
  * @param reference reference to get verses from like 'Romans 12:1-2', 'Romans 3:5', 'Mark 3:5,6,7-12'
  * @param shortName which translation to get verses from
  */
-export const getScripture = (
+export async function getScripture(
   reference: string,
-  shortName = defaultShortName,
-): Promise<ScriptureVerseRangeContent> => {
-  // Try to get from cache
-  const translationInfo = getTranslation(shortName);
-  const translationId = translationInfo.id;
-  if (scriptureCache[translationId]) {
-    const cachedVerses = scriptureCache[translationId].verses[reference];
-    if (cachedVerses) return Promise.resolve(cachedVerses);
-  }
+  shortName: string = DEFAULT_SHORT_NAME
+): Promise<ScriptureVerseRangeContent> {
+  const service = await getScriptureApiServiceByShortName(shortName);
 
-  // Get verses from server
-  if (isDev()) console.warn(`Did not find ${reference} in cache. Caching`);
-  const versesUrl = `${scriptureUrl}${reference}?translation=${translationId}`;
-  if (!scriptureCache[translationId])
-    scriptureCache[translationId] = {
-      ...translationInfo,
-      sourceUrl: scriptureUrl,
-      verses: {},
-    };
-  const versesPromise = (async () => {
-    let responseContents: any;
-    let error: any | undefined;
-    if (isDev()) {
-      try {
-        const response = await fetch(versesUrl);
-        responseContents = await response.json();
-
-        if (!response.ok) error = responseContents;
-      } catch (e) {
-        error = e;
-      }
-    } else error = `Not in dev mode. Not fetching.`;
-    if (error)
-      throw new Error(
-        `Failed to get Scripture for ${reference} ${shortName}. Error: ${error}`,
-      );
-
-    const apiVerses: ApiScriptureContent = responseContents;
-    const verses = mapApiVerseRangeToContent(apiVerses, versesUrl);
-
-    // Save verses to cache
-    scriptureCache[translationId].verses[reference] = verses;
-    // console.log(`${reference} cached`);
-
-    return verses;
-  })();
-
-  // Save verses promise to cache
-  scriptureCache[translationId].verses[reference] = versesPromise;
-
-  return versesPromise;
-};
+  return service.getScripture(reference, shortName);
+}
 
 /* Get all Scripture References from the screens and cache the verses */
 async function cacheAllScripture() {
+  if (!SHOULD_FETCH) return;
+
   const getScripturePromises: Set<ReturnType<typeof getScripture>> = new Set();
-  forEachContent(content => {
+  forEachContent((content) => {
     if (!isString(content)) {
-      if ('scripture' in content) {
+      if ("scripture" in content) {
         const scriptureSlide = content as ScriptureSlideContentData;
         if (scriptureSlide.scripture) {
           const scriptures = Array.isArray(scriptureSlide.scripture)
             ? scriptureSlide.scripture
             : [scriptureSlide.scripture];
-          scriptures.forEach(scripture =>
-            getScripturePromises.add(getScripture(scripture.reference)),
+          scriptures.forEach((scripture) =>
+            getScripturePromises.add(
+              getScripture(scripture.reference, scripture.shortName)
+            )
           );
         }
-      } else if ('reference' in content) {
+      } else if ("reference" in content) {
         const scrRangeDisplay = content as ScrRangeDisplayContentData;
         if (scrRangeDisplay.reference) {
-          getScripturePromises.add(getScripture(scrRangeDisplay.reference));
+          getScripturePromises.add(
+            getScripture(scrRangeDisplay.reference, scrRangeDisplay.shortName)
+          );
         }
       }
     }
   });
 
   await Promise.allSettled([...getScripturePromises.values()]);
-
-  if (isWeb())
-    localStorage.setItem('scriptureCache', JSON.stringify(scriptureCache));
 }
 
 // Cache all Scripture at startup
