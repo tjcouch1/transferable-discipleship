@@ -143,7 +143,7 @@ Alternatively, you can build and submit in one step:
 
 `eas build --auto-submit`
 
-Note: this has not been tested. I imagine this submits android and ios in production.
+This allows you to choose to submit Android, iOS, or both in production.
 
 Once you have submitted the build, go to [Apple App Store Connect](https://appstoreconnect.apple.com/apps) and [Google Play Console](https://play.google.com/console) to release the app.
 
