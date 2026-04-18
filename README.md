@@ -111,6 +111,8 @@ Updates must be performed on the same version as the build you are targeting. Fo
 
 `eas update --branch preview --message "Update message"`
 
+- Note: [Expo 55 made `--environment` required for `eas update`](https://expo.dev/changelog/sdk-55#notable-breaking-changes), but I don't know default and don't know what it does. Investigate when needed.
+
 #### Create and serve a web preview build
 
 ```bash
