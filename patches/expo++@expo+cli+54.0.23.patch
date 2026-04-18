@@ -1,7 +1,7 @@
-diff --git a/node_modules/@expo/cli/build/src/start/server/webTemplate.js b/node_modules/@expo/cli/build/src/start/server/webTemplate.js
+diff --git a/node_modules/expo/node_modules/@expo/cli/build/src/start/server/webTemplate.js b/node_modules/expo/node_modules/@expo/cli/build/src/start/server/webTemplate.js
 index 9f80ef5..60744e3 100644
---- a/node_modules/@expo/cli/build/src/start/server/webTemplate.js
-+++ b/node_modules/@expo/cli/build/src/start/server/webTemplate.js
+--- a/node_modules/expo/node_modules/@expo/cli/build/src/start/server/webTemplate.js
++++ b/node_modules/expo/node_modules/@expo/cli/build/src/start/server/webTemplate.js
 @@ -50,6 +50,7 @@ async function createTemplateHtmlFromExpoConfigAsync(projectRoot, { scripts, css
  }).exp }) {
      var _exp_web, _exp_web1, _exp_web2;

@@ -20,7 +20,7 @@
  * StorageService.ts - Handles persisting data in various locations and backup layers
  */
 
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import { APP_VERSION, isWeb } from '../util/Util';
 
 /**

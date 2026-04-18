@@ -17,12 +17,8 @@
  */
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native';
+import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer, Route } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { getAppScreens } from './src/services/ScreenService';
@@ -105,76 +101,78 @@ export default function App() {
   if (isWaitingForFontLoading && !fontsLoaded && !fontError) return;
 
   return (
-    <SafeAreaView
-      style={[backgroundStyle, styles.safeAreaView]}
-      onLayout={onLayoutRootView}>
-      <ContentsModuleContext.Provider value={ContentsModule}>
-        <WebWrapper>
-          <NavigationContainer
-            initialState={
-              restoredRoutes
-                ? {
-                    routes: restoredRoutes,
-                  }
-                : undefined
-            }>
-            <StatusBar
-              barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-              backgroundColor={backgroundStyle.backgroundColor}
-            />
-            <Stack.Navigator
-              initialRouteName={appScreens.initialScreen}
-              screenListeners={
-                // Web only: Persist the route stack on changes so we can restore it later
-                isWeb()
+    <SafeAreaProvider>
+      <SafeAreaView
+        style={[backgroundStyle, styles.safeAreaView]}
+        onLayout={onLayoutRootView}>
+        <ContentsModuleContext.Provider value={ContentsModule}>
+          <WebWrapper>
+            <NavigationContainer
+              initialState={
+                restoredRoutes
                   ? {
-                      // Looks like the types for this event are wrong :( so just use any
-                      state: (e: any) => {
-                        const routeStack = e?.data?.state?.routes?.map(
-                          (route: Route<string>) => route.name,
-                        );
-                        sessionStorage.setItem(
-                          ROUTE_STACK_KEY,
-                          JSON.stringify(
-                            !routeStack || routeStack.length === 0
-                              ? null
-                              : routeStack,
-                          ),
-                        );
-                      },
+                      routes: restoredRoutes,
                     }
                   : undefined
               }>
-              {screens.map(screen => (
-                <Stack.Screen
-                  name={screen.id}
-                  key={screen.id}
-                  component={Screens[screen.type]}
-                  options={{
-                    title: screen.title || screen.id,
-                    // Header background
-                    headerStyle: {
-                      backgroundColor: theme.navigation.background,
-                    },
-                    // Remove the white line at the bottom of the header
-                    headerShadowVisible: !isWeb(),
-                    // Back button and header text color
-                    headerTintColor: theme.navigation.text,
-                    // App background
-                    contentStyle: {
-                      backgroundColor: theme.app.background,
-                      borderTopWidth: isWeb() ? 1 : 0,
-                      borderTopColor: theme.navigation.bottom,
-                    },
-                    headerShown: screen.showNavigationBar ?? true,
-                  }}
-                />
-              ))}
-            </Stack.Navigator>
-          </NavigationContainer>
-        </WebWrapper>
-      </ContentsModuleContext.Provider>
-    </SafeAreaView>
+              <StatusBar
+                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                backgroundColor={backgroundStyle.backgroundColor}
+              />
+              <Stack.Navigator
+                initialRouteName={appScreens.initialScreen}
+                screenListeners={
+                  // Web only: Persist the route stack on changes so we can restore it later
+                  isWeb()
+                    ? {
+                        // Looks like the types for this event are wrong :( so just use any
+                        state: (e: any) => {
+                          const routeStack = e?.data?.state?.routes?.map(
+                            (route: Route<string>) => route.name,
+                          );
+                          sessionStorage.setItem(
+                            ROUTE_STACK_KEY,
+                            JSON.stringify(
+                              !routeStack || routeStack.length === 0
+                                ? null
+                                : routeStack,
+                            ),
+                          );
+                        },
+                      }
+                    : undefined
+                }>
+                {screens.map(screen => (
+                  <Stack.Screen
+                    name={screen.id}
+                    key={screen.id}
+                    component={Screens[screen.type]}
+                    options={{
+                      title: screen.title || screen.id,
+                      // Header background
+                      headerStyle: {
+                        backgroundColor: theme.navigation.background,
+                      },
+                      // Remove the white line at the bottom of the header
+                      headerShadowVisible: !isWeb(),
+                      // Back button and header text color
+                      headerTintColor: theme.navigation.text,
+                      // App background
+                      contentStyle: {
+                        backgroundColor: theme.app.background,
+                        borderTopWidth: isWeb() ? 1 : 0,
+                        borderTopColor: theme.navigation.bottom,
+                      },
+                      headerShown: screen.showNavigationBar ?? true,
+                    }}
+                  />
+                ))}
+              </Stack.Navigator>
+            </NavigationContainer>
+          </WebWrapper>
+        </ContentsModuleContext.Provider>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
