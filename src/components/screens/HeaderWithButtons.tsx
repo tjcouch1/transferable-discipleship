@@ -24,6 +24,9 @@ import { ScreenDataBase } from './Screens';
 import { getScreenData } from '../../services/ScreenService';
 import { ButtonList, ButtonListData } from '../contents/ButtonList';
 import TScrollView from '../TScrollView';
+import { NextButton } from '../contents/NextButton';
+import { PreviousButton } from '../contents/PreviousButton';
+import { Breadcrumb } from '../contents/Breadcrumb';
 
 /** The data that defines the HeaderWithButtons screen */
 export type HeaderWithButtonsData = {
@@ -43,9 +46,14 @@ export const HeaderWithButtons = ({
 
   return (
     <TScrollView contentInsetAdjustmentBehavior="automatic">
+      <Breadcrumb />
       <View style={styles.layout}>
         <Header {...headerData} />
         <ButtonList {...buttonListData} />
+        <View style={styles.navigationContainer}>
+          <PreviousButton />
+          <NextButton />
+        </View>
       </View>
     </TScrollView>
   );
@@ -56,5 +64,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  navigationContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    paddingHorizontal: 0,
   },
 });

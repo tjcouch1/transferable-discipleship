@@ -28,6 +28,10 @@ type SlideScripture = {
   reference: string;
   hiddenButton?: Omit<ButtonDataBase, 'type'>;
   revealedButton?: Omit<ButtonDataBase, 'type'>;
+  /** Start with revealed answer visible (see ToggleButton revealedInitially) */
+  revealAnswerInitially?: boolean;
+  /** Shown inside the same slide as the verse, styled like the answer (no tap-to-reveal) */
+  answerInSlide?: string;
 };
 
 export type ScriptureSlideContentData = ContentDataBase & {
@@ -95,6 +99,13 @@ export const ScriptureSlide = ({
       style: designStyle.contents,
     } as ScrRangeDisplayContentData);
 
+    if (scr.answerInSlide)
+      contents.push({
+        type: 'BasicButton',
+        design: 'answer',
+        text: { text: scr.answerInSlide },
+      });
+
     if (showButton)
       contents.push({
         type: 'ToggleButton',
@@ -103,6 +114,7 @@ export const ScriptureSlide = ({
         ...hiddenButtonMerged,
         // Can toggle to revealed button
         altButtons: [revealedButtonMerged],
+        revealedInitially: !!scr.revealAnswerInitially,
       });
   });
 

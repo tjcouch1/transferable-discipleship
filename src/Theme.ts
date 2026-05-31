@@ -59,6 +59,18 @@ type ColorMap = {
 
 export const themes: ColorMap = require('../assets/data/colors.json');
 
+export type ThemeMode = 'light' | 'dark';
+
+/**
+ * Get theme colors for a specific theme mode
+ */
+export function getTheme(mode: ThemeMode = 'light'): Colors {
+  return themes[mode] || themes['light'];
+}
+
+// Default export for backward compatibility - returns light theme
+// Components should use useTheme hook from ThemeContext instead
+// This is kept for static style definitions, but dynamic styles should use useThemeColors hook
 const theme: Colors = themes['light'];
 
 export default theme;

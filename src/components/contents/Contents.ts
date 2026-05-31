@@ -29,6 +29,11 @@ import { Slide, SlideContentData } from './Slide';
 import { SubheaderText, SubheaderTextContentData } from './SubheaderText';
 import { Text, TextContentData } from './Text';
 import { Image, ImageContentData } from './Image';
+import { DarkModeToggle, DarkModeToggleContentData } from './DarkModeToggle';
+import {
+  ScheduleTable,
+  ScheduleTableContentData,
+} from './ScheduleTable';
 
 //----- CONTENT TYPES -----//
 
@@ -44,7 +49,9 @@ export type ContentData =
   | ContentListContentData
   | ScriptureSlideContentData
   | ScrRangeDisplayContentData
-  | ImageContentData;
+  | ImageContentData
+  | DarkModeToggleContentData
+  | ScheduleTableContentData;
 
 /** All content types available. Content is a component that does various things */
 export type ContentType = keyof typeof Contents;
@@ -70,6 +77,8 @@ export const Contents: {
   ScriptureSlide,
   ScrRangeDisplay,
   Image,
+  DarkModeToggle,
+  ScheduleTable,
 };
 
 /** Determines whether the content is openable and should be considered for managing its isOpen prop */

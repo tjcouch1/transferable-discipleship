@@ -29,11 +29,16 @@ const DEFAULT_FONT_FAMILY = 'OpenSauceOne';
 /** The base data that every text object must have. All text data object data types should extend TextDataObjectBase */
 export type TextDataObjectBase = { text: string };
 
+/** Inline span for rich text (single paragraph, nested Text in RN) */
+export type TextSegment = { text: string; style?: StyleProp<TextStyle> };
+
 /** Simple defining data for displaying text */
 export interface TextContentDataObject
   extends ContentDataBase,
     TextDataObjectBase {
   type: 'Text';
+  /** When set, renders one flowing paragraph with optional per-span styles (use text: \"\" when only segments) */
+  segments?: TextSegment[];
   design?: TextDesign;
   style?: StyleProp<TextStyle>;
 }
@@ -86,6 +91,25 @@ export const getTextDataObject = <T extends TextDataObjectBase | string>(
 };
 
 export const Text = (props: TextProps) => {
+  const contentProps = props as TextContentDataObject;
+  const segments = contentProps.segments;
+
+  if (segments && segments.length > 0) {
+    const { design = 'normal', style } = contentProps;
+    const { onPress } = props as TextPropsBase;
+    const designStyle = designStyles[design];
+    const baseStyles = [designStyle.lineText, style];
+    return (
+      <ReactText onPress={onPress} style={baseStyles}>
+        {segments.map((seg, i) => (
+          <ReactText key={i} style={[designStyle.lineText, seg.style]}>
+            {seg.text}
+          </ReactText>
+        ))}
+      </ReactText>
+    );
+  }
+
   const { text, design, style, onPress } = {
     ...DEFAULT_PROPS,
     ...getTextDataObject(props),
@@ -132,7 +156,7 @@ export const Text = (props: TextProps) => {
       if (!highestFontFamily) highestFontFamily = DEFAULT_FONT_FAMILY;
 
       // Set up the font family we're supposed to use
-      const weight = parseInt(highestFontWeight || '');
+      const weight = parseInt(String(highestFontWeight ?? ''), 10);
       // normal is 400, and bold is 700
       const isBold =
         highestFontWeight === 'bold' ||

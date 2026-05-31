@@ -21,6 +21,41 @@ import { RouteProp } from '@react-navigation/native';
 import { pathJoin } from './PathUtil';
 import { openURL } from 'expo-linking';
 import { isWeb } from './Util';
+import { shareScreen, shareScripture } from '../services/ShareService';
+import { toggleBookmark } from '../services/BookmarkService';
+import { markScreenProgress } from '../services/ProgressService';
+
+// Global visited screens tracker
+let visitedScreensSet: Set<string> = new Set();
+let markVisitedCallback: ((screenPath: string) => void) | null = null;
+let resetVisitedCallback: (() => void) | null = null;
+let refreshProgressCallback: (() => Promise<void>) | null = null;
+
+export const setVisitedScreensCallback = (callback: (screenPath: string) => void) => {
+  markVisitedCallback = callback;
+};
+
+export const setResetVisitedScreensCallback = (callback: () => void) => {
+  resetVisitedCallback = callback;
+};
+
+export const setRefreshProgressCallback = (callback: () => Promise<void>) => {
+  refreshProgressCallback = callback;
+};
+
+export const markScreenAsVisited = (screenPath: string) => {
+  visitedScreensSet.add(screenPath);
+  if (markVisitedCallback) {
+    markVisitedCallback(screenPath);
+  }
+};
+
+export const resetVisitedScreens = () => {
+  visitedScreensSet.clear();
+  if (resetVisitedCallback) {
+    resetVisitedCallback();
+  }
+};
 
 //----- ACTION TYPES -----//
 
@@ -46,21 +81,58 @@ export const ActionFactory: {
 } = {
   navigate:
     ({ to, navigation, route }: PropsWithNavigation<NavigateActionData>) =>
-    () => {
-      navigation.navigate(pathJoin(route.name, to));
-    },
+      async () => {
+        const targetPath = pathJoin(route.name, to);
+        markScreenAsVisited(targetPath);
+        // Track progress and refresh context
+        try {
+          await markScreenProgress(targetPath);
+          if (refreshProgressCallback) {
+            await refreshProgressCallback();
+          }
+        } catch (err) {
+          console.error('Failed to mark screen progress:', err);
+        }
+        navigation.navigate(targetPath);
+      },
   link:
     ({ to }: PropsWithNavigation<LinkActionData>) =>
-    async () => {
-      if (to) {
-        // Fix the discipleship%2Dapp%2Dtemplate link that is encoded to prevent accidental replacement when customizing the template
-        const toUrl = to?.includes('discipleship%2Dapp%2Dtemplate')
-          ? to.replace(/%2D/g, '-')
-          : to;
-        if (isWeb()) window.open(toUrl, '_blank');
-        else openURL(toUrl);
-      }
-    },
+      async () => {
+        if (to) {
+          // Fix the discipleship%2Dapp%2Dtemplate link that is encoded to prevent accidental replacement when customizing the template
+          const toUrl = to?.includes('discipleship%2Dapp%2Dtemplate')
+            ? to.replace(/%2D/g, '-')
+            : to;
+          if (isWeb()) window.open(toUrl, '_blank');
+          else openURL(toUrl);
+        }
+      },
+  share:
+    ({ shareType, target, title, includeText, route }: PropsWithNavigation<ShareActionData>) =>
+      async () => {
+        if (shareType === 'screen' && target) {
+          await shareScreen(target, title);
+        } else if (shareType === 'scripture' && target) {
+          await shareScripture(target, includeText ?? true);
+        } else if (shareType === 'currentScreen') {
+          // Share the current screen - route.name is already the full screen path
+          const screenPath = target || route.name;
+          await shareScreen(screenPath, title);
+        }
+      },
+  resetVisited:
+    () =>
+      () => {
+        resetVisitedScreens();
+      },
+  bookmark:
+    ({ screenPath, route }: PropsWithNavigation<BookmarkActionData>) =>
+      async () => {
+        const targetPath = screenPath || route.name;
+        await toggleBookmark(targetPath);
+        // Trigger bookmark state update by reloading if needed
+        // This will be handled by BookmarksContext
+      },
 };
 
 /** All available action types. An action is a function that does something based on the data that defines it */
@@ -78,5 +150,29 @@ export type LinkActionData = {
   to: string;
 } & ActionDataBase;
 
+/** The data that defines an action to share content */
+export type ShareActionData = {
+  type: 'share';
+  shareType: 'screen' | 'scripture' | 'currentScreen';
+  /** Target to share (screen path or scripture reference). For 'currentScreen', this can be empty to use current route */
+  target?: string;
+  /** Optional title for the share dialog */
+  title?: string;
+  /** For scripture sharing, whether to include the text (default: true) */
+  includeText?: boolean;
+} & ActionDataBase;
+
+/** The data that defines an action to reset visited screens */
+export type ResetVisitedActionData = {
+  type: 'resetVisited';
+} & ActionDataBase;
+
+/** The data that defines an action to bookmark/unbookmark a screen */
+export type BookmarkActionData = {
+  type: 'bookmark';
+  /** Screen path to bookmark. If not provided, uses current route */
+  screenPath?: string;
+} & ActionDataBase;
+
 /** Defining data for every action type. All action types should extend ActionDataBase  */
-export type ActionData = NavigateActionData | LinkActionData;
+export type ActionData = NavigateActionData | LinkActionData | ShareActionData | ResetVisitedActionData | BookmarkActionData;

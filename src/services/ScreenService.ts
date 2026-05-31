@@ -39,6 +39,9 @@ const serializedAppDataNew: SerializedAppData = require('../../assets/data/scree
 /** Screen data for software license info. Accessed on path `app:/__licenses` */
 const licensesScreen = require('../../assets/data/licenses/licenses.json');
 
+/** Screen data for settings. Accessed on path `app:/Settings` */
+const settingsScreen = require('../../assets/data/settings.json');
+
 function assertScreenIdIsValid(screenId: string) {
   if (!screenId)
     throw new Error(
@@ -106,6 +109,7 @@ function deserializeAppData(appData: SerializedAppData): AppData {
     screens: addSubscreensToMap(new Map<string, ScreenData>(), ROOT_PATH, [
       ...appData.screens,
       licensesScreen,
+      settingsScreen,
     ]),
   };
 

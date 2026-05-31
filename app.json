@@ -44,6 +44,13 @@
       },
       "startUrl": "./?utm_source=web_app_manifest"
     },
+    "scheme": "transferable-discipleship",
+    "linking": {
+      "prefixes": [
+        "transferable-discipleship://",
+        "https://tjcouch1.github.io/transferable-discipleship"
+      ]
+    },
     "extra": {
       "eas": {
         "projectId": "97ad893f-12a9-4da7-baaf-c8f468dd9583"

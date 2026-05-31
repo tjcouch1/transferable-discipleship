@@ -19,6 +19,8 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { HeaderWithButtons, HeaderWithButtonsData } from './HeaderWithButtons';
 import { ContentListScreen, ContentListScreenData } from './ContentListScreen';
+import { BookmarksScreen } from './BookmarksScreen';
+import { SettingsScreen } from './SettingsScreen';
 
 //----- SCREEN TYPES -----//
 
@@ -28,6 +30,8 @@ export const Screens: {
 } = {
   HeaderWithButtons,
   ContentListScreen,
+  BookmarksScreen,
+  SettingsScreen,
 };
 
 /** Defining data for every screen type. All screen types should extend ScreenDataBase */

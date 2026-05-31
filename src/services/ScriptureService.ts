@@ -25,7 +25,7 @@ import { ScriptureSlideContentData } from '../components/contents/ScriptureSlide
 import { isDev, isString, isWeb } from '../util/Util';
 import { forEachContent } from './ScreenService';
 
-const defaultShortName = 'WEB';
+const defaultShortName = 'NET';
 
 /** Example query from https://bible-api.com/romans+12:1-2 */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -100,6 +100,18 @@ type ApiScriptureContent = {
   translation_note: string;
 };
 
+/** Verse contents and metadata from Bible.org Labs API (for NET) */
+type BibleOrgVerseContent = {
+  /** book name */
+  bookname: string;
+  /** chapter number as string */
+  chapter: string;
+  /** verse number as string */
+  verse: string;
+  /** Scripture text at this verse */
+  text: string;
+};
+
 /** Contents of the verse */
 export type ScriptureVerseContent = {
   /** verse number */
@@ -125,8 +137,8 @@ type ScriptureCache = ScriptureResourceInfo & {
   sourceUrl: string;
   verses: {
     [reference: string]:
-      | ScriptureVerseRangeContent
-      | Promise<ScriptureVerseRangeContent>;
+    | ScriptureVerseRangeContent
+    | Promise<ScriptureVerseRangeContent>;
   };
 };
 
@@ -182,12 +194,35 @@ const mapApiVerseRangeToContent = (
   sourceUrl,
 });
 
+/**
+ * Map Bible.org Labs API format to our internal format
+ */
+const mapBibleOrgVersesToContent = (
+  bibleOrgVerses: BibleOrgVerseContent[],
+  reference: string,
+  translationInfo: ScriptureResourceInfo,
+  sourceUrl: string,
+): ScriptureVerseRangeContent => {
+  const verses: ScriptureVerseContent[] = bibleOrgVerses.map(v => ({
+    verse: parseInt(v.verse, 10),
+    text: v.text.trim(),
+  }));
+
+  return {
+    resourceInfo: translationInfo,
+    reference,
+    verses,
+    sourceUrl,
+  };
+};
+
 // #region retrieving and caching Scripture
 
 /** Scripture cache containing verses in our desired format and info about where we got them */
 const scriptureCache: MultiScriptureCache = require('../../assets/data/scripture.json');
 
 const scriptureUrl = 'https://bible-api.com/';
+const bibleOrgUrl = 'https://labs.bible.org/api/';
 
 /**
  * Get Scripture verses from a string reference
@@ -208,13 +243,20 @@ export const getScripture = (
 
   // Get verses from server
   if (isDev()) console.warn(`Did not find ${reference} in cache. Caching`);
-  const versesUrl = `${scriptureUrl}${reference}?translation=${translationId}`;
+
+  // Use Bible.org Labs API for NET, bible-api.com for others
+  const isNET = translationId === 'net';
+  const versesUrl = isNET
+    ? `${bibleOrgUrl}?passage=${encodeURIComponent(reference)}&formatting=plain&type=json`
+    : `${scriptureUrl}${reference}?translation=${translationId}`;
+
   if (!scriptureCache[translationId])
     scriptureCache[translationId] = {
       ...translationInfo,
-      sourceUrl: scriptureUrl,
+      sourceUrl: isNET ? bibleOrgUrl : scriptureUrl,
       verses: {},
     };
+
   const versesPromise = (async () => {
     let responseContents: any;
     let error: any | undefined;
@@ -233,8 +275,21 @@ export const getScripture = (
         `Failed to get Scripture for ${reference} ${shortName}. Error: ${error}`,
       );
 
-    const apiVerses: ApiScriptureContent = responseContents;
-    const verses = mapApiVerseRangeToContent(apiVerses, versesUrl);
+    let verses: ScriptureVerseRangeContent;
+    if (isNET) {
+      // Bible.org Labs API format
+      const bibleOrgVerses: BibleOrgVerseContent[] = responseContents;
+      verses = mapBibleOrgVersesToContent(
+        bibleOrgVerses,
+        reference,
+        translationInfo,
+        versesUrl,
+      );
+    } else {
+      // bible-api.com format
+      const apiVerses: ApiScriptureContent = responseContents;
+      verses = mapApiVerseRangeToContent(apiVerses, versesUrl);
+    }
 
     // Save verses to cache
     scriptureCache[translationId].verses[reference] = verses;

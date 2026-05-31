@@ -21,30 +21,35 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
-  useColorScheme,
 } from 'react-native';
-import { NavigationContainer, Route } from '@react-navigation/native';
+import { NavigationContainer, Route, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { getAppScreens } from './src/services/ScreenService';
 import { Screens } from './src/components/screens/Screens';
 import WebWrapper from './src/components/WebWrapper';
 import ContentsModuleContext from './src/components/contents/ContentsContext';
 import * as ContentsModule from './src/components/contents/Contents';
-import theme from './src/Theme';
 import { isWeb } from './src/util/Util';
 import { preventAutoHideAsync, hideAsync } from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
+import * as Linking from 'expo-linking';
+import { ROOT_PATH, PATH_DELIMITER, pathJoin } from './src/util/PathUtil';
+import { VisitedScreensProvider } from './src/contexts/VisitedScreensContext';
+import { ProgressProvider } from './src/contexts/ProgressContext';
+import { BookmarksProvider } from './src/contexts/BookmarksContext';
+import { ThemeProvider, useTheme } from './src/contexts/ThemeContext';
 
 /** Web only: sessionStorage key used to save and to restore the route stack on refresh */
 const ROUTE_STACK_KEY = 'route-stack';
 
 preventAutoHideAsync();
 
-export default function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+// Inner app component that has access to ThemeContext
+function AppContent() {
+  const { isDarkMode, theme } = useTheme();
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? 'black' : 'white',
+    backgroundColor: theme.app.background,
   };
 
   const Stack = useMemo(() => createNativeStackNavigator(), []);
@@ -55,13 +60,34 @@ export default function App() {
 
   // Web only: Restore the route stack on refresh if in same session
   const restoredRoutes = useMemo<Route<string>[] | undefined>(() => {
-    if (!isWeb()) return undefined;
+    if (!isWeb()) {
+      // On native, check for initial deep link
+      return undefined;
+    }
+
+    // Check for hash-based routing first (for deep links)
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#/')) {
+      const path = hash.substring(2); // Remove '#/'
+      // Handle scripture deep links
+      if (path.startsWith('scripture/')) {
+        const reference = decodeURIComponent(path.substring('scripture/'.length));
+        // For now, just navigate to root - scripture sharing can be handled differently
+        // TODO: Create a scripture viewer screen or handle this differently
+        return [{ name: appScreens.initialScreen }];
+      }
+      // Handle regular screen paths
+      const screenPath = pathJoin(ROOT_PATH, path);
+      if (appScreens.screens.has(screenPath)) {
+        return [{ name: screenPath }];
+      }
+    }
 
     const routeStackJson = sessionStorage.getItem(ROUTE_STACK_KEY);
     if (!routeStackJson) return undefined;
 
     return JSON.parse(routeStackJson).map((route: string) => ({ name: route }));
-  }, []);
+  }, [appScreens]);
 
   // WARNING: Because iOS does not support fonts well, we are using special naming conventions
   // here to add bold and italic. If you want a font family to support bold and italic on iOS,
@@ -102,32 +128,129 @@ export default function App() {
     }
   }, [fontsLoaded, fontError, isWaitingForFontLoading]);
 
+  // Handle deep links
+  useEffect(() => {
+    if (isWaitingForFontLoading && !fontsLoaded && !fontError) return;
+
+    const handleDeepLink = (url: string) => {
+      // Parse the URL
+      const parsed = Linking.parse(url);
+      const path = parsed.path || '';
+
+      // Handle scripture deep links: scripture/:reference
+      if (path.startsWith('scripture/')) {
+        const reference = decodeURIComponent(path.substring('scripture/'.length));
+        // TODO: Navigate to scripture viewer or show modal
+        console.log('Scripture deep link:', reference);
+        return;
+      }
+
+      // Handle regular screen paths
+      if (path) {
+        const screenPath = pathJoin(ROOT_PATH, path);
+        if (appScreens.screens.has(screenPath)) {
+          // Navigation will be handled by NavigationContainer's linking config
+          // We could also manually navigate here if needed
+        }
+      }
+    };
+
+    // Handle initial deep link
+    Linking.getInitialURL().then(url => {
+      if (url) {
+        handleDeepLink(url);
+      }
+    });
+
+    // Listen for deep links while app is running
+    const subscription = Linking.addEventListener('url', ({ url }) => {
+      handleDeepLink(url);
+    });
+
+    // Web: Handle hash changes
+    if (isWeb()) {
+      const handleHashChange = () => {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#/')) {
+          const path = hash.substring(2);
+          if (path.startsWith('scripture/')) {
+            // Scripture deep link - could show a modal or navigate
+            // For now, we'll just log it
+            console.log('Scripture deep link:', decodeURIComponent(path.substring('scripture/'.length)));
+          } else {
+            const screenPath = pathJoin(ROOT_PATH, path);
+            if (appScreens.screens.has(screenPath)) {
+              // Navigation will be handled by the NavigationContainer's linking config
+            }
+          }
+        }
+      };
+
+      window.addEventListener('hashchange', handleHashChange);
+      return () => {
+        subscription.remove();
+        window.removeEventListener('hashchange', handleHashChange);
+      };
+    }
+
+    return () => {
+      subscription.remove();
+    };
+  }, [isWaitingForFontLoading, fontsLoaded, fontError, appScreens]);
+
   if (isWaitingForFontLoading && !fontsLoaded && !fontError) return;
 
   return (
     <SafeAreaView
       style={[backgroundStyle, styles.safeAreaView]}
       onLayout={onLayoutRootView}>
-      <ContentsModuleContext.Provider value={ContentsModule}>
-        <WebWrapper>
-          <NavigationContainer
-            initialState={
-              restoredRoutes
-                ? {
-                    routes: restoredRoutes,
-                  }
-                : undefined
-            }>
-            <StatusBar
-              barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-              backgroundColor={backgroundStyle.backgroundColor}
-            />
-            <Stack.Navigator
-              initialRouteName={appScreens.initialScreen}
-              screenListeners={
-                // Web only: Persist the route stack on changes so we can restore it later
-                isWeb()
+      <VisitedScreensProvider>
+        <ProgressProvider>
+          <BookmarksProvider>
+            <ContentsModuleContext.Provider value={ContentsModule}>
+              <WebWrapper>
+            <NavigationContainer
+              initialState={
+                restoredRoutes
                   ? {
+                      routes: restoredRoutes,
+                    }
+                  : undefined
+              }
+              linking={{
+                prefixes: [
+                  'transferable-discipleship://',
+                  'https://tjcouch1.github.io/transferable-discipleship',
+                ],
+                config: {
+                  screens: {
+                    // Map all screens for deep linking
+                    // The screen paths will be matched dynamically
+                  },
+                },
+              }}>
+              <StatusBar
+                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                backgroundColor={backgroundStyle.backgroundColor}
+              />
+              <Stack.Navigator
+                initialRouteName={appScreens.initialScreen}
+                screenOptions={{
+                  headerStyle: {
+                    backgroundColor: theme.navigation.background,
+                  },
+                  headerShadowVisible: !isWeb(),
+                  headerTintColor: theme.navigation.text,
+                  contentStyle: {
+                    backgroundColor: theme.app.background,
+                    borderTopWidth: isWeb() ? 1 : 0,
+                    borderTopColor: theme.navigation.bottom,
+                  },
+                }}
+                screenListeners={
+                  // Web only: Persist the route stack on changes so we can restore it later
+                  isWeb()
+                    ? {
                       // Looks like the types for this event are wrong :( so just use any
                       state: (e: any) => {
                         const routeStack = e?.data?.state?.routes?.map(
@@ -143,38 +266,36 @@ export default function App() {
                         );
                       },
                     }
-                  : undefined
-              }>
-              {screens.map(screen => (
-                <Stack.Screen
-                  name={screen.id}
-                  key={screen.id}
-                  component={Screens[screen.type]}
-                  options={{
-                    title: screen.title || screen.id,
-                    // Header background
-                    headerStyle: {
-                      backgroundColor: theme.navigation.background,
-                    },
-                    // Remove the white line at the bottom of the header
-                    headerShadowVisible: !isWeb(),
-                    // Back button and header text color
-                    headerTintColor: theme.navigation.text,
-                    // App background
-                    contentStyle: {
-                      backgroundColor: theme.app.background,
-                      borderTopWidth: isWeb() ? 1 : 0,
-                      borderTopColor: theme.navigation.bottom,
-                    },
-                    headerShown: screen.showNavigationBar ?? true,
-                  }}
-                />
-              ))}
-            </Stack.Navigator>
-          </NavigationContainer>
-        </WebWrapper>
-      </ContentsModuleContext.Provider>
+                    : undefined
+                }>
+                {screens.map(screen => (
+                  <Stack.Screen
+                    name={screen.id}
+                    key={screen.id}
+                    component={Screens[screen.type]}
+                    options={{
+                      title: screen.title || screen.id,
+                      headerShown: screen.showNavigationBar ?? true,
+                    }}
+                  />
+                ))}
+              </Stack.Navigator>
+            </NavigationContainer>
+              </WebWrapper>
+            </ContentsModuleContext.Provider>
+          </BookmarksProvider>
+        </ProgressProvider>
+      </VisitedScreensProvider>
     </SafeAreaView>
+  );
+}
+
+// Main App component with ThemeProvider wrapper
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

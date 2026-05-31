@@ -49,6 +49,13 @@
     "license": "Public Domain"
   },
   {
+    "shortName": "NET",
+    "name": "New English Translation",
+    "id": "net",
+    "language": "English",
+    "license": "Copyright © 1996-2016 by Biblical Studies Press, L.L.C. All rights reserved."
+  },
+  {
     "shortName": "WEB",
     "name": "World English Bible",
     "id": "web",

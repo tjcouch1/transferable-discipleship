@@ -32,5 +32,39 @@
       "subheaderText": "#383f43",
       "lineText": "#383f43"
     }
+  },
+  "dark": {
+    "app": {
+      "background": "#1a1a1a"
+    },
+    "navigation": {
+      "background": "#005a8f",
+      "text": "#ffffff",
+      "bottom": "#4a4a4a"
+    },
+    "header": {
+      "background": "#005a8f",
+      "headerText": "#ffffff",
+      "subheaderText": "#e0e0e0",
+      "lineText": "#e0e0e0",
+      "bottom": "#4a4a4a"
+    },
+    "slide": {
+      "background": "#2d2d2d",
+      "headerText": "#ff9700",
+      "headerTextPrimary": "#00c7e2",
+      "bottom": "#4a4a4a"
+    },
+    "button": {
+      "background": "#007bc6",
+      "text": "#ffffff",
+      "backgroundAnswer": "#00c7e2",
+      "textAnswer": "#ffffff"
+    },
+    "text": {
+      "headerText": "#e0e0e0",
+      "subheaderText": "#d0d0d0",
+      "lineText": "#d0d0d0"
+    }
   }
 }

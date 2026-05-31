@@ -28,6 +28,9 @@ import {
   ContentListData,
   getContentListDesignPadding,
 } from '../contents/ContentList';
+import { NextButton } from '../contents/NextButton';
+import { PreviousButton } from '../contents/PreviousButton';
+import { Breadcrumb } from '../contents/Breadcrumb';
 
 /** The data that defines the ContentListScreen screen */
 export type ContentListScreenData = {
@@ -54,7 +57,22 @@ export const ContentListScreen = ({
         screenData.design,
       )}
       contentInsetAdjustmentBehavior="automatic">
+      <Breadcrumb />
       <ContentList {...screenData} padTop={padTop} padBottom={padBottom} />
+      <View style={styles.navigationContainer}>
+        <PreviousButton />
+        <NextButton />
+      </View>
     </TScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  navigationContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    paddingHorizontal: 0,
+  },
+});
