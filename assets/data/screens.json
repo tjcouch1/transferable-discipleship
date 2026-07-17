@@ -905,7 +905,7 @@
                       "headerText": "What Is True About God?",
                       "scripture": [
                         {
-                          "reference": "Acts 17:24–27",
+                          "reference": "Acts 17:24-27",
                           "hiddenButton": {
                             "text": "What is true about God from this passage?"
                           },
@@ -933,7 +933,7 @@
                       "headerText": "What Is True About Humanity?",
                       "scripture": [
                         {
-                          "reference": "Ephesians 2:1–3",
+                          "reference": "Ephesians 2:1-3",
                           "hiddenButton": {
                             "text": "What is true about humanity from this passage?"
                           },
@@ -1154,7 +1154,7 @@
                     {
                       "type": "ScriptureSlide",
                       "scripture": {
-                        "reference": "1 Corinthians 15:3–8",
+                        "reference": "1 Corinthians 15:3-8",
                         "hiddenButton": {
                           "text": "What did Jesus do?"
                         },
@@ -1206,7 +1206,7 @@
                       "type": "ScriptureSlide",
                       "scripture": [
                         {
-                          "reference": "Romans 4:1–3",
+                          "reference": "Romans 4:1-3",
                           "hiddenButton": {
                             "text": "How were people made right with God in the old testament?"
                           },
@@ -1215,10 +1215,10 @@
                           }
                         },
                         {
-                          "reference": "Ephesians 2:4–5"
+                          "reference": "Ephesians 2:4-5"
                         },
                         {
-                          "reference": "Ephesians 2:8–9",
+                          "reference": "Ephesians 2:8-9",
                           "hiddenButton": {
                             "text": "How are people made right with God today?"
                           },
@@ -1289,7 +1289,7 @@
                     {
                       "type": "ScriptureSlide",
                       "scripture": {
-                        "reference": "Romans 10:9–10",
+                        "reference": "Romans 10:9-10",
                         "hiddenButton": {
                           "text": "How should we respond?"
                         },
@@ -1592,7 +1592,6 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "2 Timothy 3:16",
                       "scripture": {
                         "reference": "2 Timothy 3:16",
                         "hiddenButton": {
@@ -1605,7 +1604,6 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Hebrews 4:12",
                       "scripture": {
                         "reference": "Hebrews 4:12",
                         "hiddenButton": {
@@ -1657,56 +1655,42 @@
                       ]
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "headerText": "2 Timothy 3:14–17",
-                      "scripture": {
-                        "reference": "2 Timothy 3:14-17",
-                        "hiddenButton": {
-                          "text": "What are the benefits of reading scripture? (tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "What are the benefits of reading scripture?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "2 Timothy 3:14-17",
+                            "revealedButton": {
+                              "text": "Scripture makes a person wise for salvation and is useful for teaching, rebuking, correcting, and training in righteousness, equipping believers for every good work."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Scripture makes a person wise for salvation and is useful for teaching, rebuking, correcting, and training in righteousness, equipping believers for every good work."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Romans 15:4",
-                      "scripture": {
-                        "reference": "Romans 15:4",
-                        "hiddenButton": {
-                          "text": "What are the benefits of reading scripture? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Romans 15:4",
+                            "revealedButton": {
+                              "text": "What was written previously was written for instruction, producing endurance and encouragement and giving hope."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "What was written previously was written for instruction, producing endurance and encouragement and giving hope."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Psalm 19:7–11",
-                      "scripture": {
-                        "reference": "Psalm 19:7-11",
-                        "hiddenButton": {
-                          "text": "What are the benefits of reading scripture? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Psalm 19:7-11",
+                            "revealedButton": {
+                              "text": "God's instruction is perfect and restores life. His rules are trustworthy and make the inexperienced wise. They are right, pure, enduring, and righteous altogether."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "God's instruction is perfect and restores life. His rules are trustworthy and make the inexperienced wise. They are right, pure, enduring, and righteous altogether."
+                        {
+                          "scripture": {
+                            "reference": "John 17:17",
+                            "revealedButton": {
+                              "text": "God's word is truth."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "John 17:17",
-                      "scripture": {
-                        "reference": "John 17:17",
-                        "hiddenButton": {
-                          "text": "What are the benefits of reading scripture? (tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "God's word is truth."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "Slide",
@@ -1784,11 +1768,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Psalm 1:1–3",
                       "scripture": {
                         "reference": "Psalm 1:1-3",
                         "hiddenButton": {
-                          "text": "How should we engage with scripture? (tap to reveal)"
+                          "text": "How should we engage with scripture?"
                         },
                         "revealedButton": {
                           "text": "The blessed person delights in the law of the Lord and meditates on it day and night."
@@ -1805,30 +1788,26 @@
                       ]
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "headerText": "Matthew 7:24–27",
-                      "scripture": {
-                        "reference": "Matthew 7:24-27",
-                        "hiddenButton": {
-                          "text": "How should we engage with scripture? (tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "How should we engage with scripture?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "Matthew 7:24-27",
+                            "revealedButton": {
+                              "text": "Hearing God's words is not enough. Wisdom comes from putting them into practice."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Hearing God's words is not enough. Wisdom comes from putting them into practice."
+                        {
+                          "scripture": {
+                            "reference": "John 8:31-32",
+                            "revealedButton": {
+                              "text": "Continuing in Jesus' word leads to freedom."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "John 8:31–32",
-                      "scripture": {
-                        "reference": "John 8:31-32",
-                        "hiddenButton": {
-                          "text": "How should we engage with scripture? (tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "Continuing in Jesus' word leads to freedom."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "QuestionPrompt",
@@ -1855,11 +1834,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Psalm 119:11",
                       "scripture": {
                         "reference": "Psalm 119:11",
                         "hiddenButton": {
-                          "text": "How does scripture affect my life? (tap to reveal)"
+                          "text": "How does scripture affect my life?"
                         },
                         "revealedButton": {
                           "text": "God's word is stored in the heart to guard against sin."
@@ -1872,11 +1850,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Psalm 40:8",
                       "scripture": {
                         "reference": "Psalm 40:8",
                         "hiddenButton": {
-                          "text": "How does scripture affect my life? (tap to reveal)"
+                          "text": "How does scripture affect my life?"
                         },
                         "revealedButton": {
                           "text": "God's law within the heart produces a desire to do His will."
@@ -1889,11 +1866,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Deuteronomy 11:18–20",
                       "scripture": {
                         "reference": "Deuteronomy 11:18-20",
                         "hiddenButton": {
-                          "text": "How does scripture affect my life? (tap to reveal)"
+                          "text": "How does scripture affect my life?"
                         },
                         "revealedButton": {
                           "text": "God's words are meant to shape thoughts, actions, conversations, and daily rhythms."
@@ -2056,11 +2032,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "1 John 5:12–13",
                       "scripture": {
                         "reference": "1 John 5:12-13",
                         "hiddenButton": {
-                          "text": "Can you know that your faith is secure? (Tap to reveal)"
+                          "text": "Can you know that your faith is secure?"
                         },
                         "revealedButton": {
                           "text": "You CAN know your faith is secure."
@@ -2077,11 +2052,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "2 Corinthians 13:5",
                       "scripture": {
                         "reference": "2 Corinthians 13:5",
                         "hiddenButton": {
-                          "text": "What does healthy self-examination look like for a believer? (Tap to reveal)"
+                          "text": "What does healthy self-examination look like for a believer?"
                         },
                         "revealedButton": {
                           "text": "Self-examination is meant to invite honest reflection, not fear. Scripture encourages believers to look at their lives in light of Christ's presence, not to constantly question whether God has abandoned them."
@@ -2109,11 +2083,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "2 Corinthians 5:17",
                       "scripture": {
                         "reference": "2 Corinthians 5:17",
                         "hiddenButton": {
-                          "text": "What changes when someone is \"in Christ\"? (Tap to reveal)"
+                          "text": "What changes when someone is \"in Christ\"?"
                         },
                         "revealedButton": {
                           "text": "A new identity forms the foundation for a new way of life."
@@ -2122,11 +2095,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Ephesians 4:22–24",
                       "scripture": {
                         "reference": "Ephesians 4:22-24",
                         "hiddenButton": {
-                          "text": "What ongoing process is described in the life of a believer? (Tap to reveal)"
+                          "text": "What ongoing process is described in the life of a believer?"
                         },
                         "revealedButton": {
                           "text": "Growth in Christ involves an ongoing process of putting off your old ways and putting on what reflects new life."
@@ -2154,11 +2126,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "1 John 2:3–6",
                       "scripture": {
                         "reference": "1 John 2:3-6",
                         "hiddenButton": {
-                          "text": "How can I recognize the evidence of salvation in my life? (Tap to reveal)"
+                          "text": "How can I recognize the evidence of salvation in my life?"
                         },
                         "revealedButton": {
                           "text": "Our life begins to be marked by obedience to God's desire for our life."
@@ -2167,49 +2138,39 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "1 John 3:6",
                       "scripture": {
                         "reference": "1 John 3:6"
                       }
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "headerText": "1 John 3:9–10",
-                      "scripture": {
-                        "reference": "1 John 3:9-10",
-                        "hiddenButton": {
-                          "text": "How can I recognize the evidence of salvation in my life? (Tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "How can I recognize the evidence of salvation in my life?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "1 John 3:9-10",
+                            "revealedButton": {
+                              "text": "This does not mean believers never sin. It means sin no longer defines the pattern of their lives."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "This does not mean believers never sin. It means sin no longer defines the pattern of their lives."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "1 John 3:14",
-                      "scripture": {
-                        "reference": "1 John 3:14",
-                        "hiddenButton": {
-                          "text": "How can I recognize the evidence of salvation in my life? (Tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "1 John 3:14",
+                            "revealedButton": {
+                              "text": "We begin to have more love toward other people."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "We begin to have more love toward other people."
+                        {
+                          "scripture": {
+                            "reference": "1 John 3:24",
+                            "revealedButton": {
+                              "text": "His Spirit lives in us."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "1 John 3:24",
-                      "scripture": {
-                        "reference": "1 John 3:24",
-                        "hiddenButton": {
-                          "text": "How can I recognize the evidence of salvation in my life? (Tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "His Spirit lives in us."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "QuestionPrompt",
@@ -2254,30 +2215,26 @@
                       "headerText": "Can anything cause me to lose my salvation?"
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "headerText": "John 10:27–29",
-                      "scripture": {
-                        "reference": "John 10:27-29",
-                        "hiddenButton": {
-                          "text": "Can anything cause me to lose my salvation? (Tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "Can anything cause me to lose my salvation?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "John 10:27-29",
+                            "revealedButton": {
+                              "text": "No. We are safely held in the hands of God."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "No. We are safely held in the hands of God."
+                        {
+                          "scripture": {
+                            "reference": "Ephesians 1:13-14",
+                            "revealedButton": {
+                              "text": "No. We are sealed by the Holy Spirit."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Ephesians 1:13–14",
-                      "scripture": {
-                        "reference": "Ephesians 1:13-14",
-                        "hiddenButton": {
-                          "text": "Can anything cause me to lose my salvation? (Tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "No. We are sealed by the Holy Spirit."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "Slide",
@@ -2288,43 +2245,34 @@
                       ]
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "headerText": "Romans 8:16",
-                      "scripture": {
-                        "reference": "Romans 8:16",
-                        "hiddenButton": {
-                          "text": "Can anything cause me to lose my salvation? (Tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "Can anything cause me to lose my salvation?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "Romans 8:16",
+                            "revealedButton": {
+                              "text": "No. The Spirit bears witness that we are God's children."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "No. The Spirit bears witness that we are God's children."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "John 6:37",
-                      "scripture": {
-                        "reference": "John 6:37",
-                        "hiddenButton": {
-                          "text": "Can anything cause me to lose my salvation? (Tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "John 6:37",
+                            "revealedButton": {
+                              "text": "No. God does not disown us."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "No. God does not disown us."
+                        {
+                          "scripture": {
+                            "reference": "Romans 8:38-39",
+                            "revealedButton": {
+                              "text": "No. Nothing can separate us from God."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Romans 8:38–39",
-                      "scripture": {
-                        "reference": "Romans 8:38-39",
-                        "hiddenButton": {
-                          "text": "Can anything cause me to lose my salvation? (Tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "No. Nothing can separate us from God."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "Slide",
@@ -2363,30 +2311,26 @@
                       "headerText": "Was Jesus' sacrifice enough?"
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "headerText": "Colossians 2:14",
-                      "scripture": {
-                        "reference": "Colossians 2:14",
-                        "hiddenButton": {
-                          "text": "Was Jesus' sacrifice enough? (Tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "Was Jesus' sacrifice enough?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "Colossians 2:14",
+                            "revealedButton": {
+                              "text": "He has taken away the debt we owed because of our sin."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "He has taken away the debt we owed because of our sin."
+                        {
+                          "scripture": {
+                            "reference": "Hebrews 10:11-18",
+                            "revealedButton": {
+                              "text": "Jesus' one-time sacrifice was enough."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Hebrews 10:11–18",
-                      "scripture": {
-                        "reference": "Hebrews 10:11-18",
-                        "hiddenButton": {
-                          "text": "Was Jesus' sacrifice enough? (Tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "Jesus' one-time sacrifice was enough."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "Slide",
@@ -2546,11 +2490,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Genesis 1:1–2",
                       "scripture": {
                         "reference": "Genesis 1:1-2",
                         "hiddenButton": {
-                          "text": "What was the Spirit's involvement at creation? (tap to reveal)"
+                          "text": "What was the Spirit's involvement at creation?"
                         },
                         "revealedButton": {
                           "text": "The Spirit of God was present and active in creation."
@@ -2559,11 +2502,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "2 Corinthians 3:17",
                       "scripture": {
                         "reference": "2 Corinthians 3:17",
                         "hiddenButton": {
-                          "text": "What is the nature of the Spirit? (Tap to reveal)"
+                          "text": "What is the nature of the Spirit?"
                         },
                         "revealedButton": {
                           "text": "\"Now the Lord is the Spirit, and where the Spirit of the Lord is present, there is freedom.\""
@@ -2572,11 +2514,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Matthew 3:16–17",
                       "scripture": {
                         "reference": "Matthew 3:16-17",
                         "hiddenButton": {
-                          "text": "What stands out here about Father, Son, and Spirit? (Tap to reveal)"
+                          "text": "What stands out here about Father, Son, and Spirit?"
                         },
                         "revealedButton": {
                           "text": "At Jesus' baptism, the Father speaks, the Son is baptized, and the Spirit descends, revealing the triune nature of God."
@@ -2608,11 +2549,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Acts 2:38",
                       "scripture": {
                         "reference": "Acts 2:38",
                         "hiddenButton": {
-                          "text": "When does someone receive the Holy Spirit? (tap to reveal)"
+                          "text": "When does someone receive the Holy Spirit?"
                         },
                         "revealedButton": {
                           "text": "The Spirit is received when someone places faith in Jesus."
@@ -2620,95 +2560,66 @@
                       }
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "headerText": "Romans 5:5",
-                      "scripture": {
-                        "reference": "Romans 5:5",
-                        "hiddenButton": {
-                          "text": "What does the Holy Spirit do? (tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "What does the Holy Spirit do?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "Romans 5:5",
+                            "revealedButton": {
+                              "text": "God's love is poured out in our hearts through the Holy Spirit."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "God's love is poured out in our hearts through the Holy Spirit."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Ephesians 3:16",
-                      "scripture": {
-                        "reference": "Ephesians 3:16",
-                        "hiddenButton": {
-                          "text": "What does the Holy Spirit do? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Ephesians 3:16",
+                            "revealedButton": {
+                              "text": "The Spirit strengthens us in our inner being."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "The Spirit strengthens us in our inner being."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "John 14:25–26",
-                      "scripture": {
-                        "reference": "John 14:25-26",
-                        "hiddenButton": {
-                          "text": "What does the Holy Spirit do? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "John 14:25-26",
+                            "revealedButton": {
+                              "text": "The Spirit teaches and reminds us of Jesus' words."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "The Spirit teaches and reminds us of Jesus' words."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "1 Corinthians 2:10–12",
-                      "scripture": {
-                        "reference": "1 Corinthians 2:10-12",
-                        "hiddenButton": {
-                          "text": "What does the Holy Spirit do? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "1 Corinthians 2:10-12",
+                            "revealedButton": {
+                              "text": "The Spirit helps us understand what God has freely given us."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "The Spirit helps us understand what God has freely given us."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "John 16:8",
-                      "scripture": {
-                        "reference": "John 16:8",
-                        "hiddenButton": {
-                          "text": "What does the Holy Spirit do? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "John 16:8",
+                            "revealedButton": {
+                              "text": "The Spirit convicts us of sin. (tap to go back)"
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "The Spirit convicts us of sin. (tap to go back)"
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "John 16:13–14",
-                      "scripture": {
-                        "reference": "John 16:13-14",
-                        "hiddenButton": {
-                          "text": "What does the Holy Spirit do? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "John 16:13-14",
+                            "revealedButton": {
+                              "text": "The Spirit guides believers into truth and points attention to Jesus."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "The Spirit guides believers into truth and points attention to Jesus."
+                        {
+                          "scripture": {
+                            "reference": "Acts 1:8",
+                            "revealedButton": {
+                              "text": "The Spirit empowers believers to be witnesses."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Acts 1:8",
-                      "scripture": {
-                        "reference": "Acts 1:8",
-                        "hiddenButton": {
-                          "text": "What does the Holy Spirit do? (tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "The Spirit empowers believers to be witnesses."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "QuestionPrompt",
@@ -2761,69 +2672,50 @@
                       "headerText": "What is the ongoing role of the Spirit?"
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "headerText": "2 Peter 1:20–21",
-                      "scripture": {
-                        "reference": "2 Peter 1:20-21",
-                        "hiddenButton": {
-                          "text": "What is the ongoing role of the Spirit? (tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "What is the ongoing role of the Spirit?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "2 Peter 1:20-21",
+                            "revealedButton": {
+                              "text": "Scripture comes from God as people were carried along by the Holy Spirit."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Scripture comes from God as people were carried along by the Holy Spirit."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Ephesians 1:13–14",
-                      "scripture": {
-                        "reference": "Ephesians 1:13-14",
-                        "hiddenButton": {
-                          "text": "What is the ongoing role of the Spirit? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Ephesians 1:13-14",
+                            "revealedButton": {
+                              "text": "The Spirit seals believers as a guarantee of their inheritance."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "The Spirit seals believers as a guarantee of their inheritance."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "2 Timothy 1:13–14",
-                      "scripture": {
-                        "reference": "2 Timothy 1:13-14",
-                        "hiddenButton": {
-                          "text": "What is the ongoing role of the Spirit? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "2 Timothy 1:13-14",
+                            "revealedButton": {
+                              "text": "The Spirit helps guard the truth entrusted to us."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "The Spirit helps guard the truth entrusted to us."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "Ezekiel 36:26–27",
-                      "scripture": {
-                        "reference": "Ezekiel 36:26-27",
-                        "hiddenButton": {
-                          "text": "What is the ongoing role of the Spirit? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Ezekiel 36:26-27",
+                            "revealedButton": {
+                              "text": "God promises to put His Spirit within His people."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "God promises to put His Spirit within His people."
+                        {
+                          "scripture": {
+                            "reference": "1 Corinthians 3:16",
+                            "revealedButton": {
+                              "text": "Believers are God's temple, and God's Spirit lives in them."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "headerText": "1 Corinthians 3:16",
-                      "scripture": {
-                        "reference": "1 Corinthians 3:16",
-                        "hiddenButton": {
-                          "text": "What is the ongoing role of the Spirit? (tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "Believers are God's temple, and God's Spirit lives in them."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "QuestionPrompt",
@@ -2842,11 +2734,10 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Galatians 5:16–25",
                       "scripture": {
                         "reference": "Galatians 5:16-25",
                         "hiddenButton": {
-                          "text": "How should we respond to the Holy Spirit? (tap to reveal)"
+                          "text": "How should we respond to the Holy Spirit?"
                         },
                         "revealedButton": {
                           "text": "Believers are called to walk by the Spirit rather than the flesh."
@@ -2895,7 +2786,6 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Ephesians 5:18",
                       "scripture": {
                         "reference": "Ephesians 5:18"
                       }
@@ -2926,7 +2816,6 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Romans 8:1–2",
                       "scripture": {
                         "reference": "Romans 8:1-2",
                         "answerInSlide": "Life in the Spirit brings freedom."
@@ -2934,7 +2823,6 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Romans 8:3–4",
                       "scripture": {
                         "reference": "Romans 8:3-4",
                         "answerInSlide": "God enables believers to live according to the Spirit."
@@ -2942,7 +2830,6 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Romans 8:5–11",
                       "scripture": {
                         "reference": "Romans 8:5-11",
                         "answerInSlide": "The Spirit gives life."
@@ -2950,7 +2837,6 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Romans 8:12–13",
                       "scripture": {
                         "reference": "Romans 8:12-13",
                         "answerInSlide": "By the Spirit, believers put sin to death."
@@ -2958,7 +2844,6 @@
                     },
                     {
                       "type": "ScriptureSlide",
-                      "headerText": "Romans 8:14–16",
                       "scripture": {
                         "reference": "Romans 8:14-16",
                         "answerInSlide": "The Spirit brings assurance of belonging to God's family."
@@ -3184,76 +3069,58 @@
                       ]
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "John 16:23–24",
-                        "hiddenButton": {
-                          "text": "Why should we pray? (tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "Why should we pray?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "John 16:23-24",
+                            "revealedButton": {
+                              "text": "Jesus connects prayer with fullness of joy."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Jesus connects prayer with fullness of joy."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Philippians 4:6–7",
-                        "hiddenButton": {
-                          "text": "Why should we pray? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Philippians 4:6-7",
+                            "revealedButton": {
+                              "text": "Prayer replaces anxiety with God's peace."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Prayer replaces anxiety with God's peace."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Hebrews 4:14–16",
-                        "hiddenButton": {
-                          "text": "Why should we pray? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Hebrews 4:14-16",
+                            "revealedButton": {
+                              "text": "Jesus understands our weakness and invites us to approach God with confidence."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Jesus understands our weakness and invites us to approach God with confidence."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "James 5:16",
-                        "hiddenButton": {
-                          "text": "Why should we pray? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "James 5:16",
+                            "revealedButton": {
+                              "text": "Prayer includes confession, community, and healing."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Prayer includes confession, community, and healing."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Exodus 32:11–14",
-                        "hiddenButton": {
-                          "text": "Why should we pray? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Exodus 32:11-14",
+                            "revealedButton": {
+                              "text": "Prayer does not change God's character, but at times God chooses to work through prayer to accomplish His purposes. Scripture shows God inviting His people into real participation, not passive observation."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Prayer does not change God's character, but at times God chooses to work through prayer to accomplish His purposes. Scripture shows God inviting His people into real participation, not passive observation."
+                        {
+                          "scripture": {
+                            "reference": "Luke 22:41-42",
+                            "revealedButton": {
+                              "text": "Prayer aligns our hearts with God's will, even when obedience is costly."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Luke 22:41–42",
-                        "hiddenButton": {
-                          "text": "Why should we pray? (tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "Prayer aligns our hearts with God's will, even when obedience is costly."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "QuestionPrompt",
@@ -3271,52 +3138,42 @@
                       "headerText": "Does God Answer Prayer?"
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "1 John 5:14",
-                        "hiddenButton": {
-                          "text": "Does God answer prayer? (tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "Does God answer prayer?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "1 John 5:14",
+                            "revealedButton": {
+                              "text": "God hears prayers that align with His will."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "God hears prayers that align with His will."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "John 14:13",
-                        "hiddenButton": {
-                          "text": "Does God answer prayer? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "John 14:13",
+                            "revealedButton": {
+                              "text": "Praying in Jesus' name means praying in line with His character, mission, and purposes, not using His name as a formula."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Praying in Jesus' name means praying in line with His character, mission, and purposes, not using His name as a formula."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "James 4:3",
-                        "hiddenButton": {
-                          "text": "Does God answer prayer? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "James 4:3",
+                            "revealedButton": {
+                              "text": "God does not promise to answer prayers driven by selfish desire."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "God does not promise to answer prayers driven by selfish desire."
+                        {
+                          "scripture": {
+                            "reference": "2 Corinthians 12:8-10",
+                            "revealedButton": {
+                              "text": "Sometimes God's answer is \"no,\" not because He is distant, but because He is doing something deeper than we can see. God's grace is not proven by the absence of weakness, but by His presence within it."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "2 Corinthians 12:8–10",
-                        "hiddenButton": {
-                          "text": "Does God answer prayer? (tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "Sometimes God's answer is \"no,\" not because He is distant, but because He is doing something deeper than we can see. God's grace is not proven by the absence of weakness, but by His presence within it."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "QuestionPrompt",
@@ -3377,76 +3234,58 @@
                       ]
                     },
                     {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Luke 18:9–14",
-                        "hiddenButton": {
-                          "text": "How should we pray? (tap to reveal)"
+                      "type": "ScriptureQuestionList",
+                      "question": "How should we pray?",
+                      "slides": [
+                        {
+                          "scripture": {
+                            "reference": "Luke 18:9-14",
+                            "revealedButton": {
+                              "text": "Prayer is marked by humility, not self-righteousness."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Prayer is marked by humility, not self-righteousness."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "1 Thessalonians 5:17",
-                        "hiddenButton": {
-                          "text": "How should we pray? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "1 Thessalonians 5:17",
+                            "revealedButton": {
+                              "text": "Praying continually does not mean nonstop words, but living with ongoing awareness and dependence on God."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Praying continually does not mean nonstop words, but living with ongoing awareness and dependence on God."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Romans 8:26",
-                        "hiddenButton": {
-                          "text": "How should we pray? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Romans 8:26",
+                            "revealedButton": {
+                              "text": "When words fail, the Spirit intercedes on our behalf."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "When words fail, the Spirit intercedes on our behalf."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Nehemiah 4:9",
-                        "hiddenButton": {
-                          "text": "How should we pray? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Nehemiah 4:9",
+                            "revealedButton": {
+                              "text": "Prayer and action belong together."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Prayer and action belong together."
-                        }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Matthew 7:7–8",
-                        "hiddenButton": {
-                          "text": "How should we pray? (tap to reveal)"
+                        {
+                          "scripture": {
+                            "reference": "Matthew 7:7-8",
+                            "revealedButton": {
+                              "text": "Asking, seeking, and knocking reflect persistence."
+                            }
+                          }
                         },
-                        "revealedButton": {
-                          "text": "Asking, seeking, and knocking reflect persistence."
+                        {
+                          "scripture": {
+                            "reference": "Luke 11:13",
+                            "revealedButton": {
+                              "text": "God delights to give the Holy Spirit to those who ask."
+                            }
+                          }
                         }
-                      }
-                    },
-                    {
-                      "type": "ScriptureSlide",
-                      "scripture": {
-                        "reference": "Luke 11:13",
-                        "hiddenButton": {
-                          "text": "How should we pray? (tap to reveal)"
-                        },
-                        "revealedButton": {
-                          "text": "God delights to give the Holy Spirit to those who ask."
-                        }
-                      }
+                      ]
                     },
                     {
                       "type": "QuestionPrompt",
@@ -3689,14 +3528,10 @@
                         "You don't have to look far. The people you already see regularly are often the best place to start.",
                         "Maybe someone who lives down the hall, someone you sit next to in class, a coworker at your campus job, or someone you see at the gym or dining hall.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Write down 2–3 names\nChoose one person to be intentional with this week"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Write down 2–3 names",
+                            "Choose one person to be intentional with this week"
                           ]
                         }
                       ]
@@ -3710,14 +3545,10 @@
                         "It's easy to move through campus focused on your schedule and miss the people around you.",
                         "Think about walking to class, sitting before a lecture starts, waiting in line for coffee, or studying in common areas.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Put your phone away in one setting this week\nStart one simple conversation “How's your week going?”"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Put your phone away in one setting this week",
+                            "Start one simple conversation “How's your week going?”"
                           ]
                         }
                       ]
@@ -3731,14 +3562,10 @@
                         "Most relationships stay shallow because no one takes the first step deeper.",
                         "Instead of just talking about classes, sports, or weekend plans, you could ask about their major choice, family, goals, or what's been stressful lately.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Ask one deeper question this week\nShare something a little more personal about yourself"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Ask one deeper question this week",
+                            "Share something a little more personal about yourself"
                           ]
                         }
                       ]
@@ -3763,14 +3590,10 @@
                         "Relationships grow through time together, not just passing conversations.",
                         "This could look like grabbing coffee between classes, lunch at the dining hall, or studying together.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Invite them to coffee or a meal\nFollow up if they don't give a clear answer"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Invite them to coffee or a meal",
+                            "Follow up if they don't give a clear answer"
                           ]
                         }
                       ]
@@ -3784,14 +3607,10 @@
                         "You don't need to create something new. Just include them in what you're already doing.",
                         "Maybe you're going to a campus event, intramural game, club meeting, church gathering, or just heading to the gym.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Text them next time you're going to something\nMake it casual and easy to say yes to"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Text them next time you're going to something",
+                            "Make it casual and easy to say yes to"
                           ]
                         }
                       ]
@@ -3805,14 +3624,10 @@
                         "Saying yes to their invitations builds trust and shows you care about what they care about.",
                         "This could be going to a club meeting they're part of, a game they're watching, an open mic night, or hanging out with their friend group.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Say yes to one invitation this week\nAsk what they enjoy doing and join them"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Say yes to one invitation this week",
+                            "Ask what they enjoy doing and join them"
                           ]
                         }
                       ]
@@ -3826,14 +3641,10 @@
                         "You don't have to force it. Small steps can naturally introduce spiritual topics.",
                         "This might be when they share something stressful, talk about family, or mention something meaningful going on in their life.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Ask, “How can I pray for you?”\nFollow up later and ask how things are going"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Ask, “How can I pray for you?”",
+                            "Follow up later and ask how things are going"
                           ]
                         }
                       ]
@@ -3847,14 +3658,10 @@
                         "One long hangout is great, but consistent time together builds stronger relationships.",
                         "Think weekly meals, regular study sessions, or quick check-ins between classes.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Plan one consistent touchpoint each week\nSend a quick text to stay connected"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Plan one consistent touchpoint each week",
+                            "Send a quick text to stay connected"
                           ]
                         }
                       ]
@@ -3879,14 +3686,10 @@
                         "Talking about your faith doesn't have to feel forced. It can come up naturally as part of your life.",
                         "You might mention something from church, a conversation from Bible study, or something you've been thinking about spiritually.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Share one personal faith-related thought\nMention a spiritual activity you're part of"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Share one personal faith-related thought",
+                            "Mention a spiritual activity you're part of"
                           ]
                         }
                       ]
@@ -3900,14 +3703,10 @@
                         "Before sharing what you believe, take time to understand their story.",
                         "They may have grown up in church, another religion, or with no spiritual background at all.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Ask, “Did you grow up around church or faith at all?”\nListen without correcting"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Ask, “Did you grow up around church or faith at all?”",
+                            "Listen without correcting"
                           ]
                         }
                       ]
@@ -3921,14 +3720,10 @@
                         "People often have evolving or mixed beliefs.",
                         "They might say they're spiritual, unsure, skeptical, or just haven't thought about it much.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Ask, “What do you believe about God?”\nAsk follow-up questions to understand"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Ask, “What do you believe about God?”",
+                            "Ask follow-up questions to understand"
                           ]
                         }
                       ]
@@ -3942,14 +3737,10 @@
                         "Seeing faith lived out in community can be powerful.",
                         "This could be a campus ministry gathering, church service, small group, or special event.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Invite them to something you already attend\nSit with them and talk about it afterward"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Invite them to something you already attend",
+                            "Sit with them and talk about it afterward"
                           ]
                         }
                       ]
@@ -3963,14 +3754,10 @@
                         "At some point, it's important to clearly explain who Jesus is and what He has done.",
                         "This might come up during a deeper conversation, after they ask questions, or when talking about purpose, sin, or forgiveness.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Share a simple version of the gospel\nAsk what they think about it"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Share a simple version of the gospel",
+                            "Ask what they think about it"
                           ]
                         }
                       ]
@@ -3984,14 +3771,10 @@
                         "Doubts are normal and often take time to work through.",
                         "They may struggle with things like suffering, hypocrisy in the church, science, or past experiences.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Ask, “What makes that hard to believe?”\nKeep the conversation going over time"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Ask, “What makes that hard to believe?”",
+                            "Keep the conversation going over time"
                           ]
                         }
                       ]
@@ -4005,14 +3788,10 @@
                         "You don't need to have all the answers, but you can keep learning.",
                         "This could look like learning how to explain the gospel clearly or thinking through common questions.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Look up one question you didn't know how to answer\nAsk a mentor or leader for help"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Look up one question you didn't know how to answer",
+                            "Ask a mentor or leader for help"
                           ]
                         }
                       ]
@@ -4037,14 +3816,10 @@
                         "New faith needs structure to grow.",
                         "This could be reading the Bible together, praying, or talking through questions regularly.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Set a weekly time to meet\nStart reading a short passage together"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Set a weekly time to meet",
+                            "Start reading a short passage together"
                           ]
                         }
                       ]
@@ -4058,14 +3833,10 @@
                         "Growth happens best in intentional relationships.",
                         "This could be meeting one-on-one or in a small group to learn how to follow Jesus.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Ask if they want to meet regularly\nStart simple and be consistent"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Ask if they want to meet regularly",
+                            "Start simple and be consistent"
                           ]
                         }
                       ]
@@ -4079,14 +3850,10 @@
                         "They need more than just you to grow long-term.",
                         "This could be your friend group, a small group, or a campus ministry.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Introduce them to other believers\nBring them into group settings"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Introduce them to other believers",
+                            "Bring them into group settings"
                           ]
                         }
                       ]
@@ -4100,14 +3867,10 @@
                         "Learning alongside others helps reinforce truth and build friendships.",
                         "This might be a dorm Bible study, campus ministry group, or church small group.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Invite them to your group\nHelp them find one that fits"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Invite them to your group",
+                            "Help them find one that fits"
                           ]
                         }
                       ]
@@ -4121,14 +3884,10 @@
                         "Growth deepens when they begin living it out themselves.",
                         "They could start inviting friends, sharing their story, or joining you in investing in someone else.",
                         {
-                          "type": "ToggleButton",
-                          "design": "answer",
-                          "text": "next steps (tap to reveal)",
-                          "altButtons": [
-                            {
-                              "design": "answer",
-                              "text": "Bring them along as you meet with someone\nEncourage them to take one step with a friend"
-                            }
+                          "type": "NextSteps",
+                          "steps": [
+                            "Bring them along as you meet with someone",
+                            "Encourage them to take one step with a friend"
                           ]
                         }
                       ]
