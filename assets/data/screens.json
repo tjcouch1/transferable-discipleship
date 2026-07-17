@@ -4606,6 +4606,27 @@
             {
               "type": "Slide",
               "headerText": {
+                "text": "Reset Progress",
+                "style": {
+                  "color": "#9c9fa1"
+                }
+              },
+              "contentDesign": "tight",
+              "contents": [
+                "Reset all visited screens to show buttons in their original color.",
+                {
+                  "type": "ActionButton",
+                  "text": "Reset Visited Screens",
+                  "design": "answer",
+                  "action": {
+                    "type": "resetVisited"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": {
                 "text": "Feedback?",
                 "style": {
                   "color": "#9c9fa1"

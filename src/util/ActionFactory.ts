@@ -49,6 +49,9 @@ export const ActionFactory: {
     () => {
       navigation.navigate(pathJoin(route.name, to));
     },
+  // Clears all visited-screen progress. The actual behavior lives in
+  // ActionButton (it needs the ProgressContext); this entry registers the type.
+  resetVisited: () => () => {},
   link:
     ({ to }: PropsWithNavigation<LinkActionData>) =>
     async () => {
@@ -78,5 +81,11 @@ export type LinkActionData = {
   to: string;
 } & ActionDataBase;
 
+/** The data that defines an action that clears all visited-screen progress */
+export type ResetVisitedActionData = {
+  type: 'resetVisited';
+} & ActionDataBase;
+
 /** Defining data for every action type. All action types should extend ActionDataBase  */
-export type ActionData = NavigateActionData | LinkActionData;
+export type ActionData =
+  NavigateActionData | LinkActionData | ResetVisitedActionData;

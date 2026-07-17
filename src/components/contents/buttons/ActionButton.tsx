@@ -17,10 +17,15 @@
  */
 
 import React, { useMemo } from 'react';
+import { Text as ReactText, View } from 'react-native';
 import { BasicButton } from './BasicButton';
 import { ActionData, ActionFactory } from '../../../util/ActionFactory';
 import { ButtonDataBase } from './Buttons';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useProgress } from '../../../contexts/ProgressContext';
+import { useTheme } from '../../../contexts/ThemeContext';
+import { getAppScreens } from '../../../services/ScreenService';
+import { pathJoin } from '../../../util/PathUtil';
 import { TextData, getTextDataObject } from '../Text';
 
 /** The data that defines the ActionButton */
@@ -37,6 +42,8 @@ export const ActionButton = (props: ActionButtonProps) => {
   const { action, ...buttonData } = props;
   const navigation = useNavigation();
   const route = useRoute();
+  const { theme } = useTheme();
+  const { isVisited, completion, markVisited, resetProgress } = useProgress();
 
   // Set up text style with underline for `link` action type
   const textObject = useMemo<TextData | undefined>(() => {
@@ -54,9 +61,70 @@ export const ActionButton = (props: ActionButtonProps) => {
     };
   }, []);
 
+  // Where a navigate action leads, if it leads to a real screen
+  const targetPath = useMemo(() => {
+    if (action?.type !== 'navigate') return undefined;
+    const path = pathJoin(route.name, action.to);
+    return getAppScreens().screens.has(path) ? path : undefined;
+  }, [action, route.name]);
+
   let onPress = action
     ? ActionFactory[action.type]({ ...action, navigation, route })
     : undefined;
+  // Actions that need React context are handled here instead of the factory
+  if (action?.type === 'resetVisited') onPress = resetProgress;
+  else if (targetPath) {
+    const navigate = onPress;
+    onPress = () => {
+      markVisited(targetPath);
+      navigate?.(undefined);
+    };
+  }
 
-  return <BasicButton {...buttonData} text={textObject} onPress={onPress} />;
+  // Visited indicators — not on the Home screen's main navigation buttons
+  const showProgress =
+    targetPath && route.name !== getAppScreens().initialScreen;
+  const visited = showProgress ? isVisited(targetPath) : false;
+  const completionPercent = showProgress ? completion(targetPath) : undefined;
+  const badge =
+    completionPercent !== undefined
+      ? completionPercent >= 100
+        ? '✓'
+        : completionPercent > 0
+          ? `${completionPercent}%`
+          : undefined
+      : visited
+        ? '✓'
+        : undefined;
+
+  const button = (
+    <BasicButton
+      {...buttonData}
+      text={textObject}
+      // Visited targets gray out (TouchableOpacity owns `opacity`, so use color)
+      style={[
+        visited && { backgroundColor: theme.slide.bottom },
+        buttonData.style,
+      ]}
+      onPress={onPress}
+    />
+  );
+
+  if (!badge) return button;
+  return (
+    <View style={{ width: '100%', alignItems: 'center' }}>
+      {button}
+      <ReactText
+        style={{
+          position: 'absolute',
+          top: -6,
+          right: '8%',
+          color: theme.button.visitedBadge,
+          fontWeight: 'bold',
+          fontSize: 16,
+        }}>
+        {badge}
+      </ReactText>
+    </View>
+  );
 };

@@ -47,6 +47,8 @@ export type Colors = {
     text: string;
     backgroundAnswer: string;
     textAnswer: string;
+    /** Badge marking visited/completed navigation targets */
+    visitedBadge: string;
   };
   text: {
     headerText: string;
