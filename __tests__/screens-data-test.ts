@@ -27,6 +27,7 @@ const REGISTERED_CONTENT_TYPES = new Set([
   'ContentList',
   'ScriptureSlide',
   'ScrRangeDisplay',
+  'QuestionPrompt',
   'Image',
 ]);
 const REGISTERED_SCREEN_TYPES = new Set(['ContentListScreen', 'HeaderWithButtons']);
