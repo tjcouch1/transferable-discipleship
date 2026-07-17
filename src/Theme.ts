@@ -18,7 +18,9 @@
 
 import { ColorValue, StyleSheet } from 'react-native';
 
-type Colors = {
+export type ThemeMode = 'light' | 'dark';
+
+export type Colors = {
   app: {
     background: string;
   };
@@ -59,6 +61,7 @@ type ColorMap = {
 
 export const themes: ColorMap = require('../assets/data/colors.json');
 
-const theme: Colors = themes['light'];
-
-export default theme;
+/** Get the color palette for a theme mode, falling back to light */
+export function getTheme(mode: ThemeMode): Colors {
+  return themes[mode] ?? themes['light'];
+}
