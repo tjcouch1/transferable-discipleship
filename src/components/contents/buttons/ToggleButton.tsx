@@ -38,7 +38,7 @@ export interface ToggleButtonProps extends Omit<ToggleButtonData, 'type'> {}
 export function applyToggleHint(text: string, isRevealed: boolean): string {
   if (isRevealed)
     return /tap to go back/i.test(text) ? text : `${text} (tap to go back)`;
-  return /tap|reveal/i.test(text) ? text : `${text} (Tap to reveal)`;
+  return /tap|reveal/i.test(text) ? text : `${text} (tap to reveal)`;
 }
 
 /** Button that toggles between different looks */

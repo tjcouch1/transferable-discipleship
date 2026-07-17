@@ -31,8 +31,14 @@ const REGISTERED_CONTENT_TYPES = new Set([
   'ScheduleTable',
   'DarkModeToggle',
   'Image',
+  // Content sugar expanded at load by ScreenService (never rendered directly)
+  'ScriptureQuestionList',
+  'NextSteps',
 ]);
-const REGISTERED_SCREEN_TYPES = new Set(['ContentListScreen', 'HeaderWithButtons']);
+const REGISTERED_SCREEN_TYPES = new Set([
+  'ContentListScreen',
+  'HeaderWithButtons',
+]);
 // Screens added programmatically by ScreenService rather than defined in the JSON
 const KNOWN_EXTERNAL_TARGETS = new Set(['app:/__licenses']);
 
@@ -63,11 +69,13 @@ for (const [path, screen] of Object.entries(screensByPath)) {
       if (typeof value.type === 'string') contentTypes.add(value.type);
       if (value.action?.type === 'navigate' && value.action.to)
         links.push({ from: path, to: value.action.to });
-      if (typeof value.reference === 'string') scriptureReferences.add(value.reference);
+      if (typeof value.reference === 'string')
+        scriptureReferences.add(value.reference);
       // Skip subscreens (walked separately) and action objects (their `type`
       // is an action type like "navigate", not a content type)
       Object.entries(value).forEach(
-        ([key, v]) => key !== 'subscreens' && key !== 'action' && walkContents(v),
+        ([key, v]) =>
+          key !== 'subscreens' && key !== 'action' && walkContents(v),
       );
     }
   })(screen.contents);
@@ -131,11 +139,20 @@ describe('screens.json data invariants', () => {
     for (const [path, screen] of Object.entries(screensByPath)) {
       (screen.subscreens ?? []).forEach(child => {
         const childPath = `${path}/${child.id}`;
-        if (!links.some(link => link.from === path && link.resolved === childPath))
+        if (
+          !links.some(link => link.from === path && link.resolved === childPath)
+        )
           problems.push(childPath);
       });
     }
     expect(problems).toEqual([]);
+  });
+
+  it('references use hyphens for verse ranges (en dash breaks VerseRef parsing)', () => {
+    const enDashReferences = [...scriptureReferences].filter(reference =>
+      reference.includes('–'),
+    );
+    expect(enDashReferences).toEqual([]);
   });
 
   it('every scripture reference is in the bundled NET cache', () => {

@@ -8,7 +8,7 @@ import {
 describe('applyToggleHint', () => {
   it('appends the reveal hint when a collapsed label lacks tap wording', () => {
     expect(applyToggleHint('What does this teach?', false)).toBe(
-      'What does this teach? (Tap to reveal)',
+      'What does this teach? (tap to reveal)',
     );
   });
   it('leaves labels that already mention tap/reveal alone', () => {
@@ -39,8 +39,8 @@ it('shows hints through a full toggle cycle', async () => {
     />,
   );
   const user = userEvent.setup();
-  expect(screen.getByText('What is the answer? (Tap to reveal)')).toBeTruthy();
-  await user.press(screen.getByText('What is the answer? (Tap to reveal)'));
+  expect(screen.getByText('What is the answer? (tap to reveal)')).toBeTruthy();
+  await user.press(screen.getByText('What is the answer? (tap to reveal)'));
   expect(screen.getByText('The answer. (tap to go back)')).toBeTruthy();
 });
 

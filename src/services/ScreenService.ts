@@ -20,37 +20,124 @@
  * ScreenService.ts - Handles getting the page structure
  */
 
-import { ViewStyle } from "react-native";
-import { ContentListData } from "../components/contents/ContentList";
-import { ContentData } from "../components/contents/Contents";
-import { HeaderContentData } from "../components/contents/Header";
-import { ContentListScreenData } from "../components/screens/ContentListScreen";
+import { ViewStyle } from 'react-native';
+import { ContentListData } from '../components/contents/ContentList';
+import { ContentData } from '../components/contents/Contents';
+import { HeaderContentData } from '../components/contents/Header';
+import { ContentListScreenData } from '../components/screens/ContentListScreen';
 import {
   SerializedAppData,
   ScreenData,
   AppData,
   ScreenMap,
-} from "../components/screens/Screens";
-import { ROOT_PATH, PATH_DELIMITER, pathJoin } from "../util/PathUtil";
-import { APP_VERSION, isDev } from "../util/Util";
+} from '../components/screens/Screens';
+import { ROOT_PATH, PATH_DELIMITER, pathJoin } from '../util/PathUtil';
+import { APP_VERSION, isDev } from '../util/Util';
 
-const serializedAppDataNew: SerializedAppData = require("../../assets/data/screens.json");
+const serializedAppDataNew: SerializedAppData = require('../../assets/data/screens.json');
 
 /** Screen data for software license info. Accessed on path `app:/__licenses` */
-const licensesScreen = require("../../assets/data/licenses/licenses.json");
+const licensesScreen = require('../../assets/data/licenses/licenses.json');
+
+//----- CONTENT SUGAR -----//
+// Compact content forms in screens.json that expand to regular contents at
+// load time. They never reach the component registry, so rendering behavior
+// (including ContentList's one-open-slide-at-a-time control) is unchanged.
+
+/**
+ * A run of ScriptureSlides that all pose the same tap-to-reveal question.
+ * Expands to one ScriptureSlide per entry with the question as its
+ * hiddenButton ("(tap to reveal)" is appended automatically by ToggleButton).
+ */
+export type ScriptureQuestionListContentData = {
+  type: 'ScriptureQuestionList';
+  /** The question every slide's tap-to-reveal button asks */
+  question: string;
+  /** ScriptureSlide data (without type); hiddenButton is filled from question */
+  slides: Omit<Extract<ContentData, { type: 'ScriptureSlide' }>, 'type'>[];
+};
+
+/**
+ * A standard "next steps" reveal. Expands to the answer-styled ToggleButton
+ * used throughout the Intentionality content.
+ */
+export type NextStepsContentData = {
+  type: 'NextSteps';
+  /** The action steps revealed on tap, shown one per line */
+  steps: string[];
+};
+
+/** Content sugar types (see above) */
+export type SugarContentData =
+  ScriptureQuestionListContentData | NextStepsContentData;
+
+function expandContent(content: ContentData | SugarContentData): ContentData[] {
+  if (typeof content === 'string' || !('type' in content)) return [content];
+
+  if (content.type === 'ScriptureQuestionList') {
+    const { question, slides } = content as ScriptureQuestionListContentData;
+    return slides.map(slide => ({
+      ...slide,
+      type: 'ScriptureSlide',
+      scripture: Array.isArray(slide.scripture)
+        ? slide.scripture
+        : { hiddenButton: { text: question }, ...slide.scripture },
+    })) as ContentData[];
+  }
+
+  if (content.type === 'NextSteps') {
+    const { steps } = content as NextStepsContentData;
+    return [
+      {
+        type: 'ToggleButton',
+        design: 'answer',
+        text: 'next steps',
+        altButtons: [{ design: 'answer', text: steps.join('\n') }],
+      } as ContentData,
+    ];
+  }
+
+  // Recursively expand nested contents (e.g. NextSteps inside a Slide)
+  const withContents = content as ContentData &
+    object & { contents?: unknown[] };
+  if (Array.isArray(withContents.contents))
+    return [
+      {
+        ...withContents,
+        contents: withContents.contents.flatMap(nested =>
+          expandContent(nested as ContentData | SugarContentData),
+        ),
+      } as ContentData,
+    ];
+
+  return [content as ContentData];
+}
+
+/** Expand all content sugar in a screen's contents (and its subscreens') */
+export function expandScreenContents(screen: ScreenData): ScreenData {
+  const expanded = { ...screen };
+  const withContents = expanded as ScreenData & { contents?: unknown[] };
+  if (Array.isArray(withContents.contents))
+    withContents.contents = withContents.contents.flatMap(content =>
+      expandContent(content as ContentData | SugarContentData),
+    );
+  if (expanded.subscreens)
+    expanded.subscreens = expanded.subscreens.map(expandScreenContents);
+  return expanded;
+}
 
 function assertScreenIdIsValid(screenId: string) {
   if (!screenId)
     throw new Error(
-      `Screen id ${screenId} is not valid! Must provide a non-empty string`
+      `Screen id ${screenId} is not valid! Must provide a non-empty string`,
     );
-  if (screenId === "..")
+  if (screenId === '..')
     throw new Error(
-      `Screen id ${screenId} is not valid! Cannot use reserved words`
+      `Screen id ${screenId} is not valid! Cannot use reserved words`,
     );
   if (screenId.includes(PATH_DELIMITER))
     throw new Error(
-      `Screen id ${screenId} is not valid! Cannot use ${PATH_DELIMITER} in screen id`
+      `Screen id ${screenId} is not valid! Cannot use ${PATH_DELIMITER} in screen id`,
     );
 }
 
@@ -64,9 +151,9 @@ function assertScreenIdIsValid(screenId: string) {
 function addSubscreensToMap(
   screenMap: ScreenMap,
   currentPath: string,
-  screens: ScreenData[] | undefined
+  screens: ScreenData[] | undefined,
 ): ScreenMap {
-  screens?.forEach((screen) => {
+  screens?.forEach(screen => {
     assertScreenIdIsValid(screen.id);
 
     const screenPath = pathJoin(currentPath, screen.id);
@@ -79,7 +166,7 @@ function addSubscreensToMap(
     screenMap.set(screenPath, screenClone);
 
     // Preserve original id as title if a title was not provided
-    if (!screenClone.title && screenClone.title !== "")
+    if (!screenClone.title && screenClone.title !== '')
       screenClone.title = screenClone.id;
 
     // Overwrite the existing id with the full path
@@ -104,7 +191,7 @@ function deserializeAppData(appData: SerializedAppData): AppData {
     ...appData,
     initialScreen: pathJoin(ROOT_PATH, appData.initialScreen),
     screens: addSubscreensToMap(new Map<string, ScreenData>(), ROOT_PATH, [
-      ...appData.screens,
+      ...appData.screens.map(expandScreenContents),
       licensesScreen,
     ]),
   };
@@ -112,12 +199,12 @@ function deserializeAppData(appData: SerializedAppData): AppData {
   // If we're in development, add a red border around the title screen header
   if (isDev()) {
     const initialScreen = deserializedAppData.screens.get(
-      deserializedAppData.initialScreen
+      deserializedAppData.initialScreen,
     ) as ContentListScreenData;
     if (initialScreen) {
       const header = initialScreen.contents[0] as HeaderContentData;
       header.style = {
-        borderColor: "#FF0000",
+        borderColor: '#FF0000',
         borderWidth: 5,
         ...(header.style as ViewStyle),
       };
@@ -137,15 +224,15 @@ export const getAppScreens = () => appScreens;
  * @returns Screen information
  */
 export const getScreenData = (path: string): ScreenData =>
-  appScreens.screens.get(path) || ({ id: "NOT_FOUND" } as ScreenData);
+  appScreens.screens.get(path) || ({ id: 'NOT_FOUND' } as ScreenData);
 
 function forEachContentOfContents(
   contents: ContentData[],
-  callback: (content: ContentData) => void
+  callback: (content: ContentData) => void,
 ) {
   if (!contents) return;
 
-  contents.forEach((content) => {
+  contents.forEach(content => {
     if (!content) return;
 
     callback(content);
@@ -156,11 +243,11 @@ function forEachContentOfContents(
 
 /** Runs a callback on every content in the screens recursively */
 export function forEachContent(callback: (content: ContentData) => void) {
-  appScreens.screens.forEach((screen) => {
+  appScreens.screens.forEach(screen => {
     if ((screen as ContentListScreenData).contents)
       forEachContentOfContents(
         (screen as ContentListScreenData).contents,
-        callback
+        callback,
       );
   });
 }
