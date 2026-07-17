@@ -24,6 +24,7 @@ import { ScreenDataBase } from './Screens';
 import { getScreenData } from '../../services/ScreenService';
 import { ButtonList, ButtonListData } from '../contents/ButtonList';
 import TScrollView from '../TScrollView';
+import { Breadcrumb } from '../Breadcrumb';
 import { NavigationButtons } from '../NavigationButtons';
 
 /** The data that defines the HeaderWithButtons screen */
@@ -44,6 +45,7 @@ export const HeaderWithButtons = ({
 
   return (
     <TScrollView contentInsetAdjustmentBehavior="automatic">
+      <Breadcrumb />
       <View style={styles.layout}>
         <Header {...headerData} />
         <ButtonList {...buttonListData} />
