@@ -17,7 +17,7 @@
  */
 
 import React, { ReactNode } from 'react';
-import { TouchableOpacity, GestureResponderEvent } from 'react-native';
+import { TouchableOpacity, GestureResponderEvent, Platform } from 'react-native';
 import theme from '../../../Theme';
 import { createDesignStyleSheets } from '../../../util/DesignStyleSheets';
 import { Text, TextData, getTextDataObject } from '../Text';
@@ -67,6 +67,20 @@ const designStyles = createDesignStyleSheets(
       padding: 12,
       borderRadius: 12,
       width: '75%',
+      ...Platform.select({
+        ios: {
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.2,
+          shadowRadius: 4,
+        },
+        android: {
+          elevation: 4,
+        },
+        web: {
+          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+        },
+      }),
     },
     navButtonText: {
       color: theme.button.text,
@@ -81,6 +95,20 @@ const designStyles = createDesignStyleSheets(
         padding: 10,
         borderRadius: 6,
         width: 'auto',
+        ...Platform.select({
+          ios: {
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.2,
+            shadowRadius: 3,
+          },
+          android: {
+            elevation: 3,
+          },
+          web: {
+            boxShadow: '0 2px 3px rgba(0, 0, 0, 0.2)',
+          },
+        }),
       },
       navButtonText: {
         color: theme.button.textAnswer,
