@@ -18,18 +18,18 @@
 
 **Files:** none created in-repo (worktree setup)
 
-- [ ] **Step 1:** Create isolated worktree on new branch `port-wesley-updates` based on `main` (EnterWorktree tool, or `git worktree add ../td-port -b port-wesley-updates main`).
-- [ ] **Step 2:** Cherry-pick the tooling/docs commit from wesley-updates: `git cherry-pick f4cd332` (adds `scripts/compare-screens.mjs`, `scripts/check-screens.mjs`, `CLAUDE.md`, spec, Wesley report, plans dir). All-new files; no conflicts expected.
-- [ ] **Step 3:** `npm install` (runs patch-package postinstall). Expected: success with warnings OK.
-- [ ] **Step 4:** Baseline: `npx jest` — record which of the 2 existing suites pass. Wesley's notes claim a pre-existing "Jest test configuration issue"; if `App-test.tsx` fails at baseline, note it and treat data/pure-function tests as the regression gate for this plan (component render tests below become best-effort).
-- [ ] **Step 5:** Baseline structural checks pass on main's content: `node scripts/check-screens.mjs` → "All checks passed".
+- [x] **Step 1:** Create isolated worktree on new branch `port-wesley-updates` based on `main` (EnterWorktree tool, or `git worktree add ../td-port -b port-wesley-updates main`).
+- [x] **Step 2:** Cherry-pick the tooling/docs commit from wesley-updates: `git cherry-pick f4cd332` (adds `scripts/compare-screens.mjs`, `scripts/check-screens.mjs`, `CLAUDE.md`, spec, Wesley report, plans dir). All-new files; no conflicts expected.
+- [x] **Step 3:** `npm install` (runs patch-package postinstall). Expected: success with warnings OK.
+- [x] **Step 4:** Baseline: `npx jest` — record which of the 2 existing suites pass. Wesley's notes claim a pre-existing "Jest test configuration issue"; if `App-test.tsx` fails at baseline, note it and treat data/pure-function tests as the regression gate for this plan (component render tests below become best-effort).
+- [x] **Step 5:** Baseline structural checks pass on main's content: `node scripts/check-screens.mjs` → "All checks passed".
 
 ### Task 2: screens.json data invariants test
 
 **Files:**
 - Test: `__tests__/screens-data-test.ts`
 
-- [ ] **Step 1: Write the test** (pure JSON — no React Native imports; mirrors `scripts/check-screens.mjs` rules plus type registration and scripture-cache coverage):
+- [x] **Step 1: Write the test** (pure JSON — no React Native imports; mirrors `scripts/check-screens.mjs` rules plus type registration and scripture-cache coverage):
 
 ```ts
 import screensData from '../assets/data/screens.json';
@@ -148,8 +148,8 @@ function referenceIsCached(reference: string, verses: any): boolean {
 }
 ```
 
-- [ ] **Step 2:** `npx jest screens-data` → expect PASS against main's current content (if a main reference is missing from the cache, investigate — the app on main works, so the parse rules in the test likely need adjusting to match, e.g. Psalm/Psalms).
-- [ ] **Step 3:** Commit: `test: add screens.json data invariant tests`.
+- [x] **Step 2:** `npx jest screens-data` → expect PASS against main's current content (if a main reference is missing from the cache, investigate — the app on main works, so the parse rules in the test likely need adjusting to match, e.g. Psalm/Psalms).
+- [x] **Step 3:** Commit: `test: add screens.json data invariant tests`.
 
 ### Task 3: Extend helloao NET scripture cache to Wesley's references
 
@@ -157,15 +157,15 @@ function referenceIsCached(reference: string, verses: any): boolean {
 - Create: `scripts/fetch-helloao-cache.mjs`
 - Modify: `assets/data/bible.helloao.org/scripture.json`
 
-- [ ] **Step 1:** Write `scripts/fetch-helloao-cache.mjs` (committed — it's the repeatable, README-friendlier alternative to the manual localStorage flow for *adding* references):
+- [x] **Step 1:** Write `scripts/fetch-helloao-cache.mjs` (committed — it's the repeatable, README-friendlier alternative to the manual localStorage flow for *adding* references):
   - Input: a screens.json path (arg 1, default `assets/data/screens.json`).
   - Collect all `reference` strings (same walk as the Jest test).
   - Parse book/chapter with a book-name→USFM-id table (copy the name list from `src/util/ScriptureUtils.ts` `allBookEnglishNames` plus the standard 66 USFM ids `GEN…REV`; alias `Psalm`→`PSA`).
   - For each unique `(bookId, chapter)` missing from `assets/data/bible.helloao.org/scripture.json` under `NET.verses[bookId][chapter]`, fetch `https://bible.helloao.org/api/eng_net/${bookId}/${chapter}.json`, map exactly like `BibleHelloAOApiService.mapChapterToVerseContentByVerseRef`: for content items with `type === 'verse'`, store `verses[bookId][chapter][number] = { verse: number, text: content.filter(l => typeof l === 'string' || 'text' in l).map(l => typeof l === 'string' ? l : l.text).join(' ') }`.
   - Append the chapter URL to `NET.urls` if absent; write the file back pretty-printed with 2-space indent (matching the existing file); log fetched/skipped counts. Sequential fetches with a 200 ms delay (politeness; helloao has no rate limit).
-- [ ] **Step 2:** Run against Wesley's content: `git show wesley-updates:assets/data/screens.json > "$SCRATCH/screens.wes.json" && node scripts/fetch-helloao-cache.mjs "$SCRATCH/screens.wes.json"`. Expected: fetches the chapters for Wesley's 92 refs not already cached; file grows; JSON valid. If network is blocked in this environment, STOP and ask TJ to run the command (or the README dev-server flow) — do not fake cache data.
-- [ ] **Step 3:** `npx jest screens-data` still passes (main's refs unaffected). Sanity-check one new entry (e.g. John 16:8) exists in the file.
-- [ ] **Step 4:** Commit: `feat: add scripted helloao cache fetcher; extend NET cache for new content`.
+- [x] **Step 2:** Run against Wesley's content: `git show wesley-updates:assets/data/screens.json > "$SCRATCH/screens.wes.json" && node scripts/fetch-helloao-cache.mjs "$SCRATCH/screens.wes.json"`. Expected: fetches the chapters for Wesley's 92 refs not already cached; file grows; JSON valid. If network is blocked in this environment, STOP and ask TJ to run the command (or the README dev-server flow) — do not fake cache data.
+- [x] **Step 3:** `npx jest screens-data` still passes (main's refs unaffected). Sanity-check one new entry (e.g. John 16:8) exists in the file.
+- [x] **Step 4:** Commit: `feat: add scripted helloao cache fetcher; extend NET cache for new content`.
 
 ### Task 4: QuestionPrompt content component
 
@@ -174,7 +174,7 @@ function referenceIsCached(reference: string, verses: any): boolean {
 - Modify: `src/components/contents/Contents.ts` (union + map)
 - Test: `__tests__/QuestionPrompt-test.tsx`
 
-- [ ] **Step 1: Write the failing test** (skip render assertions if Task 1 found the renderer baseline broken; keep the registration assertion either way):
+- [x] **Step 1: Write the failing test** (skip render assertions if Task 1 found the renderer baseline broken; keep the registration assertion either way):
 
 ```tsx
 import React from 'react';
@@ -193,8 +193,8 @@ it('renders its text without any touchable', () => {
 });
 ```
 
-- [ ] **Step 2:** `npx jest QuestionPrompt` → FAIL (module not found).
-- [ ] **Step 3: Implement.** Non-interactive emphasized box matching the `answer` BasicButton look (colors from the static `theme` for now; Plan 2 makes theming dynamic app-wide):
+- [x] **Step 2:** `npx jest QuestionPrompt` → FAIL (module not found).
+- [x] **Step 3: Implement.** Non-interactive emphasized box matching the `answer` BasicButton look (colors from the static `theme` for now; Plan 2 makes theming dynamic app-wide):
 
 ```tsx
 import React from 'react';
@@ -233,15 +233,15 @@ export const QuestionPrompt = ({ text }: Omit<QuestionPromptContentData, 'type'>
 ```
 
   In `Contents.ts`: import, add `QuestionPromptContentData` to the `ContentData` union, add `QuestionPrompt` to the `Contents` map, and add `'QuestionPrompt'` to `REGISTERED_CONTENT_TYPES` in `__tests__/screens-data-test.ts`.
-- [ ] **Step 4:** `npx jest QuestionPrompt screens-data` → PASS.
-- [ ] **Step 5:** Commit: `feat: add QuestionPrompt non-interactive content type`.
+- [x] **Step 4:** `npx jest QuestionPrompt screens-data` → PASS.
+- [x] **Step 5:** Commit: `feat: add QuestionPrompt non-interactive content type`.
 
 ### Task 5: ScriptureSlide `answerInSlide`
 
 **Files:**
 - Modify: `src/components/contents/ScriptureSlide.tsx`
 
-- [ ] **Step 1:** Extend `SlideScripture` and render an inline QuestionPrompt after the passage (before the toggle button block). In `ScriptureSlide.tsx`:
+- [x] **Step 1:** Extend `SlideScripture` and render an inline QuestionPrompt after the passage (before the toggle button block). In `ScriptureSlide.tsx`:
 
 ```ts
 type SlideScripture = Omit<ScrRangeDisplayContentData, 'type'> & {
@@ -262,8 +262,8 @@ type SlideScripture = Omit<ScrRangeDisplayContentData, 'type'> & {
       });
 ```
 
-- [ ] **Step 2:** TypeScript check: `npx tsc --noEmit` → no new errors (repo may have pre-existing ones; compare to baseline).
-- [ ] **Step 3:** Commit: `feat: support answerInSlide on ScriptureSlide scriptures`.
+- [x] **Step 2:** TypeScript check: `npx tsc --noEmit` → no new errors (repo may have pre-existing ones; compare to baseline).
+- [x] **Step 3:** Commit: `feat: support answerInSlide on ScriptureSlide scriptures`.
 
 ### Task 6: Text segments (through font resolution)
 
@@ -271,7 +271,7 @@ type SlideScripture = Omit<ScrRangeDisplayContentData, 'type'> & {
 - Modify: `src/components/contents/Text.tsx`
 - Test: `__tests__/Text-segments-test.tsx`
 
-- [ ] **Step 1: Failing test:**
+- [x] **Step 1: Failing test:**
 
 ```tsx
 import React from 'react';
@@ -296,8 +296,8 @@ it('renders segments as one flowing paragraph with per-span styles', () => {
 });
 ```
 
-- [ ] **Step 2:** Run → FAIL (`segments` prop rejected / not rendered).
-- [ ] **Step 3: Implement.** Add to `TextContentDataObject`:
+- [x] **Step 2:** Run → FAIL (`segments` prop rejected / not rendered).
+- [x] **Step 3: Implement.** Add to `TextContentDataObject`:
 
 ```ts
 /** Inline span of a segmented paragraph */
@@ -325,8 +325,8 @@ export type TextSegment = { text: string; style?: StyleProp<TextStyle> };
 ```
 
   (Recursion terminates: segments are plain text objects without `segments`.)
-- [ ] **Step 4:** Run → PASS.
-- [ ] **Step 5:** Commit: `feat: support inline styled segments in Text`.
+- [x] **Step 4:** Run → PASS.
+- [x] **Step 5:** Commit: `feat: support inline styled segments in Text`.
 
 ### Task 7: ToggleButton tap hints + BasicButton shadows
 
@@ -334,7 +334,7 @@ export type TextSegment = { text: string; style?: StyleProp<TextStyle> };
 - Modify: `src/components/contents/buttons/ToggleButton.tsx`, `src/components/contents/buttons/BasicButton.tsx`
 - Test: `__tests__/ToggleButton-hints-test.ts`
 
-- [ ] **Step 1: Failing test** for the pure hint helper:
+- [x] **Step 1: Failing test** for the pure hint helper:
 
 ```ts
 import { applyToggleHint } from '../src/components/contents/buttons/ToggleButton';
@@ -353,8 +353,8 @@ describe('applyToggleHint', () => {
 });
 ```
 
-- [ ] **Step 2:** Run → FAIL (no export).
-- [ ] **Step 3: Implement** in `ToggleButton.tsx` (replacing Wesley's inline version; no `revealedInitially` — it was never used):
+- [x] **Step 2:** Run → FAIL (no export).
+- [x] **Step 3: Implement** in `ToggleButton.tsx` (replacing Wesley's inline version; no `revealedInitially` — it was never used):
 
 ```ts
 /** Append the standard tap hint to a toggle label unless it already has one */
@@ -379,8 +379,8 @@ export function applyToggleHint(text: string, isRevealed: boolean): string {
 
   (`getTextDataObject` imported from `../Text`.)
   In `BasicButton.tsx`, add Wesley's platform shadows verbatim to both `navButton` design styles (`Platform.select` blocks with iOS shadow*, android `elevation: 4`/`3`, web `boxShadow`), importing `Platform` from react-native — take the exact values from `git show wesley-updates:src/components/contents/buttons/BasicButton.tsx`.
-- [ ] **Step 4:** `npx jest ToggleButton` → PASS.
-- [ ] **Step 5:** Commit: `feat: standard tap hints on ToggleButton; platform shadows on buttons`.
+- [x] **Step 4:** `npx jest ToggleButton` → PASS.
+- [x] **Step 5:** Commit: `feat: standard tap hints on ToggleButton; platform shadows on buttons`.
 
 ### Task 8: ScheduleTable
 
@@ -388,13 +388,13 @@ export function applyToggleHint(text: string, isRevealed: boolean): string {
 - Create: `src/components/contents/ScheduleTable.tsx` (from `git show wesley-updates:src/components/contents/ScheduleTable.tsx`)
 - Modify: `src/components/contents/Contents.ts`, `__tests__/screens-data-test.ts` (add type)
 
-- [ ] **Step 1:** Port Wesley's component with these changes:
+- [x] **Step 1:** Port Wesley's component with these changes:
   - Drop `useTheme`/`ThemeContext` (Plan 2): `import theme from '../../Theme';`, border color `theme.header.bottom` (existing divider color) instead of hardcoded `#1a1a1a`/`#8a8a8a`, `cellBg = theme.slide.background`, `textColor` from `theme.text.lineText`.
   - `ScheduleTableContentData` extends `ContentDataBase` (`type: 'ScheduleTable'`), remove unused `PropsWithNavigation` wrapper.
   - Keep the week-column RNText (`numberOfLines={1}`, `adjustsFontSizeToFit`) — it's a deliberate fit fix.
-- [ ] **Step 2:** Register in `Contents.ts` (union + map) and add `'ScheduleTable'` to the test's `REGISTERED_CONTENT_TYPES`.
-- [ ] **Step 3:** `npx tsc --noEmit` clean vs baseline; `npx jest screens-data` PASS.
-- [ ] **Step 4:** Commit: `feat: add ScheduleTable content type`.
+- [x] **Step 2:** Register in `Contents.ts` (union + map) and add `'ScheduleTable'` to the test's `REGISTERED_CONTENT_TYPES`.
+- [x] **Step 3:** `npx tsc --noEmit` clean vs baseline; `npx jest screens-data` PASS.
+- [x] **Step 4:** Commit: `feat: add ScheduleTable content type`.
 
 ### Task 9: Port screens.json (transform + verify)
 
@@ -402,19 +402,19 @@ export function applyToggleHint(text: string, isRevealed: boolean): string {
 - Modify: `assets/data/screens.json`
 - Scratch (not committed): `$SCRATCH/port-screens.mjs`
 
-- [ ] **Step 1:** Write the transform script. Inputs: Wesley's file (`git show wesley-updates:assets/data/screens.json`), main's current file (for attribution text). Rules, each logging a count:
+- [x] **Step 1:** Write the transform script. Inputs: Wesley's file (`git show wesley-updates:assets/data/screens.json`), main's current file (for attribution text). Rules, each logging a count:
   1. `version` → `"2.2.2"` (main's).
   2. Hierarchy: remove `Basics`, `Resources`, `About` from `Start Here`'s `subscreens` and insert them (same order) into `Home`'s `subscreens` after `Start Here`; rewrite Home's three navigate actions `"Start Here/Basics"`→`"Basics"`, `"Start Here/Resources"`→`"Resources"`, `"Start Here/About"`→`"About"`. Assert no other `action.to` in the whole file contains `"Start Here/Basics|Resources|About"`.
   3. Attribution: in the `About` screen contents, replace the string starting `"- Disciple-making content"` with main's exact string; replace the whole `Credits` subscreen node with main's `Home/About/Credits` node.
   4. Defer feature slides: remove from `About.contents` the slide whose `headerText` is `"Dark Mode"` (re-added in Plan 2) and the slide/button block for `"Reset Progress"` (re-added in Plan 3). Assert exactly one of each was removed.
   5. QuestionPrompt conversion: every `ToggleButton` whose `altButtons` all have text identical to its own → `{ type: 'QuestionPrompt', text }` (expect 44); every `BasicButton` without an `action` → `{ type: 'QuestionPrompt', text }` (expect 6).
   6. Write result over `assets/data/screens.json`, then `npx prettier --write assets/data/screens.json`.
-- [ ] **Step 2: Verify — semantic diff:** `node scripts/compare-screens.mjs "$SCRATCH/screens.wes.json" assets/data/screens.json`. Expected output accounts for EVERY difference: version change; the three moved sections flagged as moves with content identical; Home + Start Here + About contents changes (buttons/slides per rules 2–4); Credits attribution strings; QuestionPrompt conversions inside the 30-odd affected screens. Anything unexplained = STOP and fix.
-- [ ] **Step 3: Verify — invariants:** `node scripts/check-screens.mjs` → all pass (hierarchy now clean). `npx jest` → screens-data suite passes (all types registered, all refs cached).
-- [ ] **Step 4:** Commit: `feat: port Wesley's content overhaul (screens.json)` with a body summarizing the six deltas.
+- [x] **Step 2: Verify — semantic diff:** `node scripts/compare-screens.mjs "$SCRATCH/screens.wes.json" assets/data/screens.json`. Expected output accounts for EVERY difference: version change; the three moved sections flagged as moves with content identical; Home + Start Here + About contents changes (buttons/slides per rules 2–4); Credits attribution strings; QuestionPrompt conversions inside the 30-odd affected screens. Anything unexplained = STOP and fix.
+- [x] **Step 3: Verify — invariants:** `node scripts/check-screens.mjs` → all pass (hierarchy now clean). `npx jest` → screens-data suite passes (all types registered, all refs cached).
+- [x] **Step 4:** Commit: `feat: port Wesley's content overhaul (screens.json)` with a body summarizing the six deltas.
 
 ### Task 10: Smoke test & wrap-up
 
-- [ ] **Step 1:** `npm run web` (background), open the app; verify: Home shows Start Here/Basics/Resources/About; Resources → Sample Schedule renders the grid; a Prayer lesson slide shows italic+underline segment words; a converted reflection question renders as a non-tappable emphasized box; a ScriptureSlide with `answerInSlide` (Summary: Life in the Spirit) shows the inline answer; tap-to-reveal still works on a real Q&A slide; no console errors about screens/content types/scripture cache misses ("Did not find ___ in cache").
-- [ ] **Step 2:** Fix anything found (small fixes inline; if structural, add a task).
-- [ ] **Step 3:** Update the spec's plan section status; note Plans 2 & 3 remain. Commit any doc updates.
+- [x] **Step 1:** `npm run web` (background), open the app; verify: Home shows Start Here/Basics/Resources/About; Resources → Sample Schedule renders the grid; a Prayer lesson slide shows italic+underline segment words; a converted reflection question renders as a non-tappable emphasized box; a ScriptureSlide with `answerInSlide` (Summary: Life in the Spirit) shows the inline answer; tap-to-reveal still works on a real Q&A slide; no console errors about screens/content types/scripture cache misses ("Did not find ___ in cache").
+- [x] **Step 2:** Fix anything found (small fixes inline; if structural, add a task).
+- [x] **Step 3:** Update the spec's plan section status; note Plans 2 & 3 remain. Commit any doc updates.
