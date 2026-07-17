@@ -24,6 +24,7 @@ import { ScreenDataBase } from './Screens';
 import { getScreenData } from '../../services/ScreenService';
 import { ButtonList, ButtonListData } from '../contents/ButtonList';
 import TScrollView from '../TScrollView';
+import { NavigationButtons } from '../NavigationButtons';
 
 /** The data that defines the HeaderWithButtons screen */
 export type HeaderWithButtonsData = {
@@ -47,6 +48,7 @@ export const HeaderWithButtons = ({
         <Header {...headerData} />
         <ButtonList {...buttonListData} />
       </View>
+      <NavigationButtons />
     </TScrollView>
   );
 };

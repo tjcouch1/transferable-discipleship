@@ -535,7 +535,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "hideNavigationButtons": true
             },
             {
               "id": "WhyUseTD",
@@ -756,7 +757,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "hideNavigationButtons": true
             }
           ]
         },
@@ -1412,7 +1414,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "hideNavigationButtons": true
             },
             {
               "id": "Scripture 1.0",
@@ -1976,7 +1979,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "hideNavigationButtons": true
             },
             {
               "id": "Assurance of Salvation",
@@ -2399,7 +2403,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "hideNavigationButtons": true
             },
             {
               "id": "Holy Spirit",
@@ -3023,7 +3028,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "hideNavigationButtons": true
             },
             {
               "id": "Prayer",
@@ -3580,9 +3586,11 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "hideNavigationButtons": true
             }
-          ]
+          ],
+          "hideNavigationButtons": true
         },
         {
           "id": "Resources",

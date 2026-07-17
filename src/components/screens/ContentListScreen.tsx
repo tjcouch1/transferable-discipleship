@@ -23,6 +23,7 @@ import { ScreenDataBase } from './Screens';
 import { getScreenData } from '../../services/ScreenService';
 import { ContentData, Contents } from '../contents/Contents';
 import TScrollView from '../TScrollView';
+import { NavigationButtons } from '../NavigationButtons';
 import {
   ContentList,
   ContentListData,
@@ -55,6 +56,7 @@ export const ContentListScreen = ({
       )}
       contentInsetAdjustmentBehavior="automatic">
       <ContentList {...screenData} padTop={padTop} padBottom={padBottom} />
+      <NavigationButtons />
     </TScrollView>
   );
 };
