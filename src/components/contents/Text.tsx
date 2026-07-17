@@ -29,11 +29,19 @@ const DEFAULT_FONT_FAMILY = "OpenSauceOne";
 /** The base data that every text object must have. All text data object data types should extend TextDataObjectBase */
 export type TextDataObjectBase = { text: string };
 
+/** Inline span of a segmented paragraph */
+export type TextSegment = { text: string; style?: StyleProp<TextStyle> };
+
 /** Simple defining data for displaying text */
 export interface TextContentDataObject
   extends ContentDataBase,
     TextDataObjectBase {
   type: "Text";
+  /**
+   * When set, render one flowing paragraph of styled spans instead of `text`
+   * (set text: "" and put the paragraph in segments)
+   */
+  segments?: TextSegment[];
   design?: TextDesign;
   style?: StyleProp<TextStyle>;
 }
@@ -86,10 +94,24 @@ export const getTextDataObject = <T extends TextDataObjectBase | string>(
 };
 
 export const Text = (props: TextProps) => {
-  const { text, design, style, onPress } = {
+  const { text, segments, design, style, onPress } = {
     ...DEFAULT_PROPS,
     ...getTextDataObject(props),
   };
+
+  // Segmented paragraph: render each span through this same component so each
+  // gets the usual design and font resolution (including iOS bold/italic
+  // font-family baking below), nested so the paragraph flows as one text
+  if (segments && segments.length > 0) {
+    const designStyle = designStyles[design];
+    return (
+      <ReactText onPress={onPress} style={[designStyle.lineText, style]}>
+        {segments.map((segment, i) => (
+          <Text key={i} design={design} text={segment.text} style={[style, segment.style]} />
+        ))}
+      </ReactText>
+    );
+  }
 
   const designStyle = designStyles[design];
   let styles = [designStyle.lineText, style];
