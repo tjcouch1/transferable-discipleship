@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
-import theme from '../../Theme';
+import { useTheme } from '../../contexts/ThemeContext';
 // import type: avoids a runtime circular import (Contents.ts imports this file)
 import type { ContentDataBase } from './Contents';
 import { Text, TextData, getTextDataObject } from './Text';
@@ -35,10 +35,13 @@ export type QuestionPromptContentData = ContentDataBase & {
 };
 
 /** Props the QuestionPrompt needs to function */
-export interface QuestionPromptProps
-  extends Omit<QuestionPromptContentData, 'type'> {}
+export interface QuestionPromptProps extends Omit<
+  QuestionPromptContentData,
+  'type'
+> {}
 
 export const QuestionPrompt = ({ text, style }: QuestionPromptProps) => {
+  const { theme } = useTheme();
   const textObject = getTextDataObject(text);
   return (
     <View

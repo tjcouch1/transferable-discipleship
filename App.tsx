@@ -17,7 +17,7 @@
  */
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer, Route } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -26,7 +26,7 @@ import { Screens } from './src/components/screens/Screens';
 import WebWrapper from './src/components/WebWrapper';
 import ContentsModuleContext from './src/components/contents/ContentsContext';
 import * as ContentsModule from './src/components/contents/Contents';
-import theme from './src/Theme';
+import { ThemeProvider, useTheme } from './src/contexts/ThemeContext';
 import { isWeb } from './src/util/Util';
 import { preventAutoHideAsync, hideAsync } from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
@@ -37,10 +37,18 @@ const ROUTE_STACK_KEY = 'route-stack';
 preventAutoHideAsync();
 
 export default function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
+}
+
+function AppContent() {
+  const { theme, isDark } = useTheme();
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? 'black' : 'white',
+    backgroundColor: theme.app.background,
   };
 
   const Stack = useMemo(() => createNativeStackNavigator(), []);
@@ -116,7 +124,7 @@ export default function App() {
                   : undefined
               }>
               <StatusBar
-                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                barStyle={isDark ? 'light-content' : 'dark-content'}
                 backgroundColor={backgroundStyle.backgroundColor}
               />
               <Stack.Navigator

@@ -117,3 +117,25 @@ export const createDesignStyleSheets = <
 
   return designStyleSheets;
 };
+
+/**
+ * Memoize a theme-dependent style factory by theme object (one entry per
+ * theme mode). Use with useTheme():
+ *
+ *   const getDesignStyles = themedStyles(theme => createDesignStyleSheets({...}, {...}));
+ *   // in the component:
+ *   const designStyles = getDesignStyles(useTheme().theme);
+ */
+export function themedStyles<TTheme extends object, TStyles>(
+  factory: (theme: TTheme) => TStyles,
+): (theme: TTheme) => TStyles {
+  const cache = new WeakMap<TTheme, TStyles>();
+  return theme => {
+    let styles = cache.get(theme);
+    if (!styles) {
+      styles = factory(theme);
+      cache.set(theme, styles);
+    }
+    return styles;
+  };
+}

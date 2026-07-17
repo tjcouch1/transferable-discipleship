@@ -18,7 +18,9 @@
 
 import React from 'react';
 import { StyleSheet, Text as RNText, View } from 'react-native';
-import theme from '../../Theme';
+import { Colors } from '../../Theme';
+import { useTheme } from '../../contexts/ThemeContext';
+import { themedStyles } from '../../util/DesignStyleSheets';
 // import type: avoids a runtime circular import (Contents.ts imports this file)
 import type { ContentDataBase } from './Contents';
 import { Text } from './Text';
@@ -44,8 +46,10 @@ export type ScheduleTableContentData = ContentDataBase & {
 };
 
 /** Props the ScheduleTable needs to function */
-export interface ScheduleTableProps
-  extends Omit<ScheduleTableContentData, 'type'> {}
+export interface ScheduleTableProps extends Omit<
+  ScheduleTableContentData,
+  'type'
+> {}
 
 function asCell(value: string | ScheduleCell): ScheduleCell {
   return typeof value === 'string' ? { text: value } : value;
@@ -54,6 +58,7 @@ function asCell(value: string | ScheduleCell): ScheduleCell {
 type Column = 'week' | 'focus' | 'notes';
 
 export const ScheduleTable = ({ headers, rows }: ScheduleTableProps) => {
+  const styles = getStyles(useTheme().theme);
   const renderCell = (
     value: string | ScheduleCell,
     column: Column,
@@ -104,47 +109,49 @@ export const ScheduleTable = ({ headers, rows }: ScheduleTableProps) => {
   );
 };
 
-const styles = StyleSheet.create({
-  table: {
-    alignSelf: 'stretch',
-    marginHorizontal: 2,
-    borderLeftWidth: 1,
-    borderTopWidth: 1,
-    borderColor: theme.slide.bottom,
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'stretch',
-  },
-  cell: {
-    borderRightWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: theme.slide.bottom,
-    backgroundColor: theme.slide.background,
-    paddingVertical: 8,
-    paddingHorizontal: 6,
-    justifyContent: 'center',
-    minHeight: 40,
-  },
-  cellText: {
-    fontSize: 14,
-    lineHeight: 20,
-    color: theme.text.lineText,
-  },
-  weekText: {
-    fontFamily: 'OpenSauceOne',
-    width: '100%',
-  },
-  textCentered: {
-    textAlign: 'center',
-  },
-  bold: {
-    fontWeight: '700',
-  },
-  italic: {
-    fontStyle: 'italic',
-  },
-});
+const getStyles = themedStyles((theme: Colors) =>
+  StyleSheet.create({
+    table: {
+      alignSelf: 'stretch',
+      marginHorizontal: 2,
+      borderLeftWidth: 1,
+      borderTopWidth: 1,
+      borderColor: theme.slide.bottom,
+    },
+    row: {
+      flexDirection: 'row',
+      alignItems: 'stretch',
+    },
+    cell: {
+      borderRightWidth: 1,
+      borderBottomWidth: 1,
+      borderColor: theme.slide.bottom,
+      backgroundColor: theme.slide.background,
+      paddingVertical: 8,
+      paddingHorizontal: 6,
+      justifyContent: 'center',
+      minHeight: 40,
+    },
+    cellText: {
+      fontSize: 14,
+      lineHeight: 20,
+      color: theme.text.lineText,
+    },
+    weekText: {
+      fontFamily: 'OpenSauceOne',
+      width: '100%',
+    },
+    textCentered: {
+      textAlign: 'center',
+    },
+    bold: {
+      fontWeight: '700',
+    },
+    italic: {
+      fontStyle: 'italic',
+    },
+  }),
+);
 
 const columnStyles = StyleSheet.create({
   week: {

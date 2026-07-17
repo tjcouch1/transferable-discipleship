@@ -18,8 +18,12 @@
 
 import React from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
-import theme from '../../Theme';
-import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
+import { Colors } from '../../Theme';
+import { useTheme } from '../../contexts/ThemeContext';
+import {
+  createDesignStyleSheets,
+  themedStyles,
+} from '../../util/DesignStyleSheets';
 import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
 import { SubheaderText, SubheaderTextData } from './SubheaderText';
@@ -52,7 +56,7 @@ export const Header = ({
   design = 'screen',
   style,
 }: HeaderProps) => {
-  const designStyle = designStyles[design];
+  const designStyle = getDesignStyles(useTheme().theme)[design];
   const headerTextObject = getTextDataObject(headerText);
   const subheaderTextObject = subheaderText
     ? getTextDataObject(subheaderText)
@@ -83,48 +87,50 @@ export const Header = ({
   );
 };
 
-const designStyles = createDesignStyleSheets(
-  {
-    headerView: {
-      paddingTop: 60,
-      paddingBottom: 40,
-      backgroundColor: theme.header.background,
-      paddingHorizontal: 15,
-      width: '100%',
-      borderBottomWidth: 10,
-      borderBottomColor: theme.header.bottom,
-    },
-    headerText: {
-      textAlign: 'center',
-      color: theme.header.headerText,
-    },
-    subheaderText: {
-      marginTop: 5,
-      textAlign: 'center',
-      color: theme.header.subheaderText,
-    },
-    lineText: {
-      marginTop: 20,
-      textAlign: 'center',
-      color: theme.header.lineText,
-    },
-  },
-  {
-    screen: {
+const getDesignStyles = themedStyles((theme: Colors) =>
+  createDesignStyleSheets(
+    {
       headerView: {
-        paddingTop: 15,
-        paddingBottom: 15,
+        paddingTop: 60,
+        paddingBottom: 40,
+        backgroundColor: theme.header.background,
+        paddingHorizontal: 15,
+        width: '100%',
+        borderBottomWidth: 10,
+        borderBottomColor: theme.header.bottom,
       },
       headerText: {
-        fontWeight: '700',
-        fontSize: 25,
+        textAlign: 'center',
+        color: theme.header.headerText,
+      },
+      subheaderText: {
+        marginTop: 5,
+        textAlign: 'center',
+        color: theme.header.subheaderText,
+      },
+      lineText: {
+        marginTop: 20,
+        textAlign: 'center',
+        color: theme.header.lineText,
       },
     },
-    section: {
-      extends: ['screen'],
-      headerView: {
-        width: '90%',
+    {
+      screen: {
+        headerView: {
+          paddingTop: 15,
+          paddingBottom: 15,
+        },
+        headerText: {
+          fontWeight: '700',
+          fontSize: 25,
+        },
+      },
+      section: {
+        extends: ['screen'],
+        headerView: {
+          width: '90%',
+        },
       },
     },
-  },
+  ),
 );

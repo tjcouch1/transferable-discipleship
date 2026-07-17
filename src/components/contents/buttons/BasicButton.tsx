@@ -17,9 +17,17 @@
  */
 
 import React, { ReactNode } from 'react';
-import { TouchableOpacity, GestureResponderEvent, Platform } from 'react-native';
-import theme from '../../../Theme';
-import { createDesignStyleSheets } from '../../../util/DesignStyleSheets';
+import {
+  TouchableOpacity,
+  GestureResponderEvent,
+  Platform,
+} from 'react-native';
+import { Colors } from '../../../Theme';
+import { useTheme } from '../../../contexts/ThemeContext';
+import {
+  createDesignStyleSheets,
+  themedStyles,
+} from '../../../util/DesignStyleSheets';
 import { Text, TextData, getTextDataObject } from '../Text';
 import { ButtonDataBase } from './Buttons';
 
@@ -43,7 +51,7 @@ export const BasicButton = ({
   text = {} as TextData,
   children,
 }: BasicButtonProps) => {
-  const designStyle = designStyles[design];
+  const designStyle = getDesignStyles(useTheme().theme)[design];
   const textObject = getTextDataObject(text);
 
   return (
@@ -60,60 +68,62 @@ export const BasicButton = ({
   );
 };
 
-const designStyles = createDesignStyleSheets(
-  {
-    navButton: {
-      backgroundColor: theme.button.background,
-      padding: 12,
-      borderRadius: 12,
-      width: '75%',
-      ...Platform.select({
-        ios: {
-          shadowColor: '#000',
-          shadowOffset: { width: 0, height: 2 },
-          shadowOpacity: 0.2,
-          shadowRadius: 4,
-        },
-        android: {
-          elevation: 4,
-        },
-        web: {
-          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-        },
-      }),
-    },
-    navButtonText: {
-      color: theme.button.text,
-      fontSize: 22,
-      textAlign: 'center',
-    },
-  },
-  {
-    answer: {
+const getDesignStyles = themedStyles((theme: Colors) =>
+  createDesignStyleSheets(
+    {
       navButton: {
-        backgroundColor: theme.button.backgroundAnswer,
-        padding: 10,
-        borderRadius: 6,
-        width: 'auto',
+        backgroundColor: theme.button.background,
+        padding: 12,
+        borderRadius: 12,
+        width: '75%',
         ...Platform.select({
           ios: {
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 2 },
             shadowOpacity: 0.2,
-            shadowRadius: 3,
+            shadowRadius: 4,
           },
           android: {
-            elevation: 3,
+            elevation: 4,
           },
           web: {
-            boxShadow: '0 2px 3px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
           },
         }),
       },
       navButtonText: {
-        color: theme.button.textAnswer,
-        fontSize: 17,
+        color: theme.button.text,
+        fontSize: 22,
+        textAlign: 'center',
       },
     },
-  },
+    {
+      answer: {
+        navButton: {
+          backgroundColor: theme.button.backgroundAnswer,
+          padding: 10,
+          borderRadius: 6,
+          width: 'auto',
+          ...Platform.select({
+            ios: {
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 2 },
+              shadowOpacity: 0.2,
+              shadowRadius: 3,
+            },
+            android: {
+              elevation: 3,
+            },
+            web: {
+              boxShadow: '0 2px 3px rgba(0, 0, 0, 0.2)',
+            },
+          }),
+        },
+        navButtonText: {
+          color: theme.button.textAnswer,
+          fontSize: 17,
+        },
+      },
+    },
+  ),
 );

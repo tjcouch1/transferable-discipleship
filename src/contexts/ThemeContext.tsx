@@ -40,7 +40,14 @@ type ThemeContextValue = {
   setMode: (mode: ThemeMode) => void;
 };
 
-const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
+// Default value so components render (light) even outside a provider —
+// e.g. in tests. The app mounts ThemeProvider at the root.
+const ThemeContext = createContext<ThemeContextValue>({
+  theme: getTheme('light'),
+  mode: 'light',
+  isDark: false,
+  setMode: () => {},
+});
 
 /**
  * Provides the active theme. Starts from the OS color scheme; a saved user
@@ -82,9 +89,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
   );
 };
 
-/** Get the active theme. Must be used under ThemeProvider. */
+/** Get the active theme (light outside a ThemeProvider) */
 export function useTheme(): ThemeContextValue {
-  const context = useContext(ThemeContext);
-  if (!context) throw new Error('useTheme must be used within ThemeProvider');
-  return context;
+  return useContext(ThemeContext);
 }
