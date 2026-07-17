@@ -19,7 +19,8 @@
 import React from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import theme from '../../Theme';
-import { ContentDataBase } from './Contents';
+// import type: avoids a runtime circular import (Contents.ts imports this file)
+import type { ContentDataBase } from './Contents';
 import { Text, TextData, getTextDataObject } from './Text';
 
 /**
