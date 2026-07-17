@@ -4591,6 +4591,21 @@
             {
               "type": "Slide",
               "headerText": {
+                "text": "Dark Mode",
+                "style": {
+                  "color": "#9c9fa1"
+                }
+              },
+              "contentDesign": "tight",
+              "contents": [
+                {
+                  "type": "DarkModeToggle"
+                }
+              ]
+            },
+            {
+              "type": "Slide",
+              "headerText": {
                 "text": "Feedback?",
                 "style": {
                   "color": "#9c9fa1"

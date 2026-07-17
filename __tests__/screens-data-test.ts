@@ -29,6 +29,7 @@ const REGISTERED_CONTENT_TYPES = new Set([
   'ScrRangeDisplay',
   'QuestionPrompt',
   'ScheduleTable',
+  'DarkModeToggle',
   'Image',
 ]);
 const REGISTERED_SCREEN_TYPES = new Set(['ContentListScreen', 'HeaderWithButtons']);

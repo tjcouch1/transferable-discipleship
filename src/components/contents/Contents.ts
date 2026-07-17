@@ -23,6 +23,7 @@ import { ButtonData, Buttons } from './buttons/Buttons';
 import { ContentList, ContentListContentData } from './ContentList';
 import { Header, HeaderContentData } from './Header';
 import { HeaderText, HeaderTextContentData } from './HeaderText';
+import { DarkModeToggle, DarkModeToggleContentData } from './DarkModeToggle';
 import { QuestionPrompt, QuestionPromptContentData } from './QuestionPrompt';
 import { ScheduleTable, ScheduleTableContentData } from './ScheduleTable';
 import { ScriptureSlide, ScriptureSlideContentData } from './ScriptureSlide';
@@ -48,6 +49,7 @@ export type ContentData =
   | ScrRangeDisplayContentData
   | QuestionPromptContentData
   | ScheduleTableContentData
+  | DarkModeToggleContentData
   | ImageContentData;
 
 /** All content types available. Content is a component that does various things */
@@ -75,6 +77,7 @@ export const Contents: {
   ScrRangeDisplay,
   QuestionPrompt,
   ScheduleTable,
+  DarkModeToggle,
   Image,
 };
 
