@@ -83,7 +83,9 @@
       "https://bible.helloao.org/api/eng_net/PSA/19.json",
       "https://bible.helloao.org/api/eng_net/PSA/119.json",
       "https://bible.helloao.org/api/eng_net/PSA/1.json",
-      "https://bible.helloao.org/api/eng_net/PSA/40.json"
+      "https://bible.helloao.org/api/eng_net/PSA/40.json",
+      "https://bible.helloao.org/api/eng_net/JHN/6.json",
+      "https://bible.helloao.org/api/eng_net/COL/2.json"
     ],
     "verses": {
       "MAT": {
@@ -5299,6 +5301,292 @@
             "text": "Jesus did this as his second miraculous sign when he returned from Judea to Galilee."
           }
         },
+        "6": {
+          "1": {
+            "verse": 1,
+            "text": "After this Jesus went away to the other side of the Sea of Galilee (also called the Sea of Tiberias)."
+          },
+          "2": {
+            "verse": 2,
+            "text": "A large crowd was following him because they were observing the miraculous signs he was performing on the sick."
+          },
+          "3": {
+            "verse": 3,
+            "text": "So Jesus went on up the mountainside and sat down there with his disciples."
+          },
+          "4": {
+            "verse": 4,
+            "text": "(Now the Jewish feast of the Passover was near.)"
+          },
+          "5": {
+            "verse": 5,
+            "text": "Then Jesus, when he looked up and saw that a large crowd was coming to him, said to Philip, “Where can we buy bread so that these people may eat?”"
+          },
+          "6": {
+            "verse": 6,
+            "text": "(Now Jesus said this to test him, for he knew what he was going to do.)"
+          },
+          "7": {
+            "verse": 7,
+            "text": "Philip replied, “Two hundred silver coins worth of bread would not be enough for them, for each one to get a little.”"
+          },
+          "8": {
+            "verse": 8,
+            "text": "One of Jesus’ disciples, Andrew, Simon Peter’s brother, said to him,"
+          },
+          "9": {
+            "verse": 9,
+            "text": "“Here is a boy who has five barley loaves and two fish, but what good are these for so many people?”"
+          },
+          "10": {
+            "verse": 10,
+            "text": "Jesus said, “Have the people sit down.” (Now there was a lot of grass in that place.) So the men sat down, about five thousand in number."
+          },
+          "11": {
+            "verse": 11,
+            "text": "Then Jesus took the loaves, and when he had given thanks, he distributed the bread to those who were seated. He then did the same with the fish, as much as they wanted."
+          },
+          "12": {
+            "verse": 12,
+            "text": "When they were all satisfied, Jesus said to his disciples, “Gather up the broken pieces that are left over, so that nothing is wasted.”"
+          },
+          "13": {
+            "verse": 13,
+            "text": "So they gathered them up and filled twelve baskets with broken pieces from the five barley loaves left over by the people who had eaten."
+          },
+          "14": {
+            "verse": 14,
+            "text": "Now when the people saw the miraculous sign that Jesus performed, they began to say to one another, “This is certainly the Prophet who is to come into the world.”"
+          },
+          "15": {
+            "verse": 15,
+            "text": "Then Jesus, because he knew they were going to come and seize him by force to make him king, withdrew again up the mountainside alone."
+          },
+          "16": {
+            "verse": 16,
+            "text": "Now when evening came, his disciples went down to the lake,"
+          },
+          "17": {
+            "verse": 17,
+            "text": "got into a boat, and started to cross the lake to Capernaum. (It had already become dark, and Jesus had not yet come to them.)"
+          },
+          "18": {
+            "verse": 18,
+            "text": "By now a strong wind was blowing and the sea was getting rough."
+          },
+          "19": {
+            "verse": 19,
+            "text": "Then, when they had rowed about three or four miles, they caught sight of Jesus walking on the lake, approaching the boat, and they were frightened."
+          },
+          "20": {
+            "verse": 20,
+            "text": "But he said to them, “It is I. Do not be afraid.”"
+          },
+          "21": {
+            "verse": 21,
+            "text": "Then they wanted to take him into the boat, and immediately the boat came to the land where they had been heading."
+          },
+          "22": {
+            "verse": 22,
+            "text": "The next day the crowd that remained on the other side of the lake realized that only one small boat had been there, and that Jesus had not boarded it with his disciples, but that his disciples had gone away alone."
+          },
+          "23": {
+            "verse": 23,
+            "text": "But some boats from Tiberias came to shore near the place where they had eaten the bread after the Lord had given thanks."
+          },
+          "24": {
+            "verse": 24,
+            "text": "So when the crowd realized that neither Jesus nor his disciples were there, they got into the boats and came to Capernaum looking for Jesus."
+          },
+          "25": {
+            "verse": 25,
+            "text": "When they found him on the other side of the lake, they said to him, “Rabbi, when did you get here?”"
+          },
+          "26": {
+            "verse": 26,
+            "text": "Jesus replied, “I tell you the solemn truth, you are looking for me not because you saw miraculous signs, but because you ate all the loaves of bread you wanted."
+          },
+          "27": {
+            "verse": 27,
+            "text": "Do not work for the food that disappears, but for the food that remains to eternal life – the food which the Son of Man will give to you. For God the Father has put his seal of approval on him.”"
+          },
+          "28": {
+            "verse": 28,
+            "text": "So then they said to him, “What must we do to accomplish the deeds God requires?”"
+          },
+          "29": {
+            "verse": 29,
+            "text": "Jesus replied, “This is the deed God requires – to believe in the one whom he sent.”"
+          },
+          "30": {
+            "verse": 30,
+            "text": "So they said to him, “Then what miraculous sign will you perform, so that we may see it and believe you? What will you do?"
+          },
+          "31": {
+            "verse": 31,
+            "text": "Our ancestors ate the manna in the wilderness, just as it is written, ‘He gave them bread from heaven to eat.’”"
+          },
+          "32": {
+            "verse": 32,
+            "text": "Then Jesus told them, “I tell you the solemn truth, it is not Moses who has given you the bread from heaven, but my Father is giving you the true bread from heaven."
+          },
+          "33": {
+            "verse": 33,
+            "text": "For the bread of God is the one who comes down from heaven and gives life to the world.”"
+          },
+          "34": {
+            "verse": 34,
+            "text": "So they said to him, “Sir, give us this bread all the time!”"
+          },
+          "35": {
+            "verse": 35,
+            "text": "Jesus said to them, “I am the bread of life. The one who comes to me will never go hungry, and the one who believes in me will never be thirsty."
+          },
+          "36": {
+            "verse": 36,
+            "text": "But I told you that you have seen me and still do not believe."
+          },
+          "37": {
+            "verse": 37,
+            "text": "Everyone whom the Father gives me will come to me, and the one who comes to me I will never send away."
+          },
+          "38": {
+            "verse": 38,
+            "text": "For I have come down from heaven not to do my own will but the will of the one who sent me."
+          },
+          "39": {
+            "verse": 39,
+            "text": "Now this is the will of the one who sent me – that I should not lose one person of every one he has given me, but raise them all up at the last day."
+          },
+          "40": {
+            "verse": 40,
+            "text": "For this is the will of my Father – for everyone who looks on the Son and believes in him to have eternal life, and I will raise him up at the last day.”"
+          },
+          "41": {
+            "verse": 41,
+            "text": "Then the Jews who were hostile to Jesus began complaining about him because he said, “I am the bread that came down from heaven,”"
+          },
+          "42": {
+            "verse": 42,
+            "text": "and they said, “Isn’t this Jesus the son of Joseph, whose father and mother we know? How can he now say, ‘I have come down from heaven’?”"
+          },
+          "43": {
+            "verse": 43,
+            "text": "Jesus replied, “Do not complain about me to one another."
+          },
+          "44": {
+            "verse": 44,
+            "text": "No one can come to me unless the Father who sent me draws him, and I will raise him up at the last day."
+          },
+          "45": {
+            "verse": 45,
+            "text": "It is written in the prophets, ‘And they will all be taught by God.’ Everyone who hears and learns from the Father comes to me."
+          },
+          "46": {
+            "verse": 46,
+            "text": "(Not that anyone has seen the Father except the one who is from God – he has seen the Father.)"
+          },
+          "47": {
+            "verse": 47,
+            "text": "I tell you the solemn truth, the one who believes has eternal life."
+          },
+          "48": {
+            "verse": 48,
+            "text": "I am the bread of life."
+          },
+          "49": {
+            "verse": 49,
+            "text": "Your ancestors ate the manna in the wilderness, and they died."
+          },
+          "50": {
+            "verse": 50,
+            "text": "This is the bread that has come down from heaven, so that a person may eat from it and not die."
+          },
+          "51": {
+            "verse": 51,
+            "text": "I am the living bread that came down from heaven. If anyone eats from this bread he will live forever. The bread that I will give for the life of the world is my flesh.”"
+          },
+          "52": {
+            "verse": 52,
+            "text": "Then the Jews who were hostile to Jesus began to argue with one another, “How can this man give us his flesh to eat?”"
+          },
+          "53": {
+            "verse": 53,
+            "text": "Jesus said to them, “I tell you the solemn truth, unless you eat the flesh of the Son of Man and drink his blood, you have no life in yourselves."
+          },
+          "54": {
+            "verse": 54,
+            "text": "The one who eats my flesh and drinks my blood has eternal life, and I will raise him up on the last day."
+          },
+          "55": {
+            "verse": 55,
+            "text": "For my flesh is true food, and my blood is true drink."
+          },
+          "56": {
+            "verse": 56,
+            "text": "The one who eats my flesh and drinks my blood resides in me, and I in him."
+          },
+          "57": {
+            "verse": 57,
+            "text": "Just as the living Father sent me, and I live because of the Father, so the one who consumes me will live because of me."
+          },
+          "58": {
+            "verse": 58,
+            "text": "This is the bread that came down from heaven; it is not like the bread your ancestors ate, but then later died. The one who eats this bread will live forever.”"
+          },
+          "59": {
+            "verse": 59,
+            "text": "Jesus said these things while he was teaching in the synagogue in Capernaum."
+          },
+          "60": {
+            "verse": 60,
+            "text": "Then many of his disciples, when they heard these things, said, “This is a difficult saying! Who can understand it?”"
+          },
+          "61": {
+            "verse": 61,
+            "text": "When Jesus was aware that his disciples were complaining about this, he said to them, “Does this cause you to be offended?"
+          },
+          "62": {
+            "verse": 62,
+            "text": "Then what if you see the Son of Man ascending where he was before?"
+          },
+          "63": {
+            "verse": 63,
+            "text": "The Spirit is the one who gives life; human nature is of no help! The words that I have spoken to you are spirit and are life."
+          },
+          "64": {
+            "verse": 64,
+            "text": "But there are some of you who do not believe.” (For Jesus had already known from the beginning who those were who did not believe, and who it was who would betray him.)"
+          },
+          "65": {
+            "verse": 65,
+            "text": "So Jesus added, “Because of this I told you that no one can come to me unless the Father has allowed him to come.”"
+          },
+          "66": {
+            "verse": 66,
+            "text": "After this many of his disciples quit following him and did not accompany him any longer."
+          },
+          "67": {
+            "verse": 67,
+            "text": "So Jesus said to the twelve, “You don’t want to go away too, do you?”"
+          },
+          "68": {
+            "verse": 68,
+            "text": "Simon Peter answered him, “Lord, to whom would we go? You have the words of eternal life."
+          },
+          "69": {
+            "verse": 69,
+            "text": "We have come to believe and to know that you are the Holy One of God!”"
+          },
+          "70": {
+            "verse": 70,
+            "text": "Jesus replied, “Didn’t I choose you, the twelve, and yet one of you is the devil?”"
+          },
+          "71": {
+            "verse": 71,
+            "text": "(Now he said this about Judas son of Simon Iscariot, for Judas, one of the twelve, was going to betray him.)"
+          }
+        },
         "8": {
           "1": {
             "verse": 1,
@@ -10049,6 +10337,102 @@
           "176": {
             "verse": 176,
             "text": "I have wandered off like a lost sheep. Come looking for your servant, for I do not forget your commands."
+          }
+        }
+      },
+      "COL": {
+        "2": {
+          "1": {
+            "verse": 1,
+            "text": "For I want you to know how great a struggle I have for you, and for those in Laodicea, and for those who have not met me face to face."
+          },
+          "2": {
+            "verse": 2,
+            "text": "My goal is that their hearts, having been knit together in love, may be encouraged, and that they may have all the riches that assurance brings in their understanding of the knowledge of the mystery of God, namely, Christ,"
+          },
+          "3": {
+            "verse": 3,
+            "text": "in whom are hidden all the treasures of wisdom and knowledge."
+          },
+          "4": {
+            "verse": 4,
+            "text": "I say this so that no one will deceive you through arguments that sound reasonable."
+          },
+          "5": {
+            "verse": 5,
+            "text": "For though I am absent from you in body, I am present with you in spirit, rejoicing to see your morale and the firmness of your faith in Christ."
+          },
+          "6": {
+            "verse": 6,
+            "text": "Therefore, just as you received Christ Jesus as Lord, continue to live your lives in him,"
+          },
+          "7": {
+            "verse": 7,
+            "text": "rooted and built up in him and firm in your faith just as you were taught, and overflowing with thankfulness."
+          },
+          "8": {
+            "verse": 8,
+            "text": "Be careful not to allow anyone to captivate you through an empty, deceitful philosophy that is according to human traditions and the elemental spirits of the world, and not according to Christ."
+          },
+          "9": {
+            "verse": 9,
+            "text": "For in him all the fullness of deity lives in bodily form,"
+          },
+          "10": {
+            "verse": 10,
+            "text": "and you have been filled in him, who is the head over every ruler and authority."
+          },
+          "11": {
+            "verse": 11,
+            "text": "In him you also were circumcised – not, however, with a circumcision performed by human hands, but by the removal of the fleshly body, that is, through the circumcision done by Christ."
+          },
+          "12": {
+            "verse": 12,
+            "text": "Having been buried with him in baptism, you also have been raised with him through your faith in the power of God who raised him from the dead."
+          },
+          "13": {
+            "verse": 13,
+            "text": "And even though you were dead in your transgressions and in the uncircumcision of your flesh, he nevertheless made you alive with him, having forgiven all your transgressions."
+          },
+          "14": {
+            "verse": 14,
+            "text": "He has destroyed what was against us, a certificate of indebtedness expressed in decrees opposed to us. He has taken it away by nailing it to the cross."
+          },
+          "15": {
+            "verse": 15,
+            "text": "Disarming the rulers and authorities, he has made a public disgrace of them, triumphing over them by the cross."
+          },
+          "16": {
+            "verse": 16,
+            "text": "Therefore do not let anyone judge you with respect to food or drink, or in the matter of a feast, new moon, or Sabbath days –"
+          },
+          "17": {
+            "verse": 17,
+            "text": "these are only the shadow of the things to come, but the reality is Christ!"
+          },
+          "18": {
+            "verse": 18,
+            "text": "Let no one who delights in humility and the worship of angels pass judgment on you. That person goes on at great lengths about what he has supposedly seen, but he is puffed up with empty notions by his fleshly mind."
+          },
+          "19": {
+            "verse": 19,
+            "text": "He has not held fast to the head from whom the whole body, supported and knit together through its ligaments and sinews, grows with a growth that is from God."
+          },
+          "20": {
+            "verse": 20,
+            "text": "If you have died with Christ to the elemental spirits of the world, why do you submit to them as though you lived in the world?"
+          },
+          "21": {
+            "verse": 21,
+            "text": "“Do not handle! Do not taste! Do not touch!”"
+          },
+          "22": {
+            "verse": 22,
+            "text": "These are all destined to perish with use, founded as they are on human commands and teachings."
+          },
+          "23": {
+            "verse": 23,
+            "text": "Even though they have the appearance of wisdom with their self-imposed worship and false humility achieved by an unsparing treatment of the body – a wisdom with no true value – they in reality result in fleshly indulgence."
           }
         }
       }
