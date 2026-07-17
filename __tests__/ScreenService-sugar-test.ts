@@ -20,7 +20,7 @@ it('leaves no sugar types anywhere in the loaded screen map', () => {
           ([key, v]) => key !== 'subscreens' && walk(v),
         );
       }
-    })(screen.contents);
+    })((screen as any).contents);
   }
   expect(sugarTypes).toEqual([]);
 });
