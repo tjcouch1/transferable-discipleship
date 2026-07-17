@@ -27,6 +27,7 @@ import WebWrapper from './src/components/WebWrapper';
 import ContentsModuleContext from './src/components/contents/ContentsContext';
 import * as ContentsModule from './src/components/contents/Contents';
 import { ThemeProvider, useTheme } from './src/contexts/ThemeContext';
+import { ProgressProvider } from './src/contexts/ProgressContext';
 import { isWeb } from './src/util/Util';
 import { preventAutoHideAsync, hideAsync } from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
@@ -39,7 +40,9 @@ preventAutoHideAsync();
 export default function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <ProgressProvider>
+        <AppContent />
+      </ProgressProvider>
     </ThemeProvider>
   );
 }
