@@ -19,27 +19,27 @@
 import React from 'react';
 import {
   StyleSheet,
-  Text as ReactText,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { useTheme } from '../contexts/ThemeContext';
 import { getSiblingScreenPath } from '../services/NavigationService';
 import { getAppScreens } from '../services/ScreenService';
+import { BasicButton } from './contents/buttons/BasicButton';
 
 /**
  * Previous/Next sibling-screen navigation shown at the bottom of content
- * screens. Hidden on screens with `hideNavigationButtons` (e.g. section menus)
- * and on ends without a sibling.
+ * screens. Only shown on leaf screens (no children) that have a sibling.
  */
 export const NavigationButtons = () => {
   const navigation = useNavigation<any>();
   const route = useRoute();
-  const { theme } = useTheme();
 
   const screen = getAppScreens().screens.get(route.name);
-  if (!screen || screen.hideNavigationButtons) return null;
+  if (!screen) return null;
+
+  // A screen is a leaf if it doesn't have child subscreens
+  const isLeaf = !screen.subscreens || screen.subscreens.length === 0;
+  if (!isLeaf) return null;
 
   const previousPath = getSiblingScreenPath(route.name, -1);
   const nextPath = getSiblingScreenPath(route.name, 1);
@@ -47,25 +47,25 @@ export const NavigationButtons = () => {
 
   const go = (path: string) => navigation.navigate(path);
 
-  const linkColor = theme.slide.headerText;
-
   return (
     <View style={styles.row}>
       {previousPath ? (
-        <TouchableOpacity onPress={() => go(previousPath)}>
-          <ReactText style={[styles.link, { color: linkColor }]}>
-            ← Previous
-          </ReactText>
-        </TouchableOpacity>
+        <BasicButton
+          type="BasicButton"
+          design="navigation"
+          text={{ text: '← Previous' }}
+          onPress={() => go(previousPath)}
+        />
       ) : (
         <View />
       )}
       {nextPath ? (
-        <TouchableOpacity onPress={() => go(nextPath)}>
-          <ReactText style={[styles.link, { color: linkColor }]}>
-            Next →
-          </ReactText>
-        </TouchableOpacity>
+        <BasicButton
+          type="BasicButton"
+          design="navigation"
+          text={{ text: 'Next →' }}
+          onPress={() => go(nextPath)}
+        />
       ) : (
         <View />
       )}
@@ -80,9 +80,5 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     paddingHorizontal: 20,
     paddingVertical: 12,
-  },
-  link: {
-    fontSize: 17,
-    fontWeight: '600',
   },
 });

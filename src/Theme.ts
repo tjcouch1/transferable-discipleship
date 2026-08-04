@@ -47,6 +47,8 @@ export type Colors = {
     text: string;
     backgroundAnswer: string;
     textAnswer: string;
+    backgroundNav: string;
+    textNav: string;
     /** Badge marking visited/completed navigation targets */
     visitedBadge: string;
     /** Drop-shadow color for raised buttons (rgba; themed for light/dark) */
@@ -69,3 +71,8 @@ export const themes: ColorMap = require('../assets/data/colors.json');
 export function getTheme(mode: ThemeMode): Colors {
   return themes[mode] ?? themes['light'];
 }
+
+export const Layout = {
+  maxContentWidth: '90%' as const,
+  slideBorderWidth: 10,
+};

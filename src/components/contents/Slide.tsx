@@ -24,7 +24,7 @@ import {
   TouchableWithoutFeedback,
   Platform,
 } from 'react-native';
-import { Colors } from '../../Theme';
+import { Colors, Layout } from '../../Theme';
 import { useTheme } from '../../contexts/ThemeContext';
 import {
   createDesignStyleSheets,
@@ -145,8 +145,8 @@ const getDesignStyles = themedStyles((theme: Colors) =>
     {
       slideView: {
         backgroundColor: theme.slide.background,
-        width: '90%',
-        borderBottomWidth: 10,
+        width: Layout.maxContentWidth,
+        borderBottomWidth: Layout.slideBorderWidth,
         borderBottomColor: theme.slide.bottom,
       },
       slideViewOpen: {

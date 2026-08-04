@@ -75,9 +75,8 @@ export const ActionButton = (props: ActionButtonProps) => {
     ? ActionFactory[action.type]({ ...action, navigation, route, resetProgress })
     : undefined;
 
-  // Visited indicators — not on the Home screen's main navigation buttons
-  const showProgress =
-    targetPath && route.name !== getAppScreens().initialScreen;
+  // Visited indicators
+  const showProgress = !!targetPath;
   const visited = showProgress ? isVisited(targetPath) : false;
   const completionPercent = showProgress ? completion(targetPath) : undefined;
   const badge =
@@ -91,7 +90,40 @@ export const ActionButton = (props: ActionButtonProps) => {
         ? '✓'
         : undefined;
 
-  const button = (
+  const badgeElement = badge ? (
+    <View
+      style={{
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        width: 0,
+        height: 0,
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1,
+      }}>
+      <View
+        style={{
+          backgroundColor: theme.button.visitedBadge,
+          borderRadius: 12,
+          paddingHorizontal: 10,
+          paddingVertical: 4,
+          minWidth: 32,
+          alignItems: 'center',
+        }}>
+        <ReactText
+          style={{
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 14,
+          }}>
+          {badge}
+        </ReactText>
+      </View>
+    </View>
+  ) : undefined;
+
+  return (
     <BasicButton
       {...buttonData}
       text={textObject}
@@ -101,24 +133,7 @@ export const ActionButton = (props: ActionButtonProps) => {
         buttonData.style,
       ]}
       onPress={onPress}
+      badge={badgeElement}
     />
-  );
-
-  if (!badge) return button;
-  return (
-    <View style={{ width: '100%', alignItems: 'center' }}>
-      {button}
-      <ReactText
-        style={{
-          position: 'absolute',
-          top: -6,
-          right: '8%',
-          color: theme.button.visitedBadge,
-          fontWeight: 'bold',
-          fontSize: 16,
-        }}>
-        {badge}
-      </ReactText>
-    </View>
   );
 };

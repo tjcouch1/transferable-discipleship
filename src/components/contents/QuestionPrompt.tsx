@@ -19,6 +19,7 @@
 import React from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import { useTheme } from '../../contexts/ThemeContext';
+import { Layout } from '../../Theme';
 // import type: avoids a runtime circular import (Contents.ts imports this file)
 import type { ContentDataBase } from './Contents';
 import { Text, TextData, getTextDataObject } from './Text';
@@ -47,17 +48,20 @@ export const QuestionPrompt = ({ text, style }: QuestionPromptProps) => {
     <View
       style={[
         {
-          backgroundColor: theme.button.backgroundAnswer,
-          padding: 10,
-          borderRadius: 6,
+          backgroundColor: theme.slide.background,
+          padding: 15,
+          borderLeftWidth: Layout.slideBorderWidth,
+          borderLeftColor: theme.button.backgroundAnswer,
+          borderRadius: 0,
           width: 'auto',
+          maxWidth: Layout.maxContentWidth,
         },
         style,
       ]}>
       <Text
         {...textObject}
         style={[
-          { color: theme.button.textAnswer, fontSize: 17, textAlign: 'center' },
+          { color: theme.text.lineText, fontSize: 17, fontStyle: 'italic' },
           textObject.style,
         ]}
       />

@@ -222,7 +222,7 @@
                       "altButtons": [
                         {
                           "design": "answer",
-                          "text": "— Jesus commanded it."
+                          "text": "Jesus commanded it."
                         }
                       ]
                     },
@@ -248,7 +248,7 @@
                       "altButtons": [
                         {
                           "design": "answer",
-                          "text": "— Jesus experienced it."
+                          "text": "Jesus experienced it."
                         }
                       ]
                     },
@@ -274,7 +274,7 @@
                       "altButtons": [
                         {
                           "design": "answer",
-                          "text": "— Jesus modeled it with 12."
+                          "text": "Jesus modeled it with 12."
                         }
                       ]
                     },
@@ -315,7 +315,7 @@
                       "altButtons": [
                         {
                           "design": "answer",
-                          "text": "— We were created for discipleship. Before sin entered the world, Adam did the work God gave him to do and walked in a growing relationship with Him."
+                          "text": "We were created for discipleship. Before sin entered the world, Adam did the work God gave him to do and walked in a growing relationship with Him."
                         }
                       ]
                     },
@@ -535,8 +535,7 @@
                     }
                   ]
                 }
-              ],
-              "hideNavigationButtons": true
+              ]
             },
             {
               "id": "WhyUseTD",
@@ -757,8 +756,7 @@
                     }
                   ]
                 }
-              ],
-              "hideNavigationButtons": true
+              ]
             }
           ]
         },
@@ -1414,8 +1412,7 @@
                     }
                   ]
                 }
-              ],
-              "hideNavigationButtons": true
+              ]
             },
             {
               "id": "Scripture 1.0",
@@ -1955,8 +1952,7 @@
                     }
                   ]
                 }
-              ],
-              "hideNavigationButtons": true
+              ]
             },
             {
               "id": "Assurance of Salvation",
@@ -2347,8 +2343,7 @@
                     }
                   ]
                 }
-              ],
-              "hideNavigationButtons": true
+              ]
             },
             {
               "id": "Holy Spirit",
@@ -2913,8 +2908,7 @@
                     }
                   ]
                 }
-              ],
-              "hideNavigationButtons": true
+              ]
             },
             {
               "id": "Prayer",
@@ -3425,11 +3419,9 @@
                     }
                   ]
                 }
-              ],
-              "hideNavigationButtons": true
+              ]
             }
-          ],
-          "hideNavigationButtons": true
+          ]
         },
         {
           "id": "Resources",

@@ -83,9 +83,6 @@ Content conventions (learned from the pre-2.3 content; keep them):
   en dashes — `VerseRef` parses an en-dash range as a single verse (enforced
   by the screens-data test). Don't bake "(tap to reveal)" into button text;
   ToggleButton appends the standardized hint.
-- Section-menu screens set `hideNavigationButtons: true` to suppress the
-  Previous/Next sibling buttons; every subscreen must be linked from its own
-  parent (enforced by `scripts/check-screens.mjs` and the screens-data test).
 
 ## History notes
 

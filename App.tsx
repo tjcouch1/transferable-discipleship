@@ -93,9 +93,10 @@ function AppContent() {
   const [isWaitingForFontLoading, setIsWaitingForFontLoading] = useState(true);
   // Only run the timer once
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsWaitingForFontLoading(false);
     }, 5000);
+    return () => clearTimeout(timer);
   }, []);
 
   const onLayoutRootView = useCallback(async () => {

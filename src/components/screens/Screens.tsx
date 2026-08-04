@@ -44,8 +44,6 @@ export interface ScreenDataBase {
   title?: string;
   /** Whether to show the navigation bar. Defaults to true */
   showNavigationBar?: boolean;
-  /** Whether to hide the Previous/Next sibling buttons (e.g. on section menus). Defaults to false */
-  hideNavigationButtons?: boolean;
   /** Type of Screen */
   type: ScreenType;
   /** Screens that are children of this screen. Can navigate to them with an `ActionButton` */

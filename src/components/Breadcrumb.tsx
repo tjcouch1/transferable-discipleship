@@ -40,19 +40,19 @@ export const Breadcrumb = () => {
   const segments = route.name.split(PATH_DELIMITER);
   if (segments.length <= 2) return null; // Home (or shallower): no trail
 
-  // Ancestors only (skip the 'app:' root segment and the current screen)
-  const crumbs = segments.slice(1, -1).map((segment, i) => {
+  // Ancestors and current screen (skip the 'app:' root segment)
+  const crumbs = segments.slice(1).map((segment, i) => {
     const path = segments.slice(0, i + 2).join(PATH_DELIMITER);
     return { path, title: screens.get(path)?.title ?? segment };
   });
 
   return (
-    <View style={styles.row}>
+    <View style={[styles.row, { backgroundColor: theme.header.background }]}>
       {crumbs.map((crumb, i) => (
         <React.Fragment key={crumb.path}>
           {i > 0 && (
             <ReactText
-              style={[styles.separator, { color: theme.text.subheaderText }]}>
+              style={[styles.separator, { color: 'white' }]}>
               ›
             </ReactText>
           )}
@@ -60,7 +60,7 @@ export const Breadcrumb = () => {
             style={[
               styles.crumb,
               styles.linkCrumb,
-              { color: theme.slide.headerText },
+              { color: i === crumbs.length - 1 ? 'white' : theme.slide.headerText },
             ]}
             onPress={() => navigation.navigate(crumb.path)}>
             {crumb.title}
@@ -78,16 +78,16 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'center',
     paddingHorizontal: 12,
-    paddingTop: 8,
+    paddingVertical: 12,
   },
   crumb: {
-    fontSize: 13,
+    fontSize: 15,
   },
   linkCrumb: {
     fontWeight: '600',
   },
   separator: {
-    fontSize: 13,
+    fontSize: 15,
     paddingHorizontal: 5,
   },
 });

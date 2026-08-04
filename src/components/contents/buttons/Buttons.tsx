@@ -47,4 +47,4 @@ export type ButtonDataBase = {
   text?: TextData;
 };
 
-type ButtonDesign = 'normal' | 'answer';
+type ButtonDesign = 'normal' | 'answer' | 'navigation';

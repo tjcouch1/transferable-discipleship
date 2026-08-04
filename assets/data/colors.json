@@ -26,6 +26,8 @@
       "text": "#ffffff",
       "backgroundAnswer": "#00c7e2",
       "textAnswer": "#ffffff",
+      "backgroundNav": "#ffffff",
+      "textNav": "#ff9700",
       "visitedBadge": "#4CAF50",
       "shadow": "rgba(0, 0, 0, 0.2)"
     },
@@ -62,6 +64,8 @@
       "text": "#ffffff",
       "backgroundAnswer": "#00c7e2",
       "textAnswer": "#ffffff",
+      "backgroundNav": "#2d2d2d",
+      "textNav": "#ff9700",
       "visitedBadge": "#66BB6A",
       "shadow": "rgba(0, 0, 0, 0.5)"
     },

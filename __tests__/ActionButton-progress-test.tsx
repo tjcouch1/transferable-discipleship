@@ -64,14 +64,16 @@ it('grays out a button whose target has been visited', async () => {
   );
 });
 
-it('does not gray buttons on the Home screen', async () => {
+it('grays buttons on the Home screen', async () => {
   mockRouteName = 'app:/Home';
   progressService.loadProgress.mockResolvedValueOnce({
     'app:/Home/Basics': VISIT,
   });
   await renderButton('Basics', 'Basics');
-  // Home's main navigation buttons never gray, even when their target is visited
-  expect(buttonStyleOf(screen.getByText('Basics'))).not.toContain('#9c9fa1');
+  // Home's main navigation buttons now show progress and gray out when visited
+  await waitFor(() =>
+    expect(buttonStyleOf(screen.getByText('Basics'))).toContain('#9c9fa1'),
+  );
 });
 
 it('shows a checkmark badge for a visited leaf target', async () => {

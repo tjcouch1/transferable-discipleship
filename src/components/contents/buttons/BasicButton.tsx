@@ -22,7 +22,7 @@ import {
   GestureResponderEvent,
   Platform,
 } from 'react-native';
-import { Colors } from '../../../Theme';
+import { Colors, Layout } from '../../../Theme';
 import { useTheme } from '../../../contexts/ThemeContext';
 import {
   createDesignStyleSheets,
@@ -40,6 +40,7 @@ export interface BasicButtonData extends ButtonDataBase {
 export interface BasicButtonProps extends Omit<BasicButtonData, 'type'> {
   onPress?: (event: GestureResponderEvent) => void;
   children?: ReactNode;
+  badge?: ReactNode;
 }
 
 // TODO: Consider reworking with Pressable https://reactnative.dev/docs/pressable
@@ -50,6 +51,7 @@ export const BasicButton = ({
   style,
   text = {} as TextData,
   children,
+  badge,
 }: BasicButtonProps) => {
   const designStyle = getDesignStyles(useTheme().theme)[design];
   const textObject = getTextDataObject(text);
@@ -64,6 +66,7 @@ export const BasicButton = ({
           style={[designStyle.navButtonText, textObject.style]}
         />
       )}
+      {badge}
     </TouchableOpacity>
   );
 };
@@ -109,11 +112,27 @@ const getDesignStyles = themedStyles((theme: Colors) =>
           padding: 10,
           borderRadius: 6,
           width: 'auto',
+          maxWidth: Layout.maxContentWidth,
           ...buttonShadow(theme.button.shadow, 3),
         },
         navButtonText: {
           color: theme.button.textAnswer,
           fontSize: 17,
+        },
+      },
+      navigation: {
+        navButton: {
+          backgroundColor: theme.button.backgroundNav,
+          padding: 10,
+          borderRadius: 12,
+          width: 'auto',
+          maxWidth: Layout.maxContentWidth,
+          ...buttonShadow(theme.button.shadow, 3),
+        },
+        navButtonText: {
+          color: theme.button.textNav,
+          fontSize: 17,
+          fontWeight: '600',
         },
       },
     },
