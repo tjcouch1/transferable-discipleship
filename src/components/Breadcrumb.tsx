@@ -19,7 +19,6 @@
 import React from 'react';
 import { StyleSheet, Text as ReactText, View } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { useProgress } from '../contexts/ProgressContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { getAppScreens } from '../services/ScreenService';
 import { PATH_DELIMITER } from '../util/PathUtil';
@@ -33,7 +32,6 @@ export const Breadcrumb = () => {
   const navigation = useNavigation<any>();
   const route = useRoute();
   const { theme } = useTheme();
-  const { markVisited } = useProgress();
 
   const { screens } = getAppScreens();
   if (!screens.has(route.name)) return null;
@@ -64,10 +62,7 @@ export const Breadcrumb = () => {
               styles.linkCrumb,
               { color: theme.slide.headerText },
             ]}
-            onPress={() => {
-              markVisited(crumb.path);
-              navigation.navigate(crumb.path);
-            }}>
+            onPress={() => navigation.navigate(crumb.path)}>
             {crumb.title}
           </ReactText>
         </React.Fragment>

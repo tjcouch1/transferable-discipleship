@@ -60,7 +60,7 @@ export const createDesignStyleSheets = <
   const baseStyleSheet = StyleSheet.create(baseStyles);
 
   // Create a proxied design style sheet composition that returns baseStyles as the default design if the specific design is not found
-  const designStyleSheets: DesignStyleSheetComposition<T> = new Proxy(
+  const designStyleSheets = new Proxy(
     Object.fromEntries(
       Object.entries(extensions).map(([name, dSS]) => {
         // Not sure why TypeScript drops the type here on Object.entries() on extensions
@@ -113,7 +113,7 @@ export const createDesignStyleSheets = <
           : baseStyleSheet;
       },
     },
-  );
+  ) as unknown as DesignStyleSheetComposition<T>;
 
   return designStyleSheets;
 };

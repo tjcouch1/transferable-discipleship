@@ -43,7 +43,7 @@ export const ActionButton = (props: ActionButtonProps) => {
   const navigation = useNavigation();
   const route = useRoute();
   const { theme } = useTheme();
-  const { isVisited, completion, markVisited, resetProgress } = useProgress();
+  const { isVisited, completion, resetProgress } = useProgress();
 
   // Set up text style with underline for `link` action type
   const textObject = useMemo<TextData | undefined>(() => {
@@ -68,18 +68,12 @@ export const ActionButton = (props: ActionButtonProps) => {
     return getAppScreens().screens.has(path) ? path : undefined;
   }, [action, route.name]);
 
-  let onPress = action
-    ? ActionFactory[action.type]({ ...action, navigation, route })
+  // resetProgress is threaded into the action bag so resetVisited stays in the
+  // factory. Visit tracking happens on screen focus (see useMarkVisitedOnFocus),
+  // not on press, so navigate needs no wrapping here.
+  const onPress = action
+    ? ActionFactory[action.type]({ ...action, navigation, route, resetProgress })
     : undefined;
-  // Actions that need React context are handled here instead of the factory
-  if (action?.type === 'resetVisited') onPress = resetProgress;
-  else if (targetPath) {
-    const navigate = onPress;
-    onPress = () => {
-      markVisited(targetPath);
-      navigate?.(undefined);
-    };
-  }
 
   // Visited indicators — not on the Home screen's main navigation buttons
   const showProgress =

@@ -68,6 +68,24 @@ export const BasicButton = ({
   );
 };
 
+/**
+ * Cross-platform drop shadow for raised buttons. The color is themed
+ * (`button.shadow`, an rgba whose alpha carries the intensity), so shadows
+ * adapt between light and dark instead of hardcoding black.
+ */
+function buttonShadow(shadowColor: string, radius: number) {
+  return Platform.select({
+    ios: {
+      shadowColor,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 1,
+      shadowRadius: radius,
+    },
+    android: { elevation: radius },
+    web: { boxShadow: `0 2px ${radius}px ${shadowColor}` },
+  });
+}
+
 const getDesignStyles = themedStyles((theme: Colors) =>
   createDesignStyleSheets(
     {
@@ -76,20 +94,7 @@ const getDesignStyles = themedStyles((theme: Colors) =>
         padding: 12,
         borderRadius: 12,
         width: '75%',
-        ...Platform.select({
-          ios: {
-            shadowColor: '#000',
-            shadowOffset: { width: 0, height: 2 },
-            shadowOpacity: 0.2,
-            shadowRadius: 4,
-          },
-          android: {
-            elevation: 4,
-          },
-          web: {
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-          },
-        }),
+        ...buttonShadow(theme.button.shadow, 4),
       },
       navButtonText: {
         color: theme.button.text,
@@ -104,20 +109,7 @@ const getDesignStyles = themedStyles((theme: Colors) =>
           padding: 10,
           borderRadius: 6,
           width: 'auto',
-          ...Platform.select({
-            ios: {
-              shadowColor: '#000',
-              shadowOffset: { width: 0, height: 2 },
-              shadowOpacity: 0.2,
-              shadowRadius: 3,
-            },
-            android: {
-              elevation: 3,
-            },
-            web: {
-              boxShadow: '0 2px 3px rgba(0, 0, 0, 0.2)',
-            },
-          }),
+          ...buttonShadow(theme.button.shadow, 3),
         },
         navButtonText: {
           color: theme.button.textAnswer,

@@ -67,6 +67,10 @@ export type TextData = TextDataObject | string;
 /** The base props that every text object should have and pass down to the text inside. All text data object props should extend TextPropsBase */
 export type TextPropsBase = {
   onPress?: (event: GestureResponderEvent) => void;
+  /** Passed through to the underlying RN Text (e.g. for shrink-to-fit cells) */
+  numberOfLines?: number;
+  adjustsFontSizeToFit?: boolean;
+  minimumFontScale?: number;
 };
 
 /** Props the Text needs to function */
@@ -98,10 +102,21 @@ export const getTextDataObject = <T extends TextDataObjectBase | string>(
 
 export const Text = (props: TextProps) => {
   const designStyles = getDesignStyles(useTheme().theme);
-  const { text, segments, design, style, onPress } = {
+  const {
+    text,
+    segments,
+    design,
+    style,
+    onPress,
+    numberOfLines,
+    adjustsFontSizeToFit,
+    minimumFontScale,
+  } = {
     ...DEFAULT_PROPS,
     ...getTextDataObject(props),
   };
+  // Props forwarded verbatim to the underlying RN Text
+  const passthrough = { onPress, numberOfLines, adjustsFontSizeToFit, minimumFontScale };
 
   // Segmented paragraph: render each span through this same component so each
   // gets the usual design and font resolution (including iOS bold/italic
@@ -109,14 +124,12 @@ export const Text = (props: TextProps) => {
   if (segments && segments.length > 0) {
     const designStyle = designStyles[design];
     return (
-      <ReactText onPress={onPress} style={[designStyle.lineText, style]}>
+      <ReactText {...passthrough} style={[designStyle.lineText, style]}>
         {segments.map((segment, i) => (
-          <Text
-            key={i}
-            design={design}
-            text={segment.text}
-            style={[style, segment.style]}
-          />
+          // Only the span's own style — the paragraph `style` is on the
+          // wrapper above and inherits, so re-applying it here would double
+          // any box-model props (padding/background/margin) onto each span
+          <Text key={i} design={design} text={segment.text} style={segment.style} />
         ))}
       </ReactText>
     );
@@ -192,7 +205,7 @@ export const Text = (props: TextProps) => {
   }
 
   return (
-    <ReactText onPress={onPress} style={styles}>
+    <ReactText {...passthrough} style={styles}>
       {text}
     </ReactText>
   );

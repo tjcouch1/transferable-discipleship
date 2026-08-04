@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, userEvent } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import {
   ToggleButton,
   applyToggleHint,
@@ -11,7 +11,12 @@ describe('applyToggleHint', () => {
       'What does this teach? (tap to reveal)',
     );
   });
-  it('leaves labels that already mention tap/reveal alone', () => {
+  it('appends the reveal hint even when the label merely contains the word "reveal"', () => {
+    expect(applyToggleHint('What does this passage reveal?', false)).toBe(
+      'What does this passage reveal? (tap to reveal)',
+    );
+  });
+  it('leaves labels that already include the reveal hint alone', () => {
     expect(applyToggleHint('Why pray? (tap to reveal)', false)).toBe(
       'Why pray? (tap to reveal)',
     );
@@ -38,9 +43,8 @@ it('shows hints through a full toggle cycle', async () => {
       altButtons={[{ text: 'The answer.' }]}
     />,
   );
-  const user = userEvent.setup();
   expect(screen.getByText('What is the answer? (tap to reveal)')).toBeTruthy();
-  await user.press(screen.getByText('What is the answer? (tap to reveal)'));
+  await fireEvent.press(screen.getByText('What is the answer? (tap to reveal)'));
   expect(screen.getByText('The answer. (tap to go back)')).toBeTruthy();
 });
 

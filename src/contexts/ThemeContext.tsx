@@ -55,15 +55,18 @@ const ThemeContext = createContext<ThemeContextValue>({
  */
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const osScheme = useColorScheme();
-  const [mode, setModeState] = useState<ThemeMode>(
-    osScheme === 'dark' ? 'dark' : 'light',
-  );
+  // An explicit user preference (saved or toggled) wins; otherwise the theme
+  // follows the OS color scheme live — useColorScheme re-renders on OS changes,
+  // and deriving mode here (rather than seeding state once) means a null-at-
+  // first-render OS scheme and later OS toggles are both picked up.
+  const [preference, setPreference] = useState<ThemeMode | undefined>();
+  const mode: ThemeMode = preference ?? (osScheme === 'dark' ? 'dark' : 'light');
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
       const saved = await getThemePreference();
-      if (saved && !cancelled) setModeState(saved);
+      if (saved && !cancelled) setPreference(saved);
     })();
     return () => {
       cancelled = true;
@@ -76,7 +79,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
       mode,
       isDark: mode === 'dark',
       setMode: (newMode: ThemeMode) => {
-        setModeState(newMode);
+        setPreference(newMode);
         // Fire-and-forget persistence; failures only affect the next launch
         setThemePreference(newMode);
       },

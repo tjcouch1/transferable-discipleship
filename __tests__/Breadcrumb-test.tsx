@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, userEvent } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { Breadcrumb } from '../src/components/Breadcrumb';
 
 const mockNavigate = jest.fn();
@@ -22,8 +22,7 @@ it('renders the ancestor trail and navigates on crumb press', async () => {
   // Current screen is not part of the trail (its header already names it)
   expect(screen.queryByText('Opening Reflection')).toBeNull();
 
-  const user = userEvent.setup();
-  await user.press(screen.getByText('Basics'));
+  await fireEvent.press(screen.getByText('Basics'));
   expect(mockNavigate).toHaveBeenCalledWith('app:/Home/Basics');
 });
 

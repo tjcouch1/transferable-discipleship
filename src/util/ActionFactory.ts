@@ -49,9 +49,13 @@ export const ActionFactory: {
     () => {
       navigation.navigate(pathJoin(route.name, to));
     },
-  // Clears all visited-screen progress. The actual behavior lives in
-  // ActionButton (it needs the ProgressContext); this entry registers the type.
-  resetVisited: () => () => {},
+  // Clears all visited-screen progress. ActionButton threads resetProgress
+  // from the ProgressContext into the action bag so the behavior lives here.
+  resetVisited:
+    ({ resetProgress }: PropsWithNavigation<{ resetProgress?: () => void }>) =>
+    () => {
+      resetProgress?.();
+    },
   link:
     ({ to }: PropsWithNavigation<LinkActionData>) =>
     async () => {

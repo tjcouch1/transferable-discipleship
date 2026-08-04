@@ -26,7 +26,7 @@ import { ToggleButton, ToggleButtonData } from './ToggleButton';
 //----- BUTTON TYPES -----//
 
 export const Buttons: {
-  [contentType: string]: (props: PropsWithNavigation<any>) => JSX.Element;
+  [contentType: string]: (props: PropsWithNavigation<any>) => React.JSX.Element;
 } = {
   ActionButton,
   BasicButton,

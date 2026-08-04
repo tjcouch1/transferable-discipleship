@@ -63,7 +63,7 @@ export type ContentDataBase = {
 //----- CONTENTS AND OTHER FUNCTIONS -----//
 
 export const Contents: {
-  [contentType: string]: (props: PropsWithNavigation<any>) => JSX.Element;
+  [contentType: string]: (props: PropsWithNavigation<any>) => React.JSX.Element;
 } = {
   ...Buttons,
   Text,

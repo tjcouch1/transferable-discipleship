@@ -49,6 +49,8 @@ export type Colors = {
     textAnswer: string;
     /** Badge marking visited/completed navigation targets */
     visitedBadge: string;
+    /** Drop-shadow color for raised buttons (rgba; themed for light/dark) */
+    shadow: string;
   };
   text: {
     headerText: string;

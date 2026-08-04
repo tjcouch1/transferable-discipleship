@@ -72,16 +72,26 @@ export type SugarContentData =
   ScriptureQuestionListContentData | NextStepsContentData;
 
 function expandContent(content: ContentData | SugarContentData): ContentData[] {
-  if (typeof content === 'string' || !('type' in content)) return [content];
+  if (!content || typeof content === 'string' || !('type' in content))
+    return [content];
 
   if (content.type === 'ScriptureQuestionList') {
     const { question, slides } = content as ScriptureQuestionListContentData;
+    // Attach the shared question as the tap-to-reveal hiddenButton (a slide's
+    // own hiddenButton still wins via spread order). For a multi-passage
+    // (array) slide, put it on the last passage so it renders once after them.
+    const addQuestion = (scr: object) => ({
+      hiddenButton: { text: question },
+      ...scr,
+    });
     return slides.map(slide => ({
       ...slide,
       type: 'ScriptureSlide',
       scripture: Array.isArray(slide.scripture)
-        ? slide.scripture
-        : { hiddenButton: { text: question }, ...slide.scripture },
+        ? slide.scripture.map((scr, i, arr) =>
+            i === arr.length - 1 ? addQuestion(scr) : scr,
+          )
+        : addQuestion(slide.scripture),
     })) as ContentData[];
   }
 

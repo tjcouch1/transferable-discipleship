@@ -24,7 +24,6 @@ import {
   View,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { useProgress } from '../contexts/ProgressContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { getSiblingScreenPath } from '../services/NavigationService';
 import { getAppScreens } from '../services/ScreenService';
@@ -38,7 +37,6 @@ export const NavigationButtons = () => {
   const navigation = useNavigation<any>();
   const route = useRoute();
   const { theme } = useTheme();
-  const { markVisited } = useProgress();
 
   const screen = getAppScreens().screens.get(route.name);
   if (!screen || screen.hideNavigationButtons) return null;
@@ -47,10 +45,7 @@ export const NavigationButtons = () => {
   const nextPath = getSiblingScreenPath(route.name, 1);
   if (!previousPath && !nextPath) return null;
 
-  const go = (path: string) => {
-    markVisited(path);
-    navigation.navigate(path);
-  };
+  const go = (path: string) => navigation.navigate(path);
 
   const linkColor = theme.slide.headerText;
 

@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import { StyleSheet, Text as RNText, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Colors } from '../../Theme';
 import { useTheme } from '../../contexts/ThemeContext';
 import { themedStyles } from '../../util/DesignStyleSheets';
@@ -76,14 +76,17 @@ export const ScheduleTable = ({ headers, rows }: ScheduleTableProps) => {
     return (
       <View style={[styles.cell, columnStyles[column]]}>
         {column === 'week' ? (
-          // RN Text directly: single line that shrinks to fit the narrow column
-          <RNText
+          // Routed through Text (not raw RN Text) so it gets the same iOS
+          // bold/italic font-family baking; still a single line that shrinks
+          // to fit the narrow column
+          <Text
+            design="small"
+            text={text}
             numberOfLines={1}
             adjustsFontSizeToFit
             minimumFontScale={0.82}
-            style={[...textStyle, styles.weekText]}>
-            {text}
-          </RNText>
+            style={[...textStyle, styles.weekText]}
+          />
         ) : (
           <Text design="small" text={text} style={textStyle} />
         )}

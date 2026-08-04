@@ -25,6 +25,7 @@ import { ContentData, Contents } from '../contents/Contents';
 import TScrollView from '../TScrollView';
 import { Breadcrumb } from '../Breadcrumb';
 import { NavigationButtons } from '../NavigationButtons';
+import { useMarkVisitedOnFocus } from '../../contexts/ProgressContext';
 import {
   ContentList,
   ContentListData,
@@ -42,6 +43,9 @@ export const ContentListScreen = ({
   navigation,
   route,
 }: NativeStackScreenProps<any>) => {
+  // Record the visit to this screen (single source of visit tracking)
+  useMarkVisitedOnFocus();
+
   // Default spaceFirst and spaceLast to false instead of true like in ContentList
   const {
     padTop = false,
