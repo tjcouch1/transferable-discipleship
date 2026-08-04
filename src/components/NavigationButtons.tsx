@@ -20,11 +20,13 @@ import React from 'react';
 import {
   StyleSheet,
   View,
+  Text,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { getSiblingScreenPath } from '../services/NavigationService';
 import { getAppScreens } from '../services/ScreenService';
 import { BasicButton } from './contents/buttons/BasicButton';
+import { useTheme } from '../contexts/ThemeContext';
 
 /**
  * Previous/Next sibling-screen navigation shown at the bottom of content
@@ -33,6 +35,7 @@ import { BasicButton } from './contents/buttons/BasicButton';
 export const NavigationButtons = () => {
   const navigation = useNavigation<any>();
   const route = useRoute();
+  const { theme } = useTheme();
 
   const screen = getAppScreens().screens.get(route.name);
   if (!screen) return null;
@@ -45,29 +48,44 @@ export const NavigationButtons = () => {
   const nextPath = getSiblingScreenPath(route.name, 1);
   if (!previousPath && !nextPath) return null;
 
+  const prevScreen = previousPath ? getAppScreens().screens.get(previousPath) : null;
+  const nextScreen = nextPath ? getAppScreens().screens.get(nextPath) : null;
+
   const go = (path: string) => navigation.navigate(path);
 
   return (
     <View style={styles.row}>
-      {previousPath ? (
+      {previousPath && prevScreen ? (
         <BasicButton
-          type="BasicButton"
           design="navigation"
-          text={{ text: '← Previous' }}
           onPress={() => go(previousPath)}
-        />
+          style={styles.buttonContainer}
+        >
+          <Text style={[styles.mainText, { color: theme.button.textNav }]}>
+            ← Previous
+          </Text>
+          <Text style={[styles.subText, { color: theme.button.textNav }]} numberOfLines={1}>
+            {prevScreen.title || prevScreen.id}
+          </Text>
+        </BasicButton>
       ) : (
-        <View />
+        <View style={styles.buttonContainer} />
       )}
-      {nextPath ? (
+      {nextPath && nextScreen ? (
         <BasicButton
-          type="BasicButton"
           design="navigation"
-          text={{ text: 'Next →' }}
           onPress={() => go(nextPath)}
-        />
+          style={styles.buttonContainer}
+        >
+          <Text style={[styles.mainText, { color: theme.button.textNav }]}>
+            Next →
+          </Text>
+          <Text style={[styles.subText, { color: theme.button.textNav }]} numberOfLines={1}>
+            {nextScreen.title || nextScreen.id}
+          </Text>
+        </BasicButton>
       ) : (
-        <View />
+        <View style={styles.buttonContainer} />
       )}
     </View>
   );
@@ -80,5 +98,20 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     paddingHorizontal: 20,
     paddingVertical: 12,
+    gap: 15,
+  },
+  buttonContainer: {
+    flex: 1,
+  },
+  mainText: {
+    fontSize: 17,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  subText: {
+    fontSize: 12,
+    textAlign: 'center',
+    marginTop: 2,
+    opacity: 0.8,
   },
 });

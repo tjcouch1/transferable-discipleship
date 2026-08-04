@@ -9,6 +9,7 @@
     "ios": "expo start --ios",
     "web": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo start --web --go",
     "test": "jest",
+    "typecheck": "tsc --noEmit",
     "expo:upgrade": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo install --fix",
     "postinstall": "npx patch-package",
     "licenses": "license-checker --json --out assets/data/licenses/licenses-raw.json --customPath lib/license-checker.json && node --no-warnings=ExperimentalWarning --loader ts-node/esm lib/transform-licenses-content.mts assets/data/licenses/licenses-raw.json assets/data/licenses/licenses.json assets/fonts",

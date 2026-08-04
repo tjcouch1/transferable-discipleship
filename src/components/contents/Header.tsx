@@ -18,6 +18,8 @@
 
 import React from 'react';
 import { View, ViewStyle, StyleProp } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+import { getAppScreens } from '../../services/ScreenService';
 import { Colors } from '../../Theme';
 import { useTheme } from '../../contexts/ThemeContext';
 import {
@@ -31,7 +33,7 @@ import { Text, TextData, getTextDataObject } from './Text';
 
 export interface HeaderContentData extends ContentDataBase {
   type: 'Header';
-  headerText: HeaderTextData;
+  headerText?: HeaderTextData;
   subheaderText?: SubheaderTextData;
   lineTexts?: TextData[];
   design?: HeaderDesign;
@@ -56,8 +58,12 @@ export const Header = ({
   design = 'screen',
   style,
 }: HeaderProps) => {
+  const route = useRoute();
+  const screen = getAppScreens().screens.get(route.name);
+  const fallbackText = screen?.title || screen?.id || '';
+  
   const designStyle = getDesignStyles(useTheme().theme)[design];
-  const headerTextObject = getTextDataObject(headerText);
+  const headerTextObject = getTextDataObject(headerText || fallbackText);
   const subheaderTextObject = subheaderText
     ? getTextDataObject(subheaderText)
     : undefined;
