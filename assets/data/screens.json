@@ -3949,7 +3949,72 @@
                       "type": "Header",
                       "headerText": "Intentionality",
                       "subheaderText": "A tool for finding the right next step of intentionality with people in your life.",
+                      "lineTexts": [
+                        "Important conversations rarely happen by accident. Someone has to take the first step.",
+                        "Intentionality means paying attention to the people God has placed in your life and choosing to take a specific next step with them. You can't control the outcome, but you can choose to be intentional."
+                      ],
                       "design": "screen"
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "How to use this tool",
+                      "canClose": false,
+                      "contentDesign": "tight",
+                      "contents": []
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "1. Identify one person.",
+                      "canClose": true,
+                      "contentDesign": "tight",
+                      "contents": [
+                        "Think about the people God has already placed in your life. Which category best describes where your relationship with someone is right now?",
+                        "Beginning a Relationship",
+                        "Building the Relationship",
+                        "Getting to the Gospel",
+                        "Helping Them Grow",
+                        "If no one comes to mind, start with Beginning a Relationship and identify someone new you can get to know."
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "2. Choose one next step.",
+                      "canClose": true,
+                      "contentDesign": "tight",
+                      "contents": [
+                        "Look through the options in that category. What is one specific step you can take with that person this week?",
+                        "Don't try to do everything. Choose one step and take it."
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "3. Take the step.",
+                      "canClose": true,
+                      "contentDesign": "tight",
+                      "contents": [
+                        "Pray for the person, take the step, and trust God with the outcome. The goal isn't to force a relationship or conversation. It's simply to be faithful with the opportunity God has given you."
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "headerText": "4. Come back and evaluate.",
+                      "canClose": true,
+                      "contentDesign": "tight",
+                      "contents": [
+                        "When we meet again, talk about how it went.",
+                        "What happened?",
+                        "What did you learn?",
+                        "What might be the next right step?",
+                        "Then choose another step and keep going."
+                      ]
+                    },
+                    {
+                      "type": "Slide",
+                      "canClose": false,
+                      "contentDesign": "tight",
+                      "contents": [
+                        "Intentionality is simply taking the next faithful step with the people God has placed in your life."
+                      ]
                     },
                     {
                       "type": "ActionButton",
