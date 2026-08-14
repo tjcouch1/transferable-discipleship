@@ -96,30 +96,24 @@ export const ActionButton = (props: ActionButtonProps) => {
         position: 'absolute',
         top: 0,
         right: 0,
-        width: 0,
-        height: 0,
+        transform: [{ translateX: '50%' }, { translateY: '-50%' }],
+        backgroundColor: theme.button.visitedBadge,
+        borderRadius: 12,
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+        minWidth: 32,
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1,
       }}>
-      <View
+      <ReactText
         style={{
-          backgroundColor: theme.button.visitedBadge,
-          borderRadius: 12,
-          paddingHorizontal: 10,
-          paddingVertical: 4,
-          minWidth: 32,
-          alignItems: 'center',
+          color: 'white',
+          fontWeight: 'bold',
+          fontSize: 14,
         }}>
-        <ReactText
-          style={{
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: 14,
-          }}>
-          {badge}
-        </ReactText>
-      </View>
+        {badge}
+      </ReactText>
     </View>
   ) : undefined;
 
