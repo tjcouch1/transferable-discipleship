@@ -10,6 +10,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+commit_msg.txt
 
 # macOS
 .DS_Store

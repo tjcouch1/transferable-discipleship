@@ -51,7 +51,7 @@ export const NavigationButtons = () => {
   const prevScreen = previousPath ? getAppScreens().screens.get(previousPath) : null;
   const nextScreen = nextPath ? getAppScreens().screens.get(nextPath) : null;
 
-  const go = (path: string) => navigation.navigate(path);
+  const go = (path: string) => navigation.replace(path);
 
   return (
     <View style={styles.row}>

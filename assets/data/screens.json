@@ -80,7 +80,6 @@
           "subscreens": [
             {
               "id": "The Challenge",
-              "title": "The Challenge",
               "type": "ContentListScreen",
               "design": "loose",
               "contents": [
@@ -466,7 +465,6 @@
                 },
                 {
                   "id": "Expectations",
-                  "title": "Expectations",
                   "type": "ContentListScreen",
                   "contents": [
                     {
@@ -842,7 +840,7 @@
                   "text": "Half-way Recap",
                   "action": {
                     "type": "navigate",
-                    "to": "HalfwayRecap"
+                    "to": "GospelHalfwayRecap"
                   }
                 },
                 {
@@ -1060,7 +1058,7 @@
                   ]
                 },
                 {
-                  "id": "HalfwayRecap",
+                  "id": "GospelHalfwayRecap",
                   "title": "Half-way Recap",
                   "type": "ContentListScreen",
                   "contents": [
@@ -1471,7 +1469,6 @@
               "subscreens": [
                 {
                   "id": "Introduction",
-                  "title": "Introduction",
                   "type": "ContentListScreen",
                   "contents": [
                     {
@@ -3418,7 +3415,6 @@
           "subscreens": [
             {
               "id": "Intentionality",
-              "title": "Intentionality",
               "type": "ContentListScreen",
               "contents": [
                 {

@@ -1,6 +1,0 @@
-Fix incorrect subscreen titles that duplicated their parent IDs
-
-- Wesley's content overhaul accidentally duplicated parent IDs (like "The Challenge" or "Gospel Review") into the `title` property of 50 child subscreens, which caused the breadcrumbs and nav buttons to show identical, inaccurate names.
-- Identified 50 affected screens by tracing which screens had a title matching their parent's ID but different from their own ID.
-- Pulled the correct title from each screen's `Header` component's `headerText` property.
-- Re-ran the redundant header cleanup script to completely strip `headerText` from these 50 screens since their `title` property now correctly defines them, fully leveraging the structural fallback logic added previously.
