@@ -23,6 +23,9 @@ import { ButtonData, Buttons } from './buttons/Buttons';
 import { ContentList, ContentListContentData } from './ContentList';
 import { Header, HeaderContentData } from './Header';
 import { HeaderText, HeaderTextContentData } from './HeaderText';
+import { DarkModeToggle, DarkModeToggleContentData } from './DarkModeToggle';
+import { QuestionPrompt, QuestionPromptContentData } from './QuestionPrompt';
+import { ScheduleTable, ScheduleTableContentData } from './ScheduleTable';
 import { ScriptureSlide, ScriptureSlideContentData } from './ScriptureSlide';
 import { ScrRangeDisplay, ScrRangeDisplayContentData } from './ScrRangeDisplay';
 import { Slide, SlideContentData } from './Slide';
@@ -44,6 +47,9 @@ export type ContentData =
   | ContentListContentData
   | ScriptureSlideContentData
   | ScrRangeDisplayContentData
+  | QuestionPromptContentData
+  | ScheduleTableContentData
+  | DarkModeToggleContentData
   | ImageContentData;
 
 /** All content types available. Content is a component that does various things */
@@ -57,7 +63,7 @@ export type ContentDataBase = {
 //----- CONTENTS AND OTHER FUNCTIONS -----//
 
 export const Contents: {
-  [contentType: string]: (props: PropsWithNavigation<any>) => JSX.Element;
+  [contentType: string]: (props: PropsWithNavigation<any>) => React.JSX.Element;
 } = {
   ...Buttons,
   Text,
@@ -69,6 +75,9 @@ export const Contents: {
   ContentList,
   ScriptureSlide,
   ScrRangeDisplay,
+  QuestionPrompt,
+  ScheduleTable,
+  DarkModeToggle,
   Image,
 };
 

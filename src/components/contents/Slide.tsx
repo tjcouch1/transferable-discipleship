@@ -24,8 +24,12 @@ import {
   TouchableWithoutFeedback,
   Platform,
 } from 'react-native';
-import theme from '../../Theme';
-import { createDesignStyleSheets } from '../../util/DesignStyleSheets';
+import { Colors, Layout } from '../../Theme';
+import { useTheme } from '../../contexts/ThemeContext';
+import {
+  createDesignStyleSheets,
+  themedStyles,
+} from '../../util/DesignStyleSheets';
 import { ContentList, ContentListData, ContentListDesign } from './ContentList';
 import { ContentDataBase } from './Contents';
 import { HeaderText, HeaderTextData } from './HeaderText';
@@ -75,7 +79,7 @@ export const Slide = (slideProps: SlideProps) => {
     : undefined;
 
   const [isOpen, setIsOpen] = useState(
-    canClose ? isOpenProp ?? isOpenDefault : true,
+    canClose ? (isOpenProp ?? isOpenDefault) : true,
   );
 
   useEffect(() => {
@@ -83,7 +87,7 @@ export const Slide = (slideProps: SlideProps) => {
   }, [canClose, isOpenProp]);
 
   // Just use the one design style available
-  const designStyle = designStyles[design];
+  const designStyle = getDesignStyles(useTheme().theme)[design];
   return (
     <View
       style={[
@@ -136,56 +140,58 @@ export const Slide = (slideProps: SlideProps) => {
   );
 };
 
-const designStyles = createDesignStyleSheets(
-  {
-    slideView: {
-      backgroundColor: theme.slide.background,
-      width: '90%',
-      borderBottomWidth: 10,
-      borderBottomColor: theme.slide.bottom,
-    },
-    slideViewOpen: {
-      paddingBottom: 10,
-    },
-    headerView: {
-      paddingTop: 10,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
-    headerViewClosed: {
-      paddingBottom: 10,
-    },
-    contentView: {
-      paddingHorizontal: 15,
-    },
-    pressableHeaderView: {
-      // Display cursor on web https://github.com/necolas/react-native-web/issues/506#issuecomment-1412166955
-      // This is here to avoid errors with the next line. This is just confirming the default display
-      display: 'flex',
-      ...Platform.select({ web: { cursor: 'pointer' } }),
-    },
-    headerText: {
-      fontSize: 23,
-      fontWeight: '700',
-      color: theme.slide.headerText,
-    },
-    chevron: {
-      fontWeight: '700',
-    },
-    chevronClosed: {
-      fontWeight: '500',
-    },
-    closedContent: {
-      // Just hide the contents if the slide is closed so it can load while hidden
-      display: 'none',
-    },
-  },
-  {
-    primary: {
+const getDesignStyles = themedStyles((theme: Colors) =>
+  createDesignStyleSheets(
+    {
+      slideView: {
+        backgroundColor: theme.slide.background,
+        width: Layout.maxContentWidth,
+        borderBottomWidth: Layout.slideBorderWidth,
+        borderBottomColor: theme.slide.bottom,
+      },
+      slideViewOpen: {
+        paddingBottom: 10,
+      },
+      headerView: {
+        paddingTop: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      },
+      headerViewClosed: {
+        paddingBottom: 10,
+      },
+      contentView: {
+        paddingHorizontal: 15,
+      },
+      pressableHeaderView: {
+        // Display cursor on web https://github.com/necolas/react-native-web/issues/506#issuecomment-1412166955
+        // This is here to avoid errors with the next line. This is just confirming the default display
+        display: 'flex',
+        ...Platform.select({ web: { cursor: 'pointer' } }),
+      },
       headerText: {
-        color: theme.slide.headerTextPrimary,
+        fontSize: 23,
+        fontWeight: '700',
+        color: theme.slide.headerText,
+      },
+      chevron: {
+        fontWeight: '700',
+      },
+      chevronClosed: {
+        fontWeight: '500',
+      },
+      closedContent: {
+        // Just hide the contents if the slide is closed so it can load while hidden
+        display: 'none',
       },
     },
-  },
+    {
+      primary: {
+        headerText: {
+          color: theme.slide.headerTextPrimary,
+        },
+      },
+    },
+  ),
 );

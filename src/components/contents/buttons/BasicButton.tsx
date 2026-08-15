@@ -17,9 +17,17 @@
  */
 
 import React, { ReactNode } from 'react';
-import { TouchableOpacity, GestureResponderEvent } from 'react-native';
-import theme from '../../../Theme';
-import { createDesignStyleSheets } from '../../../util/DesignStyleSheets';
+import {
+  TouchableOpacity,
+  GestureResponderEvent,
+  Platform,
+} from 'react-native';
+import { Colors, Layout } from '../../../Theme';
+import { useTheme } from '../../../contexts/ThemeContext';
+import {
+  createDesignStyleSheets,
+  themedStyles,
+} from '../../../util/DesignStyleSheets';
 import { Text, TextData, getTextDataObject } from '../Text';
 import { ButtonDataBase } from './Buttons';
 
@@ -32,6 +40,7 @@ export interface BasicButtonData extends ButtonDataBase {
 export interface BasicButtonProps extends Omit<BasicButtonData, 'type'> {
   onPress?: (event: GestureResponderEvent) => void;
   children?: ReactNode;
+  badge?: ReactNode;
 }
 
 // TODO: Consider reworking with Pressable https://reactnative.dev/docs/pressable
@@ -42,8 +51,9 @@ export const BasicButton = ({
   style,
   text = {} as TextData,
   children,
+  badge,
 }: BasicButtonProps) => {
-  const designStyle = designStyles[design];
+  const designStyle = getDesignStyles(useTheme().theme)[design];
   const textObject = getTextDataObject(text);
 
   return (
@@ -56,36 +66,75 @@ export const BasicButton = ({
           style={[designStyle.navButtonText, textObject.style]}
         />
       )}
+      {badge}
     </TouchableOpacity>
   );
 };
 
-const designStyles = createDesignStyleSheets(
-  {
-    navButton: {
-      backgroundColor: theme.button.background,
-      padding: 12,
-      borderRadius: 12,
-      width: '75%',
+/**
+ * Cross-platform drop shadow for raised buttons. The color is themed
+ * (`button.shadow`, an rgba whose alpha carries the intensity), so shadows
+ * adapt between light and dark instead of hardcoding black.
+ */
+function buttonShadow(shadowColor: string, radius: number) {
+  return Platform.select({
+    ios: {
+      shadowColor,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 1,
+      shadowRadius: radius,
     },
-    navButtonText: {
-      color: theme.button.text,
-      fontSize: 22,
-      textAlign: 'center',
-    },
-  },
-  {
-    answer: {
+    android: { elevation: radius },
+    web: { boxShadow: `0 2px ${radius}px ${shadowColor}` },
+  });
+}
+
+const getDesignStyles = themedStyles((theme: Colors) =>
+  createDesignStyleSheets(
+    {
       navButton: {
-        backgroundColor: theme.button.backgroundAnswer,
-        padding: 10,
-        borderRadius: 6,
-        width: 'auto',
+        backgroundColor: theme.button.background,
+        padding: 12,
+        borderRadius: 12,
+        width: '75%',
+        ...buttonShadow(theme.button.shadow, 4),
       },
       navButtonText: {
-        color: theme.button.textAnswer,
-        fontSize: 17,
+        color: theme.button.text,
+        fontSize: 22,
+        textAlign: 'center',
       },
     },
-  },
+    {
+      answer: {
+        navButton: {
+          backgroundColor: theme.button.backgroundAnswer,
+          padding: 10,
+          borderRadius: 6,
+          width: 'auto',
+          maxWidth: Layout.maxContentWidth,
+          ...buttonShadow(theme.button.shadow, 3),
+        },
+        navButtonText: {
+          color: theme.button.textAnswer,
+          fontSize: 17,
+        },
+      },
+      navigation: {
+        navButton: {
+          backgroundColor: theme.button.backgroundNav,
+          padding: 10,
+          borderRadius: 12,
+          width: 'auto',
+          maxWidth: Layout.maxContentWidth,
+          ...buttonShadow(theme.button.shadow, 3),
+        },
+        navButtonText: {
+          color: theme.button.textNav,
+          fontSize: 17,
+          fontWeight: '600',
+        },
+      },
+    },
+  ),
 );

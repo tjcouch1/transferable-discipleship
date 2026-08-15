@@ -24,6 +24,9 @@ import { ScreenDataBase } from './Screens';
 import { getScreenData } from '../../services/ScreenService';
 import { ButtonList, ButtonListData } from '../contents/ButtonList';
 import TScrollView from '../TScrollView';
+import { Breadcrumb } from '../Breadcrumb';
+import { NavigationButtons } from '../NavigationButtons';
+import { useMarkVisitedOnFocus } from '../../contexts/ProgressContext';
 
 /** The data that defines the HeaderWithButtons screen */
 export type HeaderWithButtonsData = {
@@ -37,16 +40,21 @@ export const HeaderWithButtons = ({
   navigation,
   route,
 }: NativeStackScreenProps<any>) => {
+  // Record the visit to this screen (single source of visit tracking)
+  useMarkVisitedOnFocus();
+
   const { headerData, buttonListData } = getScreenData(
     route.name,
   ) as HeaderWithButtonsData;
 
   return (
     <TScrollView contentInsetAdjustmentBehavior="automatic">
+      <Breadcrumb />
       <View style={styles.layout}>
         <Header {...headerData} />
         <ButtonList {...buttonListData} />
       </View>
+      <NavigationButtons />
     </TScrollView>
   );
 };

@@ -16,24 +16,35 @@
  * along with discipleship‑app‑template. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import React from "react";
-import { StyleProp, Text as ReactText, TextStyle } from "react-native";
-import theme from "../../Theme";
-import { createDesignStyleSheets } from "../../util/DesignStyleSheets";
-import { ContentDataBase } from "./Contents";
-import { supportsVariableFont, isString } from "../../util/Util";
-import { GestureResponderEvent } from "react-native";
+import React from 'react';
+import { StyleProp, Text as ReactText, TextStyle } from 'react-native';
+import { Colors } from '../../Theme';
+import { useTheme } from '../../contexts/ThemeContext';
+import {
+  createDesignStyleSheets,
+  themedStyles,
+} from '../../util/DesignStyleSheets';
+import { ContentDataBase } from './Contents';
+import { supportsVariableFont, isString } from '../../util/Util';
+import { GestureResponderEvent } from 'react-native';
 
-const DEFAULT_FONT_FAMILY = "OpenSauceOne";
+const DEFAULT_FONT_FAMILY = 'OpenSauceOne';
 
 /** The base data that every text object must have. All text data object data types should extend TextDataObjectBase */
 export type TextDataObjectBase = { text: string };
 
+/** Inline span of a segmented paragraph */
+export type TextSegment = { text: string; style?: StyleProp<TextStyle> };
+
 /** Simple defining data for displaying text */
 export interface TextContentDataObject
-  extends ContentDataBase,
-    TextDataObjectBase {
-  type: "Text";
+  extends ContentDataBase, TextDataObjectBase {
+  type: 'Text';
+  /**
+   * When set, render one flowing paragraph of styled spans instead of `text`
+   * (set text: "" and put the paragraph in segments)
+   */
+  segments?: TextSegment[];
   design?: TextDesign;
   style?: StyleProp<TextStyle>;
 }
@@ -41,10 +52,10 @@ export interface TextContentDataObject
 /** Defining data for displaying text, either an object describing the text or just a string */
 export type TextContentData = TextContentDataObject | string;
 
-type TextDesign = "normal" | "header" | "subheader" | "small";
+type TextDesign = 'normal' | 'header' | 'subheader' | 'small';
 
 /** Data that defines Text but without the type */
-export type TextDataObject = Omit<TextContentDataObject, "type">;
+export type TextDataObject = Omit<TextContentDataObject, 'type'>;
 
 /**
  * Data that defines Text but without the type.
@@ -56,16 +67,20 @@ export type TextData = TextDataObject | string;
 /** The base props that every text object should have and pass down to the text inside. All text data object props should extend TextPropsBase */
 export type TextPropsBase = {
   onPress?: (event: GestureResponderEvent) => void;
+  /** Passed through to the underlying RN Text (e.g. for shrink-to-fit cells) */
+  numberOfLines?: number;
+  adjustsFontSizeToFit?: boolean;
+  minimumFontScale?: number;
 };
 
 /** Props the Text needs to function */
 export type TextProps = TextData & TextPropsBase;
 
 // Have to bake out any optional parameter into specifically defined for TypeScript to realize we provided it
-const DEFAULT_PROPS: Omit<TextDataObject, "design" | "text"> & {
+const DEFAULT_PROPS: Omit<TextDataObject, 'design' | 'text'> & {
   design: TextDesign;
 } = {
-  design: "normal",
+  design: 'normal',
 };
 
 /**
@@ -77,7 +92,7 @@ const DEFAULT_PROPS: Omit<TextDataObject, "design" | "text"> & {
  * probably be best to make a new version of this function specific to that text data object type
  */
 export const getTextDataObject = <T extends TextDataObjectBase | string>(
-  textData: T
+  textData: T,
 ): Exclude<T, string> => {
   return (isString(textData) ? { text: textData } : textData) as Exclude<
     T,
@@ -86,10 +101,39 @@ export const getTextDataObject = <T extends TextDataObjectBase | string>(
 };
 
 export const Text = (props: TextProps) => {
-  const { text, design, style, onPress } = {
+  const designStyles = getDesignStyles(useTheme().theme);
+  const {
+    text,
+    segments,
+    design,
+    style,
+    onPress,
+    numberOfLines,
+    adjustsFontSizeToFit,
+    minimumFontScale,
+  } = {
     ...DEFAULT_PROPS,
     ...getTextDataObject(props),
   };
+  // Props forwarded verbatim to the underlying RN Text
+  const passthrough = { onPress, numberOfLines, adjustsFontSizeToFit, minimumFontScale };
+
+  // Segmented paragraph: render each span through this same component so each
+  // gets the usual design and font resolution (including iOS bold/italic
+  // font-family baking below), nested so the paragraph flows as one text
+  if (segments && segments.length > 0) {
+    const designStyle = designStyles[design];
+    return (
+      <ReactText {...passthrough} style={[designStyle.lineText, style]}>
+        {segments.map((segment, i) => (
+          // Only the span's own style — the paragraph `style` is on the
+          // wrapper above and inherits, so re-applying it here would double
+          // any box-model props (padding/background/margin) onto each span
+          <Text key={i} design={design} text={segment.text} style={segment.style} />
+        ))}
+      </ReactText>
+    );
+  }
 
   const designStyle = designStyles[design];
   let styles = [designStyle.lineText, style];
@@ -102,12 +146,12 @@ export const Text = (props: TextProps) => {
 
     // Find the highest-precedence font family, weight, and italic
     let highestStyleIndex = -1;
-    let highestFontFamily: TextStyle["fontFamily"] = undefined;
-    let highestFontWeight: TextStyle["fontWeight"] = undefined;
-    let highestFontStyle: TextStyle["fontStyle"] = undefined;
+    let highestFontFamily: TextStyle['fontFamily'] = undefined;
+    let highestFontWeight: TextStyle['fontWeight'] = undefined;
+    let highestFontStyle: TextStyle['fontStyle'] = undefined;
     for (let i = styles.length - 1; i >= 0; i--) {
       const styleEntry = styles[i];
-      if (!styleEntry || typeof styleEntry !== "object" || styleEntry === null)
+      if (!styleEntry || typeof styleEntry !== 'object' || styleEntry === null)
         continue;
 
       // Keep track of the highest actual TextStyle so we can set the font properties on it
@@ -132,20 +176,20 @@ export const Text = (props: TextProps) => {
       if (!highestFontFamily) highestFontFamily = DEFAULT_FONT_FAMILY;
 
       // Set up the font family we're supposed to use
-      const weight = parseInt(`${highestFontWeight}` || "");
+      const weight = parseInt(`${highestFontWeight}` || '');
       // normal is 400, and bold is 700
       const isBold =
-        highestFontWeight === "bold" ||
+        highestFontWeight === 'bold' ||
         (!Number.isNaN(weight) && weight >= 700);
-      const isItalic = highestFontStyle === "italic";
-      const styledFontFamily = `${highestFontFamily}${isBold ? "_bold" : ""}${
-        isItalic ? "_italic" : ""
+      const isItalic = highestFontStyle === 'italic';
+      const styledFontFamily = `${highestFontFamily}${isBold ? '_bold' : ''}${
+        isItalic ? '_italic' : ''
       }`;
 
       if (highestStyleIndex < 0) {
         // If we didn't find an actual TextStyle, warn that this is unexpected. Please investigate
         console.warn(
-          `Unexpectedly found font styling but not an actual TextStyle object (please investigate), so adding new font style object for text ${text}`
+          `Unexpectedly found font styling but not an actual TextStyle object (please investigate), so adding new font style object for text ${text}`,
         );
         styles.push({
           fontFamily: styledFontFamily,
@@ -161,39 +205,41 @@ export const Text = (props: TextProps) => {
   }
 
   return (
-    <ReactText onPress={onPress} style={styles}>
+    <ReactText {...passthrough} style={styles}>
       {text}
     </ReactText>
   );
 };
 
-const designStyles = createDesignStyleSheets(
-  {
-    lineText: {
-      fontFamily: DEFAULT_FONT_FAMILY,
-      fontSize: 20,
-      color: theme.text.lineText,
-    },
-  },
-  {
-    header: {
+const getDesignStyles = themedStyles((theme: Colors) =>
+  createDesignStyleSheets(
+    {
       lineText: {
-        fontFamily: "LibreFranklin",
-        fontSize: 30,
-        fontWeight: "900",
-        color: theme.text.headerText,
+        fontFamily: DEFAULT_FONT_FAMILY,
+        fontSize: 20,
+        color: theme.text.lineText,
       },
     },
-    subheader: {
-      lineText: {
-        fontSize: 16,
-        color: theme.text.subheaderText,
+    {
+      header: {
+        lineText: {
+          fontFamily: 'LibreFranklin',
+          fontSize: 30,
+          fontWeight: '900',
+          color: theme.text.headerText,
+        },
+      },
+      subheader: {
+        lineText: {
+          fontSize: 16,
+          color: theme.text.subheaderText,
+        },
+      },
+      small: {
+        lineText: {
+          fontSize: 17,
+        },
       },
     },
-    small: {
-      lineText: {
-        fontSize: 17,
-      },
-    },
-  }
+  ),
 );

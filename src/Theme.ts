@@ -18,7 +18,9 @@
 
 import { ColorValue, StyleSheet } from 'react-native';
 
-type Colors = {
+export type ThemeMode = 'light' | 'dark';
+
+export type Colors = {
   app: {
     background: string;
   };
@@ -45,6 +47,12 @@ type Colors = {
     text: string;
     backgroundAnswer: string;
     textAnswer: string;
+    backgroundNav: string;
+    textNav: string;
+    /** Badge marking visited/completed navigation targets */
+    visitedBadge: string;
+    /** Drop-shadow color for raised buttons (rgba; themed for light/dark) */
+    shadow: string;
   };
   text: {
     headerText: string;
@@ -59,6 +67,12 @@ type ColorMap = {
 
 export const themes: ColorMap = require('../assets/data/colors.json');
 
-const theme: Colors = themes['light'];
+/** Get the color palette for a theme mode, falling back to light */
+export function getTheme(mode: ThemeMode): Colors {
+  return themes[mode] ?? themes['light'];
+}
 
-export default theme;
+export const Layout = {
+  maxContentWidth: '90%' as const,
+  slideBorderWidth: 10,
+};

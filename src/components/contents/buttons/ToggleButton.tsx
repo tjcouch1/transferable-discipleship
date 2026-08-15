@@ -17,6 +17,7 @@
  */
 
 import React, { useState } from 'react';
+import { getTextDataObject } from '../Text';
 import { BasicButton } from './BasicButton';
 import { ButtonDataBase } from './Buttons';
 
@@ -29,6 +30,16 @@ export interface ToggleButtonData extends ButtonDataBase {
 
 /** Props the ActionButton needs to function */
 export interface ToggleButtonProps extends Omit<ToggleButtonData, 'type'> {}
+
+/**
+ * Append the standard tap hint to a toggle button label unless the label
+ * already includes tap wording of its own
+ */
+export function applyToggleHint(text: string, isRevealed: boolean): string {
+  if (isRevealed)
+    return /tap to go back/i.test(text) ? text : `${text} (tap to go back)`;
+  return /tap to reveal/i.test(text) ? text : `${text} (tap to reveal)`;
+}
 
 /** Button that toggles between different looks */
 export const ToggleButton = (props: ToggleButtonProps) => {
@@ -56,10 +67,19 @@ export const ToggleButton = (props: ToggleButtonProps) => {
     });
   };
 
-  return (
-    <BasicButton
-      {...(buttonIndex === 0 ? buttonDataProps : altButtons[buttonIndex - 1])}
-      onPress={onPress}
-    />
-  );
+  const displayProps =
+    buttonIndex === 0 ? buttonDataProps : altButtons[buttonIndex - 1];
+
+  // Buttons that toggle between states get the standard tap hints so it's
+  // clear they're interactive
+  let { text } = displayProps;
+  if (altButtons.length > 0 && text !== undefined) {
+    const textObject = getTextDataObject(text);
+    text = {
+      ...textObject,
+      text: applyToggleHint(textObject.text, buttonIndex > 0),
+    };
+  }
+
+  return <BasicButton {...displayProps} text={text} onPress={onPress} />;
 };

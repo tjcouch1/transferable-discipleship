@@ -46,6 +46,11 @@ Run on your preferred platform on the same network:
 
 - `npm start` - runs in the web browser and allows you to use the Expo Go app to test the app on Android and iOS
 
+### Testing
+
+- `npm test` - runs the full suite of Jest unit and integration tests
+- `npm run typecheck` - runs the TypeScript compiler to check for type errors without emitting output
+
 ## Publishing
 
 You can build, publish, and update this app using [EAS](https://docs.expo.dev/eas/) with the following instructions.

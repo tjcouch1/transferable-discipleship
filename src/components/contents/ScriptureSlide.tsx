@@ -27,6 +27,8 @@ import { getTextDataObject } from "./Text";
 type SlideScripture = Omit<ScrRangeDisplayContentData, "type"> & {
   hiddenButton?: Omit<ButtonDataBase, "type">;
   revealedButton?: Omit<ButtonDataBase, "type">;
+  /** Answer text shown inline in the slide (emphasized, not interactive, no tap-to-reveal) */
+  answerInSlide?: string;
 };
 
 export type ScriptureSlideContentData = ContentDataBase & {
@@ -71,6 +73,7 @@ export const ScriptureSlide = ({
       style,
       hiddenButton,
       revealedButton,
+      answerInSlide,
       ...otherScrRangeContent
     } = scr;
 
@@ -105,6 +108,12 @@ export const ScriptureSlide = ({
     };
 
     contents.push(scrRangeDisplayContent);
+
+    if (answerInSlide)
+      contents.push({
+        type: "QuestionPrompt",
+        text: answerInSlide,
+      });
 
     if (showButton)
       contents.push({

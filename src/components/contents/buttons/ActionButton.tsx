@@ -17,10 +17,15 @@
  */
 
 import React, { useMemo } from 'react';
+import { Text as ReactText, View } from 'react-native';
 import { BasicButton } from './BasicButton';
 import { ActionData, ActionFactory } from '../../../util/ActionFactory';
 import { ButtonDataBase } from './Buttons';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useProgress } from '../../../contexts/ProgressContext';
+import { useTheme } from '../../../contexts/ThemeContext';
+import { getAppScreens } from '../../../services/ScreenService';
+import { pathJoin } from '../../../util/PathUtil';
 import { TextData, getTextDataObject } from '../Text';
 
 /** The data that defines the ActionButton */
@@ -37,6 +42,8 @@ export const ActionButton = (props: ActionButtonProps) => {
   const { action, ...buttonData } = props;
   const navigation = useNavigation();
   const route = useRoute();
+  const { theme } = useTheme();
+  const { isVisited, completion, resetProgress } = useProgress();
 
   // Set up text style with underline for `link` action type
   const textObject = useMemo<TextData | undefined>(() => {
@@ -54,9 +61,73 @@ export const ActionButton = (props: ActionButtonProps) => {
     };
   }, []);
 
-  let onPress = action
-    ? ActionFactory[action.type]({ ...action, navigation, route })
+  // Where a navigate action leads, if it leads to a real screen
+  const targetPath = useMemo(() => {
+    if (action?.type !== 'navigate') return undefined;
+    const path = pathJoin(route.name, action.to);
+    return getAppScreens().screens.has(path) ? path : undefined;
+  }, [action, route.name]);
+
+  // resetProgress is threaded into the action bag so resetVisited stays in the
+  // factory. Visit tracking happens on screen focus (see useMarkVisitedOnFocus),
+  // not on press, so navigate needs no wrapping here.
+  const onPress = action
+    ? ActionFactory[action.type]({ ...action, navigation, route, resetProgress })
     : undefined;
 
-  return <BasicButton {...buttonData} text={textObject} onPress={onPress} />;
+  // Visited indicators
+  const showProgress = !!targetPath;
+  const visited = showProgress ? isVisited(targetPath) : false;
+  const completionPercent = showProgress ? completion(targetPath) : undefined;
+  const badge =
+    completionPercent !== undefined
+      ? completionPercent >= 100
+        ? '✓'
+        : completionPercent > 0
+          ? `${completionPercent}%`
+          : undefined
+      : visited
+        ? '✓'
+        : undefined;
+
+  const badgeElement = badge ? (
+    <View
+      style={{
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        transform: [{ translateX: '50%' }, { translateY: '-50%' }],
+        backgroundColor: theme.button.visitedBadge,
+        borderRadius: 12,
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+        minWidth: 32,
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1,
+      }}>
+      <ReactText
+        style={{
+          color: 'white',
+          fontWeight: 'bold',
+          fontSize: 14,
+        }}>
+        {badge}
+      </ReactText>
+    </View>
+  ) : undefined;
+
+  return (
+    <BasicButton
+      {...buttonData}
+      text={textObject}
+      // Visited targets gray out (TouchableOpacity owns `opacity`, so use color)
+      style={[
+        visited && { backgroundColor: theme.slide.bottom },
+        buttonData.style,
+      ]}
+      onPress={onPress}
+      badge={badgeElement}
+    />
+  );
 };

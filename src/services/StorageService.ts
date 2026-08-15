@@ -69,7 +69,7 @@ export async function saveData(
     } else {
       const dirInfo = await FileSystem.getInfoAsync(directory);
       if (!dirInfo.exists)
-        await FileSystem.makeDirectoryAsync(key, { intermediates: true });
+        await FileSystem.makeDirectoryAsync(directory, { intermediates: true });
       await FileSystem.writeAsStringAsync(key, dataSerialized);
     }
     return true;
