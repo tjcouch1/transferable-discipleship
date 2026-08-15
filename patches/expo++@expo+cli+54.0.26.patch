@@ -1,5 +1,5 @@
 diff --git a/node_modules/expo/node_modules/@expo/cli/build/src/start/server/webTemplate.js b/node_modules/expo/node_modules/@expo/cli/build/src/start/server/webTemplate.js
-index 9f80ef5..60744e3 100644
+index 2f6ff64..8f2eba7 100644
 --- a/node_modules/expo/node_modules/@expo/cli/build/src/start/server/webTemplate.js
 +++ b/node_modules/expo/node_modules/@expo/cli/build/src/start/server/webTemplate.js
 @@ -50,6 +50,7 @@ async function createTemplateHtmlFromExpoConfigAsync(projectRoot, { scripts, css
@@ -10,7 +10,7 @@ index 9f80ef5..60744e3 100644
          langIsoCode: ((_exp_web = exp.web) == null ? void 0 : _exp_web.lang) ?? 'en',
          scripts,
          cssLinks,
-@@ -76,11 +77,12 @@ function getFileFromLocalPublicFolder(projectRoot, { publicFolder, filePath }) {
+@@ -74,11 +75,12 @@ function getFileFromLocalPublicFolder(projectRoot, { filePath }) {
      }
      return _fs().default.promises.readFile(filePath, 'utf8');
  }
