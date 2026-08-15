@@ -7,7 +7,7 @@
     "start:public": "npm run web -- --port 20589",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo start --web --go --clear",
+    "web": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo start --web --go",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "expo:upgrade": "cross-env NODE_OPTIONS=--openssl-legacy-provider expo install --fix",
